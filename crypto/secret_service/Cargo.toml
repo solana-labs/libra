@@ -1,5 +1,5 @@
 [package]
-name = "secret_service"
+name = "solana_libra_secret_service"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -11,15 +11,15 @@ futures = "0.1.28"
 grpcio = "0.4.3"
 protobuf = "2.7"
 
-config = { path = "../../config" }
-grpc_helpers = { path = "../../common/grpc_helpers" }
-debug_interface = { path = "../../common/debug_interface" }
-failure = { package = "failure_ext", path = "../../common/failure_ext" }
-executable_helpers = { path = "../../common/executable_helpers" }
-logger = { path = "../../common/logger" }
+config = { path = "../../config", package = "solana_libra_config" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers" }
+debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers" }
+logger = { path = "../../common/logger", package = "solana_libra_logger" }
 
-nextgen_crypto = { path = "../nextgen_crypto" }
-crypto = { path = "../legacy_crypto" }
+nextgen_crypto = { path = "../nextgen_crypto", package = "solana_libra_nextgen_crypto" }
+crypto = { path = "../legacy_crypto", package = "solana_libra_crypto" }
 # ed25519-dalek = { version = "1.0.0-pre.1", features = ["serde"] }
 serde = { version = "1.0.96", features = ["derive"] }
 rand = "0.6.5"
@@ -27,7 +27,7 @@ rand_chacha = "0.1.1"
 
 derive_deref = "1.1.0"
 
-crypto-derive = { path = "../legacy_crypto/src/macros" }
+crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers" }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers" }

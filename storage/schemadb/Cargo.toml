@@ -1,5 +1,5 @@
 [package]
-name = "schemadb"
+name = "solana_libra_schemadb"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -9,8 +9,8 @@ edition = "2018"
 [dependencies]
 lazy_static = "1.3.0"
 
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-metrics = { path = "../../common/metrics" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics" }
 
 [dependencies.rocksdb]
 git = "https://github.com/pingcap/rust-rocksdb.git"

@@ -1,5 +1,5 @@
 [package]
-name = "vm_genesis"
+name = "solana_libra_vm_genesis"
 version = "0.1.0"
 edition = "2018"
 authors = ["Libra Association <opensource@libra.org>"]
@@ -7,17 +7,17 @@ license = "Apache-2.0"
 publish = false
 
 [dependencies]
-config = { path = "../../../config" }
-crypto = { path = "../../../crypto/legacy_crypto" }
-failure = { path = "../../../common/failure_ext", package = "failure_ext" }
-ir_to_bytecode = { path = "../../compiler/ir_to_bytecode" }
-stdlib = { path = "../../stdlib" }
-proto_conv = { path = "../../../common/proto_conv", features = ["derive"] }
-state_view = { path = "../../../storage/state_view" }
-types = { path = "../../../types" }
-vm = { path = "../" }
-vm_cache_map = { path = "../vm_runtime/vm_cache_map" }
-vm_runtime = { path = "../vm_runtime" }
+config = { path = "../../../config", package = "solana_libra_config" }
+crypto = { path = "../../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext" }
+ir_to_bytecode = { path = "../../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode" }
+stdlib = { path = "../../stdlib", package = "solana_libra_stdlib" }
+proto_conv = { path = "../../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv" }
+state_view = { path = "../../../storage/state_view", package = "solana_libra_state_view" }
+types = { path = "../../../types", package = "solana_libra_types" }
+vm = { path = "../", package = "solana_libra_vm" }
+vm_cache_map = { path = "../vm_runtime/vm_cache_map", package = "solana_libra_vm_cache_map" }
+vm_runtime = { path = "../vm_runtime", package = "solana_libra_vm_runtime" }
 hex = "0.3.2"
 lazy_static = "1.3.0"
 rand = "0.6.5"
@@ -25,11 +25,12 @@ tiny-keccak = "1.5.0"
 toml = "0.4"
 
 [dev-dependencies]
-canonical_serialization = { path = "../../../common/canonical_serialization" }
+canonical_serialization = { path = "../../../common/canonical_serialization", package = "solana_libra_canonical_serialization" }
 proptest = "0.9.3"
 proptest-derive = "0.1.1"
-proptest_helpers = { path = "../../../common/proptest_helpers" }
+proptest_helpers = { path = "../../../common/proptest_helpers", package = "solana_libra_proptest_helpers" }
 
 [dev-dependencies.types]
 features = ["testing"]
 path = "../../../types"
+package = "solana_libra_types"

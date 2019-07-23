@@ -1,5 +1,5 @@
 [package]
-name = "mempool"
+name = "solana_libra_mempool"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -18,24 +18,24 @@ protobuf = "2.7"
 tokio = "0.1.22"
 ttl_cache = "0.4.2"
 
-config = { path = "../config" }
-crypto = { path = "../crypto/legacy_crypto" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
-grpc_helpers = { path = "../common/grpc_helpers" }
-logger = { path = "../common/logger" }
-metrics = { path = "../common/metrics" }
-network = { path = "../network" }
-proto_conv = { path = "../common/proto_conv" }
-storage_client = { path = "../storage/storage_client" }
-types = { path = "../types" }
-vm_validator = { path = "../vm_validator" }
+config = { path = "../config", package = "solana_libra_config" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers" }
+logger = { path = "../common/logger", package = "solana_libra_logger" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics" }
+network = { path = "../network", package = "solana_libra_network" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv" }
+storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client" }
+types = { path = "../types", package = "solana_libra_types" }
+vm_validator = { path = "../vm_validator", package = "solana_libra_vm_validator" }
 
 [dev-dependencies]
 rand = "0.6.5"
 tempfile = "3.1.0"
-channel = { path = "../common/channel" }
+channel = { path = "../common/channel", package = "solana_libra_channel" }
 
-storage_service = { path = "../storage/storage_service" }
+storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service" }
 
 [build-dependencies]
-build_helpers = { path = "../common/build_helpers" }
+build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers" }

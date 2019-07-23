@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_client as client;
+
 use client::{client_proxy::ClientProxy, commands::*};
 use logger::set_default_global_logger;
 use rustyline::{config::CompletionType, error::ReadlineError, Config, Editor};

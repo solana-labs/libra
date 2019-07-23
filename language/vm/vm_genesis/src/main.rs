@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_vm_genesis as vm_genesis;
+
 use std::{fs::File, io::prelude::*};
 use vm_genesis::{default_config, encode_genesis_transaction, GENESIS_KEYPAIR};
 

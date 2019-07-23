@@ -4,6 +4,7 @@
 use executable_helpers::helpers::{
     setup_executable, ARG_CONFIG_PATH, ARG_DISABLE_LOGGING, ARG_PEER_ID,
 };
+use solana_libra_secret_service as secret_service;
 use secret_service::secret_service_node;
 
 /// Run a SecretService in its own process.

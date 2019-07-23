@@ -1,5 +1,5 @@
 [package]
-name = "admission_control_proto"
+name = "solana_libra_admission_control_proto"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -12,11 +12,11 @@ futures03 = { version = "=0.3.0-alpha.17", package = "futures-preview" }
 grpcio = "0.4.3"
 protobuf = "2.7"
 
-failure = { package = "failure_ext", path = "../../common/failure_ext" }
-logger = { path = "../../common/logger" }
-mempool = { path = "../../mempool" }
-proto_conv = { path = "../../common/proto_conv" }
-types = { path = "../../types" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+logger = { path = "../../common/logger", package = "solana_libra_logger" }
+mempool = { path = "../../mempool", package = "solana_libra_mempool" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers" }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers" }

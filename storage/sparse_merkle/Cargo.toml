@@ -1,5 +1,5 @@
 [package]
-name = "sparse_merkle"
+name = "solana_libra_sparse_merkle"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -13,10 +13,10 @@ num-traits = "0.2"
 proptest = "0.9.2"
 proptest-derive = "0.1.2"
 
-crypto = { path = "../../crypto/legacy_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
 serde = { version = "1.0.96", features = ["derive"] }
-types = { path = "../../types" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [dev-dependencies]
 proptest = "0.9"

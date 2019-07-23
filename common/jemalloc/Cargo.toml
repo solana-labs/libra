@@ -1,5 +1,5 @@
 [package]
-name = "jemalloc"
+name = "solana_libra_jemalloc"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"

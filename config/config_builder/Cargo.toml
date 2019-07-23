@@ -1,5 +1,5 @@
 [package]
-name = "config_builder"
+name = "solana_libra_config_builder"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -14,11 +14,11 @@ serde = { version = "1.0.96", features = ["derive"] }
 tempfile = "3.1.0"
 toml = "0.4"
 
-config = { path = ".." }
-crypto = { path = "../../crypto/legacy_crypto" }
-nextgen_crypto = { path = "../../crypto/nextgen_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-generate_keypair = { path = "../generate_keypair" }
-proto_conv = { path = "../../common/proto_conv", features = ["derive"] }
-types = { path = "../../types" }
-vm_genesis = { path = "../../language/vm/vm_genesis" }
+config = { path = "..", package = "solana_libra_config" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+nextgen_crypto = { path = "../../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+generate_keypair = { path = "../generate_keypair", package = "solana_libra_generate_keypair" }
+proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv" }
+types = { path = "../../types", package = "solana_libra_types" }
+vm_genesis = { path = "../../language/vm/vm_genesis", package = "solana_libra_vm_genesis" }

@@ -1,5 +1,5 @@
 [package]
-name = "network"
+name = "solana_libra_network"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -20,17 +20,17 @@ tokio-timer = "0.2.10"
 tokio-retry = "0.2.0"
 unsigned-varint = { version = "0.2.2", features = ["codec"] }
 
-channel = { path = "../common/channel" }
-crypto = { path = "../crypto/legacy_crypto" }
-nextgen_crypto = { path = "../crypto/nextgen_crypto" }
-failure = { package = "failure_ext", path = "../common/failure_ext" }
-logger = { path = "../common/logger" }
-memsocket = { path = "memsocket" }
-metrics = { path = "../common/metrics" }
-netcore = { path = "netcore" }
-noise = { path = "noise" }
-socket_bench_server = { path = "socket_bench_server" }
-types = { path = "../types" }
+channel = { path = "../common/channel", package = "solana_libra_channel" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
+nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+logger = { path = "../common/logger", package = "solana_libra_logger" }
+memsocket = { path = "memsocket", package = "solana_libra_memsocket" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics" }
+netcore = { path = "netcore", package = "solana_libra_netcore" }
+noise = { path = "noise", package = "solana_libra_noise" }
+socket_bench_server = { path = "socket_bench_server", package = "solana_libra_socket_bench_server" }
+types = { path = "../types", package = "solana_libra_types" }
 
 [dev-dependencies]
 criterion = "0.2.11"
@@ -38,14 +38,17 @@ criterion = "0.2.11"
 [dev-dependencies.nextgen_crypto]
 features = ["testing"]
 path = "../crypto/nextgen_crypto"
+package = "solana_libra_nextgen_crypto"
 
 [build-dependencies]
 protoc-rust = "2.5.0"
 
 [[bench]]
-name = "socket_muxer_bench"
+name = "solana_libra_socket_muxer_bench"
+path = "benches/socket_muxer_bench.rs"
 harness = false
 
 [[bench]]
-name = "network_bench"
+name = "solana_libra_network_bench"
+path = "benches/network_bench.rs"
 harness = false

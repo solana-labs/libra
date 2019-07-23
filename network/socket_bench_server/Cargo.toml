@@ -1,5 +1,5 @@
 [package]
-name = "socket_bench_server"
+name = "solana_libra_socket_bench_server"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -15,8 +15,8 @@ structopt = "0.2.15"
 tokio = "0.1.22"
 unsigned-varint = { version = "0.2.2", features = ["codec"] }
 
-failure = { package = "failure_ext", path = "../../common/failure_ext" }
-logger = { path = "../../common/logger" }
-memsocket = { path = "../memsocket" }
-netcore = { path = "../netcore" }
-noise = { path = "../noise" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+logger = { path = "../../common/logger", package = "solana_libra_logger" }
+memsocket = { path = "../memsocket", package = "solana_libra_memsocket" }
+netcore = { path = "../netcore", package = "solana_libra_netcore" }
+noise = { path = "../noise", package = "solana_libra_noise" }

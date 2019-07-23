@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_compiler as compiler;
+
 use bytecode_verifier::{
     verifier::{verify_module_dependencies, VerifiedProgram},
     VerifiedModule,

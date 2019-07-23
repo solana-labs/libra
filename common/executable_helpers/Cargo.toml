@@ -1,5 +1,5 @@
 [package]
-name = "executable_helpers"
+name = "solana_libra_executable_helpers"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -10,7 +10,7 @@ edition = "2018"
 clap = "2.32.0"
 slog-scope = "4.0"
 
-config = { path = "../../config" }
-crash_handler = { path = "../crash_handler" }
-logger =  { path = "../logger" }
-metrics = { path = "../metrics" }
+config = { path = "../../config", package = "solana_libra_config" }
+crash_handler = { path = "../crash_handler", package = "solana_libra_crash_handler" }
+logger =  { path = "../logger", package = "solana_libra_logger" }
+metrics = { path = "../metrics", package = "solana_libra_metrics" }

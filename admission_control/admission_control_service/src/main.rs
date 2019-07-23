@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_admission_control_service as admission_control_service;
+
 use admission_control_service::admission_control_node;
 use executable_helpers::helpers::{
     setup_executable, ARG_CONFIG_PATH, ARG_DISABLE_LOGGING, ARG_PEER_ID,

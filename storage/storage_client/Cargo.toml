@@ -1,5 +1,5 @@
 [package]
-name = "storage_client"
+name = "solana_libra_storage_client"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -12,12 +12,12 @@ futures_01 = { version = "0.1.25", package = "futures" }
 grpcio = "0.4.4"
 protobuf = "2.7"
 
-canonical_serialization = { path = "../../common/canonical_serialization" }
-crypto = { path = "../../crypto/legacy_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-metrics = { path = "../../common/metrics" }
-proto_conv = { path = "../../common/proto_conv" }
-scratchpad = { path = "../scratchpad" }
-state_view = { path = "../state_view" }
-storage_proto = { path = "../storage_proto" }
-types = { path = "../../types" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
+scratchpad = { path = "../scratchpad", package = "solana_libra_scratchpad" }
+state_view = { path = "../state_view", package = "solana_libra_state_view" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto" }
+types = { path = "../../types", package = "solana_libra_types" }

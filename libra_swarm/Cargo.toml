@@ -1,5 +1,5 @@
 [package]
-name = "libra_swarm"
+name = "solana_libra_swarm"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -14,12 +14,12 @@ lazy_static = "1.2.0"
 structopt = "0.2.15"
 tempfile = "3.1.0"
 
-client_lib = { package = "client", path = "../client" }
-config = { path = "../config" }
-config_builder = { path = "../config/config_builder" }
-crypto = { path = "../crypto/legacy_crypto" }
-debug_interface = { path = "../common/debug_interface" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
-generate_keypair = { path = "../config/generate_keypair" }
-logger = { path = "../common/logger" }
-tools = { path = "../common/tools" }
+client_lib = { path = "../client", package = "solana_libra_client" }
+config = { path = "../config", package = "solana_libra_config" }
+config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
+debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair" }
+logger = { path = "../common/logger", package = "solana_libra_logger" }
+tools = { path = "../common/tools", package = "solana_libra_tools" }

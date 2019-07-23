@@ -1,5 +1,5 @@
 [package]
-name = "debug_interface"
+name = "solana_libra_debug_interface"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -11,10 +11,10 @@ grpcio = "0.4.3"
 futures = "0.1.28"
 protobuf = "2.7"
 
-failure = { package = "failure_ext", path = "../failure_ext" }
-jemalloc = { path = "../jemalloc" }
-logger = { path = "../logger" }
-metrics = { path = "../metrics" }
+failure = { path = "../failure_ext", package = "solana_libra_failure_ext" }
+jemalloc = { path = "../jemalloc", package = "solana_libra_jemalloc" }
+logger = { path = "../logger", package = "solana_libra_logger" }
+metrics = { path = "../metrics", package = "solana_libra_metrics" }
 
 [build-dependencies]
-build_helpers = { path = "../build_helpers" }
+build_helpers = { path = "../build_helpers", package = "solana_libra_build_helpers" }

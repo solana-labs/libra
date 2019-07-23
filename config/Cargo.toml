@@ -1,5 +1,5 @@
 [package]
-name = "config"
+name = "solana_libra_config"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -16,8 +16,8 @@ serde = { version = "1.0.96", features = ["derive"] }
 tempfile = "3.1.0"
 toml = "0.4"
 
-crypto = { path = "../crypto/legacy_crypto" }
-proto_conv = { path = "../common/proto_conv" }
-logger = { path = "../common/logger" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
-types = { path = "../types" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv" }
+logger = { path = "../common/logger", package = "solana_libra_logger" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+types = { path = "../types", package = "solana_libra_types" }
