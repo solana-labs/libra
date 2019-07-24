@@ -1,5 +1,5 @@
 [package]
-name = "repl"
+name = "solana_libra_repl"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -7,12 +7,12 @@ publish = false
 edition = "2018"
 
 [dependencies]
-bytecode_verifier = { path = "../../bytecode_verifier" }
-compiler = { path = "../../compiler" }
-failure = { path = "../../../common/failure_ext", package = "failure_ext" }
+bytecode_verifier = { path = "../../bytecode_verifier", package = "solana_libra_bytecode_verifier" }
+compiler = { path = "../../compiler", package = "solana_libra_compiler" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext" }
 getopts = "0.2.18"
-language_e2e_tests = { path = "../../e2e_tests" }
-stdlib = { path = "../../stdlib" }
-types = { path = "../../../types" }
-vm_runtime = { path = "../../vm/vm_runtime" }
+language_e2e_tests = { path = "../../e2e_tests", package = "solana_libra_language_e2e_tests" }
+stdlib = { path = "../../stdlib", package = "solana_libra_stdlib" }
+types = { path = "../../../types", package = "solana_libra_types" }
+vm_runtime = { path = "../../vm/vm_runtime", package = "solana_libra_vm_runtime" }
 hex = "0.3.2"

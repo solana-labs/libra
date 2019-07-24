@@ -1,5 +1,5 @@
 [package]
-name = "vm"
+name = "solana_libra_vm"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -12,10 +12,10 @@ hex = "0.3.2"
 proptest = "0.9"
 proptest-derive = "0.1.1"
 lazy_static = "1.3.0"
-crypto = { path = "../../crypto/legacy_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-proptest_helpers = { path = "../../common/proptest_helpers" }
-types = { path = "../../types" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+proptest_helpers = { path = "../../common/proptest_helpers", package = "solana_libra_proptest_helpers" }
+types = { path = "../../types", package = "solana_libra_types" }
 mirai-annotations = "^1.2.2"
 
 [features]

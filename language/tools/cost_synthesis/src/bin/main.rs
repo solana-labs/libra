@@ -6,6 +6,9 @@
 //! * Global-memory independent instructions;
 //! * Global-memory dependent instructions; and
 //! * Native operations.
+
+use solana_libra_cost_synthesis as cost_synthesis;
+
 use cost_synthesis::{
     global_state::{account::Account, inhabitor::RandomInhabitor},
     module_generator::ModuleGenerator,

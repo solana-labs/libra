@@ -1,5 +1,5 @@
 [package]
-name = "libradb"
+name = "solana_libradb"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -19,17 +19,17 @@ strum = "0.15.0"
 strum_macros = "0.15.0"
 tempfile = "3.0.6"
 
-accumulator = { path = "../accumulator" }
-canonical_serialization = { path = "../../common/canonical_serialization" }
-crypto = { path = "../../crypto/legacy_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-logger = { path = "../../common/logger" }
-metrics = { path = "../../common/metrics" }
-proto_conv = { path = "../../common/proto_conv" }
-schemadb = { path = "../schemadb" }
-sparse_merkle = { path = "../sparse_merkle" }
-storage_proto = { path = "../storage_proto" }
-types = { path = "../../types" }
+accumulator = { path = "../accumulator", package = "solana_libra_accumulator" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+logger = { path = "../../common/logger", package = "solana_libra_logger" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
+schemadb = { path = "../schemadb", package = "solana_libra_schemadb" }
+sparse_merkle = { path = "../sparse_merkle", package = "solana_libra_sparse_merkle" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [dev-dependencies]
 rusty-fork = "0.2.1"

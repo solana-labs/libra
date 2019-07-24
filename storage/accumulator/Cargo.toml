@@ -1,5 +1,5 @@
 [package]
-name = "accumulator"
+name = "solana_libra_accumulator"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -9,9 +9,9 @@ edition = "2018"
 [dependencies]
 proptest = "0.9.1"
 
-crypto = { path = "../../crypto/legacy_crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-types = { path = "../../types" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [dev-dependencies]
 rand = "0.6.5"

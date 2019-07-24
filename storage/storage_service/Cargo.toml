@@ -1,5 +1,5 @@
 [package]
-name = "storage_service"
+name = "solana_libra_storage_service"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -11,20 +11,20 @@ futures = { version = "0.3.0-alpha.13", package = "futures-preview", features = 
 grpcio = "0.4.4"
 protobuf = "2.7"
 
-canonical_serialization = { path = "../../common/canonical_serialization" }
-config = { path = "../../config" }
-crypto = { path = "../../crypto/legacy_crypto" }
-debug_interface = { path = "../../common/debug_interface" }
-executable_helpers = { path = "../../common/executable_helpers" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-grpc_helpers = { path = "../../common/grpc_helpers" }
-libradb = { path = "../libradb" }
-logger = { path = "../../common/logger" }
-metrics = { path = "../../common/metrics" }
-proto_conv = { path = "../../common/proto_conv", features = ["derive"] }
-storage_client = { path = "../storage_client" }
-storage_proto = { path = "../storage_proto" }
-types = { path = "../../types" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization" }
+config = { path = "../../config", package = "solana_libra_config" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface" }
+executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers" }
+libradb = { path = "../libradb", package = "solana_libradb" }
+logger = { path = "../../common/logger", package = "solana_libra_logger" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics" }
+proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv" }
+storage_client = { path = "../storage_client", package = "solana_libra_storage_client" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [dev-dependencies]
 itertools = "0.8.0"

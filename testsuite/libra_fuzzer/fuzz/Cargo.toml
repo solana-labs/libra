@@ -1,5 +1,5 @@
 [package]
-name = "libra_fuzzer_fuzz"
+name = "solana_libra_fuzzer_fuzz"
 version = "0.1.0"
 edition = "2018"
 authors = ["Automatically generated"]
@@ -10,7 +10,7 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = { git = "https://github.com/rust-fuzz/libfuzzer-sys.git" }
-libra_fuzzer = { path = ".." }
+libra_fuzzer = { path = "..", package = "solana_libra_fuzzer" }
 lazy_static = "1.3.0"
 
 # futures-preview is pinned to 0.3.0-alpha.14 by some other packages. The latest version
@@ -23,5 +23,5 @@ futures-preview = "=0.3.0-alpha.14"
 members = ["."]
 
 [[bin]]
-name = "fuzz_runner"
+name = "solana_libra_fuzz_runner"
 path = "fuzz_targets/fuzz_runner.rs"

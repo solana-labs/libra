@@ -3,6 +3,8 @@
 
 //! Helpers for fuzz testing.
 
+use solana_libra_fuzzer as libra_fuzzer;
+
 use lazy_static::lazy_static;
 use libra_fuzzer::{commands, FuzzTarget};
 use std::{env, ffi::OsString, fs, path::PathBuf};

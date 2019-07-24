@@ -1,5 +1,5 @@
 [package]
-name = "scratchpad"
+name = "solana_libra_scratchpad"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -9,8 +9,8 @@ edition = "2018"
 [dependencies]
 itertools = "0.8.0"
 
-crypto = { path = "../../crypto/legacy_crypto" }
-types = { path = "../../types" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+types = { path = "../../types", package = "solana_libra_types" }
 
 [dev-dependencies]
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }

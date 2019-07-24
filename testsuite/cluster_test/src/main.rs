@@ -1,3 +1,5 @@
+use solana_libra_cluster_test as cluster_test;
+
 use clap::{App, Arg, ArgGroup, ArgMatches};
 use cluster_test::{
     aws::Aws,

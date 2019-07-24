@@ -1,5 +1,5 @@
 [package]
-name = "execution_service"
+name = "solana_libra_execution_service"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -11,23 +11,23 @@ futures01 = { package = "futures", version = "0.1.26" }
 futures03 = { package = "futures-preview", version = "=0.3.0-alpha.17", features = ["compat"] }
 grpcio = "0.4.4"
 
-config = { path = "../../config" }
-execution_proto = { path = "../execution_proto" }
-executor = { path = "../executor" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-grpc_helpers = { path = "../../common/grpc_helpers" }
-proto_conv = { path = "../../common/proto_conv" }
-storage_client = { path = "../../storage/storage_client" }
-types = { path = "../../types" }
-vm_runtime = { path = "../../language/vm/vm_runtime" }
+config = { path = "../../config", package = "solana_libra_config" }
+execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto" }
+executor = { path = "../executor", package = "solana_libra_executor" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
+storage_client = { path = "../../storage/storage_client", package = "solana_libra_storage_client" }
+types = { path = "../../types", package = "solana_libra_types" }
+vm_runtime = { path = "../../language/vm/vm_runtime", package = "solana_libra_vm_runtime" }
 
 [dev-dependencies]
 tempfile = "3.1.0"
 
-config = { path = "../../config" }
-config_builder = { path = "../../config/config_builder" }
-crypto = { path = "../../crypto/legacy_crypto" }
-execution_client = { path = "../execution_client" }
-storage_proto = { path = "../../storage/storage_proto" }
-storage_service = { path = "../../storage/storage_service" }
-vm_genesis = { path = "../../language/vm/vm_genesis" }
+config = { path = "../../config", package = "solana_libra_config" }
+config_builder = { path = "../../config/config_builder", package = "solana_libra_config_builder" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
+execution_client = { path = "../execution_client", package = "solana_libra_execution_client" }
+storage_proto = { path = "../../storage/storage_proto", package = "solana_libra_storage_proto" }
+storage_service = { path = "../../storage/storage_service", package = "solana_libra_storage_service" }
+vm_genesis = { path = "../../language/vm/vm_genesis", package = "solana_libra_vm_genesis" }

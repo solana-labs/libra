@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_swarm as libra_swarm;
+
 use libra_swarm::{client, swarm::LibraSwarm};
 use std::path::Path;
 use structopt::StructOpt;

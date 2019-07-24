@@ -1,5 +1,5 @@
 [package]
-name = "move_ir_natives"
+name = "solana_libra_move_ir_natives"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -8,8 +8,8 @@ edition = "2018"
 
 [dependencies]
 bitcoin_hashes = "0.3.0"
-nextgen_crypto = { path = "../../../crypto/nextgen_crypto" }
-failure = { path = "../../../common/failure_ext", package = "failure_ext" }
+nextgen_crypto = { path = "../../../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext" }
 tiny-keccak = "1.5.0"
-types = { path = "../../../types" }
+types = { path = "../../../types", package = "solana_libra_types" }
 byteorder = "1.3.2"

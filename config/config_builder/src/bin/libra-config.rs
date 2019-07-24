@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_config_builder as config_builder;
+
 use clap::{value_t, App, Arg};
 use config_builder::swarm_config::SwarmConfigBuilder;
 use std::convert::TryInto;

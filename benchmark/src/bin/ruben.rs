@@ -1,6 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+use solana_libra_benchmark as benchmark;
+
 use admission_control_proto::proto::admission_control_grpc::AdmissionControlClient;
 use benchmark::{
     ruben_opt::{Executable, Opt},
