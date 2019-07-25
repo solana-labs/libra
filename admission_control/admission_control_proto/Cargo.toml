@@ -9,7 +9,7 @@ edition = "2018"
 [dependencies]
 futures = "0.1.28"
 futures03 = { version = "=0.3.0-alpha.17", package = "futures-preview" }
-grpcio = "0.4.3"
+grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
 failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }

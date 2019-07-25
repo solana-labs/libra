@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 futures = "0.1.25"
-grpcio = "0.4.3"
+grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
