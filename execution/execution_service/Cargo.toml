@@ -9,7 +9,7 @@ edition = "2018"
 [dependencies]
 futures01 = { package = "futures", version = "0.1.26" }
 futures03 = { package = "futures-preview", version = "=0.3.0-alpha.17", features = ["compat"] }
-grpcio = "0.4.4"
+grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 
 config = { path = "../../config", package = "solana_libra_config" }
 execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto" }

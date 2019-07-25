@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 futures = "0.1.28"
-grpcio = "0.4.3"
+grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
 config = { path = "../../config", package = "solana_libra_config" }

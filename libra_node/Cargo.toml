@@ -7,7 +7,7 @@ publish = false
 edition = "2018"
 
 [dependencies]
-grpcio = "0.4.3"
+grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 grpcio-sys = "0.4.4"
 signal-hook = "0.1.10"
 tokio = "0.1.22"
