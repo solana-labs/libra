@@ -20,4 +20,8 @@ logger = { path = "../logger", package = "solana_libra_logger", version = "0.0.0
 metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol10" }
 
 [build-dependencies]
-build_helpers = { path = "../build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
+
+[features]
+default = []
+build-proto = ["build_helpers"]

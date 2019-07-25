@@ -23,9 +23,13 @@ proto_conv = { path = "../../common/proto_conv", features = ["derive"], package 
 types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol10" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
 
 [dev-dependencies.types]
 features = ["testing"]
 path = "../../types"
 package = "solana_libra_types"
+
+[features]
+default = []
+build-proto = ["build_helpers"]

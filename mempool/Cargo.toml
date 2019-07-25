@@ -41,4 +41,8 @@ channel = { path = "../common/channel", package = "solana_libra_channel", versio
 storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0-sol10" }
 
 [build-dependencies]
-build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
+
+[features]
+default = []
+build-proto = ["build_helpers"]

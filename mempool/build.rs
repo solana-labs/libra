@@ -6,6 +6,7 @@
 //! For example, if there is a file `src/a/b/c.proto`, it will generate `src/a/b/c.rs` and
 //! `src/a/b/c_grpc.rs`.
 
+#[cfg(feature = "build-proto")]
 fn main() {
     let proto_root = "src/proto";
     let proto_shared_root = "src/proto/shared";
@@ -18,3 +19,6 @@ fn main() {
         true,
     );
 }
+
+#[cfg(not(feature = "build-proto"))]
+fn main() {}

@@ -34,7 +34,7 @@ proptest_helpers = { path = "../common/proptest_helpers", package = "solana_libr
 proto_conv = { path = "../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0-sol10" }
 
 [build-dependencies]
-build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
 
 [dev-dependencies.nextgen_crypto]
 features = ["testing"]
@@ -44,3 +44,4 @@ package = "solana_libra_nextgen_crypto"
 [features]
 default = []
 testing = ["nextgen_crypto/testing"]
+build-proto = ["build_helpers"]

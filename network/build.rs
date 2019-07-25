@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /// Builds the proto files needed for the network crate.
+#[cfg(feature = "build-proto")]
 fn main() {
     let proto_files = [
         "src/proto/network.proto",
@@ -25,3 +26,6 @@ fn main() {
     })
     .expect("protoc");
 }
+
+#[cfg(not(feature = "build-proto"))]
+fn main() {}

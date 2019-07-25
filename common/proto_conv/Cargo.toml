@@ -19,8 +19,9 @@ proptest-derive = "0.1.0"
 protobuf = "2.7"
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
 
 [features]
 default = []
 derive = ["proto_conv_derive"]
+build-proto = ["build_helpers"]

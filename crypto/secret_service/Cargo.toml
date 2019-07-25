@@ -33,4 +33,8 @@ derive_deref = "1.1.0"
 crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0-sol10" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10" }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol10", optional = true }
+
+[features]
+default = []
+build-proto = ["build_helpers"]
