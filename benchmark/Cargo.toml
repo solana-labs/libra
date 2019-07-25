@@ -9,7 +9,7 @@ edition = "2018"
 bincode = "1.1.4"
 clap = "2.33.0"
 futures = "0.1.28"
-grpcio = "0.4"
+grpcio = { version = "0.4", default-features = false, features = ["protobuf-codec"] }
 itertools = "0.8.0"
 lazy_static = "1.2.0"
 protobuf = "2.7"
