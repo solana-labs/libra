@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_debug_interface"
-version = "0.0.0-sol12"
+version = "0.0.0-sol13"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -14,13 +14,13 @@ grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-co
 futures = "0.1.28"
 protobuf = "2.7"
 
-failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
-jemalloc = { path = "../jemalloc", package = "solana_libra_jemalloc", version = "0.0.0-sol12" }
-logger = { path = "../logger", package = "solana_libra_logger", version = "0.0.0-sol12" }
-metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol12" }
+failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
+jemalloc = { path = "../jemalloc", package = "solana_libra_jemalloc", version = "0.0.0-sol13" }
+logger = { path = "../logger", package = "solana_libra_logger", version = "0.0.0-sol13" }
+metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol13" }
 
 [build-dependencies]
-build_helpers = { path = "../build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol12", optional = true }
+build_helpers = { path = "../build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol13", optional = true }
 
 [features]
 default = []

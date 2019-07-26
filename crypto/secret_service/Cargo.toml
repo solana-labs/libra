@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_secret_service"
-version = "0.0.0-sol12"
+version = "0.0.0-sol13"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -14,15 +14,15 @@ futures = "0.1.28"
 grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol12" }
-grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol12" }
-debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0-sol12" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
-executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0-sol12" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol12" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol13" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol13" }
+debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0-sol13" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
+executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0-sol13" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol13" }
 
-nextgen_crypto = { path = "../nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol12" }
-crypto = { path = "../legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol12" }
+nextgen_crypto = { path = "../nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol13" }
+crypto = { path = "../legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol13" }
 # ed25519-dalek = { version = "1.0.0-pre.1", features = ["serde"] }
 serde = { version = "1.0.96", features = ["derive"] }
 rand = "0.6.5"
@@ -30,10 +30,10 @@ rand_chacha = "0.1.1"
 
 derive_deref = "1.1.0"
 
-crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0-sol12" }
+crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0-sol13" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol12", optional = true }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol13", optional = true }
 
 [features]
 default = []
