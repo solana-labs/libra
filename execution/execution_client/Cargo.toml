@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_execution_client"
-version = "0.0.0-sol7"
+version = "0.0.0-sol8"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -12,7 +12,7 @@ edition = "2018"
 [dependencies]
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 
-execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol7" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol7" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol7" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol7" }
+execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol8" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol8" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol8" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol8" }
