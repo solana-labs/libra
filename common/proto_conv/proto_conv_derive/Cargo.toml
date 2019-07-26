@@ -4,7 +4,6 @@ version = "0.0.0"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 edition = "2018"
-publish = false
 
 [lib]
 proc-macro = true
