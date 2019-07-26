@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_grpcio-extras"
-version = "0.0.0-sol11"
+version = "0.0.0-sol12"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"

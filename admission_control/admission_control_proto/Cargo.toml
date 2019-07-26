@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_admission_control_proto"
-version = "0.0.0-sol11"
+version = "0.0.0-sol12"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -15,14 +15,14 @@ futures03 = { version = "=0.3.0-alpha.17", package = "futures-preview" }
 grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol11" }
-mempool = { path = "../../mempool", package = "solana_libra_mempool", version = "0.0.0-sol11" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol11" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol11" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol12" }
+mempool = { path = "../../mempool", package = "solana_libra_mempool", version = "0.0.0-sol12" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol12" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol12" }
 
 [build-dependencies]
-build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol11", optional = true }
+build_helpers = { path = "../../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0-sol12", optional = true }
 
 [features]
 default = []

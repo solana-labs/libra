@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_canonical_serialization"
-version = "0.0.0-sol11"
+version = "0.0.0-sol12"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -11,7 +11,7 @@ edition = "2018"
 [dependencies]
 byteorder = "1.3.2"
 
-failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
+failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
 
 [dev-dependencies]
 hex = "0.3"
