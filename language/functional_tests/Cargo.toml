@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_functional_tests"
-version = "0.0.0-sol10"
+version = "0.0.0-sol11"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -9,15 +9,15 @@ license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol10" }
-ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol10" }
-stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol10" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol10" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol10" }
-bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol10" }
-language_e2e_tests = { path = "../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0-sol10" }
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol10" }
-transaction_builder = { path = "../transaction_builder", package = "solana_libra_transaction_builder", version = "0.0.0-sol10" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
+ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol11" }
+stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol11" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol11" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol11" }
+bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol11" }
+language_e2e_tests = { path = "../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0-sol11" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol11" }
+transaction_builder = { path = "../transaction_builder", package = "solana_libra_transaction_builder", version = "0.0.0-sol11" }
 termcolor = "1.0.4"
 filecheck = "0.4.0"
 datatest = "0.3.5"
