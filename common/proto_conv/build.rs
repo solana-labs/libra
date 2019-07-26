@@ -1,6 +1,7 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+#[cfg(feature = "build-proto")]
 fn main() {
     let proto_root = "tests/proto";
 
@@ -10,3 +11,6 @@ fn main() {
         false, /* generate_client_stub */
     );
 }
+
+#[cfg(not(feature = "build-proto"))]
+fn main() {}
