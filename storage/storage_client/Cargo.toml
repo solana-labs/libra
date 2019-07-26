@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_storage_client"
-version = "0.0.0-sol7"
+version = "0.0.0-sol8"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -15,12 +15,12 @@ futures_01 = { version = "0.1.25", package = "futures" }
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
-canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol7" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol7" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol7" }
-metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol7" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol7" }
-scratchpad = { path = "../scratchpad", package = "solana_libra_scratchpad", version = "0.0.0-sol7" }
-state_view = { path = "../state_view", package = "solana_libra_state_view", version = "0.0.0-sol7" }
-storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol7" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol7" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol8" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol8" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol8" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol8" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol8" }
+scratchpad = { path = "../scratchpad", package = "solana_libra_scratchpad", version = "0.0.0-sol8" }
+state_view = { path = "../state_view", package = "solana_libra_state_view", version = "0.0.0-sol8" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol8" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol8" }
