@@ -1,20 +1,20 @@
 [package]
 name = "solana_libra_functional_tests"
-version = "0.0.0.4"
+version = "0.0.0-sol5"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0.4" }
-ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0.4" }
-stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0.4" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0.4" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0.4" }
-bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0.4" }
-language_e2e_tests = { path = "../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0.4" }
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0.4" }
-transaction_builder = { path = "../transaction_builder", package = "solana_libra_transaction_builder", version = "0.0.0.4" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
+ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol5" }
+stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol5" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol5" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol5" }
+bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol5" }
+language_e2e_tests = { path = "../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0-sol5" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol5" }
+transaction_builder = { path = "../transaction_builder", package = "solana_libra_transaction_builder", version = "0.0.0-sol5" }
 termcolor = "1.0.4"
 filecheck = "0.4.0"
 datatest = "0.3.5"

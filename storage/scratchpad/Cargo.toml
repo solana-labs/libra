@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_scratchpad"
-version = "0.0.0.4"
+version = "0.0.0-sol5"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -9,8 +9,8 @@ edition = "2018"
 [dependencies]
 itertools = "0.8.0"
 
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0.4" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0.4" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol5" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol5" }
 
 [dev-dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0.4" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
