@@ -12,7 +12,7 @@ use std::{collections::BTreeMap, fmt};
 use types::language_storage::ModuleId;
 use vm::{
     access::{ModuleAccess, ScriptAccess},
-    errors::{VMStaticViolation, VerificationError, VerificationStatus},
+    errors::{VMStaticViolation, VerificationError, VerificationStatus, BinaryLoaderResult},
     file_format::{CompiledModule, CompiledProgram, CompiledScript},
     resolver::Resolver,
     views::{ModuleView, ViewInternals},
@@ -189,14 +189,27 @@ impl VerifiedModule {
         VerifiedModule(module)
     }
 
-    /// Serializes this module into the provided buffer.
-    ///
-    /// This is merely a convenience wrapper around `module.as_inner().serialize(buf)`.
-    ///
-    /// `VerifiedModule` instances cannot be deserialized directly, since the input is potentially
-    /// untrusted. Instead, one must go through `CompiledModule`.
-    pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
-        self.as_inner().serialize(buf)
+    // TODO Solana: Enable serialization, Solana stores the Verified module in an immutable account
+    // /// Serializes this module into the provided buffer.
+    // ///
+    // /// This is merely a convenience wrapper around `module.as_inner().serialize(buf)`.
+    // ///
+    // /// `VerifiedModule` instances cannot be deserialized directly, since the input is potentially
+    // /// untrusted. Instead, one must go through `CompiledModule`.
+    // pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
+    //     self.as_inner().serialize(buf)
+    // }
+
+    /// Serializes a `VerifiedScript` into a binary. The mutable `Vec<u8>` will contain the
+    /// binary blob on return.
+    pub fn serialize(&self, binary: &mut Vec<u8>) -> Result<(), Error> {
+        self.as_inner().serialize(binary)
+    }
+
+    /// Deserializes a &[u8] slice into a `VerifiedScript` instance.
+    pub fn deserialize(binary: &[u8]) -> BinaryLoaderResult<Self> {
+        let deserialized = CompiledModule::deserialize(binary)?;
+        Ok(VerifiedModule(deserialized))
     }
 
     /// Returns a reference to the `CompiledModule` within.
@@ -275,14 +288,27 @@ impl VerifiedScript {
         VerifiedModule(self.into_inner().into_module())
     }
 
-    /// Serializes this script into the provided buffer.
-    ///
-    /// This is merely a convenience wrapper around `script.as_inner().serialize(buf)`.
-    ///
-    /// `VerifiedScript` instances cannot be deserialized directly, since the input is potentially
-    /// untrusted. Instead, one must go through `CompiledScript`.
-    pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
-        self.as_inner().serialize(buf)
+    // TODO Solana: Enable serialization, Solana stores the Verified script in an immutable account
+    // /// Serializes this script into the provided buffer.
+    // ///
+    // /// This is merely a convenience wrapper around `script.as_inner().serialize(buf)`.
+    // ///
+    // /// `VerifiedScript` instances cannot be deserialized directly, since the input is potentially
+    // /// untrusted. Instead, one must go through `CompiledScript`.
+    // pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
+    //     self.as_inner().serialize(buf)
+    // }
+
+    /// Serializes a `VerifiedScript` into a binary. The mutable `Vec<u8>` will contain the
+    /// binary blob on return.
+    pub fn serialize(&self, binary: &mut Vec<u8>) -> Result<(), Error> {
+        self.as_inner().serialize(binary)
+    }
+
+    /// Deserializes a &[u8] slice into a `VerifiedScript` instance.
+    pub fn deserialize(binary: &[u8]) -> BinaryLoaderResult<Self> {
+        let deserialized = CompiledScript::deserialize(binary)?;
+        Ok(VerifiedScript(deserialized))
     }
 
     /// Returns a reference to the `CompiledScript` within.
