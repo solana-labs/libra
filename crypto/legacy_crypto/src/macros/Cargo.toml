@@ -1,10 +1,11 @@
 [package]
 name = "solana_libra_crypto-derive"
-version = "0.0.0-sol8"
+version = "0.0.0-sol9"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
-description = "Custom derives for `crypto`"
+description = "Solana Libra custom derives for `crypto`"
+license = "Apache-2.0"
 edition = "2018"
 
 [lib]
