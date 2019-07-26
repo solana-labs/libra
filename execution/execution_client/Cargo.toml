@@ -1,7 +1,10 @@
 [package]
 name = "solana_libra_execution_client"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra execution_client"
 license = "Apache-2.0"
 publish = false
 edition = "2018"
@@ -9,7 +12,7 @@ edition = "2018"
 [dependencies]
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 
-execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol5" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol5" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol5" }
+execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol6" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol6" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol6" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol6" }

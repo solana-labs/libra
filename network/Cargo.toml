@@ -1,7 +1,10 @@
 [package]
 name = "solana_libra_network"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra network"
 license = "Apache-2.0"
 build = "build.rs"
 publish = false
@@ -20,17 +23,17 @@ tokio-timer = "0.2.10"
 tokio-retry = "0.2.0"
 unsigned-varint = { version = "0.2.2", features = ["codec"] }
 
-channel = { path = "../common/channel", package = "solana_libra_channel", version = "0.0.0-sol5" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol5" }
-nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol5" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
-logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol5" }
-memsocket = { path = "memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol5" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol5" }
-netcore = { path = "netcore", package = "solana_libra_netcore", version = "0.0.0-sol5" }
-noise = { path = "noise", package = "solana_libra_noise", version = "0.0.0-sol5" }
-socket_bench_server = { path = "socket_bench_server", package = "solana_libra_socket_bench_server", version = "0.0.0-sol5" }
-types = { path = "../types", package = "solana_libra_types", version = "0.0.0-sol5" }
+channel = { path = "../common/channel", package = "solana_libra_channel", version = "0.0.0-sol6" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol6" }
+nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol6" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol6" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol6" }
+memsocket = { path = "memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol6" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol6" }
+netcore = { path = "netcore", package = "solana_libra_netcore", version = "0.0.0-sol6" }
+noise = { path = "noise", package = "solana_libra_noise", version = "0.0.0-sol6" }
+socket_bench_server = { path = "socket_bench_server", package = "solana_libra_socket_bench_server", version = "0.0.0-sol6" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0-sol6" }
 
 [dev-dependencies]
 criterion = "0.2.11"

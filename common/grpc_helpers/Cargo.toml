@@ -1,7 +1,10 @@
 [package]
 name = "solana_libra_grpc_helpers"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra grpc_helpers"
 license = "Apache-2.0"
 publish = false
 edition = "2018"
@@ -11,9 +14,9 @@ grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-co
 futures = { version = "0.3.0-alpha.13", package = "futures-preview", features = ["compat"] }
 futures_01 = { version = "0.1.25", package = "futures" }
 
-failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
-logger = { path = "../logger", package = "solana_libra_logger", version = "0.0.0-sol5" }
-metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol5" }
+failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol6" }
+logger = { path = "../logger", package = "solana_libra_logger", version = "0.0.0-sol6" }
+metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol6" }
 
 [dependencies.prometheus]
 version  = "0.4.2"

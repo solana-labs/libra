@@ -1,7 +1,10 @@
 [package]
 name = "solana_libra_testsuite"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra testsuite"
 license = "Apache-2.0"
 publish = false
 edition = "2018"
@@ -14,8 +17,8 @@ rust_decimal = "1.0.1"
 # In order to limit the potential waiting time for binaries to be built while
 # running tests all binaries which are being tested under this testsuite
 # should have their crates listed as dev-dependencies.
-cli = { path = "../client", package = "solana_libra_client", version = "0.0.0-sol5" }
-generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair", version = "0.0.0-sol5" }
-libra_swarm = { path = "../libra_swarm", package = "solana_libra_swarm", version = "0.0.0-sol5" }
-logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol5" }
+cli = { path = "../client", package = "solana_libra_client", version = "0.0.0-sol6" }
+generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair", version = "0.0.0-sol6" }
+libra_swarm = { path = "../libra_swarm", package = "solana_libra_swarm", version = "0.0.0-sol6" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol6" }
 tempfile = "3.1.0"
