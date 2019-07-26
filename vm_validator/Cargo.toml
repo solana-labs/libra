@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_vm_validator"
-version = "0.0.0.4"
+version = "0.0.0-sol5"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -9,23 +9,23 @@ edition = "2018"
 [dependencies]
 futures = "0.1.28"
 
-config = { path = "../config", package = "solana_libra_config", version = "0.0.0.4" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0.4" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0.4" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0.4" }
-scratchpad = { path = "../storage/scratchpad", package = "solana_libra_scratchpad", version = "0.0.0.4" }
-state_view = { path = "../storage/state_view", package = "solana_libra_state_view", version = "0.0.0.4" }
-storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0.4" }
-types = { path = "../types", package = "solana_libra_types", version = "0.0.0.4" }
-vm_runtime = { path = "../language/vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0.4" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0-sol5" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol5" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol5" }
+scratchpad = { path = "../storage/scratchpad", package = "solana_libra_scratchpad", version = "0.0.0-sol5" }
+state_view = { path = "../storage/state_view", package = "solana_libra_state_view", version = "0.0.0-sol5" }
+storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0-sol5" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0-sol5" }
+vm_runtime = { path = "../language/vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol5" }
 
 [dev-dependencies]
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 assert_matches = "1.3.0"
 
-execution_proto = { path = "../execution/execution_proto", package = "solana_libra_execution_proto", version = "0.0.0.4" }
-execution_service = { path = "../execution/execution_service", package = "solana_libra_execution_service", version = "0.0.0.4" }
-grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0.4" }
-storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0.4" }
-vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0.4" }
-config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0.4" }
+execution_proto = { path = "../execution/execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol5" }
+execution_service = { path = "../execution/execution_service", package = "solana_libra_execution_service", version = "0.0.0-sol5" }
+grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol5" }
+storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0-sol5" }
+vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol5" }
+config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0-sol5" }
