@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_node"
-version = "0.0.0"
+version = "0.0.0.4"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -12,28 +12,28 @@ grpcio-sys = "0.4.4"
 signal-hook = "0.1.10"
 tokio = "0.1.22"
 
-admission_control_proto = { path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto", version = "0.0.0" }
-admission_control_service = { path = "../admission_control/admission_control_service", package = "solana_libra_admission_control_service", version = "0.0.0" }
-config = { path = "../config", package = "solana_libra_config", version = "0.0.0" }
-consensus = { path = "../consensus", package = "solana_libra_consensus", version = "0.0.0" }
-crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler", version = "0.0.0" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
-debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0" }
-logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0" }
-executable_helpers = { path = "../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0" }
-execution_proto = { path = "../execution/execution_proto", package = "solana_libra_execution_proto", version = "0.0.0" }
-grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0" }
-mempool = { path = "../mempool", package = "solana_libra_mempool", version = "0.0.0" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
-execution_service = { path = "../execution/execution_service", package = "solana_libra_execution_service", version = "0.0.0" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
-network = { path = "../network", package = "solana_libra_network", version = "0.0.0" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
-storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0" }
-storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0" }
-types = { path = "../types", package = "solana_libra_types", version = "0.0.0" }
-vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0" }
-vm_validator = { path = "../vm_validator", package = "solana_libra_vm_validator", version = "0.0.0" }
+admission_control_proto = { path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto", version = "0.0.0.4" }
+admission_control_service = { path = "../admission_control/admission_control_service", package = "solana_libra_admission_control_service", version = "0.0.0.4" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0.4" }
+consensus = { path = "../consensus", package = "solana_libra_consensus", version = "0.0.0.4" }
+crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler", version = "0.0.0.4" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0.4" }
+debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0.4" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0.4" }
+executable_helpers = { path = "../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0.4" }
+execution_proto = { path = "../execution/execution_proto", package = "solana_libra_execution_proto", version = "0.0.0.4" }
+grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0.4" }
+mempool = { path = "../mempool", package = "solana_libra_mempool", version = "0.0.0.4" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0.4" }
+execution_service = { path = "../execution/execution_service", package = "solana_libra_execution_service", version = "0.0.0.4" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0.4" }
+network = { path = "../network", package = "solana_libra_network", version = "0.0.0.4" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0.4" }
+storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0.4" }
+storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0.4" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0.4" }
+vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0.4" }
+vm_validator = { path = "../vm_validator", package = "solana_libra_vm_validator", version = "0.0.0.4" }
 
 [dev-dependencies]
-config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0" }
+config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0.4" }
