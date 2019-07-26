@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_execution_service"
-version = "0.0.0-sol6"
+version = "0.0.0-sol7"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -14,23 +14,23 @@ futures01 = { package = "futures", version = "0.1.26" }
 futures03 = { package = "futures-preview", version = "=0.3.0-alpha.17", features = ["compat"] }
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol6" }
-execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol6" }
-executor = { path = "../executor", package = "solana_libra_executor", version = "0.0.0-sol6" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol6" }
-grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol6" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol6" }
-storage_client = { path = "../../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0-sol6" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol6" }
-vm_runtime = { path = "../../language/vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol6" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol7" }
+execution_proto = { path = "../execution_proto", package = "solana_libra_execution_proto", version = "0.0.0-sol7" }
+executor = { path = "../executor", package = "solana_libra_executor", version = "0.0.0-sol7" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol7" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol7" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol7" }
+storage_client = { path = "../../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0-sol7" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol7" }
+vm_runtime = { path = "../../language/vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol7" }
 
 [dev-dependencies]
 tempfile = "3.1.0"
 
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol6" }
-config_builder = { path = "../../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0-sol6" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol6" }
-execution_client = { path = "../execution_client", package = "solana_libra_execution_client", version = "0.0.0-sol6" }
-storage_proto = { path = "../../storage/storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol6" }
-storage_service = { path = "../../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0-sol6" }
-vm_genesis = { path = "../../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol6" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol7" }
+config_builder = { path = "../../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0-sol7" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol7" }
+execution_client = { path = "../execution_client", package = "solana_libra_execution_client", version = "0.0.0-sol7" }
+storage_proto = { path = "../../storage/storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol7" }
+storage_service = { path = "../../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0-sol7" }
+vm_genesis = { path = "../../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol7" }

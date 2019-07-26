@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_executable_helpers"
-version = "0.0.0-sol6"
+version = "0.0.0-sol7"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -13,7 +13,7 @@ edition = "2018"
 clap = "2.32.0"
 slog-scope = "4.0"
 
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol6" }
-crash_handler = { path = "../crash_handler", package = "solana_libra_crash_handler", version = "0.0.0-sol6" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol7" }
+crash_handler = { path = "../crash_handler", package = "solana_libra_crash_handler", version = "0.0.0-sol7" }
 logger =  { path = "../logger", package = "solana_libra_logger" }
-metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol6" }
+metrics = { path = "../metrics", package = "solana_libra_metrics", version = "0.0.0-sol7" }

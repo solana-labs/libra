@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_stackless_bytecode_generator"
-version = "0.0.0-sol6"
+version = "0.0.0-sol7"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -10,11 +10,11 @@ publish = false
 edition = "2018"
 
 [dependencies]
-bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol6" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol6" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol6" }
-ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol6" }
+bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol7" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol7" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol7" }
+ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol7" }
 #
 [dev-dependencies]
-# invalid_mutations = { path = "invalid_mutations", package = "solana_libra_invalid_mutations", version = "0.0.0-sol6" }
+# invalid_mutations = { path = "invalid_mutations", package = "solana_libra_invalid_mutations", version = "0.0.0-sol7" }
 proptest = "0.9"
