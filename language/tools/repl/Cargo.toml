@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_repl"
-version = "0.0.0-sol11"
+version = "0.0.0-sol12"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -10,12 +10,12 @@ publish = false
 edition = "2018"
 
 [dependencies]
-bytecode_verifier = { path = "../../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol11" }
-compiler = { path = "../../compiler", package = "solana_libra_compiler", version = "0.0.0-sol11" }
-failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
+bytecode_verifier = { path = "../../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol12" }
+compiler = { path = "../../compiler", package = "solana_libra_compiler", version = "0.0.0-sol12" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
 getopts = "0.2.18"
-language_e2e_tests = { path = "../../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0-sol11" }
-stdlib = { path = "../../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol11" }
-types = { path = "../../../types", package = "solana_libra_types", version = "0.0.0-sol11" }
-vm_runtime = { path = "../../vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol11" }
+language_e2e_tests = { path = "../../e2e_tests", package = "solana_libra_language_e2e_tests", version = "0.0.0-sol12" }
+stdlib = { path = "../../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol12" }
+types = { path = "../../../types", package = "solana_libra_types", version = "0.0.0-sol12" }
+vm_runtime = { path = "../../vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol12" }
 hex = "0.3.2"

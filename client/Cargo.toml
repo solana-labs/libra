@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_client"
-version = "0.0.0-sol11"
+version = "0.0.0-sol12"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -26,16 +26,16 @@ serde_json = "1.0.40"
 structopt = "0.2.15"
 tempfile = "3.1.0"
 
-admission_control_proto = { version = "0.0.0-sol11", path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto" }
-config = { path = "../config", package = "solana_libra_config", version = "0.0.0-sol11" }
-crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler", version = "0.0.0-sol11" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol11" }
-nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol11" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
+admission_control_proto = { version = "0.0.0-sol12", path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0-sol12" }
+crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler", version = "0.0.0-sol12" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol12" }
+nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0-sol12" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol12" }
 libc = "0.2.60"
-libra_wallet = { path = "./libra_wallet", package = "solana_libra_wallet", version = "0.0.0-sol11" }
+libra_wallet = { path = "./libra_wallet", package = "solana_libra_wallet", version = "0.0.0-sol12" }
 logger =  { path = "../common/logger", package = "solana_libra_logger" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol11" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol11" }
-types = { path = "../types", package = "solana_libra_types", version = "0.0.0-sol11" }
-vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol11" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol12" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol12" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0-sol12" }
+vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol12" }
