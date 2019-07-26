@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_wallet"
-version = "0.0.0-sol10"
+version = "0.0.0-sol11"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -26,18 +26,22 @@ version = "1.0.0-pre.1"
 
 [dependencies.types]
 path = "../../types"
+version = "0.0.0-sol11"
 package = "solana_libra_types"
 
 [dependencies.libra_crypto]
 path = "../../crypto/legacy_crypto"
+version = "0.0.0-sol11"
 package = "solana_libra_crypto"
 
 [dependencies.proto_conv]
 path = "../../common/proto_conv"
+version = "0.0.0-sol11"
 package = "solana_libra_proto_conv"
 
 [dependencies.failure]
 path = "../../common/failure_ext"
+version = "0.0.0-sol11"
 package = "solana_libra_failure_ext"
 
 [dev-dependencies]

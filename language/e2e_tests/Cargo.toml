@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_language_e2e_tests"
-version = "0.0.0-sol10"
+version = "0.0.0-sol11"
 edition = "2018"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
@@ -9,25 +9,25 @@ description = "Solana Libra language_e2e_tests"
 license = "Apache-2.0"
 
 [dependencies]
-bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol10" }
-canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol10" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol10" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol10" }
-compiler = { path = "../compiler", package = "solana_libra_compiler", version = "0.0.0-sol10" }
-ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol10" }
+bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol11" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol11" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol11" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
+compiler = { path = "../compiler", package = "solana_libra_compiler", version = "0.0.0-sol11" }
+ir_to_bytecode = { path = "../compiler/ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol11" }
 lazy_static = "1.3.0"
-state_view = { path = "../../storage/state_view", package = "solana_libra_state_view", version = "0.0.0-sol10" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol10" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol10" }
-vm_runtime = { path = "../vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol10" }
+state_view = { path = "../../storage/state_view", package = "solana_libra_state_view", version = "0.0.0-sol11" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol11" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol11" }
+vm_runtime = { path = "../vm/vm_runtime", package = "solana_libra_vm_runtime", version = "0.0.0-sol11" }
 proptest = "0.9.3"
 proptest-derive = "0.1.1"
 assert_matches = "1.3.0"
-proptest_helpers = { path = "../../common/proptest_helpers", package = "solana_libra_proptest_helpers", version = "0.0.0-sol10" }
+proptest_helpers = { path = "../../common/proptest_helpers", package = "solana_libra_proptest_helpers", version = "0.0.0-sol11" }
 protobuf = "2.7"
-proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0-sol10" }
+proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0-sol11" }
 tiny-keccak = "1.5.0"
-vm_genesis = { path = "../vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol10" }
+vm_genesis = { path = "../vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0-sol11" }
 config =  { path = "../../config", package = "solana_libra_config" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol10" }
-stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol10" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol11" }
+stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol11" }

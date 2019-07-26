@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_ir_to_bytecode_syntax"
-version = "0.0.0-sol10"
+version = "0.0.0-sol11"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -15,7 +15,7 @@ codespan-reporting = "0.1.4"
 hex = "0.3.2"
 lalrpop-util = "0.16.3"
 regex = "1.1.9"
-types = { path = "../../../../types", package = "solana_libra_types", version = "0.0.0-sol10" }
+types = { path = "../../../../types", package = "solana_libra_types", version = "0.0.0-sol11" }
 
 [build-dependencies]
 lalrpop = "0.16.3"

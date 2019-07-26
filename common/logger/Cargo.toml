@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_logger"
-version = "0.0.0-sol10"
+version = "0.0.0-sol11"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -31,7 +31,7 @@ tokio = "0.1.22"
 
 # Do NOT add any other inter-project dependencies.
 # This is to avoid ever having a circular dependency with the logger crate.
-failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol10" }
+failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol11" }
 
 [dev-dependencies]
 rand = "0.6.5"
