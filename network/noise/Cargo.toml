@@ -1,7 +1,10 @@
 [package]
 name = "solana_libra_noise"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra noise"
 license = "Apache-2.0"
 publish = false
 edition = "2018"
@@ -10,9 +13,9 @@ edition = "2018"
 futures = { version = "=0.3.0-alpha.17", package = "futures-preview" }
 snow = { version = "0.5.2", features=["ring-accelerated"]}
 
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol5" }
-netcore = { path = "../netcore", package = "solana_libra_netcore", version = "0.0.0-sol5" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol5" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol6" }
+netcore = { path = "../netcore", package = "solana_libra_netcore", version = "0.0.0-sol6" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol6" }
 
 [dev-dependencies]
-memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol5" }
+memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol6" }

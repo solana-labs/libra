@@ -1,18 +1,21 @@
 [package]
 name = "solana_libra_transaction_builder"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
+repository = "https://github.com/solana-labs/libra"
+homepage = "https://solana.com/"
+description = "Solana Libra transaction_builder"
 license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol5" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol5" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol5" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol6" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol6" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol6" }
 hex = "0.3.2"
 structopt = { version = "0.2.15", optional = true }
 serde_json = { version = "1.0.40", optional = true }
-proto_conv = { path = "../../common/proto_conv", optional = true, package = "solana_libra_proto_conv", version = "0.0.0-sol5" }
+proto_conv = { path = "../../common/proto_conv", optional = true, package = "solana_libra_proto_conv", version = "0.0.0-sol6" }
 
 [features]
 build-binary = ["structopt", "serde_json", "proto_conv"]

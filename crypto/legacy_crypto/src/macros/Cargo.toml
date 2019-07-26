@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_crypto-derive"
-version = "0.0.0-sol5"
+version = "0.0.0-sol6"
 description = "Custom derives for `crypto`"
 edition = "2018"
 
