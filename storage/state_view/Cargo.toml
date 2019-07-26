@@ -1,11 +1,11 @@
 [package]
 name = "solana_libra_state_view"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-types = { path = "../../types", package = "solana_libra_types" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }

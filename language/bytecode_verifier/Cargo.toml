@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_bytecode_verifier"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -10,10 +10,10 @@ edition = "2018"
 mirai-annotations = "^1.2.2"
 petgraph = "0.4"
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-vm = { path = "../vm", package = "solana_libra_vm" }
-types = { path = "../../types", package = "solana_libra_types" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }
 
 [dev-dependencies]
-invalid_mutations = { path = "invalid_mutations", package = "solana_libra_invalid_mutations" }
+invalid_mutations = { path = "invalid_mutations", package = "solana_libra_invalid_mutations", version = "0.0.0" }
 proptest = "0.9"

@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_nextgen_crypto"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -28,10 +28,10 @@ hmac = "0.7.1"
 sha3 = "0.8.2"
 sha2 = "0.8.0"
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
-crypto = { path = "../legacy_crypto", package = "solana_libra_crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
+crypto = { path = "../legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
 
 [dev-dependencies]
 bitvec = "0.10.1"

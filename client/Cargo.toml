@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_client"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -23,16 +23,16 @@ serde_json = "1.0.40"
 structopt = "0.2.15"
 tempfile = "3.1.0"
 
-admission_control_proto = { version = "0.1.0", path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto" }
-config = { path = "../config", package = "solana_libra_config" }
-crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
-nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+admission_control_proto = { version = "0.0.0", path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0" }
+crash_handler = { path = "../common/crash_handler", package = "solana_libra_crash_handler", version = "0.0.0" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+nextgen_crypto = { path = "../crypto/nextgen_crypto", package = "solana_libra_nextgen_crypto", version = "0.0.0" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
 libc = "0.2.60"
-libra_wallet = { path = "./libra_wallet", package = "solana_libra_wallet" }
+libra_wallet = { path = "./libra_wallet", package = "solana_libra_wallet", version = "0.0.0" }
 logger =  { path = "../common/logger", package = "solana_libra_logger" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv" }
-types = { path = "../types", package = "solana_libra_types" }
-vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0" }
+vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0" }

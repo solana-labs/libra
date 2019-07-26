@@ -1,16 +1,16 @@
 [package]
 name = "solana_libra_ir_to_bytecode"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext" }
-ir_to_bytecode_syntax = { path = "syntax", package = "solana_libra_ir_to_bytecode_syntax" }
-types = { path = "../../../types", package = "solana_libra_types" }
-vm = { path = "../../vm", package = "solana_libra_vm" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+ir_to_bytecode_syntax = { path = "syntax", package = "solana_libra_ir_to_bytecode_syntax", version = "0.0.0" }
+types = { path = "../../../types", package = "solana_libra_types", version = "0.0.0" }
+vm = { path = "../../vm", package = "solana_libra_vm", version = "0.0.0" }
 lalrpop-util = "0.16.3"
 log = "0.4.7"
 codespan = "0.1.3"

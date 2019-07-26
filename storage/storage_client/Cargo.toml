@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_storage_client"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -12,12 +12,12 @@ futures_01 = { version = "0.1.25", package = "futures" }
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 protobuf = "2.7"
 
-canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-metrics = { path = "../../common/metrics", package = "solana_libra_metrics" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv" }
-scratchpad = { path = "../scratchpad", package = "solana_libra_scratchpad" }
-state_view = { path = "../state_view", package = "solana_libra_state_view" }
-storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto" }
-types = { path = "../../types", package = "solana_libra_types" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
+scratchpad = { path = "../scratchpad", package = "solana_libra_scratchpad", version = "0.0.0" }
+state_view = { path = "../state_view", package = "solana_libra_state_view", version = "0.0.0" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }

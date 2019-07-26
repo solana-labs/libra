@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_benchmark"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra <oncall+libra@xmail.facebook.com>"]
 publish = false
 edition = "2018"
@@ -16,18 +16,18 @@ protobuf = "2.7"
 regex = "1.1.9"
 structopt = "0.2.15"
 
-admission_control_proto = { path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto" }
-client = { path = "../client", package = "solana_libra_client" }
-config = { path = "../config", package = "solana_libra_config" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
-debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair" }
-libra_wallet = { path = "../client/libra_wallet", package = "solana_libra_wallet" }
-libra_swarm = { path = "../libra_swarm", package = "solana_libra_swarm" }
-logger = { path = "../common/logger", package = "solana_libra_logger" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv" }
+admission_control_proto = { path = "../admission_control/admission_control_proto", package = "solana_libra_admission_control_proto", version = "0.0.0" }
+client = { path = "../client", package = "solana_libra_client", version = "0.0.0" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair", version = "0.0.0" }
+libra_wallet = { path = "../client/libra_wallet", package = "solana_libra_wallet", version = "0.0.0" }
+libra_swarm = { path = "../libra_swarm", package = "solana_libra_swarm", version = "0.0.0" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
 rusty-fork = "0.2.1"
-types = { path = "../types", package = "solana_libra_types" }
-vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0" }
+vm_genesis = { path = "../language/vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0" }

@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_mempool"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
 publish = false
@@ -18,24 +18,24 @@ protobuf = "2.7"
 tokio = "0.1.22"
 ttl_cache = "0.4.2"
 
-config = { path = "../config", package = "solana_libra_config" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers" }
-logger = { path = "../common/logger", package = "solana_libra_logger" }
-metrics = { path = "../common/metrics", package = "solana_libra_metrics" }
-network = { path = "../network", package = "solana_libra_network" }
-proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv" }
-storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client" }
-types = { path = "../types", package = "solana_libra_types" }
-vm_validator = { path = "../vm_validator", package = "solana_libra_vm_validator" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+grpc_helpers = { path = "../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0" }
+metrics = { path = "../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+network = { path = "../network", package = "solana_libra_network", version = "0.0.0" }
+proto_conv = { path = "../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
+storage_client = { path = "../storage/storage_client", package = "solana_libra_storage_client", version = "0.0.0" }
+types = { path = "../types", package = "solana_libra_types", version = "0.0.0" }
+vm_validator = { path = "../vm_validator", package = "solana_libra_vm_validator", version = "0.0.0" }
 
 [dev-dependencies]
 rand = "0.6.5"
 tempfile = "3.1.0"
-channel = { path = "../common/channel", package = "solana_libra_channel" }
+channel = { path = "../common/channel", package = "solana_libra_channel", version = "0.0.0" }
 
-storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service" }
+storage_service = { path = "../storage/storage_service", package = "solana_libra_storage_service", version = "0.0.0" }
 
 [build-dependencies]
-build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers" }
+build_helpers = { path = "../common/build_helpers", package = "solana_libra_build_helpers", version = "0.0.0" }
