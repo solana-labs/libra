@@ -12,7 +12,7 @@ edition = "2018"
 [dependencies]
 grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
 futures = "0.1.28"
-protobuf = "2.7"
+protobuf = "=2.8.0"
 
 failure = { path = "../failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
 jemalloc = { path = "../jemalloc", package = "solana_libra_jemalloc", version = "0.0.0-sol13" }

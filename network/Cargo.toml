@@ -45,7 +45,7 @@ version = "0.0.0-sol13"
 package = "solana_libra_nextgen_crypto"
 
 [build-dependencies]
-protoc-rust = "2.5.0"
+protoc-rust = { version = "2.5.0", optional = true }
 
 [[bench]]
 name = "solana_libra_socket_muxer_bench"
@@ -56,3 +56,7 @@ harness = false
 name = "solana_libra_network_bench"
 path = "benches/network_bench.rs"
 harness = false
+
+[features]
+default = []
+build-proto = ["protoc-rust"]
