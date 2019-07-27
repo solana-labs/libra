@@ -7,7 +7,6 @@ repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
 description = "Solana Libra invalid_mutations"
 license = "Apache-2.0"
-publish = false
 
 [dependencies]
 proptest = "0.9"

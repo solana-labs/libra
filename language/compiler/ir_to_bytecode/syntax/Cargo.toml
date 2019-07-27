@@ -18,4 +18,8 @@ regex = "1.1.9"
 types = { path = "../../../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
 
 [build-dependencies]
-lalrpop = "0.16.3"
+lalrpop = { version = "0.16.3", optional = true }
+
+[features]
+default = []
+build-lalrpop = ["lalrpop"]
