@@ -1,4 +1,5 @@
 use ir_to_bytecode::{compiler::compile_module, parser::parse_module};
+use solana_libra_stackless_bytecode_generator as stackless_bytecode_generator;
 use stackless_bytecode_generator::{
     stackless_bytecode::StacklessBytecode::{self, *},
     stackless_bytecode_generator::StacklessModuleGenerator,

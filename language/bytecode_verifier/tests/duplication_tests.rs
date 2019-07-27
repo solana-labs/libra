@@ -3,6 +3,7 @@
 
 use bytecode_verifier::DuplicationChecker;
 use proptest::prelude::*;
+use solana_libra_bytecode_verifier as bytecode_verifier;
 use vm::file_format::CompiledModule;
 
 proptest! {

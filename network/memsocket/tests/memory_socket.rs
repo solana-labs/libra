@@ -6,6 +6,7 @@ use futures::{
     io::{AsyncReadExt, AsyncWriteExt},
 };
 use memsocket::MemorySocket;
+use solana_libra_memsocket as memsocket;
 use std::io::Result;
 
 #[test]

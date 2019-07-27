@@ -7,6 +7,7 @@ use futures::{
     stream::StreamExt,
 };
 use memsocket::{MemoryListener, MemorySocket};
+use solana_libra_memsocket as memsocket;
 use std::io::Result;
 
 #[test]

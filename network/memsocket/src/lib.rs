@@ -35,6 +35,7 @@ struct SwitchBoard(HashMap<NonZeroU16, UnboundedSender<MemorySocket>>, u16);
 /// #![feature(async_await)]
 /// use std::io::Result;
 ///
+/// use solana_libra_memsocket as memsocket;
 /// use memsocket::{MemoryListener, MemorySocket};
 /// use futures::prelude::*;
 ///
@@ -84,6 +85,7 @@ impl MemoryListener {
     /// Create a MemoryListener bound to port 16:
     ///
     /// ```rust,no_run
+    /// use solana_libra_memsocket as memsocket;
     /// use memsocket::MemoryListener;
     ///
     /// # fn main () -> ::std::io::Result<()> {
@@ -131,6 +133,7 @@ impl MemoryListener {
     /// # Examples
     ///
     /// ```rust
+    /// use solana_libra_memsocket as memsocket;
     /// use memsocket::MemoryListener;
     ///
     /// # fn main () -> ::std::io::Result<()> {
@@ -154,6 +157,7 @@ impl MemoryListener {
     /// ```rust,no_run
     /// #![feature(async_await)]
     /// use futures::prelude::*;
+    /// use solana_libra_memsocket as memsocket;
     /// use memsocket::MemoryListener;
     ///
     /// # async fn work () -> ::std::io::Result<()> {
@@ -216,6 +220,7 @@ impl<'a> Stream for Incoming<'a> {
 /// ```rust, no_run
 /// #![feature(async_await)]
 /// use futures::prelude::*;
+/// use solana_libra_memsocket as memsocket;
 /// use memsocket::MemorySocket;
 ///
 /// # async fn run() -> ::std::io::Result<()> {
@@ -248,6 +253,7 @@ impl MemorySocket {
     /// # Examples
     ///
     /// ```rust
+    /// use solana_libra_memsocket as memsocket;
     /// use memsocket::MemorySocket;
     ///
     /// # fn main() {
@@ -281,6 +287,7 @@ impl MemorySocket {
     /// # Examples
     ///
     /// ```rust,no_run
+    /// use solana_libra_memsocket as memsocket;
     /// use memsocket::MemorySocket;
     ///
     /// # fn main () -> ::std::io::Result<()> {

@@ -8,6 +8,7 @@ use schemadb::{
     schema::{KeyCodec, Schema, ValueCodec},
     ColumnFamilyOptions, ColumnFamilyOptionsMap, SchemaBatch, DB, DEFAULT_CF_NAME,
 };
+use solana_libra_schemadb as schemadb;
 
 // Creating two schemas that share exactly the same structure but are stored in different column
 // families. Also note that the key and value are of the same type `TestField`. By implementing

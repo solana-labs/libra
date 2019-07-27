@@ -7,6 +7,7 @@ use execution_proto::proto::execution_grpc::create_execution;
 use execution_service::ExecutionService;
 use grpc_helpers::ServerHandle;
 use grpcio::{EnvBuilder, ServerBuilder};
+use solana_libra_execution_service as execution_service;
 use std::{collections::HashMap, sync::Arc};
 use storage_client::{StorageReadServiceClient, StorageWriteServiceClient};
 use storage_service::start_storage_service;

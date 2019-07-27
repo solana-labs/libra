@@ -1,4 +1,5 @@
 use bytecode_verifier::CodeUnitVerifier;
+use solana_libra_bytecode_verifier as bytecode_verifier;
 use vm::{
     errors::VMStaticViolation,
     file_format::{self, Bytecode},

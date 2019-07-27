@@ -7,6 +7,7 @@ use invalid_mutations::signature::{
     FieldRefMutation,
 };
 use proptest::{collection::vec, prelude::*};
+use solana_libra_bytecode_verifier as bytecode_verifier;
 use vm::{errors::VMStaticViolation, file_format::CompiledModule};
 
 proptest! {
