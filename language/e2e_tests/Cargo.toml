@@ -28,6 +28,6 @@ protobuf = "=2.8.0"
 proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0" }
 tiny-keccak = "1.5.0"
 vm_genesis = { path = "../vm/vm_genesis", package = "solana_libra_vm_genesis", version = "0.0.0" }
-config =  { path = "../../config", package = "solana_libra_config" }
+config =  { path = "../../config", package = "solana_libra_config", version = "0.0.0" }
 logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0" }
 stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0" }
