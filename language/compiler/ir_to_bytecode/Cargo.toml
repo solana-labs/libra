@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_ir_to_bytecode"
-version = "0.0.0-sol14"
+version = "0.0.0-sol15"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -9,10 +9,10 @@ license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol14" }
-ir_to_bytecode_syntax = { path = "syntax", package = "solana_libra_ir_to_bytecode_syntax", version = "0.0.0-sol14" }
-types = { path = "../../../types", package = "solana_libra_types", version = "0.0.0-sol14" }
-vm = { path = "../../vm", package = "solana_libra_vm", version = "0.0.0-sol14" }
+failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
+ir_to_bytecode_syntax = { path = "syntax", package = "solana_libra_ir_to_bytecode_syntax", version = "0.0.0-sol15" }
+types = { path = "../../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
+vm = { path = "../../vm", package = "solana_libra_vm", version = "0.0.0-sol15" }
 lalrpop-util = "0.16.3"
 log = "0.4.7"
 codespan = "0.1.3"

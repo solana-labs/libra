@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_swarm"
-version = "0.0.0-sol14"
+version = "0.0.0-sol15"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -17,12 +17,12 @@ lazy_static = "1.2.0"
 structopt = "0.2.15"
 tempfile = "3.1.0"
 
-client_lib = { path = "../client", package = "solana_libra_client", version = "0.0.0-sol14" }
-config = { path = "../config", package = "solana_libra_config", version = "0.0.0-sol14" }
-config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0-sol14" }
-crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol14" }
-debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0-sol14" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol14" }
-generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair", version = "0.0.0-sol14" }
-logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol14" }
-tools = { path = "../common/tools", package = "solana_libra_tools", version = "0.0.0-sol14" }
+client_lib = { path = "../client", package = "solana_libra_client", version = "0.0.0-sol15" }
+config = { path = "../config", package = "solana_libra_config", version = "0.0.0-sol15" }
+config_builder = { path = "../config/config_builder", package = "solana_libra_config_builder", version = "0.0.0-sol15" }
+crypto = { path = "../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol15" }
+debug_interface = { path = "../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0-sol15" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
+generate_keypair = { path = "../config/generate_keypair", package = "solana_libra_generate_keypair", version = "0.0.0-sol15" }
+logger = { path = "../common/logger", package = "solana_libra_logger", version = "0.0.0-sol15" }
+tools = { path = "../common/tools", package = "solana_libra_tools", version = "0.0.0-sol15" }
