@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_generate_keypair"
-version = "0.0.0-sol13"
+version = "0.0.0-sol14"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -16,5 +16,5 @@ serde = { version = "1.0.96", features = ["derive"] }
 serde_json = "1.0.40"
 tempdir = "0.3.7"
 
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol13" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol14" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol14" }

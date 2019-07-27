@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_nextgen_crypto"
-version = "0.0.0-sol13"
+version = "0.0.0-sol14"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -30,10 +30,10 @@ hmac = "0.7.1"
 sha3 = "0.8.2"
 sha2 = "0.8.0"
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
-crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0-sol13" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol13" }
-crypto = { path = "../legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol13" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol14" }
+crypto-derive = { path = "../legacy_crypto/src/macros", package = "solana_libra_crypto-derive", version = "0.0.0-sol14" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol14" }
+crypto = { path = "../legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol14" }
 
 [dev-dependencies]
 bitvec = "0.10.1"
