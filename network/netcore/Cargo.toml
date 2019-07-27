@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_netcore"
-version = "0.0.0-sol13"
+version = "0.0.0-sol14"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -18,4 +18,4 @@ tokio = "0.1.22"
 yamux = "0.2.1"
 parity-multiaddr = "0.4.0"
 
-memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol13" }
+memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol14" }

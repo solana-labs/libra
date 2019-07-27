@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_socket_bench_server"
-version = "0.0.0-sol13"
+version = "0.0.0-sol14"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -18,8 +18,8 @@ structopt = "0.2.15"
 tokio = "0.1.22"
 unsigned-varint = { version = "0.2.2", features = ["codec"] }
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol13" }
-memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol13" }
-netcore = { path = "../netcore", package = "solana_libra_netcore", version = "0.0.0-sol13" }
-noise = { path = "../noise", package = "solana_libra_noise", version = "0.0.0-sol13" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol14" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol14" }
+memsocket = { path = "../memsocket", package = "solana_libra_memsocket", version = "0.0.0-sol14" }
+netcore = { path = "../netcore", package = "solana_libra_netcore", version = "0.0.0-sol14" }
+noise = { path = "../noise", package = "solana_libra_noise", version = "0.0.0-sol14" }
