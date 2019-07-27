@@ -13,7 +13,7 @@ edition = "2018"
 futures = { version = "0.3.0-alpha.13", package = "futures-preview", features = ["compat"] }
 futures_01 = { version = "0.1.25", package = "futures" }
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
-protobuf = "2.7"
+protobuf = "=2.8.0"
 
 canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol13" }
 crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol13" }

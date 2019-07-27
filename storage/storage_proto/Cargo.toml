@@ -14,7 +14,7 @@ futures = "0.1.28"
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 proptest = "0.9.2"
 proptest-derive = "0.1.0"
-protobuf = "2.7"
+protobuf = "=2.8.0"
 
 crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol13" }
 failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol13" }

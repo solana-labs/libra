@@ -12,7 +12,7 @@ edition = "2018"
 [dependencies]
 futures = "0.1.28"
 grpcio = { version = "0.4.3", default-features = false, features = ["protobuf-codec"] }
-protobuf = "2.7"
+protobuf = "=2.8.0"
 
 config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol13" }
 grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol13" }
