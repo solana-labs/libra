@@ -5,6 +5,7 @@
 #![test_runner(datatest::runner)]
 
 use functional_tests::{checker::check, errors::*, evaluator::eval, utils::parse_input};
+use solana_libra_functional_tests as functional_tests;
 
 // Runs all tests under the test/testsuite directory.
 #[datatest::files("tests/testsuite", { input in r".*\.mvir" })]

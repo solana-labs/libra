@@ -8,6 +8,7 @@ use schemadb::{
     schema::{KeyCodec, Schema, SeekKeyCodec, ValueCodec},
     ColumnFamilyOptions, ColumnFamilyOptionsMap, SchemaIterator, DB, DEFAULT_CF_NAME,
 };
+use solana_libra_schemadb as schemadb;
 
 define_schema!(TestSchema, TestKey, TestValue, "TestCF");
 

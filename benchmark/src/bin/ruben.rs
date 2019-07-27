@@ -139,6 +139,7 @@ mod tests {
     };
     use libra_swarm::swarm::LibraSwarm;
     use rusty_fork::{rusty_fork_id, rusty_fork_test, rusty_fork_test_name};
+    use solana_libra_benchmark as benchmark;
 
     rusty_fork_test! {
         #[test]

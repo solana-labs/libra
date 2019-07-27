@@ -12,6 +12,7 @@ use std::fmt::Debug;
 /// `define_schema!` allows a schema to be defined in the following syntax:
 /// ```
 /// use failure::Result;
+/// use solana_libra_schemadb as schemadb;
 /// use schemadb::{
 ///     define_schema,
 ///     schema::{KeyCodec, SeekKeyCodec, ValueCodec},

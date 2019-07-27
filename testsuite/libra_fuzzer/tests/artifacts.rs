@@ -8,6 +8,7 @@
 
 use libra_fuzzer::FuzzTarget;
 use rusty_fork::{fork, rusty_fork_id};
+use solana_libra_fuzzer as libra_fuzzer;
 use stats_alloc::{Region, StatsAlloc, INSTRUMENTED_SYSTEM};
 use std::{alloc::System, env, fs, path::Path};
 
