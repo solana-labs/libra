@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_sparse_merkle"
-version = "0.0.0-sol15"
+version = "0.0.0"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -16,10 +16,10 @@ num-traits = "0.2"
 proptest = "0.9.2"
 proptest-derive = "0.1.2"
 
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol15" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
 serde = { version = "1.0.96", features = ["derive"] }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }
 
 [dev-dependencies]
 proptest = "0.9"
