@@ -1,6 +1,6 @@
 [package]
 name = "solana_libradb"
-version = "0.0.0-sol15"
+version = "0.0.0"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -22,17 +22,17 @@ strum = "0.15.0"
 strum_macros = "0.15.0"
 tempfile = "3.0.6"
 
-accumulator = { path = "../accumulator", package = "solana_libra_accumulator", version = "0.0.0-sol15" }
-canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol15" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol15" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol15" }
-metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol15" }
-proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0-sol15" }
-schemadb = { path = "../schemadb", package = "solana_libra_schemadb", version = "0.0.0-sol15" }
-sparse_merkle = { path = "../sparse_merkle", package = "solana_libra_sparse_merkle", version = "0.0.0-sol15" }
-storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol15" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
+accumulator = { path = "../accumulator", package = "solana_libra_accumulator", version = "0.0.0" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+proto_conv = { path = "../../common/proto_conv", package = "solana_libra_proto_conv", version = "0.0.0" }
+schemadb = { path = "../schemadb", package = "solana_libra_schemadb", version = "0.0.0" }
+sparse_merkle = { path = "../sparse_merkle", package = "solana_libra_sparse_merkle", version = "0.0.0" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }
 
 [dev-dependencies]
 rusty-fork = "0.2.1"

@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_compiler"
-version = "0.0.0-sol15"
+version = "0.0.0"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -9,12 +9,12 @@ license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0-sol15" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
-ir_to_bytecode = { path = "ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0-sol15" }
-stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0-sol15" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
-vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0-sol15" }
+bytecode_verifier = { path = "../bytecode_verifier", package = "solana_libra_bytecode_verifier", version = "0.0.0" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+ir_to_bytecode = { path = "ir_to_bytecode", package = "solana_libra_ir_to_bytecode", version = "0.0.0" }
+stdlib = { path = "../stdlib", package = "solana_libra_stdlib", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }
+vm = { path = "../vm", package = "solana_libra_vm", version = "0.0.0" }
 log = "0.4.7"
 structopt = "0.2.15"
 serde_json = "1.0.40"

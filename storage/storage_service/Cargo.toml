@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_storage_service"
-version = "0.0.0-sol15"
+version = "0.0.0"
 authors = ["Solana Maintainers <maintainers@solana.com>", "Libra Association <opensource@libra.org>"]
 repository = "https://github.com/solana-labs/libra"
 homepage = "https://solana.com/"
@@ -14,20 +14,20 @@ futures = { version = "0.3.0-alpha.13", package = "futures-preview", features = 
 grpcio = { version = "0.4.4", default-features = false, features = ["protobuf-codec"] }
 protobuf = "=2.8.0"
 
-canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0-sol15" }
-config = { path = "../../config", package = "solana_libra_config", version = "0.0.0-sol15" }
-crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0-sol15" }
-debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0-sol15" }
-executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0-sol15" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0-sol15" }
-grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0-sol15" }
-libradb = { path = "../libradb", package = "solana_libradb", version = "0.0.0-sol15" }
-logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0-sol15" }
-metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0-sol15" }
-proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0-sol15" }
-storage_client = { path = "../storage_client", package = "solana_libra_storage_client", version = "0.0.0-sol15" }
-storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0-sol15" }
-types = { path = "../../types", package = "solana_libra_types", version = "0.0.0-sol15" }
+canonical_serialization = { path = "../../common/canonical_serialization", package = "solana_libra_canonical_serialization", version = "0.0.0" }
+config = { path = "../../config", package = "solana_libra_config", version = "0.0.0" }
+crypto = { path = "../../crypto/legacy_crypto", package = "solana_libra_crypto", version = "0.0.0" }
+debug_interface = { path = "../../common/debug_interface", package = "solana_libra_debug_interface", version = "0.0.0" }
+executable_helpers = { path = "../../common/executable_helpers", package = "solana_libra_executable_helpers", version = "0.0.0" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
+grpc_helpers = { path = "../../common/grpc_helpers", package = "solana_libra_grpc_helpers", version = "0.0.0" }
+libradb = { path = "../libradb", package = "solana_libradb", version = "0.0.0" }
+logger = { path = "../../common/logger", package = "solana_libra_logger", version = "0.0.0" }
+metrics = { path = "../../common/metrics", package = "solana_libra_metrics", version = "0.0.0" }
+proto_conv = { path = "../../common/proto_conv", features = ["derive"], package = "solana_libra_proto_conv", version = "0.0.0" }
+storage_client = { path = "../storage_client", package = "solana_libra_storage_client", version = "0.0.0" }
+storage_proto = { path = "../storage_proto", package = "solana_libra_storage_proto", version = "0.0.0" }
+types = { path = "../../types", package = "solana_libra_types", version = "0.0.0" }
 
 [dev-dependencies]
 itertools = "0.8.0"
