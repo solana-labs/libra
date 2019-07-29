@@ -208,5 +208,4 @@ pub mod ast;
 #[rustfmt::skip]
 #[allow(clippy::all)]
 #[allow(deprecated)]
-#[path = concat!(env!("OUT_DIR"), "/syntax.rs")]
 pub mod syntax;

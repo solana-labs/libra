@@ -7,6 +7,7 @@ homepage = "https://solana.com/"
 description = "Solana Libra functional_tests"
 license = "Apache-2.0"
 edition = "2018"
+publish = false
 
 [dependencies]
 failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext", version = "0.0.0" }
