@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+
+eval "$(ejson2env .buildkite/env/secrets.ejson)"
+
+# Ensure the pattern "+++ ..." never occurs when |set -x| is set, as buildkite
+# interprets this as the start of a log group.
+# Ref: https://buildkite.com/docs/pipelines/managing-log-output
+export PS4="++"
+
+#
+# Restore target/ from the previous CI build on this machine
+#
+(
+  set -x
+  d=$HOME/cargo-target-cache/"$BUILDKITE_LABEL"
+  MAX_CACHE_SIZE=18 # gigabytes
+
+  if [[ -d $d ]]; then
+    du -hs "$d"
+    read -r cacheSizeInGB _ < <(du -s --block-size=1800000000 "$d")
+    echo "--- ${cacheSizeInGB}GB: $d"
+    if [[ $cacheSizeInGB -gt $MAX_CACHE_SIZE ]]; then
+      echo "--- $d is too large, removing it"
+      rm -rf "$d"
+    fi
+  else
+    echo "--- $d not present"
+  fi
+
+  mkdir -p "$d"/target
+  rsync -a --delete --link-dest="$d" "$d"/target .
+)
