@@ -12,7 +12,7 @@ use std::{collections::BTreeMap, fmt};
 use types::language_storage::ModuleId;
 use vm::{
     access::{ModuleAccess, ScriptAccess},
-    errors::{VMStaticViolation, VerificationError, VerificationStatus, BinaryLoaderResult},
+    errors::{BinaryLoaderResult, VMStaticViolation, VerificationError, VerificationStatus},
     file_format::{CompiledModule, CompiledProgram, CompiledScript},
     resolver::Resolver,
     views::{ModuleView, ViewInternals},
@@ -194,8 +194,8 @@ impl VerifiedModule {
     // ///
     // /// This is merely a convenience wrapper around `module.as_inner().serialize(buf)`.
     // ///
-    // /// `VerifiedModule` instances cannot be deserialized directly, since the input is potentially
-    // /// untrusted. Instead, one must go through `CompiledModule`.
+    // /// `VerifiedModule` instances cannot be deserialized directly, since the input is
+    // /// potentially untrusted. Instead, one must go through `CompiledModule`.
     // pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
     //     self.as_inner().serialize(buf)
     // }
@@ -293,8 +293,8 @@ impl VerifiedScript {
     // ///
     // /// This is merely a convenience wrapper around `script.as_inner().serialize(buf)`.
     // ///
-    // /// `VerifiedScript` instances cannot be deserialized directly, since the input is potentially
-    // /// untrusted. Instead, one must go through `CompiledScript`.
+    // /// `VerifiedScript` instances cannot be deserialized directly, since the input is
+    // /// potentially untrusted. Instead, one must go through `CompiledScript`.
     // pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
     //     self.as_inner().serialize(buf)
     // }
