@@ -19,11 +19,11 @@
 use futures_01::future::Future as Future01;
 use logger::{prelude::*, set_default_global_logger};
 use netcore::transport::tcp::TcpTransport;
-use solana_libra_socket_bench_server as socket_bench_server;
 use socket_bench_server::{
     build_tcp_muxer_transport, build_tcp_noise_muxer_transport, build_tcp_noise_transport,
     start_muxer_server, start_stream_server, Args,
 };
+use solana_libra_socket_bench_server as socket_bench_server;
 use tokio::runtime::Runtime;
 
 fn main() {

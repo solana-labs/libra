@@ -1,9 +1,9 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use solana_libra_generate_keypair as generate_keypair;
 use clap::{value_t, App, Arg};
 use generate_keypair::create_faucet_key_file;
+use solana_libra_generate_keypair as generate_keypair;
 
 const OUTPUT_ARG: &str = "output";
 
