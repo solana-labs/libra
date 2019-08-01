@@ -1,0 +1,16 @@
+language: rust
+cache: cargo
+jobs:
+  include:
+    - stage: check
+      rust: nightly-2019-07-19
+      install:
+        - rustup component add rustfmt
+        - cargo install cargo-audit
+      script: ci/checks.sh
+    - stage: test
+      rust: nightly-2019-07-19
+      script: ci/build-all.sh
+    - stage: test
+      rust: 1.36.0
+      script: ci/e2e-tests.sh
