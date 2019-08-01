@@ -1,5 +1,0 @@
-steps:
-  - command: "ci/publish-crate.sh"
-    timeout_in_minutes: 90
-    name: "publish crate"
-    branches: "!master"
