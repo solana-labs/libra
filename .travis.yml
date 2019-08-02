@@ -1,16 +1,24 @@
 language: rust
-cache: cargo
+cache:
+  directories:
+    - $TRAVIS_HOME/.cargo/
+    - $TRAVIS_HOME/.rustup/
 jobs:
   include:
     - stage: check
       rust: nightly-2019-07-19
       install:
         - rustup component add rustfmt
-        - cargo install cargo-audit
+        - ci/cargo-try-install.sh cargo-audit
       script: ci/checks.sh
     - stage: test
       rust: nightly-2019-07-19
       script: ci/build-all.sh
     - stage: test
-      rust: 1.36.0
+      language: minimal
+      before_install:
+        - curl -sSf https://build.travis-ci.org/files/rustup-init.sh | sh -s -- --default-toolchain=1.36.0 -y
+        - export PATH=${TRAVIS_HOME}/.cargo/bin:$PATH
+        - rustup override set 1.36.0
+        - rustc --version
       script: ci/e2e-tests.sh
