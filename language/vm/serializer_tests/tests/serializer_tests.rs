@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use proptest::prelude::*;
-use vm::file_format::{CompiledModule, CompiledModuleMut};
+use solana_libra_vm::file_format::{CompiledModule, CompiledModuleMut};
 
 proptest! {
     #[test]

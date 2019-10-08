@@ -7,15 +7,17 @@ use crate::{
     validator_set::ValidatorSet,
     validator_verifier::{ValidatorVerifier, VerifyError},
 };
-use canonical_serialization::{CanonicalSerialize, CanonicalSerializer, SimpleSerializer};
-use crypto::{
-    hash::{CryptoHash, CryptoHasher, LedgerInfoHasher},
-    HashValue, *,
-};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
+};
+use solana_libra_crypto::{
+    hash::{CryptoHash, CryptoHasher, LedgerInfoHasher},
+    HashValue, *,
+};
 use std::{
     collections::HashMap,
     convert::{TryFrom, TryInto},

@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::account_address::AccountAddress;
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
-use crypto::{ed25519::*, traits::ValidKey, x25519::X25519StaticPublicKey};
 use failure::Result;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto::{ed25519::*, traits::ValidKey, x25519::X25519StaticPublicKey};
 use std::{convert::TryFrom, fmt};
 
 /// After executing a special transaction indicates a change to the next epoch, consensus

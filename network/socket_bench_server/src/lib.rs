@@ -9,8 +9,9 @@ use futures::{
     sink::SinkExt,
     stream::{Stream, StreamExt},
 };
-use memsocket::MemorySocket;
-use netcore::{
+use parity_multiaddr::Multiaddr;
+use solana_libra_memsocket::MemorySocket;
+use solana_libra_netcore::{
     multiplexing::{yamux::Yamux, StreamMultiplexer},
     transport::{
         memory::MemoryTransport,
@@ -18,8 +19,7 @@ use netcore::{
         Transport, TransportExt,
     },
 };
-use noise::{NoiseConfig, NoiseSocket};
-use parity_multiaddr::Multiaddr;
+use solana_libra_noise::{NoiseConfig, NoiseSocket};
 use std::{convert::TryInto, env, ffi::OsString, sync::Arc};
 use tokio::{codec::Framed, runtime::TaskExecutor};
 use unsigned_varint::codec::UviBytes;

@@ -2,11 +2,11 @@ use crate::{
     code_cache::module_cache::ModuleCache, data_cache::RemoteCache,
     loaded_data::loaded_module::LoadedModule,
 };
-use config::config::VMPublishingOption;
+use solana_libra_config::config::VMPublishingOption;
+use solana_libra_types::transaction::SignatureCheckedTransaction;
+use solana_libra_vm::errors::VMResult;
+use solana_libra_vm_cache_map::Arena;
 use std::marker::PhantomData;
-use types::transaction::SignatureCheckedTransaction;
-use vm::errors::VMResult;
-use vm_cache_map::Arena;
 
 pub mod execute;
 pub mod validate;

@@ -8,7 +8,7 @@ use crate::chained_bft::{
         quorum_cert::QuorumCert,
     },
 };
-use crypto::HashValue;
+use solana_libra_crypto::HashValue;
 use std::sync::Arc;
 
 mod block_store;
@@ -17,7 +17,7 @@ mod pending_votes;
 
 use crate::chained_bft::consensus_types::timeout_certificate::TimeoutCertificate;
 pub use block_store::{BlockStore, NeedFetchResult};
-use executor::StateComputeResult;
+use solana_libra_executor::StateComputeResult;
 
 /// Result of the vote processing. The failure case (Verification error) is returned
 /// as the Error part of the result.

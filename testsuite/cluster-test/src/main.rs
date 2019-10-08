@@ -1,7 +1,15 @@
-use cluster_test::prometheus::Prometheus;
-use cluster_test::tx_emitter::{EmitJobRequest, EmitThreadParams};
-use cluster_test::util::unix_timestamp_now;
-use cluster_test::{
+use failure::{
+    self,
+    prelude::{bail, format_err},
+};
+use rand::prelude::ThreadRng;
+use rand::Rng;
+use slog::{o, Drain};
+use slog_scope::info;
+use solana_libra_cluster_test::prometheus::Prometheus;
+use solana_libra_cluster_test::tx_emitter::{EmitJobRequest, EmitThreadParams};
+use solana_libra_cluster_test::util::unix_timestamp_now;
+use solana_libra_cluster_test::{
     aws::Aws,
     cluster::Cluster,
     deployment::{DeploymentManager, SOURCE_TAG, TESTED_TAG},
@@ -13,14 +21,6 @@ use cluster_test::{
     suite::ExperimentSuite,
     tx_emitter::TxEmitter,
 };
-use failure::{
-    self,
-    prelude::{bail, format_err},
-};
-use rand::prelude::ThreadRng;
-use rand::Rng;
-use slog::{o, Drain};
-use slog_scope::info;
 use std::{
     collections::HashSet,
     env, mem,

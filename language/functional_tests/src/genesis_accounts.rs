@@ -1,7 +1,7 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use language_e2e_tests::account::Account;
+use solana_libra_language_e2e_tests::account::Account;
 use std::collections::BTreeMap;
 
 // These are special-cased since they are generated in genesis, and therefore we don't want

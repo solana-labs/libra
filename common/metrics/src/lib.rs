@@ -23,12 +23,12 @@ mod unit_tests;
 pub use prometheus::{Histogram, IntCounter, IntCounterVec, IntGauge, IntGaugeVec};
 
 use failure::Result;
-use logger::prelude::*;
 use prometheus::{
     core::{Collector, Metric},
     proto::MetricType,
     Encoder, TextEncoder,
 };
+use solana_libra_logger::prelude::*;
 use std::{
     collections::HashMap,
     fs::{create_dir_all, File, OpenOptions},

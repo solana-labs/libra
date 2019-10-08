@@ -9,26 +9,28 @@
 
 pub mod mocks;
 
-use config::config::NodeConfig;
 use failure::prelude::*;
-use grpc_helpers::{provide_grpc_response, spawn_service_thread_with_drop_closure, ServerHandle};
-use libradb::LibraDB;
-use logger::prelude::*;
-use metrics::counters::SVC_COUNTERS;
-use std::{
-    convert::TryFrom,
-    ops::Deref,
-    path::Path,
-    sync::{mpsc, Arc, Mutex},
+use solana_libra_config::config::NodeConfig;
+use solana_libra_grpc_helpers::{
+    provide_grpc_response, spawn_service_thread_with_drop_closure, ServerHandle,
 };
-use storage_proto::proto::storage::{
+use solana_libra_libradb::LibraDB;
+use solana_libra_logger::prelude::*;
+use solana_libra_metrics::counters::SVC_COUNTERS;
+use solana_libra_storage_proto::proto::storage::{
     create_storage, GetAccountStateWithProofByVersionRequest,
     GetAccountStateWithProofByVersionResponse, GetLatestLedgerInfosPerEpochRequest,
     GetLatestLedgerInfosPerEpochResponse, GetStartupInfoRequest, GetStartupInfoResponse,
     GetTransactionsRequest, GetTransactionsResponse, SaveTransactionsRequest,
     SaveTransactionsResponse, Storage,
 };
-use types::proto::types::{UpdateToLatestLedgerRequest, UpdateToLatestLedgerResponse};
+use solana_libra_types::proto::types::{UpdateToLatestLedgerRequest, UpdateToLatestLedgerResponse};
+use std::{
+    convert::TryFrom,
+    ops::Deref,
+    path::Path,
+    sync::{mpsc, Arc, Mutex},
+};
 
 /// Starts storage service according to config.
 pub fn start_storage_service(config: &NodeConfig) -> ServerHandle {
@@ -115,7 +117,7 @@ impl StorageService {
     ///
     /// example:
     /// ```no_run,
-    ///    # use storage_service::*;
+    ///    # use solana_libra_storage_service::*;
     ///    # use std::path::Path;
     ///    let (service, shutdown_receiver) = StorageService::new(&Path::new("path/to/db"));
     ///
@@ -140,7 +142,8 @@ impl StorageService {
         &self,
         req: UpdateToLatestLedgerRequest,
     ) -> Result<UpdateToLatestLedgerResponse> {
-        let rust_req = types::get_with_proof::UpdateToLatestLedgerRequest::try_from(req)?;
+        let rust_req =
+            solana_libra_types::get_with_proof::UpdateToLatestLedgerRequest::try_from(req)?;
 
         let (
             response_items,
@@ -151,7 +154,7 @@ impl StorageService {
             .db
             .update_to_latest_ledger(rust_req.client_known_version, rust_req.requested_items)?;
 
-        let rust_resp = types::get_with_proof::UpdateToLatestLedgerResponse {
+        let rust_resp = solana_libra_types::get_with_proof::UpdateToLatestLedgerResponse {
             response_items,
             ledger_info_with_sigs,
             validator_change_events,
@@ -165,7 +168,7 @@ impl StorageService {
         &self,
         req: GetTransactionsRequest,
     ) -> Result<GetTransactionsResponse> {
-        let rust_req = storage_proto::GetTransactionsRequest::try_from(req)?;
+        let rust_req = solana_libra_storage_proto::GetTransactionsRequest::try_from(req)?;
 
         let txn_list_with_proof = self.db.get_transactions(
             rust_req.start_version,
@@ -174,7 +177,8 @@ impl StorageService {
             rust_req.fetch_events,
         )?;
 
-        let rust_resp = storage_proto::GetTransactionsResponse::new(txn_list_with_proof);
+        let rust_resp =
+            solana_libra_storage_proto::GetTransactionsResponse::new(txn_list_with_proof);
 
         Ok(rust_resp.into())
     }
@@ -183,13 +187,14 @@ impl StorageService {
         &self,
         req: GetAccountStateWithProofByVersionRequest,
     ) -> Result<GetAccountStateWithProofByVersionResponse> {
-        let rust_req = storage_proto::GetAccountStateWithProofByVersionRequest::try_from(req)?;
+        let rust_req =
+            solana_libra_storage_proto::GetAccountStateWithProofByVersionRequest::try_from(req)?;
 
         let (account_state_blob, sparse_merkle_proof) = self
             .db
             .get_account_state_with_proof_by_version(rust_req.address, rust_req.version)?;
 
-        let rust_resp = storage_proto::GetAccountStateWithProofByVersionResponse {
+        let rust_resp = solana_libra_storage_proto::GetAccountStateWithProofByVersionResponse {
             account_state_blob,
             sparse_merkle_proof,
         };
@@ -201,7 +206,7 @@ impl StorageService {
         &self,
         req: SaveTransactionsRequest,
     ) -> Result<SaveTransactionsResponse> {
-        let rust_req = storage_proto::SaveTransactionsRequest::try_from(req)?;
+        let rust_req = solana_libra_storage_proto::SaveTransactionsRequest::try_from(req)?;
         self.db.save_transactions(
             &rust_req.txns_to_commit,
             rust_req.first_version,
@@ -212,7 +217,7 @@ impl StorageService {
 
     fn get_startup_info_inner(&self) -> Result<GetStartupInfoResponse> {
         let info = self.db.get_startup_info()?;
-        let rust_resp = storage_proto::GetStartupInfoResponse { info };
+        let rust_resp = solana_libra_storage_proto::GetStartupInfoResponse { info };
         Ok(rust_resp.into())
     }
 
@@ -220,11 +225,13 @@ impl StorageService {
         &self,
         req: GetLatestLedgerInfosPerEpochRequest,
     ) -> Result<GetLatestLedgerInfosPerEpochResponse> {
-        let rust_req = storage_proto::GetLatestLedgerInfosPerEpochRequest::try_from(req)?;
+        let rust_req =
+            solana_libra_storage_proto::GetLatestLedgerInfosPerEpochRequest::try_from(req)?;
         let ledger_infos = self
             .db
             .get_latest_ledger_infos_per_epoch(rust_req.start_epoch)?;
-        let rust_resp = storage_proto::GetLatestLedgerInfosPerEpochResponse::new(ledger_infos);
+        let rust_resp =
+            solana_libra_storage_proto::GetLatestLedgerInfosPerEpochResponse::new(ledger_infos);
         Ok(rust_resp.into())
     }
 }

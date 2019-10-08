@@ -7,13 +7,12 @@ use crate::parser::ast::{
 };
 
 use failure::*;
-use std::{clone::Clone, collections::HashMap, hash::Hash};
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     byte_array::ByteArray,
     identifier::{IdentStr, Identifier},
 };
-use vm::{
+use solana_libra_vm::{
     access::ModuleAccess,
     file_format::{
         AddressPoolIndex, ByteArrayPoolIndex, FieldDefinitionIndex, FunctionHandle,
@@ -24,6 +23,7 @@ use vm::{
     },
     vm_string::VMString,
 };
+use std::{clone::Clone, collections::HashMap, hash::Hash};
 
 type TypeFormalMap = HashMap<TypeVar, TableIndex>;
 

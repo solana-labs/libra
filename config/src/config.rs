@@ -11,11 +11,16 @@ use crate::{
     },
     utils::{deserialize_whitelist, get_available_port, get_local_ip, serialize_whitelist},
 };
-use crypto::ValidKey;
 use failure::prelude::*;
 use parity_multiaddr::Multiaddr;
 use prost::Message;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use solana_libra_crypto::ValidKey;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::{
+    transaction::{SignedTransaction, SCRIPT_HASH_LENGTH},
+    PeerId,
+};
 use std::{
     collections::HashSet,
     convert::TryFrom,
@@ -25,11 +30,6 @@ use std::{
     string::ToString,
 };
 use toml;
-use tools::tempdir::TempPath;
-use types::{
-    transaction::{SignedTransaction, SCRIPT_HASH_LENGTH},
-    PeerId,
-};
 
 #[cfg(test)]
 #[path = "unit_tests/config_test.rs"]
@@ -595,7 +595,9 @@ impl NodeConfig {
         });
         let mut buffer = vec![];
         file.read_to_end(&mut buffer)?;
-        SignedTransaction::try_from(types::proto::types::SignedTransaction::decode(&buffer)?)
+        SignedTransaction::try_from(solana_libra_types::proto::types::SignedTransaction::decode(
+            &buffer,
+        )?)
     }
 
     pub fn get_storage_dir(&self) -> PathBuf {

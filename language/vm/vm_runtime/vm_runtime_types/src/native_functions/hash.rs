@@ -3,10 +3,10 @@
 
 use super::dispatch::NativeReturnStatus;
 use crate::value::Value;
-use crypto::HashValue;
 use sha2::{Digest, Sha256};
+use solana_libra_crypto::HashValue;
+use solana_libra_types::byte_array::ByteArray;
 use std::collections::VecDeque;
-use types::byte_array::ByteArray;
 
 const SHA2_COST: u64 = 30;
 const SHA3_COST: u64 = 30;

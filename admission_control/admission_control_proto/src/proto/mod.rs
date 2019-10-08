@@ -3,8 +3,8 @@
 
 #![allow(bare_trait_objects)]
 
-use ::types::proto::*;
-use mempool_shared_proto::proto::mempool_status;
+use ::solana_libra_types::proto::*;
+use solana_libra_mempool_shared_proto::proto::mempool_status;
 
 pub mod admission_control {
     include!(concat!(env!("OUT_DIR"), "/admission_control.rs"));

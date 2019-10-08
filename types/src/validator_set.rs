@@ -9,15 +9,15 @@ use crate::{
     language_storage::StructTag,
     validator_public_keys::ValidatorPublicKeys,
 };
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-    SimpleDeserializer,
-};
 use failure::prelude::*;
 use lazy_static::lazy_static;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+    SimpleDeserializer,
+};
 use std::{
     convert::{TryFrom, TryInto},
     fmt,

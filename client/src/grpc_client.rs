@@ -2,21 +2,19 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::AccountData;
-use admission_control_proto::{
+use failure::prelude::*;
+use futures::Future;
+use grpcio::{CallOption, ChannelBuilder, EnvBuilder};
+use solana_libra_admission_control_proto::{
     proto::admission_control::{
         AdmissionControlClient, SubmitTransactionRequest,
         SubmitTransactionResponse as ProtoSubmitTransactionResponse,
     },
     AdmissionControlStatus, SubmitTransactionResponse,
 };
-use crypto::ed25519::*;
-use failure::prelude::*;
-use futures::Future;
-use grpcio::{CallOption, ChannelBuilder, EnvBuilder};
-use logger::prelude::*;
-use std::convert::TryFrom;
-use std::sync::Arc;
-use types::{
+use solana_libra_crypto::ed25519::*;
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
     access_path::AccessPath,
     account_address::AccountAddress,
     account_config::get_account_resource_or_default,
@@ -29,6 +27,8 @@ use types::{
     transaction::{SignedTransaction, Version},
     vm_error::StatusCode,
 };
+use std::convert::TryFrom;
+use std::sync::Arc;
 
 const MAX_GRPC_RETRY_COUNT: u64 = 1;
 

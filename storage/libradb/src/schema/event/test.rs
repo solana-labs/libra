@@ -3,7 +3,7 @@
 
 use super::*;
 use proptest::prelude::*;
-use schemadb::schema::assert_encode_decode;
+use solana_libra_schemadb::schema::assert_encode_decode;
 
 proptest! {
     #[test]

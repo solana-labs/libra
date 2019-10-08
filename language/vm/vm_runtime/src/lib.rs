@@ -99,7 +99,7 @@
 //! ```
 
 //#[macro_use]
-extern crate vm;
+extern crate solana_libra_vm;
 #[macro_use]
 extern crate lazy_static;
 #[macro_use]
@@ -136,13 +136,13 @@ pub use move_vm::MoveVM;
 pub use process_txn::verify::static_verify_program;
 pub use txn_executor::execute_function;
 
-use config::config::VMConfig;
-use state_view::StateView;
-use types::{
+use solana_libra_config::config::VMConfig;
+use solana_libra_state_view::StateView;
+use solana_libra_types::{
     transaction::{SignedTransaction, TransactionOutput},
     vm_error::VMStatus,
 };
-use vm::IndexKind;
+use solana_libra_vm::IndexKind;
 
 /// This trait describes the VM's verification interfaces.
 pub trait VMVerifier {

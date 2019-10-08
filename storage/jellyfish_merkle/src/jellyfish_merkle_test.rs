@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::*;
-use crypto::HashValue;
 use mock_tree_store::MockTreeStore;
-use nibble::Nibble;
 use rand::{rngs::StdRng, Rng, SeedableRng};
+use solana_libra_crypto::HashValue;
+use solana_libra_nibble::Nibble;
+use solana_libra_types::proof::verify_sparse_merkle_element;
 use std::collections::HashMap;
-use types::proof::verify_sparse_merkle_element;
 
 fn update_nibble(original_key: &HashValue, n: usize, nibble: u8) -> HashValue {
     assert!(nibble < 16);

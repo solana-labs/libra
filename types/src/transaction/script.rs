@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transaction::transaction_argument::TransactionArgument;
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use failure::prelude::*;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
 use std::fmt;
 
 #[allow(dead_code)]

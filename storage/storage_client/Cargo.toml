@@ -1,5 +1,5 @@
 [package]
-name = "storage_client"
+name = "solana_libra_storage_client"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -11,13 +11,13 @@ futures = { version = "=0.3.0-alpha.19", package = "futures-preview", features =
 futures_01 = { version = "0.1.28", package = "futures" }
 grpcio = { version = "=0.5.0-alpha.4", default-features = false, features = ["prost-codec"] }
 rand = "0.6.5"
-crypto = { path = "../../crypto/crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-metrics = { path = "../../common/metrics" }
-scratchpad = { path = "../scratchpad" }
-state_view = { path = "../state_view" }
-storage_proto = { path = "../storage_proto" }
-types = { path = "../../types" }
+solana-libra-crypto = { path = "../../crypto/crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+solana-libra-metrics = { path = "../../common/metrics" }
+solana-libra-scratchpad = { path = "../scratchpad" }
+solana_libra_state_view = { path = "../state_view" }
+solana_libra_storage_proto = { path = "../storage_proto" }
+solana-libra-types = { path = "../../types" }
 
 [dev-dependencies]
-types = { path = "../../types", features = ["testing"] }
+solana-libra-types = { path = "../../types", features = ["testing"] }

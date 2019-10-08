@@ -50,12 +50,12 @@ use futures::{
     sink::{Sink, SinkExt},
     stream::{self, Stream, StreamExt},
 };
-use netcore::{
+use parity_multiaddr::Multiaddr;
+use solana_libra_netcore::{
     multiplexing::StreamMultiplexer,
     transport::{memory::MemoryTransport, tcp::TcpTransport, Transport},
 };
-use parity_multiaddr::Multiaddr;
-use socket_bench_server::{
+use solana_libra_socket_bench_server::{
     build_memsocket_muxer_transport, build_memsocket_noise_muxer_transport,
     build_memsocket_noise_transport, build_tcp_muxer_transport, build_tcp_noise_muxer_transport,
     build_tcp_noise_transport, start_muxer_server, start_stream_server, Args,
@@ -290,7 +290,7 @@ fn bench_tcp_noise_muxer_send(b: &mut Bencher, msg_len: &usize, server_addr: Mul
 ///    benchmarks `remote_tcp`, `remote_tcp+noise`, `remote_tcp+muxer`, and
 ///    `remote_tcp+noise+muxer` respectively.
 fn socket_muxer_bench(c: &mut Criterion) {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
 
     let rt = Runtime::new().unwrap();
     let executor = rt.executor();

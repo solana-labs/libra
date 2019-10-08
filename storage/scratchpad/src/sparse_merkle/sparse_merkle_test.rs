@@ -5,22 +5,22 @@ use super::{
     node::{LeafNode, LeafValue, SparseMerkleNode},
     AccountState, ProofRead, SparseMerkleTree,
 };
-use crypto::{
+use solana_libra_crypto::{
     hash::{CryptoHash, TestOnlyHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use std::{collections::HashMap, sync::Arc};
-use types::{
+use solana_libra_types::{
     account_state_blob::AccountStateBlob,
     proof::{verify_sparse_merkle_element, SparseMerkleProof},
 };
+use std::{collections::HashMap, sync::Arc};
 
 fn hash_internal(left_child: HashValue, right_child: HashValue) -> HashValue {
-    types::proof::SparseMerkleInternalNode::new(left_child, right_child).hash()
+    solana_libra_types::proof::SparseMerkleInternalNode::new(left_child, right_child).hash()
 }
 
 fn hash_leaf(key: HashValue, value_hash: HashValue) -> HashValue {
-    types::proof::SparseMerkleLeafNode::new(key, value_hash).hash()
+    solana_libra_types::proof::SparseMerkleLeafNode::new(key, value_hash).hash()
 }
 
 #[derive(Default)]

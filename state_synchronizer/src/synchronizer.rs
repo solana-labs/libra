@@ -5,19 +5,19 @@ use crate::{
     coordinator::{CoordinatorMessage, SyncCoordinator},
     executor_proxy::{ExecutorProxy, ExecutorProxyTrait},
 };
-use config::config::{NodeConfig, StateSyncConfig};
-use executor::Executor;
 use failure::prelude::*;
 use futures::{
     channel::{mpsc, oneshot},
     future::{Future, FutureExt, TryFutureExt},
     SinkExt,
 };
-use network::validator_network::{StateSynchronizerEvents, StateSynchronizerSender};
+use solana_libra_config::config::{NodeConfig, StateSyncConfig};
+use solana_libra_executor::Executor;
+use solana_libra_network::validator_network::{StateSynchronizerEvents, StateSynchronizerSender};
+use solana_libra_types::crypto_proxies::LedgerInfoWithSignatures;
+use solana_libra_vm_runtime::MoveVM;
 use std::sync::Arc;
 use tokio::runtime::{Builder, Runtime};
-use types::crypto_proxies::LedgerInfoWithSignatures;
-use vm_runtime::MoveVM;
 
 pub struct StateSynchronizer {
     _runtime: Runtime,

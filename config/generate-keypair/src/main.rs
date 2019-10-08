@@ -1,7 +1,7 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use generate_keypair::create_faucet_key_file;
+use solana_libra_generate_keypair::create_faucet_key_file;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

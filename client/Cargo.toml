@@ -1,5 +1,5 @@
 [package]
-name = "client"
+name = "solana-libra-client"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -22,22 +22,22 @@ serde = { version = "1.0.96", features = ["derive"] }
 serde_json = "1.0.40"
 structopt = "0.3.2"
 
-admission_control_proto = { version = "0.1.0", path = "../admission_control/admission_control_proto" }
-config = { path = "../config" }
-crash_handler = { path = "../common/crash_handler" }
-crypto = { path = "../crypto/crypto" }
-failure = { package = "failure_ext", path = "../common/failure_ext" }
+solana_libra_admission_control_proto = { version = "0.1.0", path = "../admission_control/admission_control_proto" }
+solana-libra-config = { path = "../config" }
+solana_libra_crash_handler = { path = "../common/crash_handler" }
+solana-libra-crypto = { path = "../crypto/crypto" }
+failure = { package = "solana_libra_failure_ext", path = "../common/failure_ext" }
 libra_wallet = { path = "./libra_wallet" }
-logger =  { path = "../common/logger" }
-metrics = { path = "../common/metrics" }
-types = { path = "../types" }
-tools = { path = "../common/tools/" }
-transaction_builder = { path = "../language/transaction_builder" }
+solana-libra-logger =  { path = "../common/logger" }
+solana-libra-metrics = { path = "../common/metrics" }
+solana-libra-types = { path = "../types" }
+solana-libra-tools = { path = "../common/tools/" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder" }
 
 [dev-dependencies]
-crypto = { path = "../crypto/crypto", features = ["testing"] }
-types = { path = "../types", features = ["testing"]}
+solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-types = { path = "../types", features = ["testing"]}
 
 [features]
 default = []
-testing = ["types/testing", "crypto/testing"]
+testing = ["solana-libra-types/testing", "solana-libra-crypto/testing"]

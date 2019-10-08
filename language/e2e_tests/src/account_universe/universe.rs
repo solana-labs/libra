@@ -13,7 +13,7 @@ use proptest::{
     prelude::*,
 };
 use proptest_derive::Arbitrary;
-use proptest_helpers::{pick_slice_idxs, Index};
+use solana_libra_proptest_helpers::{pick_slice_idxs, Index};
 
 /// A set of accounts which can be used to construct an initial state.
 ///

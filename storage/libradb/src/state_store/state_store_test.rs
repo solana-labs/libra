@@ -3,9 +3,9 @@
 
 use super::*;
 use crate::{pruner, LibraDB};
-use crypto::hash::CryptoHash;
-use tools::tempdir::TempPath;
-use types::{
+use solana_libra_crypto::hash::CryptoHash;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::{
     account_address::{AccountAddress, ADDRESS_LENGTH},
     account_state_blob::AccountStateBlob,
     proof::verify_sparse_merkle_element,

@@ -1,5 +1,5 @@
 [package]
-name = "admission-control-service"
+name = "solana-libra-admission-control-service"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -15,33 +15,33 @@ prost = "0.5.0"
 lazy_static = "1.3.0"
 structopt = "0.3.2"
 
-admission_control_proto = { path = "../admission_control_proto" }
-config = { path = "../../config" }
-crypto = { path = "../../crypto/crypto" }
-debug_interface = { path = "../../common/debug_interface" }
-failure = { package = "failure_ext", path = "../../common/failure_ext" }
-executable-helpers = { path = "../../common/executable-helpers" }
-grpc_helpers = { path = "../../common/grpc_helpers" }
-logger = { path = "../../common/logger" }
-mempool = { path = "../../mempool" }
-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto" }
-metrics = { path = "../../common/metrics" }
-storage_client = { path = "../../storage/storage_client" }
-types = { path = "../../types" }
-vm_validator = { path = "../../vm_validator" }
+solana_libra_admission_control_proto = { path = "../admission_control_proto" }
+solana-libra-config = { path = "../../config" }
+solana-libra-crypto = { path = "../../crypto/crypto" }
+solana_libra_debug_interface = { path = "../../common/debug_interface" }
+failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext" }
+solana-libra-executable-helpers = { path = "../../common/executable-helpers" }
+solana_libra_grpc_helpers = { path = "../../common/grpc_helpers" }
+solana-libra-logger = { path = "../../common/logger" }
+solana-libra-mempool = { path = "../../mempool" }
+solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto" }
+solana-libra-metrics = { path = "../../common/metrics" }
+solana_libra_storage_client = { path = "../../storage/storage_client" }
+solana-libra-types = { path = "../../types" }
+solana_libra_vm_validator = { path = "../../vm_validator" }
 
-storage-service = { path = "../../storage/storage-service", optional = true }
-proptest_helpers = { path = "../../common/proptest_helpers", optional = true }
+solana-libra-storage-service = { path = "../../storage/storage-service", optional = true }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", optional = true }
 proptest = { version = "0.9.4", optional = true }
 
 [dev-dependencies]
 assert_matches = "1.3.0"
 rand = "0.6.5"
-storage-service = { path = "../../storage/storage-service" }
-types = { path = "../../types", features = ["testing"] }
-proptest_helpers = { path = "../../common/proptest_helpers" }
+solana-libra-storage-service = { path = "../../storage/storage-service" }
+solana-libra-types = { path = "../../types", features = ["testing"] }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers" }
 proptest = "0.9.4"
 
 [features]
 default = []
-fuzzing = ["storage-service", "proptest_helpers", "proptest"]
+fuzzing = ["solana-libra-storage-service", "solana_libra_proptest_helpers", "proptest"]

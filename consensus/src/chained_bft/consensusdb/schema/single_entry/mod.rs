@@ -15,7 +15,7 @@ use byteorder::ReadBytesExt;
 use failure::prelude::*;
 use num_derive::{FromPrimitive, ToPrimitive};
 use num_traits::{FromPrimitive, ToPrimitive};
-use schemadb::{
+use solana_libra_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };

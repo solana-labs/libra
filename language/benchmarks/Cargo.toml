@@ -1,5 +1,5 @@
 [package]
-name = "language_benchmarks"
+name = "solana_libra_language_benchmarks"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -10,12 +10,12 @@ edition = "2018"
 criterion = "0.2.11"
 proptest = "0.9.4"
 
-language_e2e_tests = { path = "../e2e_tests" }
-proptest_helpers = { path = "../../common/proptest_helpers" }
-types = { path = "../../types" }
+solana_libra_language_e2e_tests = { path = "../e2e_tests" }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers" }
+solana-libra-types = { path = "../../types" }
 
 [dev-dependencies]
-types = { path = "../../types", features = ["testing"] }
+solana-libra-types = { path = "../../types", features = ["testing"] }
 
 [[bench]]
 name = "transactions"

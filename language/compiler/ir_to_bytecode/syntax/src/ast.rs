@@ -4,16 +4,16 @@
 use codespan::{ByteIndex, Span};
 use lalrpop_util::ParseError;
 use lazy_static::lazy_static;
-use std::{
-    collections::{HashSet, VecDeque},
-    fmt,
-    ops::Deref,
-};
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     byte_array::ByteArray,
     identifier::{IdentStr, Identifier},
     language_storage::ModuleId,
+};
+use std::{
+    collections::{HashSet, VecDeque},
+    fmt,
+    ops::Deref,
 };
 
 /// Generic wrapper that keeps file locations for any ast-node
@@ -143,9 +143,9 @@ pub type TypeVar_ = Spanned<TypeVar>;
 // Kinds
 //**************************************************************************************************
 
-// TODO: This enum is completely equivalent to vm::file_format::Kind.
-//       Should we just use vm::file_format::Kind or replace both with a common one?
-/// The kind of a type. Analogous to `vm::file_format::Kind`.
+// TODO: This enum is completely equivalent to solana_libra_vm::file_format::Kind.
+//       Should we just use solana_libra_vm::file_format::Kind or replace both with a common one?
+/// The kind of a type. Analogous to `solana_libra_vm::file_format::Kind`.
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub enum Kind {
     /// Represents the super set of all types.
@@ -197,7 +197,7 @@ pub struct QualifiedStructIdent {
 }
 
 /// The field newtype
-pub type Field = types::access_path::Field;
+pub type Field = solana_libra_types::access_path::Field;
 
 /// A field coupled with source location information
 pub type Field_ = Spanned<Field>;

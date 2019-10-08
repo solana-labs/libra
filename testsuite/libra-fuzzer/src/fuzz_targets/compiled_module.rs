@@ -3,8 +3,8 @@
 
 use crate::FuzzTargetImpl;
 use proptest::prelude::*;
-use proptest_helpers::ValueGenerator;
-use vm::file_format::{CompiledModule, CompiledModuleMut};
+use solana_libra_proptest_helpers::ValueGenerator;
+use solana_libra_vm::file_format::{CompiledModule, CompiledModuleMut};
 
 #[derive(Clone, Debug, Default)]
 pub struct CompiledModuleTarget;

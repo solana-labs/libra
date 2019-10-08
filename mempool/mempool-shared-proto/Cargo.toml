@@ -1,5 +1,5 @@
 [package]
-name = "mempool-shared-proto"
+name = "solana-libra-mempool-shared-proto"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -12,7 +12,7 @@ edition = "2018"
 prost = "0.5.0"
 bytes = "0.4.12"
 
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
 
 [build-dependencies]
 prost-build = "0.5.0"

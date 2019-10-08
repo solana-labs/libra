@@ -4,16 +4,20 @@
 use crate::{
     executor_proxy::ExecutorProxyTrait, LedgerInfo, PeerId, StateSyncClient, StateSynchronizer,
 };
-use config::config::RoleType;
-use config_builder::util::get_test_config;
-use crypto::{ed25519::*, test_utils::TEST_SEED, traits::Genesis, x25519, HashValue, SigningKey};
 use failure::{prelude::*, Result};
 use futures::{
     executor::block_on,
     future::{FutureExt, TryFutureExt},
     Future,
 };
-use network::{
+use parity_multiaddr::Multiaddr;
+use rand::{rngs::StdRng, SeedableRng};
+use solana_libra_config::config::RoleType;
+use solana_libra_config_builder::util::get_test_config;
+use solana_libra_crypto::{
+    ed25519::*, test_utils::TEST_SEED, traits::Genesis, x25519, HashValue, SigningKey,
+};
+use solana_libra_network::{
     proto::GetChunkResponse,
     validator_network::{
         network_builder::{NetworkBuilder, TransportType},
@@ -21,8 +25,17 @@ use network::{
     },
     NetworkPublicKeys, ProtocolId,
 };
-use parity_multiaddr::Multiaddr;
-use rand::{rngs::StdRng, SeedableRng};
+use solana_libra_transaction_builder::encode_transfer_script;
+use solana_libra_types::{
+    account_address::AccountAddress,
+    crypto_proxies::LedgerInfoWithSignatures,
+    ledger_info::LedgerInfo as TypesLedgerInfo,
+    proof::AccumulatorProof,
+    test_helpers::transaction_test_helpers::get_test_signed_txn,
+    transaction::{TransactionInfo, TransactionListWithProof},
+    vm_error::StatusCode,
+};
+use solana_libra_vm_genesis::GENESIS_KEYPAIR;
 use std::{
     collections::HashMap,
     pin::Pin,
@@ -32,17 +45,6 @@ use std::{
     },
 };
 use tokio::runtime::{Builder, Runtime};
-use transaction_builder::encode_transfer_script;
-use types::{
-    account_address::AccountAddress,
-    crypto_proxies::LedgerInfoWithSignatures,
-    ledger_info::LedgerInfo as TypesLedgerInfo,
-    proof::AccumulatorProof,
-    test_helpers::transaction_test_helpers::get_test_signed_txn,
-    transaction::{TransactionInfo, TransactionListWithProof},
-    vm_error::StatusCode,
-};
-use vm_genesis::GENESIS_KEYPAIR;
 
 type MockRpcHandler =
     Box<dyn Fn(GetChunkResponse) -> Result<GetChunkResponse> + Send + Sync + 'static>;

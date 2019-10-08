@@ -5,7 +5,7 @@ use crate::{
     proto::KeyType,
     secret_service_server::{KeyID, SecretServiceServer},
 };
-use crypto::{
+use solana_libra_crypto::{
     hash::HashValue,
     traits::{Signature, ValidKey},
 };

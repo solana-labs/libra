@@ -26,10 +26,10 @@ pub use consensus::{
     CONSENSUS_RPC_PROTOCOL,
 };
 pub use mempool::{MempoolNetworkEvents, MempoolNetworkSender, MEMPOOL_DIRECT_SEND_PROTOCOL};
+use solana_libra_types::PeerId;
 pub use state_synchronizer::{
     StateSynchronizerEvents, StateSynchronizerSender, STATE_SYNCHRONIZER_MSG_PROTOCOL,
 };
-use types::PeerId;
 
 /// Events received by network clients in a validator
 ///

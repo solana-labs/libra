@@ -1,8 +1,8 @@
 use crate::{cluster::Cluster, instance::Instance};
-use admission_control_proto::proto::admission_control::{
+use grpcio::{ChannelBuilder, EnvBuilder};
+use solana_libra_admission_control_proto::proto::admission_control::{
     AdmissionControlClient, SubmitTransactionRequest,
 };
-use grpcio::{ChannelBuilder, EnvBuilder};
 use std::{
     convert::TryFrom,
     slice,
@@ -11,17 +11,10 @@ use std::{
     time::{Duration, Instant},
 };
 
-use admission_control_proto::{AdmissionControlStatus, SubmitTransactionResponse};
-use crypto::{
-    ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
-    test_utils::KeyPair,
-    traits::Uniform,
-};
 use failure::{
     self,
     prelude::{bail, format_err},
 };
-use generate_keypair::load_key_from_file;
 use itertools::zip;
 use rand::{
     prelude::ThreadRng,
@@ -30,9 +23,14 @@ use rand::{
     Rng, SeedableRng,
 };
 use slog_scope::{debug, info};
-use std::sync::atomic::{AtomicBool, Ordering};
-use std::thread::JoinHandle;
-use types::{
+use solana_libra_admission_control_proto::{AdmissionControlStatus, SubmitTransactionResponse};
+use solana_libra_crypto::{
+    ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
+    test_utils::KeyPair,
+    traits::Uniform,
+};
+use solana_libra_generate_keypair::load_key_from_file;
+use solana_libra_types::{
     account_address::AccountAddress,
     account_config::{association_address, get_account_resource_or_default},
     get_with_proof::ResponseItem,
@@ -43,6 +41,8 @@ use types::{
     transaction::{Script, TransactionPayload},
     transaction_helpers::create_signed_txn,
 };
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::thread::JoinHandle;
 
 const MAX_TXN_BATCH_SIZE: usize = 100; // Max transactions per account in mempool
 
@@ -325,7 +325,7 @@ fn gen_transfer_txn_request(
     receiver: &AccountAddress,
     num_coins: u64,
 ) -> SubmitTransactionRequest {
-    let script = transaction_builder::encode_transfer_script(&receiver, num_coins);
+    let script = solana_libra_transaction_builder::encode_transfer_script(&receiver, num_coins);
     gen_submit_transaction_request(script, sender)
 }
 
@@ -350,7 +350,7 @@ fn gen_mint_txn_request(
     faucet_account: &mut AccountData,
     receiver: &AccountAddress,
 ) -> SubmitTransactionRequest {
-    let program = transaction_builder::encode_mint_script(receiver, 1_000_000);
+    let program = solana_libra_transaction_builder::encode_mint_script(receiver, 1_000_000);
     gen_submit_transaction_request(program, faucet_account)
 }
 

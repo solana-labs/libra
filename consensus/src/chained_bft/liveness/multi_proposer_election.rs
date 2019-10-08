@@ -6,8 +6,8 @@ use crate::chained_bft::{
     consensus_types::block::Block,
     liveness::proposer_election::ProposerElection,
 };
-use logger::prelude::*;
 use siphasher::sip::SipHasher24;
+use solana_libra_logger::prelude::*;
 use std::hash::{Hash, Hasher};
 
 // A deterministic hashing function based on SipHash 2-4 hasher

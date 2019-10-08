@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::*;
-use tools::tempdir::TempPath;
+use solana_libra_tools::tempdir::TempPath;
 
 #[test]
 fn test_put_get() {

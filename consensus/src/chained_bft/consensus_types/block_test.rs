@@ -10,18 +10,18 @@ use crate::chained_bft::{
     test_utils::placeholder_certificate_for_block,
 };
 
-use crypto::HashValue;
 use proptest::{prelude::*, std_facade::hash_map::HashMap};
+use solana_libra_crypto::HashValue;
+#[cfg(test)]
+use solana_libra_types::crypto_proxies::SecretKey;
+use solana_libra_types::crypto_proxies::{ValidatorSigner, ValidatorVerifier};
+#[cfg(test)]
+use solana_libra_types::validator_signer::proptests;
 use std::{
     panic,
     sync::Arc,
     time::{Duration, SystemTime, UNIX_EPOCH},
 };
-#[cfg(test)]
-use types::crypto_proxies::SecretKey;
-use types::crypto_proxies::{ValidatorSigner, ValidatorVerifier};
-#[cfg(test)]
-use types::validator_signer::proptests;
 
 type LinearizedBlockForest<T> = Vec<Block<T>>;
 

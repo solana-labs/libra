@@ -4,12 +4,12 @@
 use get_if_addrs::get_if_addrs;
 use parity_multiaddr::{Multiaddr, Protocol};
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use solana_libra_types::transaction::SCRIPT_HASH_LENGTH;
 use std::{
     collections::HashSet,
     hash::BuildHasher,
     net::{IpAddr, TcpListener, TcpStream},
 };
-use types::transaction::SCRIPT_HASH_LENGTH;
 
 /// Return an ephemeral, available port. On unix systems, the port returned will be in the
 /// TIME_WAIT state ensuring that the OS won't hand out this port for some grace period.

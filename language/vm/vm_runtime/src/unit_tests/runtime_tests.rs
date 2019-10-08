@@ -11,14 +11,13 @@ use crate::{
     },
     txn_executor::TransactionExecutor,
 };
-use bytecode_verifier::{VerifiedModule, VerifiedScript};
-use crypto::ed25519::compat;
-use std::collections::HashMap;
-use types::{
+use solana_libra_bytecode_verifier::{VerifiedModule, VerifiedScript};
+use solana_libra_crypto::ed25519::compat;
+use solana_libra_types::{
     access_path::AccessPath, account_address::AccountAddress, byte_array::ByteArray,
     vm_error::StatusCode,
 };
-use vm::{
+use solana_libra_vm::{
     access::ModuleAccess,
     errors::VMResult,
     file_format::{
@@ -30,8 +29,9 @@ use vm::{
     gas_schedule::{AbstractMemorySize, GasAlgebra, GasPrice, GasUnits},
     transaction_metadata::TransactionMetadata,
 };
-use vm_cache_map::Arena;
-use vm_runtime_types::value::{Locals, Value};
+use solana_libra_vm_cache_map::Arena;
+use solana_libra_vm_runtime_types::value::{Locals, Value};
+use std::collections::HashMap;
 
 // Trait for the data cache to build a TransactionProcessor
 struct FakeDataCache {

@@ -6,25 +6,17 @@
 //! * Global-memory independent instructions;
 //! * Global-memory dependent instructions; and
 //! * Native operations.
-use cost_synthesis::{
+use csv;
+use solana_libra_cost_synthesis::{
     global_state::{account::Account, inhabitor::RandomInhabitor},
     module_generator::ModuleGenerator,
     natives::StackAccessorMocker,
     stack_generator::RandomStackGenerator,
     with_loaded_vm,
 };
-use csv;
-use language_e2e_tests::data_store::FakeDataStore;
-use std::{
-    collections::{HashMap, VecDeque},
-    convert::TryFrom,
-    path::Path,
-    time::Instant,
-    u64,
-};
-use structopt::StructOpt;
-use types::vm_error::StatusCode;
-use vm::{
+use solana_libra_language_e2e_tests::data_store::FakeDataStore;
+use solana_libra_types::vm_error::StatusCode;
+use solana_libra_vm::{
     file_format::{
         AddressPoolIndex, ByteArrayPoolIndex, Bytecode, FieldDefinitionIndex,
         FunctionDefinitionIndex, FunctionHandleIndex, StructDefinitionIndex, UserStringIndex,
@@ -33,13 +25,21 @@ use vm::{
     gas_schedule::{AbstractMemorySize, GasAlgebra, GasCarrier},
     transaction_metadata::TransactionMetadata,
 };
-use vm_cache_map::Arena;
-use vm_runtime::{
+use solana_libra_vm_cache_map::Arena;
+use solana_libra_vm_runtime::{
     code_cache::module_cache::{ModuleCache, VMModuleCache},
     loaded_data::function::{FunctionRef, FunctionReference},
     txn_executor::TransactionExecutor,
 };
-use vm_runtime_types::{native_functions::hash, value::Value};
+use solana_libra_vm_runtime_types::{native_functions::hash, value::Value};
+use std::{
+    collections::{HashMap, VecDeque},
+    convert::TryFrom,
+    path::Path,
+    time::Instant,
+    u64,
+};
+use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 #[structopt(

@@ -15,21 +15,21 @@ use crate::{
     state_replication::StateMachineReplication,
     txn_manager::MempoolProxy,
 };
-use config::config::{ConsensusProposerType::FixedProposer, NodeConfig};
-use executor::Executor;
 use failure::prelude::*;
-use logger::prelude::*;
-use mempool::proto::mempool::MempoolClient;
-use network::validator_network::{ConsensusNetworkEvents, ConsensusNetworkSender};
-use state_synchronizer::StateSyncClient;
-use std::{convert::TryFrom, sync::Arc};
-use tokio::runtime;
-use types::{
+use solana_libra_config::config::{ConsensusProposerType::FixedProposer, NodeConfig};
+use solana_libra_executor::Executor;
+use solana_libra_logger::prelude::*;
+use solana_libra_mempool::proto::mempool::MempoolClient;
+use solana_libra_network::validator_network::{ConsensusNetworkEvents, ConsensusNetworkSender};
+use solana_libra_state_synchronizer::StateSyncClient;
+use solana_libra_types::{
     account_address::AccountAddress,
     crypto_proxies::{ValidatorSigner, ValidatorVerifier},
     transaction::SignedTransaction,
 };
-use vm_runtime::MoveVM;
+use solana_libra_vm_runtime::MoveVM;
+use std::{convert::TryFrom, sync::Arc};
+use tokio::runtime;
 
 struct InitialSetup {
     author: Author,

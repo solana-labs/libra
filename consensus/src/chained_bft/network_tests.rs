@@ -11,17 +11,17 @@ use crate::chained_bft::{
     network::{BlockRetrievalResponse, ConsensusNetworkImpl, NetworkReceivers},
     test_utils::{consensus_runtime, placeholder_ledger_info},
 };
-use channel;
-use crypto::HashValue;
-use executor::ExecutedState;
 use futures::{channel::mpsc, executor::block_on, FutureExt, SinkExt, StreamExt, TryFutureExt};
-use network::{
+use prost::Message;
+use solana_libra_channel;
+use solana_libra_crypto::HashValue;
+use solana_libra_executor::ExecutedState;
+use solana_libra_network::{
     interface::{NetworkNotification, NetworkRequest},
     proto::{BlockRetrievalStatus, ConsensusMsg, ConsensusMsg_oneof},
     protocols::rpc::InboundRpcRequest,
     validator_network::{ConsensusNetworkEvents, ConsensusNetworkSender},
 };
-use prost::Message;
 use std::{
     collections::{HashMap, HashSet},
     sync::{Arc, Mutex, RwLock},
@@ -41,7 +41,8 @@ pub struct NetworkPlayground {
     /// Maps each Author to a Sender of their inbound network notifications.
     /// These events will usually be handled by the event loop spawned in
     /// `ConsensusNetworkImpl`.
-    node_consensus_txs: Arc<Mutex<HashMap<Author, channel::Sender<NetworkNotification>>>>,
+    node_consensus_txs:
+        Arc<Mutex<HashMap<Author, solana_libra_channel::Sender<NetworkNotification>>>>,
     /// Nodes' outbound handlers forward their outbound non-rpc messages to this
     /// queue.
     outbound_msgs_tx: mpsc::Sender<(Author, NetworkRequest)>,
@@ -77,9 +78,11 @@ impl NetworkPlayground {
     async fn start_node_outbound_handler(
         drop_config: Arc<RwLock<DropConfig>>,
         src: Author,
-        mut network_reqs_rx: channel::Receiver<NetworkRequest>,
+        mut network_reqs_rx: solana_libra_channel::Receiver<NetworkRequest>,
         mut outbound_msgs_tx: mpsc::Sender<(Author, NetworkRequest)>,
-        node_consensus_txs: Arc<Mutex<HashMap<Author, channel::Sender<NetworkNotification>>>>,
+        node_consensus_txs: Arc<
+            Mutex<HashMap<Author, solana_libra_channel::Sender<NetworkNotification>>>,
+        >,
     ) {
         while let Some(net_req) = network_reqs_rx.next().await {
             let drop_rpc = drop_config
@@ -134,11 +137,11 @@ impl NetworkPlayground {
         author: Author,
         // The `Sender` of inbound network events. The `Receiver` end of this
         // queue is usually wrapped in a `ConsensusNetworkEvents` adapter.
-        consensus_tx: channel::Sender<NetworkNotification>,
+        consensus_tx: solana_libra_channel::Sender<NetworkNotification>,
         // The `Receiver` of outbound network events this node sends. The
         // `Sender` side of this queue is usually wrapped in a
         // `ConsensusNetworkSender` adapter.
-        network_reqs_rx: channel::Receiver<NetworkRequest>,
+        network_reqs_rx: solana_libra_channel::Receiver<NetworkRequest>,
     ) {
         self.node_consensus_txs
             .lock()
@@ -320,7 +323,7 @@ impl DropConfig {
 }
 
 #[cfg(test)]
-use types::crypto_proxies::random_validator_verifier;
+use solana_libra_types::crypto_proxies::random_validator_verifier;
 
 #[test]
 fn test_network_api() {
@@ -333,8 +336,8 @@ fn test_network_api() {
     let peers: Vec<_> = signers.iter().map(|signer| signer.author()).collect();
     let epoch_mgr = Arc::new(EpochManager::new(0, validator_verifier));
     for peer in &peers {
-        let (network_reqs_tx, network_reqs_rx) = channel::new_test(8);
-        let (consensus_tx, consensus_rx) = channel::new_test(8);
+        let (network_reqs_tx, network_reqs_rx) = solana_libra_channel::new_test(8);
+        let (consensus_tx, consensus_rx) = solana_libra_channel::new_test(8);
         let network_sender = ConsensusNetworkSender::new(network_reqs_tx);
         let network_events = ConsensusNetworkEvents::new(consensus_rx);
 
@@ -400,8 +403,8 @@ fn test_rpc() {
     let peers: Vec<_> = signers.iter().map(|signer| signer.author()).collect();
     let epoch_mgr = Arc::new(EpochManager::new(0, validator_verifier));
     for peer in peers.iter() {
-        let (network_reqs_tx, network_reqs_rx) = channel::new_test(8);
-        let (consensus_tx, consensus_rx) = channel::new_test(8);
+        let (network_reqs_tx, network_reqs_rx) = solana_libra_channel::new_test(8);
+        let (consensus_tx, consensus_rx) = solana_libra_channel::new_test(8);
         let network_sender = ConsensusNetworkSender::new(network_reqs_tx);
         let network_events = ConsensusNetworkEvents::new(consensus_rx);
 

@@ -7,10 +7,10 @@ use crate::{
     account::{Account, AccountData},
     data_store::{FakeDataStore, GENESIS_WRITE_SET, TESTNET_GENESIS},
 };
-use canonical_serialization::SimpleDeserializer;
-use config::config::{NodeConfig, NodeConfigHelpers, VMPublishingOption};
-use state_view::StateView;
-use types::{
+use solana_libra_canonical_serialization::SimpleDeserializer;
+use solana_libra_config::config::{NodeConfig, NodeConfigHelpers, VMPublishingOption};
+use solana_libra_state_view::StateView;
+use solana_libra_types::{
     access_path::AccessPath,
     account_config::AccountResource,
     language_storage::ModuleId,
@@ -18,8 +18,8 @@ use types::{
     vm_error::VMStatus,
     write_set::WriteSet,
 };
-use vm::CompiledModule;
-use vm_runtime::{MoveVM, VMExecutor, VMVerifier};
+use solana_libra_vm::CompiledModule;
+use solana_libra_vm_runtime::{MoveVM, VMExecutor, VMVerifier};
 
 /// Provides an environment to run a VM instance.
 ///

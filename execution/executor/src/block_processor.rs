@@ -7,24 +7,17 @@ use crate::{
     Command, ExecutedState, ExecutedTrees, StateComputeResult, OP_COUNTERS,
 };
 use backoff::{ExponentialBackoff, Operation};
-use config::config::VMConfig;
-use crypto::{
+use failure::prelude::*;
+use futures::channel::oneshot;
+use solana_libra_config::config::VMConfig;
+use solana_libra_crypto::{
     hash::{CryptoHash, EventAccumulatorHasher},
     HashValue,
 };
-use failure::prelude::*;
-use futures::channel::oneshot;
-use logger::prelude::*;
-use scratchpad::{ProofRead, SparseMerkleTree};
-use std::{
-    collections::{hash_map, BTreeMap, HashMap, HashSet, VecDeque},
-    convert::TryFrom,
-    marker::PhantomData,
-    rc::Rc,
-    sync::{mpsc, Arc},
-};
-use storage_client::{StorageRead, StorageWrite, VerifiedStateView};
-use types::{
+use solana_libra_logger::prelude::*;
+use solana_libra_scratchpad::{ProofRead, SparseMerkleTree};
+use solana_libra_storage_client::{StorageRead, StorageWrite, VerifiedStateView};
+use solana_libra_types::{
     account_address::AccountAddress,
     account_state_blob::AccountStateBlob,
     crypto_proxies::LedgerInfoWithSignatures,
@@ -35,7 +28,14 @@ use types::{
     },
     write_set::{WriteOp, WriteSet},
 };
-use vm_runtime::VMExecutor;
+use solana_libra_vm_runtime::VMExecutor;
+use std::{
+    collections::{hash_map, BTreeMap, HashMap, HashSet, VecDeque},
+    convert::TryFrom,
+    marker::PhantomData,
+    rc::Rc,
+    sync::{mpsc, Arc},
+};
 
 #[derive(Debug)]
 enum Mode {

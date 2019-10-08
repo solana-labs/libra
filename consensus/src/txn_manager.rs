@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{counters, state_replication::TxnManager};
-use executor::StateComputeResult;
 use failure::Result;
 use futures::{compat::Future01CompatExt, future, Future, FutureExt};
-use logger::prelude::*;
-use mempool::proto::mempool::{
+use solana_libra_executor::StateComputeResult;
+use solana_libra_logger::prelude::*;
+use solana_libra_mempool::proto::mempool::{
     CommitTransactionsRequest, CommittedTransaction, GetBlockRequest, MempoolClient,
     TransactionExclusion,
 };
+use solana_libra_types::transaction::{SignedTransaction, TransactionStatus};
 use std::{convert::TryFrom, pin::Pin, sync::Arc};
-use types::transaction::{SignedTransaction, TransactionStatus};
 
 /// Proxy interface to mempool
 pub struct MempoolProxy {

@@ -26,7 +26,7 @@
 //! # Examples
 //!
 //! ```
-//! use crypto::x25519::*;
+//! use solana_libra_crypto::x25519::*;
 //! use rand::{rngs::StdRng, SeedableRng};
 //!
 //! // Derive an X25519 static key pair from seed using the extract-then-expand HKDF method from RFC 5869.
@@ -40,7 +40,7 @@
 //! assert_eq!(public_key1, public_key2);
 //!
 //! // Generate a random X25519 ephemeral key pair from an RNG (in this example a StdRng)
-//! use crypto::Uniform;
+//! use solana_libra_crypto::Uniform;
 //! let seed = [1u8; 32];
 //! let mut rng: StdRng = SeedableRng::from_seed(seed);
 //! let private_key = X25519StaticPrivateKey::generate_for_testing(&mut rng);
@@ -57,14 +57,14 @@
 //! ```
 
 use crate::{hkdf::Hkdf, traits::*};
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
-use crypto_derive::{Deref, SilentDebug, SilentDisplay};
 use failure::prelude::*;
 use rand::{rngs::EntropyRng, RngCore};
 use serde::{de, export, ser};
 use sha2::Sha256;
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto_derive::{Deref, SilentDebug, SilentDisplay};
 use std::{convert::TryFrom, fmt, ops::Deref};
 use x25519_dalek;
 
@@ -408,7 +408,7 @@ pub mod compat {
     ///
     /// Warning: if you pass in None, this will not return distinct
     /// results every time! Should you want to write non-deterministic
-    /// tests, look at config::config_builder::util::get_test_config
+    /// tests, look at solana_libra_config::config_builder::util::get_test_config
     pub fn generate_keypair<'a, T>(opt_rng: T) -> (X25519StaticPrivateKey, X25519StaticPublicKey)
     where
         T: Into<Option<&'a mut StdRng>> + Sized,

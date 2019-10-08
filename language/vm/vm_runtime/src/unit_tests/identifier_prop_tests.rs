@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::identifier::resource_storage_key;
-use canonical_serialization::{SimpleDeserializer, SimpleSerializer};
 use proptest::prelude::*;
-use vm::{
+use solana_libra_canonical_serialization::{SimpleDeserializer, SimpleSerializer};
+use solana_libra_vm::{
     access::ModuleAccess,
     file_format::{CompiledModule, StructDefinitionIndex, TableIndex},
 };

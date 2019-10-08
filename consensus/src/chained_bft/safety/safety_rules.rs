@@ -9,8 +9,8 @@ use crate::{
     counters,
 };
 
-use crypto::HashValue;
 use serde::{Deserialize, Serialize};
+use solana_libra_crypto::HashValue;
 use std::fmt::{Display, Formatter};
 
 #[cfg(test)]

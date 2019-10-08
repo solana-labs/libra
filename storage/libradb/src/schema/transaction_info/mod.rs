@@ -16,14 +16,14 @@ use crate::schema::TRANSACTION_INFO_CF_NAME;
 use byteorder::{BigEndian, ReadBytesExt};
 use failure::prelude::*;
 use prost::Message;
-use prost_ext::MessageExt;
-use schemadb::{
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
+use solana_libra_types::transaction::{TransactionInfo, Version};
 use std::convert::TryInto;
 use std::mem::size_of;
-use types::transaction::{TransactionInfo, Version};
 
 define_schema!(
     TransactionInfoSchema,
@@ -49,12 +49,12 @@ impl KeyCodec<TransactionInfoSchema> for Version {
 
 impl ValueCodec<TransactionInfoSchema> for TransactionInfo {
     fn encode_value(&self) -> Result<Vec<u8>> {
-        let event: types::proto::types::TransactionInfo = self.clone().into();
+        let event: solana_libra_types::proto::types::TransactionInfo = self.clone().into();
         Ok(event.to_vec()?)
     }
 
     fn decode_value(data: &[u8]) -> Result<Self> {
-        types::proto::types::TransactionInfo::decode(data)?.try_into()
+        solana_libra_types::proto::types::TransactionInfo::decode(data)?.try_into()
     }
 }
 

@@ -1,5 +1,5 @@
 [package]
-name = "libradb"
+name = "solana-libra-libradb"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -21,23 +21,23 @@ rusty-fork = "0.2.1"
 strum = "0.15.0"
 strum_macros = "0.15.0"
 
-accumulator = { path = "../accumulator" }
-canonical_serialization = { path = "../../common/canonical_serialization" }
-crypto = { path = "../../crypto/crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-jellyfish_merkle = { path = "../jellyfish_merkle" }
-logger = { path = "../../common/logger" }
-metrics = { path = "../../common/metrics" }
-prost-ext = { path = "../../common/prost-ext" }
-schemadb = { path = "../schemadb" }
-storage_proto = { path = "../storage_proto" }
-tools = { path = "../../common/tools" }
-types = { path = "../../types" }
+solana-libra-accumulator = { path = "../accumulator" }
+solana_libra_canonical_serialization = { path = "../../common/canonical_serialization" }
+solana-libra-crypto = { path = "../../crypto/crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+solana_libra_jellyfish_merkle = { path = "../jellyfish_merkle" }
+solana-libra-logger = { path = "../../common/logger" }
+solana-libra-metrics = { path = "../../common/metrics" }
+solana-libra-prost-ext = { path = "../../common/prost-ext" }
+solana-libra-schemadb = { path = "../schemadb" }
+solana_libra_storage_proto = { path = "../storage_proto" }
+solana-libra-tools = { path = "../../common/tools" }
+solana-libra-types = { path = "../../types" }
 
 [dev-dependencies]
-proptest_helpers = { path = "../../common/proptest_helpers" }
-types = { path = "../../types", features = ["testing"]}
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers" }
+solana-libra-types = { path = "../../types", features = ["testing"]}
 
 [features]
 default = []
-testing = ["types/testing"]
+testing = ["solana-libra-types/testing"]

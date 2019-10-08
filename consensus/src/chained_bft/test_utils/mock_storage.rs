@@ -8,14 +8,14 @@ use crate::chained_bft::{
     persistent_storage::{PersistentLivenessStorage, PersistentStorage, RecoveryData},
     safety::safety_rules::ConsensusState,
 };
-use config::config::{NodeConfig, NodeConfigHelpers};
-use crypto::HashValue;
 use failure::Result;
+use solana_libra_config::config::{NodeConfig, NodeConfigHelpers};
+use solana_libra_crypto::HashValue;
+use solana_libra_types::ledger_info::LedgerInfo;
 use std::{
     collections::HashMap,
     sync::{Arc, Mutex},
 };
-use types::ledger_info::LedgerInfo;
 
 pub struct MockSharedStorage<T> {
     // Safety state

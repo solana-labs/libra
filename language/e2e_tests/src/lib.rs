@@ -5,20 +5,20 @@
 //!
 //! This crate contains helpers for executing tests against the Libra VM.
 
-use bytecode_verifier::{VerifiedModule, VerifiedScript};
-use compiler::Compiler;
 use data_store::FakeDataStore;
-use types::{
+use solana_libra_bytecode_verifier::{VerifiedModule, VerifiedScript};
+use solana_libra_compiler::Compiler;
+use solana_libra_types::{
     access_path::AccessPath,
     account_address::AccountAddress,
     transaction::{TransactionArgument, TransactionStatus},
     vm_error::VMStatus,
 };
-use vm::{
+use solana_libra_vm::{
     errors::*,
     file_format::{CompiledModule, CompiledScript},
 };
-use vm_runtime::{execute_function, static_verify_program};
+use solana_libra_vm_runtime::{execute_function, static_verify_program};
 
 #[cfg(test)]
 mod tests;

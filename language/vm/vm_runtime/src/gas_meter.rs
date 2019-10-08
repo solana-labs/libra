@@ -6,11 +6,11 @@ use crate::{
     code_cache::module_cache::ModuleCache, execution_stack::ExecutionStack,
     loaded_data::function::FunctionReference,
 };
-use types::{
+use solana_libra_types::{
     account_address::ADDRESS_LENGTH, transaction::MAX_TRANSACTION_SIZE_IN_BYTES,
     vm_error::StatusCode,
 };
-use vm::{
+use solana_libra_vm::{
     access::ModuleAccess,
     errors::{vm_error, VMResult},
     file_format::Bytecode,

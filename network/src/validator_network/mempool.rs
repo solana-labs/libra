@@ -12,7 +12,6 @@ use crate::{
     validator_network::Event,
     ProtocolId,
 };
-use channel;
 use futures::{
     stream::Map,
     task::{Context, Poll},
@@ -20,8 +19,9 @@ use futures::{
 };
 use pin_utils::unsafe_pinned;
 use prost::Message as proto_msg;
+use solana_libra_channel;
+use solana_libra_types::PeerId;
 use std::pin::Pin;
-use types::PeerId;
 
 /// Protocol id for mempool direct-send calls
 pub const MEMPOOL_DIRECT_SEND_PROTOCOL: &[u8] = b"/libra/mempool/direct-send/0.1.0";
@@ -31,11 +31,11 @@ pub const MEMPOOL_DIRECT_SEND_PROTOCOL: &[u8] = b"/libra/mempool/direct-send/0.1
 /// `MempoolNetworkEvents` is a `Stream` of `NetworkNotification` where the
 /// raw `Bytes` direct-send and rpc messages are deserialized into
 /// `MempoolMessage` types. `MempoolNetworkEvents` is a thin wrapper around an
-/// `channel::Receiver<NetworkNotification>`.
+/// `solana_libra_channel::Receiver<NetworkNotification>`.
 pub struct MempoolNetworkEvents {
     // TODO(philiphayes): remove pub
     pub inner: Map<
-        channel::Receiver<NetworkNotification>,
+        solana_libra_channel::Receiver<NetworkNotification>,
         fn(NetworkNotification) -> Result<Event<MempoolSyncMsg>, NetworkError>,
     >,
 }
@@ -48,12 +48,12 @@ impl MempoolNetworkEvents {
     unsafe_pinned!(
         inner:
             Map<
-                channel::Receiver<NetworkNotification>,
+                solana_libra_channel::Receiver<NetworkNotification>,
                 fn(NetworkNotification) -> Result<Event<MempoolSyncMsg>, NetworkError>,
             >
     );
 
-    pub fn new(receiver: channel::Receiver<NetworkNotification>) -> Self {
+    pub fn new(receiver: solana_libra_channel::Receiver<NetworkNotification>) -> Self {
         let inner = receiver
             // TODO(philiphayes): filter_map might be better, so we can drop
             // messages that don't deserialize.
@@ -83,7 +83,7 @@ impl Stream for MempoolNetworkEvents {
 
 /// The interface from Mempool to Networking layer.
 ///
-/// This is a thin wrapper around an `channel::Sender<NetworkRequest>`, so it is
+/// This is a thin wrapper around an `solana_libra_channel::Sender<NetworkRequest>`, so it is
 /// easy to clone and send off to a separate task. For example, the rpc requests
 /// return Futures that encapsulate the whole flow, from sending the request to
 /// remote, to finally receiving the response and deserializing. It therefore
@@ -92,11 +92,11 @@ impl Stream for MempoolNetworkEvents {
 #[derive(Clone)]
 pub struct MempoolNetworkSender {
     // TODO(philiphayes): remove pub
-    pub inner: channel::Sender<NetworkRequest>,
+    pub inner: solana_libra_channel::Sender<NetworkRequest>,
 }
 
 impl MempoolNetworkSender {
-    pub fn new(inner: channel::Sender<NetworkRequest>) -> Self {
+    pub fn new(inner: solana_libra_channel::Sender<NetworkRequest>) -> Self {
         Self { inner }
     }
 
@@ -138,7 +138,7 @@ mod tests {
     // `MempoolNetworkEvents` stream.
     #[test]
     fn test_mempool_network_events() {
-        let (mut mempool_tx, mempool_rx) = channel::new_test(8);
+        let (mut mempool_tx, mempool_rx) = solana_libra_channel::new_test(8);
         let mut stream = MempoolNetworkEvents::new(mempool_rx);
 
         let peer_id = PeerId::random();
@@ -160,7 +160,7 @@ mod tests {
     // `MempoolNetworkSender` should serialize outbound messages
     #[test]
     fn test_mempool_network_sender() {
-        let (network_reqs_tx, mut network_reqs_rx) = channel::new_test(8);
+        let (network_reqs_tx, mut network_reqs_rx) = solana_libra_channel::new_test(8);
         let mut sender = MempoolNetworkSender::new(network_reqs_tx);
 
         let peer_id = PeerId::random();

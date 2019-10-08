@@ -3,8 +3,8 @@
 
 use super::*;
 use proptest::prelude::*;
-use schemadb::schema::assert_encode_decode;
-use types::crypto_proxies::LedgerInfoWithSignatures;
+use solana_libra_schemadb::schema::assert_encode_decode;
+use solana_libra_types::crypto_proxies::LedgerInfoWithSignatures;
 
 proptest! {
     #[test]

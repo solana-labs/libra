@@ -2,20 +2,20 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::chained_bft::{common::Round, consensus_types::vote_data::VoteData};
-use crypto::{
+use failure::ResultExt;
+use serde::{Deserialize, Serialize};
+use solana_libra_crypto::{
     hash::{CryptoHash, ACCUMULATOR_PLACEHOLDER_HASH, GENESIS_BLOCK_ID},
     HashValue,
 };
-use failure::ResultExt;
-use serde::{Deserialize, Serialize};
+use solana_libra_types::{
+    crypto_proxies::{LedgerInfoWithSignatures, ValidatorSigner, ValidatorVerifier},
+    ledger_info::LedgerInfo,
+};
 use std::{
     collections::HashMap,
     convert::{TryFrom, TryInto},
     fmt::{Display, Formatter},
-};
-use types::{
-    crypto_proxies::{LedgerInfoWithSignatures, ValidatorSigner, ValidatorVerifier},
-    ledger_info::LedgerInfo,
 };
 
 #[derive(Deserialize, Serialize, Clone, Debug, Eq, PartialEq)]
@@ -148,10 +148,10 @@ impl QuorumCert {
     }
 }
 
-impl TryFrom<network::proto::QuorumCert> for QuorumCert {
+impl TryFrom<solana_libra_network::proto::QuorumCert> for QuorumCert {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::QuorumCert) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::QuorumCert) -> failure::Result<Self> {
         let vote_data = proto
             .vote_data
             .ok_or_else(|| format_err!("Missing vote_data"))?
@@ -168,7 +168,7 @@ impl TryFrom<network::proto::QuorumCert> for QuorumCert {
     }
 }
 
-impl From<QuorumCert> for network::proto::QuorumCert {
+impl From<QuorumCert> for solana_libra_network::proto::QuorumCert {
     fn from(cert: QuorumCert) -> Self {
         Self {
             vote_data: Some(cert.vote_data.into()),

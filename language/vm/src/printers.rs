@@ -4,8 +4,10 @@
 use crate::{file_format::*, vm_string::VMStr};
 use failure::*;
 use hex;
+use solana_libra_types::{
+    account_address::AccountAddress, byte_array::ByteArray, identifier::IdentStr,
+};
 use std::{collections::VecDeque, fmt};
-use types::{account_address::AccountAddress, byte_array::ByteArray, identifier::IdentStr};
 
 //
 // Display printing

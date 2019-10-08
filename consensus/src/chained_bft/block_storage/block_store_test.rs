@@ -15,12 +15,12 @@ use crate::chained_bft::{
         placeholder_ledger_info, TreeInserter,
     },
 };
-use crypto::{HashValue, PrivateKey};
 use futures::executor::block_on;
 use proptest::prelude::*;
+use solana_libra_crypto::{HashValue, PrivateKey};
+use solana_libra_types::crypto_proxies::{random_validator_verifier, ValidatorVerifier};
+use solana_libra_types::{account_address::AccountAddress, crypto_proxies::ValidatorSigner};
 use std::{cmp::min, collections::HashSet, sync::Arc};
-use types::crypto_proxies::{random_validator_verifier, ValidatorVerifier};
-use types::{account_address::AccountAddress, crypto_proxies::ValidatorSigner};
 
 fn build_simple_tree() -> (
     Vec<Arc<ExecutedBlock<Vec<usize>>>>,
@@ -332,7 +332,7 @@ fn test_path_from_root() {
 
 #[test]
 fn test_insert_vote() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
     // Set up enough different authors to support different votes for the same block.
     let (signers, validator_verifier) = random_validator_verifier(11, Some(10), false);
     let validator_verifier = Arc::new(validator_verifier);

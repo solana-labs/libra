@@ -25,7 +25,7 @@
 //! # Examples
 //!
 //! ```
-//! use crypto::hash::{CryptoHasher, TestOnlyHasher};
+//! use solana_libra_crypto::hash::{CryptoHasher, TestOnlyHasher};
 //!
 //! let mut hasher = TestOnlyHasher::default();
 //! hasher.write("Test message".as_bytes());
@@ -48,7 +48,7 @@
 //!
 //! Then, the `CryptoHash` trait should be implemented:
 //! ```
-//! # use crypto::hash::*;
+//! # use solana_libra_crypto::hash::*;
 //! # #[derive(Default)]
 //! # struct MyNewStructHasher;
 //! # impl CryptoHasher for MyNewStructHasher {
@@ -71,10 +71,10 @@
 use bytes::Bytes;
 use failure::prelude::*;
 use lazy_static::lazy_static;
-use nibble::Nibble;
 use proptest_derive::Arbitrary;
 use rand::{rngs::EntropyRng, Rng};
 use serde::{Deserialize, Serialize};
+use solana_libra_nibble::Nibble;
 use std::{self, convert::AsRef, fmt};
 use tiny_keccak::Keccak;
 
@@ -592,7 +592,7 @@ lazy_static! {
 ///
 /// # Example
 /// ```
-/// use crypto::hash::TestOnlyHash;
+/// use solana_libra_crypto::hash::TestOnlyHash;
 ///
 /// b"hello world".test_only_hash();
 /// ```

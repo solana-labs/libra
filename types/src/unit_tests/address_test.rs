@@ -3,9 +3,9 @@
 
 use crate::account_address::{AccountAddress, ADDRESS_LENGTH};
 use bech32::Bech32;
-use crypto::{hash::CryptoHash, HashValue};
 use hex::FromHex;
 use proptest::prelude::*;
+use solana_libra_crypto::{hash::CryptoHash, HashValue};
 use std::convert::{AsRef, TryFrom};
 
 #[test]

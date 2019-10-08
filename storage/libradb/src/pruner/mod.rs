@@ -11,8 +11,9 @@ use crate::{
     OP_COUNTER,
 };
 use failure::prelude::*;
-use logger::prelude::*;
-use schemadb::{ReadOptions, SchemaBatch, SchemaIterator, DB};
+use solana_libra_logger::prelude::*;
+use solana_libra_schemadb::{ReadOptions, SchemaBatch, SchemaIterator, DB};
+use solana_libra_types::transaction::Version;
 use std::{
     sync::{
         mpsc::{channel, Receiver, Sender},
@@ -20,10 +21,9 @@ use std::{
     },
     thread::JoinHandle,
 };
-use types::transaction::Version;
 
 use failure::_core::sync::atomic::Ordering;
-use jellyfish_merkle::StaleNodeIndex;
+use solana_libra_jellyfish_merkle::StaleNodeIndex;
 #[cfg(test)]
 use std::thread::sleep;
 use std::{

@@ -5,10 +5,9 @@ use proptest::{
     prelude::*,
     sample::{self, Index as PropIndex},
 };
-use proptest_helpers::pick_slice_idxs;
-use std::collections::BTreeMap;
-use types::vm_error::{StatusCode, VMStatus};
-use vm::{
+use solana_libra_proptest_helpers::pick_slice_idxs;
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
+use solana_libra_vm::{
     errors::{append_err_info, bounds_error},
     file_format::{
         AddressPoolIndex, CompiledModule, CompiledModuleMut, FieldDefinitionIndex,
@@ -20,6 +19,7 @@ use vm::{
     views::{ModuleView, SignatureTokenView},
     IndexKind,
 };
+use std::collections::BTreeMap;
 
 mod code_unit;
 pub use code_unit::{ApplyCodeUnitBoundsContext, CodeUnitBoundsMutation};

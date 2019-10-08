@@ -12,7 +12,6 @@ use crate::{
     validator_network::Event,
     ProtocolId,
 };
-use channel;
 use futures::{
     stream::Map,
     task::{Context, Poll},
@@ -20,14 +19,15 @@ use futures::{
 };
 use pin_utils::unsafe_pinned;
 use prost::Message as _;
+use solana_libra_channel;
+use solana_libra_types::PeerId;
 use std::pin::Pin;
-use types::PeerId;
 
 pub const STATE_SYNCHRONIZER_MSG_PROTOCOL: &[u8] = b"/libra/state_synchronizer/direct-send/0.1.0";
 
 pub struct StateSynchronizerEvents {
     inner: Map<
-        channel::Receiver<NetworkNotification>,
+        solana_libra_channel::Receiver<NetworkNotification>,
         fn(NetworkNotification) -> Result<Event<StateSynchronizerMsg>, NetworkError>,
     >,
 }
@@ -39,12 +39,12 @@ impl StateSynchronizerEvents {
     unsafe_pinned!(
         inner:
             Map<
-                channel::Receiver<NetworkNotification>,
+                solana_libra_channel::Receiver<NetworkNotification>,
                 fn(NetworkNotification) -> Result<Event<StateSynchronizerMsg>, NetworkError>,
             >
     );
 
-    pub fn new(receiver: channel::Receiver<NetworkNotification>) -> Self {
+    pub fn new(receiver: solana_libra_channel::Receiver<NetworkNotification>) -> Self {
         let inner = receiver.map::<_, fn(_) -> _>(|notification| match notification {
             NetworkNotification::NewPeer(peer_id) => Ok(Event::NewPeer(peer_id)),
             NetworkNotification::LostPeer(peer_id) => Ok(Event::LostPeer(peer_id)),
@@ -71,11 +71,11 @@ impl Stream for StateSynchronizerEvents {
 
 #[derive(Clone)]
 pub struct StateSynchronizerSender {
-    inner: channel::Sender<NetworkRequest>,
+    inner: solana_libra_channel::Sender<NetworkRequest>,
 }
 
 impl StateSynchronizerSender {
-    pub fn new(inner: channel::Sender<NetworkRequest>) -> Self {
+    pub fn new(inner: solana_libra_channel::Sender<NetworkRequest>) -> Self {
         Self { inner }
     }
 
@@ -108,7 +108,7 @@ mod tests {
     // `StateSynchronizerSender` should serialize outbound messages
     #[test]
     fn test_outbound_msg() {
-        let (network_reqs_tx, mut network_reqs_rx) = channel::new_test(8);
+        let (network_reqs_tx, mut network_reqs_rx) = solana_libra_channel::new_test(8);
         let mut sender = StateSynchronizerSender::new(network_reqs_tx);
         let peer_id = PeerId::random();
 
@@ -138,7 +138,7 @@ mod tests {
     // Direct send messages should get deserialized through the `StateSynchronizerEvents` stream.
     #[test]
     fn test_inbound_msg() {
-        let (mut state_sync_tx, state_sync_rx) = channel::new_test(8);
+        let (mut state_sync_tx, state_sync_rx) = solana_libra_channel::new_test(8);
         let mut stream = StateSynchronizerEvents::new(state_sync_rx);
         let peer_id = PeerId::random();
 

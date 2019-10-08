@@ -1,11 +1,11 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-extern crate test_generation;
-use test_generation::{
+extern crate solana_libra_test_generation;
+use solana_libra_test_generation::{
     abstract_state::AbstractState, config::ALLOW_MEMORY_UNSAFE, summaries::instruction_summary,
 };
-use vm::file_format::Bytecode;
+use solana_libra_vm::file_format::Bytecode;
 
 pub fn run_instruction(instruction: Bytecode, initial_state: AbstractState) -> AbstractState {
     let summary = instruction_summary(instruction.clone());

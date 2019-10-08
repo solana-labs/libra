@@ -1,5 +1,5 @@
 [package]
-name = "mempool"
+name = "solana-libra-mempool"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -19,24 +19,24 @@ prost = "0.5.0"
 tokio = "0.1.22"
 ttl_cache = "0.4.2"
 
-mempool-shared-proto = { path = "mempool-shared-proto" }
-bounded-executor = { path = "../common/bounded-executor" }
-config = { path = "../config" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
-grpc_helpers = { path = "../common/grpc_helpers" }
-logger = { path = "../common/logger" }
-metrics = { path = "../common/metrics" }
-network = { path = "../network" }
-crypto = { path = "../crypto/crypto" }
-storage_client = { path = "../storage/storage_client" }
-types = { path = "../types" }
-vm_validator = { path = "../vm_validator" }
+solana-libra-mempool-shared-proto = { path = "mempool-shared-proto" }
+solana-libra-bounded-executor = { path = "../common/bounded-executor" }
+solana-libra-config = { path = "../config" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+solana_libra_grpc_helpers = { path = "../common/grpc_helpers" }
+solana-libra-logger = { path = "../common/logger" }
+solana-libra-metrics = { path = "../common/metrics" }
+solana-libra-network = { path = "../network" }
+solana-libra-crypto = { path = "../crypto/crypto" }
+solana_libra_storage_client = { path = "../storage/storage_client" }
+solana-libra-types = { path = "../types" }
+solana_libra_vm_validator = { path = "../vm_validator" }
 
 [dev-dependencies]
 rand = "0.6.5"
-channel = { path = "../common/channel" }
-storage-service = { path = "../storage/storage-service" }
-types = { path = "../types", features = ["testing"] }
+solana-libra-channel = { path = "../common/channel" }
+solana-libra-storage-service = { path = "../storage/storage-service" }
+solana-libra-types = { path = "../types", features = ["testing"] }
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }

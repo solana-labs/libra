@@ -7,9 +7,9 @@ use crate::{
     },
     proto,
 };
-use crypto::ed25519::*;
 use proptest::prelude::*;
-use prost_ext::test_helpers::assert_protobuf_encode_decode;
+use solana_libra_crypto::ed25519::*;
+use solana_libra_prost_ext::test_helpers::assert_protobuf_encode_decode;
 use std::convert::TryFrom;
 
 proptest! {

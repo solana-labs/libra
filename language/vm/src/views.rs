@@ -25,10 +25,10 @@ use crate::{
 };
 use std::collections::BTreeSet;
 
-use types::language_storage::ModuleId;
+use solana_libra_types::language_storage::ModuleId;
 
+use solana_libra_types::identifier::IdentStr;
 use std::collections::BTreeMap;
-use types::identifier::IdentStr;
 
 /// Represents a lazily evaluated abstraction over a module.
 ///

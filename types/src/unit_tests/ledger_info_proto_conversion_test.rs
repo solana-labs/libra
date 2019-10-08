@@ -3,7 +3,7 @@
 
 use crate::{crypto_proxies::LedgerInfoWithSignatures, ledger_info::LedgerInfo};
 use proptest::prelude::*;
-use prost_ext::test_helpers::assert_protobuf_encode_decode;
+use solana_libra_prost_ext::test_helpers::assert_protobuf_encode_decode;
 
 proptest! {
     #[test]

@@ -1,9 +1,9 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use config::config::{NodeConfig, PersistableConfig};
 use failure::prelude::*;
-use logger::prelude::*;
+use solana_libra_config::config::{NodeConfig, PersistableConfig};
+use solana_libra_logger::prelude::*;
 use std::{ffi::OsStr, fs, net::IpAddr, path::PathBuf, str::FromStr};
 use structopt::{clap::arg_enum, StructOpt};
 use walkdir::WalkDir;
@@ -53,7 +53,7 @@ pub struct BenchOpt {
     /// A value of 1 ms effectively means starting all clients at once.
     #[structopt(short = "g", long, default_value = "64")]
     pub stagger_range_ms: u16,
-    /// Submit constant number of requests per second per client; otherwise flood requests.
+    /// Submit constant number of requests per second per solana_libra_client; otherwise flood requests.
     #[structopt(short = "k", long)]
     pub submit_rate: Option<u64>,
 }

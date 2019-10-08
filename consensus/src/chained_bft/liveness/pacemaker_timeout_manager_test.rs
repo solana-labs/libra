@@ -7,8 +7,10 @@ use crate::chained_bft::{
     persistent_storage::PersistentStorage,
     test_utils::{MockStorage, TestPayload},
 };
+use solana_libra_types::{
+    crypto_proxies::random_validator_verifier, validator_signer::ValidatorSigner,
+};
 use std::sync::Arc;
-use types::{crypto_proxies::random_validator_verifier, validator_signer::ValidatorSigner};
 
 #[test]
 fn test_basic() {

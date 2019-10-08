@@ -1,28 +1,28 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use bytecode_verifier::{
+use serde_json;
+use solana_libra_bytecode_verifier::{
     verifier::{verify_module_dependencies, VerifiedProgram},
     VerifiedModule,
 };
-use compiler::{util, Compiler};
-use ir_to_bytecode::parser::{parse_module, parse_script};
-use serde_json;
+use solana_libra_compiler::{util, Compiler};
+use solana_libra_ir_to_bytecode::parser::{parse_module, parse_script};
+use solana_libra_stdlib::stdlib_modules;
+use solana_libra_types::{
+    access_path::AccessPath,
+    account_address::AccountAddress,
+    transaction::{Module, Script},
+    vm_error::VMStatus,
+};
+use solana_libra_vm::file_format::CompiledModule;
 use std::{
     convert::TryFrom,
     fs,
     io::Write,
     path::{Path, PathBuf},
 };
-use stdlib::stdlib_modules;
 use structopt::StructOpt;
-use types::{
-    access_path::AccessPath,
-    account_address::AccountAddress,
-    transaction::{Module, Script},
-    vm_error::VMStatus,
-};
-use vm::file_format::CompiledModule;
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "IR Compiler", about = "Move IR to bytecode compiler.")]

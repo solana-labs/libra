@@ -1,5 +1,5 @@
 [package]
-name = "noise"
+name = "solana-libra-noise"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -9,9 +9,9 @@ edition = "2018"
 [dependencies]
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview" }
 snow = { version = "0.5.2", features=["ring-accelerated"]}
-crypto = { path = "../../crypto/crypto" }
-netcore = { path = "../netcore" }
-logger = { path = "../../common/logger" }
+solana-libra-crypto = { path = "../../crypto/crypto" }
+solana-libra-netcore = { path = "../netcore" }
+solana-libra-logger = { path = "../../common/logger" }
 
 [dev-dependencies]
-memsocket = { path = "../memsocket" }
+solana-libra-memsocket = { path = "../memsocket" }

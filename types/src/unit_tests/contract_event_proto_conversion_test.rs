@@ -3,7 +3,7 @@
 
 use crate::contract_event::{ContractEvent, EventWithProof};
 use proptest::prelude::*;
-use prost_ext::test_helpers::assert_protobuf_encode_decode;
+use solana_libra_prost_ext::test_helpers::assert_protobuf_encode_decode;
 
 proptest! {
     #[test]

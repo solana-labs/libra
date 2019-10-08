@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::vm_string::{VMStr, VMString};
-use canonical_serialization::test_helper::assert_canonical_encode_decode;
 use proptest::prelude::*;
 use serde_json;
+use solana_libra_canonical_serialization::test_helper::assert_canonical_encode_decode;
 use std::borrow::Borrow;
 
 proptest! {

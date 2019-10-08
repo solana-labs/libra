@@ -3,19 +3,19 @@
 
 use bech32::{Bech32, FromBase32, ToBase32};
 use bytes::Bytes;
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
-use crypto::{
-    hash::{AccountAddressHasher, CryptoHash, CryptoHasher},
-    HashValue, VerifyingKey,
-};
 use failure::prelude::*;
 use hex;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use rand::{rngs::OsRng, Rng};
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto::{
+    hash::{AccountAddressHasher, CryptoHash, CryptoHasher},
+    HashValue, VerifyingKey,
+};
 use std::{convert::TryFrom, fmt, str::FromStr};
 
 pub const ADDRESS_LENGTH: usize = 32;

@@ -1,11 +1,11 @@
 use crate::account_address::AccountAddress;
 use crate::byte_array::ByteArray;
-use canonical_serialization::{
+use failure::prelude::*;
+use solana_libra_canonical_serialization::{
     CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
     SimpleSerializer,
 };
-use crypto::{ed25519::Ed25519Signature, HashValue};
-use failure::prelude::*;
+use solana_libra_crypto::{ed25519::Ed25519Signature, HashValue};
 use std::collections::BTreeMap;
 
 /// Struct that will be persisted on chain to store the information of the current block.

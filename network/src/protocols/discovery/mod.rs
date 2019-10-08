@@ -42,12 +42,6 @@ use crate::{
     NetworkPublicKeys, ProtocolId,
 };
 use bytes::Bytes;
-use channel;
-use crypto::{
-    ed25519::*,
-    hash::{CryptoHasher, DiscoveryMsgHasher},
-    HashValue,
-};
 use failure::{format_err, Fail};
 use futures::{
     compat::{Future01CompatExt, Sink01CompatExt},
@@ -56,10 +50,21 @@ use futures::{
     sink::SinkExt,
     stream::{FusedStream, FuturesUnordered, Stream, StreamExt},
 };
-use logger::prelude::*;
 use parity_multiaddr::Multiaddr;
 use prost::Message;
 use rand::{rngs::SmallRng, FromEntropy, Rng};
+use solana_libra_channel;
+use solana_libra_crypto::{
+    ed25519::*,
+    hash::{CryptoHasher, DiscoveryMsgHasher},
+    HashValue,
+};
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
+    crypto_proxies::{ValidatorSigner as Signer, ValidatorVerifier as SignatureValidator},
+    validator_verifier::ValidatorInfo as SignatureInfo,
+    PeerId,
+};
 use std::{
     collections::HashMap,
     convert::TryFrom,
@@ -69,11 +74,6 @@ use std::{
     time::{Duration, SystemTime},
 };
 use tokio::{codec::Framed, prelude::FutureExt as _};
-use types::{
-    crypto_proxies::{ValidatorSigner as Signer, ValidatorVerifier as SignatureValidator},
-    validator_verifier::ValidatorInfo as SignatureInfo,
-    PeerId,
-};
 use unsigned_varint::codec::UviBytes;
 
 #[cfg(test)]
@@ -99,9 +99,9 @@ pub struct Discovery<TTicker, TSubstream> {
     /// Channel to send requests to PeerManager.
     peer_mgr_reqs_tx: PeerManagerRequestSender<TSubstream>,
     /// Channel to receive notifications from PeerManager.
-    peer_mgr_notifs_rx: channel::Receiver<PeerManagerNotification<TSubstream>>,
+    peer_mgr_notifs_rx: solana_libra_channel::Receiver<PeerManagerNotification<TSubstream>>,
     /// Channel to send requests to ConnectivityManager.
-    conn_mgr_reqs_tx: channel::Sender<ConnectivityRequest>,
+    conn_mgr_reqs_tx: solana_libra_channel::Sender<ConnectivityRequest>,
     /// Message timeout duration.
     msg_timeout: Duration,
     /// Random-number generator.
@@ -121,8 +121,8 @@ where
         trusted_peers: Arc<RwLock<HashMap<PeerId, NetworkPublicKeys>>>,
         ticker: TTicker,
         peer_mgr_reqs_tx: PeerManagerRequestSender<TSubstream>,
-        peer_mgr_notifs_rx: channel::Receiver<PeerManagerNotification<TSubstream>>,
-        conn_mgr_reqs_tx: channel::Sender<ConnectivityRequest>,
+        peer_mgr_notifs_rx: solana_libra_channel::Receiver<PeerManagerNotification<TSubstream>>,
+        conn_mgr_reqs_tx: solana_libra_channel::Sender<ConnectivityRequest>,
         msg_timeout: Duration,
     ) -> Self {
         // TODO(philiphayes): wire through config

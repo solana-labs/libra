@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::FuzzTargetImpl;
-use canonical_serialization::{SimpleDeserializer, SimpleSerializer};
 use failure::prelude::Result;
 use proptest::prelude::*;
-use proptest_helpers::ValueGenerator;
-use types::transaction::SignedTransaction;
+use solana_libra_canonical_serialization::{SimpleDeserializer, SimpleSerializer};
+use solana_libra_proptest_helpers::ValueGenerator;
+use solana_libra_types::transaction::SignedTransaction;
 
 #[derive(Clone, Debug, Default)]
 pub struct SignedTransactionTarget;

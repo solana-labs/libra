@@ -69,14 +69,16 @@ pub mod node_type;
 pub mod restore;
 mod tree_cache;
 
-use crypto::{hash::CryptoHash, HashValue};
 use failure::prelude::*;
 use nibble_path::{skip_common_prefix, NibbleIterator, NibblePath};
 use node_type::{Child, Children, InternalNode, LeafNode, Node, NodeKey};
 use proptest_derive::Arbitrary;
+use solana_libra_crypto::{hash::CryptoHash, HashValue};
+use solana_libra_types::{
+    account_state_blob::AccountStateBlob, proof::SparseMerkleProof, transaction::Version,
+};
 use std::collections::{BTreeMap, BTreeSet};
 use tree_cache::TreeCache;
-use types::{account_state_blob::AccountStateBlob, proof::SparseMerkleProof, transaction::Version};
 
 /// The hardcoded maximum height of a [`JellyfishMerkleTree`] in nibbles.
 const ROOT_NIBBLE_HEIGHT: usize = HashValue::LENGTH * 2;

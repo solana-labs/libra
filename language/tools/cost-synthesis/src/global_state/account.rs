@@ -1,20 +1,20 @@
 use crate::global_state::inhabitor::RandomInhabitor;
-use bytecode_verifier::VerifiedModule;
-use crypto::ed25519::{compat, Ed25519PrivateKey, Ed25519PublicKey};
 use rand::{
     rngs::{OsRng, StdRng},
     Rng, SeedableRng,
 };
-use std::iter::Iterator;
-use types::{
+use solana_libra_bytecode_verifier::VerifiedModule;
+use solana_libra_crypto::ed25519::{compat, Ed25519PrivateKey, Ed25519PublicKey};
+use solana_libra_types::{
     access_path::AccessPath, account_address::AccountAddress, account_config, byte_array::ByteArray,
 };
-use vm::{
+use solana_libra_vm::{
     access::*,
     file_format::{SignatureToken, StructDefinitionIndex, TableIndex},
 };
-use vm_runtime::identifier::{create_access_path, resource_storage_key};
-use vm_runtime_types::value::{Struct, Value};
+use solana_libra_vm_runtime::identifier::{create_access_path, resource_storage_key};
+use solana_libra_vm_runtime_types::value::{Struct, Value};
+use std::iter::Iterator;
 
 /// Details about an account.
 #[derive(Debug, Clone, Eq, PartialEq)]

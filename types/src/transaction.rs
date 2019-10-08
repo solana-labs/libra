@@ -14,11 +14,15 @@ use crate::{
     vm_error::{StatusCode, StatusType, VMStatus},
     write_set::WriteSet,
 };
-use canonical_serialization::{
+use failure::prelude::*;
+#[cfg(any(test, feature = "testing"))]
+use proptest_derive::Arbitrary;
+use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
     CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
     SimpleDeserializer, SimpleSerializer,
 };
-use crypto::{
+use solana_libra_crypto::{
     ed25519::*,
     hash::{
         CryptoHash, CryptoHasher, EventAccumulatorHasher, RawTransactionHasher,
@@ -27,10 +31,6 @@ use crypto::{
     traits::*,
     HashValue,
 };
-use failure::prelude::*;
-#[cfg(any(test, feature = "testing"))]
-use proptest_derive::Arbitrary;
-use serde::{Deserialize, Serialize};
 use std::{
     collections::HashMap,
     convert::{TryFrom, TryInto},

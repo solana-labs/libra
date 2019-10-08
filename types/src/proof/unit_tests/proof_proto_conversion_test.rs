@@ -6,12 +6,12 @@ use crate::proof::{
     AccountStateProof, AccumulatorConsistencyProof, AccumulatorProof, EventProof,
     SignedTransactionProof, SparseMerkleProof,
 };
-use crypto::{
+use proptest::{collection::vec, prelude::*};
+use solana_libra_crypto::{
     hash::{TestOnlyHash, ACCUMULATOR_PLACEHOLDER_HASH, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use proptest::{collection::vec, prelude::*};
-use prost_ext::test_helpers::assert_protobuf_encode_decode;
+use solana_libra_prost_ext::test_helpers::assert_protobuf_encode_decode;
 use std::convert::TryFrom;
 
 fn accumulator_bitmap_iterator_test(bitmap_value: u64, expected_bits: Vec<bool>) {

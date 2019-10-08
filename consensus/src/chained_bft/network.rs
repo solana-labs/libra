@@ -16,29 +16,29 @@ use crate::{
     counters,
 };
 use bytes::Bytes;
-use channel;
-use crypto::HashValue;
 use failure::{self, ResultExt};
 use futures::{
     channel::oneshot, stream::select, FutureExt, SinkExt, Stream, StreamExt, TryFutureExt,
     TryStreamExt,
 };
-use logger::prelude::*;
-use network::{
+use solana_libra_channel;
+use solana_libra_crypto::HashValue;
+use solana_libra_logger::prelude::*;
+use solana_libra_network::{
     proto::{
         BlockRetrievalStatus, ConsensusMsg, ConsensusMsg_oneof, Proposal, RequestBlock,
         RespondBlock, SyncInfo as SyncInfoProto, TimeoutMsg as TimeoutMsgProto, Vote,
     },
     validator_network::{ConsensusNetworkEvents, ConsensusNetworkSender, Event, RpcError},
 };
-use prost_ext::MessageExt;
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_types::account_address::AccountAddress;
 use std::{
     convert::TryFrom,
     sync::Arc,
     time::{Duration, Instant},
 };
 use tokio::runtime::TaskExecutor;
-use types::account_address::AccountAddress;
 
 /// The response sent back from EventProcessor for the BlockRetrievalRequest.
 #[derive(Debug)]
@@ -83,11 +83,11 @@ pub struct BlockRetrievalRequest<T> {
 /// Just a convenience struct to keep all the network proxy receiving queues in one place.
 /// Will be returned by the networking trait upon startup.
 pub struct NetworkReceivers<T> {
-    pub proposals: channel::Receiver<ProposalMsg<T>>,
-    pub votes: channel::Receiver<VoteMsg>,
-    pub block_retrieval: channel::Receiver<BlockRetrievalRequest<T>>,
-    pub timeout_msgs: channel::Receiver<TimeoutMsg>,
-    pub sync_info_msgs: channel::Receiver<(SyncInfo, AccountAddress)>,
+    pub proposals: solana_libra_channel::Receiver<ProposalMsg<T>>,
+    pub votes: solana_libra_channel::Receiver<VoteMsg>,
+    pub block_retrieval: solana_libra_channel::Receiver<BlockRetrievalRequest<T>>,
+    pub timeout_msgs: solana_libra_channel::Receiver<TimeoutMsg>,
+    pub sync_info_msgs: solana_libra_channel::Receiver<(SyncInfo, AccountAddress)>,
 }
 
 /// Implements the actual networking support for all consensus messaging.
@@ -98,8 +98,8 @@ pub struct ConsensusNetworkImpl {
     // Self sender and self receivers provide a shortcut for sending the messages to itself.
     // (self sending is not supported by the networking API).
     // Note that we do not support self rpc requests as it might cause infinite recursive calls.
-    self_sender: channel::Sender<failure::Result<Event<ConsensusMsg>>>,
-    self_receiver: Option<channel::Receiver<failure::Result<Event<ConsensusMsg>>>>,
+    self_sender: solana_libra_channel::Sender<failure::Result<Event<ConsensusMsg>>>,
+    self_receiver: Option<solana_libra_channel::Receiver<failure::Result<Event<ConsensusMsg>>>>,
     epoch_mgr: Arc<EpochManager>,
 }
 
@@ -123,7 +123,8 @@ impl ConsensusNetworkImpl {
         network_events: ConsensusNetworkEvents,
         epoch_mgr: Arc<EpochManager>,
     ) -> Self {
-        let (self_sender, self_receiver) = channel::new(1_024, &counters::PENDING_SELF_MESSAGES);
+        let (self_sender, self_receiver) =
+            solana_libra_channel::new(1_024, &counters::PENDING_SELF_MESSAGES);
         ConsensusNetworkImpl {
             author,
             network_sender,
@@ -136,13 +137,15 @@ impl ConsensusNetworkImpl {
 
     /// Establishes the initial connections with the peers and returns the receivers.
     pub fn start<T: Payload>(&mut self, executor: &TaskExecutor) -> NetworkReceivers<T> {
-        let (proposal_tx, proposal_rx) = channel::new(1_024, &counters::PENDING_PROPOSAL);
-        let (vote_tx, vote_rx) = channel::new(1_024, &counters::PENDING_VOTES);
+        let (proposal_tx, proposal_rx) =
+            solana_libra_channel::new(1_024, &counters::PENDING_PROPOSAL);
+        let (vote_tx, vote_rx) = solana_libra_channel::new(1_024, &counters::PENDING_VOTES);
         let (block_request_tx, block_request_rx) =
-            channel::new(1_024, &counters::PENDING_BLOCK_REQUESTS);
+            solana_libra_channel::new(1_024, &counters::PENDING_BLOCK_REQUESTS);
         let (timeout_msg_tx, timeout_msg_rx) =
-            channel::new(1_024, &counters::PENDING_NEW_ROUND_MESSAGES);
-        let (sync_info_tx, sync_info_rx) = channel::new(1_024, &counters::PENDING_SYNC_INFO_MSGS);
+            solana_libra_channel::new(1_024, &counters::PENDING_NEW_ROUND_MESSAGES);
+        let (sync_info_tx, sync_info_rx) =
+            solana_libra_channel::new(1_024, &counters::PENDING_SYNC_INFO_MSGS);
         let network_events = self
             .network_events
             .take()
@@ -309,11 +312,11 @@ impl ConsensusNetworkImpl {
 }
 
 struct NetworkTask<T, S> {
-    proposal_tx: channel::Sender<ProposalMsg<T>>,
-    vote_tx: channel::Sender<VoteMsg>,
-    block_request_tx: channel::Sender<BlockRetrievalRequest<T>>,
-    timeout_msg_tx: channel::Sender<TimeoutMsg>,
-    sync_info_tx: channel::Sender<(SyncInfo, AccountAddress)>,
+    proposal_tx: solana_libra_channel::Sender<ProposalMsg<T>>,
+    vote_tx: solana_libra_channel::Sender<VoteMsg>,
+    block_request_tx: solana_libra_channel::Sender<BlockRetrievalRequest<T>>,
+    timeout_msg_tx: solana_libra_channel::Sender<TimeoutMsg>,
+    sync_info_tx: solana_libra_channel::Sender<(SyncInfo, AccountAddress)>,
     all_events: S,
     epoch_mgr: Arc<EpochManager>,
 }

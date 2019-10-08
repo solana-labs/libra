@@ -6,35 +6,35 @@
 //! next step.
 
 use crate::OP_COUNTERS;
-use admission_control_proto::{
+use failure::prelude::*;
+use futures::future::Future;
+use futures03::executor::block_on;
+use solana_libra_admission_control_proto::{
     proto::admission_control::{
         submit_transaction_response::Status, AdmissionControl, SubmitTransactionRequest,
         SubmitTransactionResponse,
     },
     AdmissionControlStatus,
 };
-use failure::prelude::*;
-use futures::future::Future;
-use futures03::executor::block_on;
-use grpc_helpers::provide_grpc_response;
-use logger::prelude::*;
-use mempool::proto::{
+use solana_libra_grpc_helpers::provide_grpc_response;
+use solana_libra_logger::prelude::*;
+use solana_libra_mempool::proto::{
     mempool::{AddTransactionWithValidationRequest, HealthCheckRequest},
     mempool_client::MempoolClientTrait,
 };
-use mempool_shared_proto::proto::mempool_status::{
+use solana_libra_mempool_shared_proto::proto::mempool_status::{
     MempoolAddTransactionStatus,
     MempoolAddTransactionStatusCode::{self, MempoolIsFull},
 };
-use metrics::counters::SVC_COUNTERS;
-use std::convert::TryFrom;
-use std::sync::Arc;
-use storage_client::StorageRead;
-use types::{
+use solana_libra_metrics::counters::SVC_COUNTERS;
+use solana_libra_storage_client::StorageRead;
+use solana_libra_types::{
     proto::types::{UpdateToLatestLedgerRequest, UpdateToLatestLedgerResponse},
     transaction::SignedTransaction,
 };
-use vm_validator::vm_validator::{get_account_state, TransactionValidation};
+use solana_libra_vm_validator::vm_validator::{get_account_state, TransactionValidation};
+use std::convert::TryFrom;
+use std::sync::Arc;
 
 #[cfg(test)]
 #[path = "unit_tests/admission_control_service_test.rs"]
@@ -200,7 +200,8 @@ where
         &self,
         req: UpdateToLatestLedgerRequest,
     ) -> Result<UpdateToLatestLedgerResponse> {
-        let rust_req = types::get_with_proof::UpdateToLatestLedgerRequest::try_from(req)?;
+        let rust_req =
+            solana_libra_types::get_with_proof::UpdateToLatestLedgerRequest::try_from(req)?;
         let (
             response_items,
             ledger_info_with_sigs,
@@ -209,7 +210,7 @@ where
         ) = self
             .storage_read_client
             .update_to_latest_ledger(rust_req.client_known_version, rust_req.requested_items)?;
-        let rust_resp = types::get_with_proof::UpdateToLatestLedgerResponse::new(
+        let rust_resp = solana_libra_types::get_with_proof::UpdateToLatestLedgerResponse::new(
             response_items,
             ledger_info_with_sigs,
             validator_change_events,
@@ -251,8 +252,8 @@ where
     fn update_to_latest_ledger(
         &mut self,
         ctx: grpcio::RpcContext<'_>,
-        req: types::proto::types::UpdateToLatestLedgerRequest,
-        sink: grpcio::UnarySink<types::proto::types::UpdateToLatestLedgerResponse>,
+        req: solana_libra_types::proto::types::UpdateToLatestLedgerRequest,
+        sink: grpcio::UnarySink<solana_libra_types::proto::types::UpdateToLatestLedgerResponse>,
     ) {
         debug!("[GRPC] AdmissionControl::update_to_latest_ledger");
         let _timer = SVC_COUNTERS.req(&ctx);

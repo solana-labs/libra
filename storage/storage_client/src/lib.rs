@@ -14,16 +14,14 @@ use futures::{compat::Future01CompatExt, executor::block_on, prelude::*};
 use futures_01::future::Future as Future01;
 use grpcio::{ChannelBuilder, Environment};
 use rand::Rng;
-use std::convert::TryFrom;
-use std::{pin::Pin, sync::Arc};
-use storage_proto::{
+use solana_libra_storage_proto::{
     proto::storage::{GetStartupInfoRequest, StorageClient},
     GetAccountStateWithProofByVersionRequest, GetAccountStateWithProofByVersionResponse,
     GetLatestLedgerInfosPerEpochRequest, GetLatestLedgerInfosPerEpochResponse,
     GetStartupInfoResponse, GetTransactionsRequest, GetTransactionsResponse,
     SaveTransactionsRequest, StartupInfo,
 };
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     account_state_blob::AccountStateBlob,
     crypto_proxies::{LedgerInfoWithSignatures, ValidatorChangeEventWithProof},
@@ -34,6 +32,8 @@ use types::{
     proof::SparseMerkleProof,
     transaction::{TransactionListWithProof, TransactionToCommit, Version},
 };
+use std::convert::TryFrom;
+use std::{pin::Pin, sync::Arc};
 
 pub use crate::state_view::VerifiedStateView;
 

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! This module defines representation of Libra core data structures at physical level via schemas
-//! that implement [`schemadb::schema::Schema`].
+//! that implement [`solana_libra_schemadb::schema::Schema`].
 //!
 //! All schemas are `pub(crate)` so not shown in rustdoc, refer to the source code to see details.
 
@@ -20,7 +20,7 @@ pub(crate) mod transaction_info;
 pub(crate) mod validator;
 
 use failure::prelude::*;
-use schemadb::ColumnFamilyName;
+use solana_libra_schemadb::ColumnFamilyName;
 
 pub(super) const EVENT_ACCUMULATOR_CF_NAME: ColumnFamilyName = "event_accumulator";
 pub(super) const EVENT_BY_KEY_CF_NAME: ColumnFamilyName = "event_by_key";

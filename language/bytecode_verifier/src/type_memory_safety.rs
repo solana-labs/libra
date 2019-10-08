@@ -10,9 +10,8 @@ use crate::{
     nonce::Nonce,
 };
 use mirai_annotations::checked_verify;
-use std::collections::{BTreeMap, BTreeSet};
-use types::vm_error::{StatusCode, VMStatus};
-use vm::{
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
+use solana_libra_vm::{
     access::ModuleAccess,
     errors::{err_at_offset, VMResult},
     file_format::{
@@ -24,6 +23,7 @@ use vm::{
         SignatureTokenView, StructDefinitionView, ViewInternals,
     },
 };
+use std::collections::{BTreeMap, BTreeSet};
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 struct StackAbstractValue {

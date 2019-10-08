@@ -1,5 +1,5 @@
 [package]
-name = "vm_validator"
+name = "solana_libra_vm_validator"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -7,24 +7,24 @@ publish = false
 edition = "2018"
 
 [dependencies]
-config = { path = "../config" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
+solana-libra-config = { path = "../config" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
 futures = "0.1.28"
-scratchpad = { path = "../storage/scratchpad" }
-state_view = { path = "../storage/state_view" }
-storage_client = { path = "../storage/storage_client" }
-types = { path = "../types" }
-vm_runtime = { path = "../language/vm/vm_runtime" }
+solana-libra-scratchpad = { path = "../storage/scratchpad" }
+solana_libra_state_view = { path = "../storage/state_view" }
+solana_libra_storage_client = { path = "../storage/storage_client" }
+solana-libra-types = { path = "../types" }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime" }
 
 [dev-dependencies]
 grpcio = { version = "=0.5.0-alpha.4", default-features = false }
 rand = "0.6.5"
 
-config-builder = { path = "../config/config-builder" }
-crypto = { path = "../crypto/crypto", features = ["testing"] }
-executor = { path = "../execution/executor" }
-grpc_helpers = { path = "../common/grpc_helpers" }
-storage-service = { path = "../storage/storage-service" }
-types = { path = "../types", features = ["testing"] }
-vm_runtime = { path = "../language/vm/vm_runtime" }
-transaction_builder = { path = "../language/transaction_builder" }
+solana-libra-config-builder = { path = "../config/config-builder" }
+solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-executor = { path = "../execution/executor" }
+solana_libra_grpc_helpers = { path = "../common/grpc_helpers" }
+solana-libra-storage-service = { path = "../storage/storage-service" }
+solana-libra-types = { path = "../types", features = ["testing"] }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder" }

@@ -1,5 +1,5 @@
 [package]
-name = "admission_control_proto"
+name = "solana_libra_admission_control_proto"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -12,13 +12,13 @@ futures = "0.1.28"
 grpcio = { version = "=0.5.0-alpha.4", default-features = false, features = ["prost-codec"] }
 prost = "0.5.0"
 
-failure = { package = "failure_ext", path = "../../common/failure_ext" }
-logger = { path = "../../common/logger" }
-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto" }
-types = { path = "../../types" }
+failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext" }
+solana-libra-logger = { path = "../../common/logger" }
+solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto" }
+solana-libra-types = { path = "../../types" }
 
 [dev-dependencies]
-types = { path = "../../types", features = ["testing"]}
+solana-libra-types = { path = "../../types", features = ["testing"]}
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }

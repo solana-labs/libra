@@ -1,11 +1,11 @@
-use ir_to_bytecode::{compiler::compile_program, parser::parse_program};
-use stackless_bytecode_generator::{
+use solana_libra_ir_to_bytecode::{compiler::compile_program, parser::parse_program};
+use solana_libra_stackless_bytecode_generator::{
     stackless_bytecode::StacklessBytecode::{self, *},
     stackless_bytecode_generator::StacklessProgramGenerator,
 };
-use stdlib::stdlib_modules;
-use types::account_address::AccountAddress;
-use vm::file_format::{
+use solana_libra_stdlib::stdlib_modules;
+use solana_libra_types::account_address::AccountAddress;
+use solana_libra_vm::file_format::{
     AddressPoolIndex, ByteArrayPoolIndex, FieldDefinitionIndex, FunctionHandleIndex,
     SignatureToken, StructDefinitionIndex, StructHandleIndex,
 };

@@ -45,10 +45,6 @@ use crate::{
     language_storage::{ModuleId, ResourceKey, StructTag},
     validator_set::validator_set_path,
 };
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
-use crypto::hash::{CryptoHash, HashValue};
 use failure::prelude::*;
 use hex;
 use lazy_static::lazy_static;
@@ -56,6 +52,10 @@ use lazy_static::lazy_static;
 use proptest_derive::Arbitrary;
 use radix_trie::TrieKey;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto::hash::{CryptoHash, HashValue};
 use std::{
     convert::{TryFrom, TryInto},
     fmt,

@@ -3,14 +3,14 @@
 
 use crate::chained_bft::common::{self, Author, Round};
 use failure::prelude::*;
-use network;
 use serde::{Deserialize, Serialize};
-use std::convert::TryFrom;
-use std::{collections::HashMap, fmt};
-use types::{
+use solana_libra_network;
+use solana_libra_types::{
     account_address::AccountAddress,
     crypto_proxies::{Signature, ValidatorVerifier},
 };
+use std::convert::TryFrom;
+use std::{collections::HashMap, fmt};
 
 #[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 /// TimeoutCertificate is a proof that 2f+1 participants have voted in round r and we can now move
@@ -64,10 +64,10 @@ impl TimeoutCertificate {
     }
 }
 
-impl TryFrom<network::proto::TimeoutCertificate> for TimeoutCertificate {
+impl TryFrom<solana_libra_network::proto::TimeoutCertificate> for TimeoutCertificate {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::TimeoutCertificate) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::TimeoutCertificate) -> failure::Result<Self> {
         let round = proto.round;
         let signatures = proto
             .signatures
@@ -82,13 +82,13 @@ impl TryFrom<network::proto::TimeoutCertificate> for TimeoutCertificate {
     }
 }
 
-impl From<TimeoutCertificate> for network::proto::TimeoutCertificate {
+impl From<TimeoutCertificate> for solana_libra_network::proto::TimeoutCertificate {
     fn from(cert: TimeoutCertificate) -> Self {
         let signatures = cert
             .signatures
             .into_iter()
             .map(
-                |(validator_id, signature)| types::proto::types::ValidatorSignature {
+                |(validator_id, signature)| solana_libra_types::proto::types::ValidatorSignature {
                     validator_id: validator_id.to_vec(),
                     signature: signature.to_bytes().to_vec(),
                 },

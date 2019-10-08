@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::account_address::{AccountAddress, ADDRESS_LENGTH};
-use crypto::{test_utils::TEST_SEED, HashValue, *};
 use failure::Error;
 use rand::{rngs::StdRng, SeedableRng};
+use solana_libra_crypto::{test_utils::TEST_SEED, HashValue, *};
 use std::convert::TryFrom;
 
 /// ValidatorSigner associates an author with public and private keys with helpers for signing and
@@ -84,9 +84,9 @@ impl<PrivateKey: SigningKey + Uniform> ValidatorSigner<PrivateKey> {
 #[cfg(any(test, feature = "testing"))]
 pub mod proptests {
     use super::*;
-    #[cfg(test)]
-    use crypto::ed25519::*;
     use proptest::{prelude::*, sample, strategy::LazyJust};
+    #[cfg(test)]
+    use solana_libra_crypto::ed25519::*;
 
     #[allow(clippy::redundant_closure)]
     pub fn arb_signing_key<PrivateKey: SigningKey + Uniform + Genesis + 'static>(

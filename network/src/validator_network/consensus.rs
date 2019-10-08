@@ -15,7 +15,6 @@ use crate::{
     validator_network::Event,
     NetworkPublicKeys, ProtocolId,
 };
-use channel;
 use futures::{
     stream::Map,
     task::{Context, Poll},
@@ -23,8 +22,9 @@ use futures::{
 };
 use pin_utils::unsafe_pinned;
 use prost::Message as _;
+use solana_libra_channel;
+use solana_libra_types::{validator_public_keys::ValidatorPublicKeys, PeerId};
 use std::{pin::Pin, time::Duration};
-use types::{validator_public_keys::ValidatorPublicKeys, PeerId};
 
 /// Protocol id for consensus RPC calls
 pub const CONSENSUS_RPC_PROTOCOL: &[u8] = b"/libra/consensus/rpc/0.1.0";
@@ -36,10 +36,10 @@ pub const CONSENSUS_DIRECT_SEND_PROTOCOL: &[u8] = b"/libra/consensus/direct-send
 /// `ConsensusNetworkEvents` is a `Stream` of `NetworkNotification` where the
 /// raw `Bytes` direct-send and rpc messages are deserialized into
 /// `ConsensusMessage` types. `ConsensusNetworkEvents` is a thin wrapper around
-/// an `channel::Receiver<NetworkNotification>`.
+/// an `solana_libra_channel::Receiver<NetworkNotification>`.
 pub struct ConsensusNetworkEvents {
     inner: Map<
-        channel::Receiver<NetworkNotification>,
+        solana_libra_channel::Receiver<NetworkNotification>,
         fn(NetworkNotification) -> Result<Event<ConsensusMsg>, NetworkError>,
     >,
 }
@@ -52,12 +52,12 @@ impl ConsensusNetworkEvents {
     unsafe_pinned!(
         inner:
             Map<
-                channel::Receiver<NetworkNotification>,
+                solana_libra_channel::Receiver<NetworkNotification>,
                 fn(NetworkNotification) -> Result<Event<ConsensusMsg>, NetworkError>,
             >
     );
 
-    pub fn new(receiver: channel::Receiver<NetworkNotification>) -> Self {
+    pub fn new(receiver: solana_libra_channel::Receiver<NetworkNotification>) -> Self {
         let inner = receiver.map::<_, fn(_) -> _>(|notification| match notification {
             NetworkNotification::NewPeer(peer_id) => Ok(Event::NewPeer(peer_id)),
             NetworkNotification::LostPeer(peer_id) => Ok(Event::LostPeer(peer_id)),
@@ -85,7 +85,7 @@ impl Stream for ConsensusNetworkEvents {
 
 /// The interface from Consensus to Networking layer.
 ///
-/// This is a thin wrapper around an `channel::Sender<NetworkRequest>`, so it is
+/// This is a thin wrapper around an `solana_libra_channel::Sender<NetworkRequest>`, so it is
 /// easy to clone and send off to a separate task. For example, the rpc requests
 /// return Futures that encapsulate the whole flow, from sending the request to
 /// remote, to finally receiving the response and deserializing. It therefore
@@ -93,11 +93,11 @@ impl Stream for ConsensusNetworkEvents {
 /// requires the `ConsensusNetworkSender` to be `Clone` and `Send`.
 #[derive(Clone)]
 pub struct ConsensusNetworkSender {
-    inner: channel::Sender<NetworkRequest>,
+    inner: solana_libra_channel::Sender<NetworkRequest>,
 }
 
 impl ConsensusNetworkSender {
-    pub fn new(inner: channel::Sender<NetworkRequest>) -> Self {
+    pub fn new(inner: solana_libra_channel::Sender<NetworkRequest>) -> Self {
         Self { inner }
     }
 
@@ -202,7 +202,7 @@ mod tests {
     // `ConsensusNetworkEvents` stream.
     #[test]
     fn test_consensus_network_events() {
-        let (mut consensus_tx, consensus_rx) = channel::new_test(8);
+        let (mut consensus_tx, consensus_rx) = solana_libra_channel::new_test(8);
         let mut stream = ConsensusNetworkEvents::new(consensus_rx);
 
         let peer_id = PeerId::random();
@@ -231,7 +231,7 @@ mod tests {
     // `ConsensusNetworkSender` should serialize outbound messages
     #[test]
     fn test_consensus_network_sender() {
-        let (network_reqs_tx, mut network_reqs_rx) = channel::new_test(8);
+        let (network_reqs_tx, mut network_reqs_rx) = solana_libra_channel::new_test(8);
         let mut sender = ConsensusNetworkSender::new(network_reqs_tx);
 
         let peer_id = PeerId::random();
@@ -258,7 +258,7 @@ mod tests {
     // `ConsensusNetworkEvents` should deserialize inbound RPC requests
     #[test]
     fn test_consensus_inbound_rpc() {
-        let (mut consensus_tx, consensus_rx) = channel::new_test(8);
+        let (mut consensus_tx, consensus_rx) = solana_libra_channel::new_test(8);
         let mut stream = ConsensusNetworkEvents::new(consensus_rx);
 
         // build rpc request
@@ -291,7 +291,7 @@ mod tests {
     // with the serialized request.
     #[test]
     fn test_consensus_outbound_rpc() {
-        let (network_reqs_tx, mut network_reqs_rx) = channel::new_test(8);
+        let (network_reqs_tx, mut network_reqs_rx) = solana_libra_channel::new_test(8);
         let mut sender = ConsensusNetworkSender::new(network_reqs_tx);
 
         // send get_block rpc request

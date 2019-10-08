@@ -3,13 +3,13 @@ use crate::chained_bft::consensus_types::{
     quorum_cert::QuorumCert, timeout_msg::PacemakerTimeoutCertificate,
 };
 use failure::ResultExt;
-use network;
 use serde::{Deserialize, Serialize};
+use solana_libra_network;
+use solana_libra_types::crypto_proxies::ValidatorVerifier;
 use std::{
     convert::{TryFrom, TryInto},
     fmt::{Display, Formatter},
 };
-use types::crypto_proxies::ValidatorVerifier;
 
 #[derive(Deserialize, Serialize, Clone, Debug, Eq, PartialEq)]
 /// This struct describes basic synchronization metadata.
@@ -96,10 +96,10 @@ impl SyncInfo {
     }
 }
 
-impl TryFrom<network::proto::SyncInfo> for SyncInfo {
+impl TryFrom<solana_libra_network::proto::SyncInfo> for SyncInfo {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::SyncInfo) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::SyncInfo) -> failure::Result<Self> {
         let highest_quorum_cert = proto
             .highest_quorum_cert
             .ok_or_else(|| format_err!("Missing highest_quorum_cert"))?
@@ -121,7 +121,7 @@ impl TryFrom<network::proto::SyncInfo> for SyncInfo {
     }
 }
 
-impl From<SyncInfo> for network::proto::SyncInfo {
+impl From<SyncInfo> for solana_libra_network::proto::SyncInfo {
     fn from(info: SyncInfo) -> Self {
         Self {
             highest_ledger_info: Some(info.highest_ledger_info.into()),

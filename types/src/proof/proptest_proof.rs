@@ -8,12 +8,12 @@ use crate::proof::{
     definition::MAX_ACCUMULATOR_PROOF_DEPTH, AccumulatorConsistencyProof, AccumulatorProof,
     SparseMerkleProof,
 };
-use crypto::{
+use proptest::{collection::vec, prelude::*};
+use rand::{seq::SliceRandom, thread_rng};
+use solana_libra_crypto::{
     hash::{ACCUMULATOR_PLACEHOLDER_HASH, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use proptest::{collection::vec, prelude::*};
-use rand::{seq::SliceRandom, thread_rng};
 
 prop_compose! {
     fn arb_accumulator_proof()(

@@ -1,8 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use config::config::RoleType;
-use config_builder::swarm_config::SwarmConfigBuilder;
+use solana_libra_config::config::RoleType;
+use solana_libra_config_builder::swarm_config::SwarmConfigBuilder;
 use std::convert::TryInto;
 use std::path::PathBuf;
 use structopt::StructOpt;
@@ -44,7 +44,9 @@ fn main() {
         ::std::env::current_dir().expect("Failed to access current directory.")
     };
     let (faucet_account_keypair, _faucet_key_file_path, _temp_dir) =
-        generate_keypair::load_faucet_key_or_create_default(Some(args.faucet_account_file.clone()));
+        solana_libra_generate_keypair::load_faucet_key_or_create_default(Some(
+            args.faucet_account_file.clone(),
+        ));
     let role: RoleType = args.role.clone().into();
 
     let mut config_builder = SwarmConfigBuilder::new();

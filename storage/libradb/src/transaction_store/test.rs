@@ -4,9 +4,9 @@
 use super::*;
 use crate::LibraDB;
 use proptest::{collection::vec, prelude::*};
-use proptest_helpers::Index;
-use tools::tempdir::TempPath;
-use types::proptest_types::{AccountInfoUniverse, SignatureCheckedTransactionGen};
+use solana_libra_proptest_helpers::Index;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::proptest_types::{AccountInfoUniverse, SignatureCheckedTransactionGen};
 
 proptest! {
     #![proptest_config(ProptestConfig::with_cases(10))]

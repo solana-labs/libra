@@ -2,25 +2,27 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::vm_validator::{TransactionValidation, VMValidator};
-use config::config::NodeConfig;
-use config_builder::util::get_test_config;
-use crypto::ed25519::*;
-use executor::Executor;
 use futures::future::Future;
-use grpc_helpers::ServerHandle;
 use grpcio::EnvBuilder;
 use rand::SeedableRng;
-use std::{sync::Arc, u64};
-use storage_client::{StorageRead, StorageReadServiceClient, StorageWriteServiceClient};
-use storage_service::start_storage_service;
-use transaction_builder::encode_transfer_script;
-use types::{
+use solana_libra_config::config::NodeConfig;
+use solana_libra_config_builder::util::get_test_config;
+use solana_libra_crypto::ed25519::*;
+use solana_libra_executor::Executor;
+use solana_libra_grpc_helpers::ServerHandle;
+use solana_libra_storage_client::{
+    StorageRead, StorageReadServiceClient, StorageWriteServiceClient,
+};
+use solana_libra_storage_service::start_storage_service;
+use solana_libra_transaction_builder::encode_transfer_script;
+use solana_libra_types::{
     account_address, account_config,
     test_helpers::transaction_test_helpers,
     transaction::{Module, Script, TransactionArgument, MAX_TRANSACTION_SIZE_IN_BYTES},
     vm_error::StatusCode,
 };
-use vm_runtime::MoveVM;
+use solana_libra_vm_runtime::MoveVM;
+use std::{sync::Arc, u64};
 
 struct TestValidator {
     _storage: ServerHandle,

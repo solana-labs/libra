@@ -1,8 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use executable_helpers::helpers::setup_executable;
 use signal_hook;
+use solana_libra_executable_helpers::helpers::setup_executable;
 use std::{
     path::PathBuf,
     sync::{

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use lazy_static;
-use metrics::{DurationHistogram, OpMetrics};
 use prometheus::{Histogram, IntCounter, IntGauge};
+use solana_libra_metrics::{DurationHistogram, OpMetrics};
 
 lazy_static::lazy_static! {
     pub static ref OP_COUNTERS: OpMetrics = OpMetrics::new_and_registered("consensus");

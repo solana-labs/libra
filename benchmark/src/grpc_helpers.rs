@@ -1,27 +1,27 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use admission_control_proto::proto::admission_control::{
-    AdmissionControlClient, AdmissionControlStatusCode,
-    SubmitTransactionResponse as ProtoSubmitTransactionResponse,
-};
-use client::AccountStatus;
 use failure::prelude::*;
 use futures::{
     stream::{self, Stream},
     Future,
 };
 use grpcio::{self, CallOption, Error};
-use logger::prelude::*;
 use prost::Message;
-use std::convert::TryFrom;
-use std::{collections::HashMap, marker::Send, slice::Chunks, thread, time};
-use types::{
+use solana_libra_admission_control_proto::proto::admission_control::{
+    AdmissionControlClient, AdmissionControlStatusCode,
+    SubmitTransactionResponse as ProtoSubmitTransactionResponse,
+};
+use solana_libra_client::AccountStatus;
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
     account_address::AccountAddress,
     account_config::get_account_resource_or_default,
     get_with_proof::{RequestItem, ResponseItem, UpdateToLatestLedgerRequest},
     proto::types::UpdateToLatestLedgerResponse,
 };
+use std::convert::TryFrom;
+use std::{collections::HashMap, marker::Send, slice::Chunks, thread, time};
 
 use crate::{
     load_generator::{Request, TXN_EXPIRATION},
@@ -59,7 +59,7 @@ pub fn divide_items<T>(items: &[T], num_chunks: usize) -> Chunks<T> {
 /// By checking 1) ac status, 2) vm status, and 3) mempool status, decide whether the reponse
 /// from AC is accepted. If not, classify what the error type is.
 fn check_ac_response(resp: &ProtoSubmitTransactionResponse) -> bool {
-    use admission_control_proto::proto::admission_control::submit_transaction_response::Status::*;
+    use solana_libra_admission_control_proto::proto::admission_control::submit_transaction_response::Status::*;
 
     match &resp.status {
         Some(AcStatus(status)) => {

@@ -8,8 +8,8 @@ use hyper::{
     service::service_fn,
     Body, Method, Request, Response, Server, StatusCode,
 };
-use logger::prelude::*;
 use prometheus::{Encoder, TextEncoder};
+use solana_libra_logger::prelude::*;
 use std::net::{SocketAddr, ToSocketAddrs};
 
 fn encode_metrics(encoder: impl Encoder) -> Vec<u8> {
@@ -29,7 +29,7 @@ fn serve_metrics(req: Request<Body>) -> impl Future<Item = Response<Body>, Error
             *resp.body_mut() = Body::from(buffer);
         }
         (&Method::GET, "/counters") => {
-            // Json encoded metrics;
+            // Json encoded solana_libra_metrics;
             let encoder = JsonEncoder;
             let buffer = encode_metrics(encoder);
             *resp.body_mut() = Body::from(buffer);

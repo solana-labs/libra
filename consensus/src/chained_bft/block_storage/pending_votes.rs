@@ -8,13 +8,13 @@ use crate::chained_bft::{
     common::Author,
     consensus_types::{quorum_cert::QuorumCert, vote_msg::VoteMsg},
 };
-use crypto::{hash::CryptoHash, HashValue};
-use logger::prelude::*;
-use std::{collections::HashMap, sync::Arc};
-use types::{
+use solana_libra_crypto::{hash::CryptoHash, HashValue};
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
     crypto_proxies::{LedgerInfoWithSignatures, ValidatorVerifier},
     validator_verifier::VerifyError,
 };
+use std::{collections::HashMap, sync::Arc};
 
 #[cfg(test)]
 #[path = "pending_votes_test.rs"]

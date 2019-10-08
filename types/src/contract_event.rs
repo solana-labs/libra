@@ -8,14 +8,16 @@ use crate::{
     proof::{verify_event, EventProof},
     transaction::Version,
 };
-use canonical_serialization::{CanonicalSerialize, CanonicalSerializer, SimpleSerializer};
-use crypto::{
-    hash::{ContractEventHasher, CryptoHash, CryptoHasher},
-    HashValue,
-};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
+use solana_libra_canonical_serialization::{
+    CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
+};
+use solana_libra_crypto::{
+    hash::{ContractEventHasher, CryptoHash, CryptoHasher},
+    HashValue,
+};
 use std::convert::{TryFrom, TryInto};
 
 /// Entry produced via a call to the `emit_event` builtin.

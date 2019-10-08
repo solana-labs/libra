@@ -1,10 +1,10 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use ir_to_bytecode::{compiler::compile_module, parser::parse_module};
+use solana_libra_ir_to_bytecode::{compiler::compile_module, parser::parse_module};
+use solana_libra_types::account_address::AccountAddress;
+use solana_libra_vm::{access::ModuleAccess, file_format::CompiledModule};
 use std::{fs, path::Path};
-use types::account_address::AccountAddress;
-use vm::{access::ModuleAccess, file_format::CompiledModule};
 
 pub fn do_compile_module<T: ModuleAccess>(
     source_path: &Path,

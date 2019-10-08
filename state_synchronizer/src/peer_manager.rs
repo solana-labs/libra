@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{counters, PeerId};
-use logger::prelude::*;
-use network::validator_network::StateSynchronizerSender;
 use rand::{
     distributions::{Distribution, WeightedIndex},
     thread_rng,
 };
+use solana_libra_logger::prelude::*;
+use solana_libra_network::validator_network::StateSynchronizerSender;
 use std::{
     collections::{BTreeMap, HashMap, HashSet},
     time::SystemTime,

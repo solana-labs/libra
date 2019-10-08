@@ -4,15 +4,15 @@
 //! This module contains wrappers around nextgen crypto API to support crypto agility
 //! and to make the secret service agnostic to the details of the particular signing algorithms.
 
-use crypto::{
+use serde::{Deserialize, Serialize};
+use solana_libra_crypto::{
     bls12381::{BLS12381PrivateKey, BLS12381PublicKey, BLS12381Signature},
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
     hash::HashValue,
 };
-use crypto_derive::{
+use solana_libra_crypto_derive::{
     Deref, PrivateKey, PublicKey, Signature, SigningKey, SilentDebug, ValidKey, VerifyingKey,
 };
-use serde::{Deserialize, Serialize};
 
 /// KeyID value is a handler to the secret key and a simple wrapper around the hash value.
 #[derive(Clone, Deref, PartialEq, Eq, Hash)]

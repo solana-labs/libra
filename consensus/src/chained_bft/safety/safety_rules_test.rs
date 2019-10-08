@@ -12,14 +12,14 @@ use crate::chained_bft::{
     test_utils::{build_empty_tree, build_empty_tree_with_custom_signing, TreeInserter},
 };
 use cached::{cached_key, SizedCache};
-use crypto::HashValue;
 use proptest::prelude::*;
+use solana_libra_crypto::HashValue;
+use solana_libra_types::validator_signer::ValidatorSigner;
 use std::{
     collections::{hash_map::DefaultHasher, BTreeMap},
     hash::{Hash, Hasher},
     sync::Arc,
 };
-use types::validator_signer::ValidatorSigner;
 
 fn calculate_hash<T: Hash>(t: &T) -> u64 {
     let mut s = DefaultHasher::new();
