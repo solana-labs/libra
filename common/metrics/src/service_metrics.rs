@@ -25,13 +25,13 @@ fn sample_service_method(ctx: RpcContext, params: Params) {
 */
 
 use grpcio::RpcContext;
-use logger::prelude::*;
 use prometheus::{
     core::{Collector, Desc},
     exponential_buckets,
     proto::MetricFamily,
     HistogramOpts, HistogramTimer, HistogramVec, IntCounterVec, Opts, Result,
 };
+use solana_libra_logger::prelude::*;
 use std::str;
 
 #[derive(Clone)]

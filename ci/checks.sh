@@ -11,6 +11,6 @@ cargo fmt --all -- --check
 #cargo clippy --all -- --deny=warnings
 cargo update
 cargo audit --version
-cargo audit --ignore RUSTSEC-2019-0011 # https://github.com/solana-labs/solana/issues/5207
+cargo audit --ignore RUSTSEC-2016-0005 --ignore RUSTSEC-2018-0015
 #ci/nits.sh
-ci/order-crates-for-publishing.py
+#ci/order-crates-for-publishing.py #https://github.com/solana-labs/libra/issues/36

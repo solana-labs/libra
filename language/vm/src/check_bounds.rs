@@ -11,7 +11,7 @@ use crate::{
     internals::ModuleIndex,
     IndexKind,
 };
-use types::vm_error::{StatusCode, VMStatus};
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
 
 pub struct BoundsChecker<'a> {
     module: &'a CompiledModuleMut,

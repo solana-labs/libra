@@ -5,11 +5,11 @@ use crate::{
     account_address::AccountAddress,
     transaction::{RawTransaction, Script, SignedTransaction, TransactionPayload},
 };
-use canonical_serialization::{
+use proptest::prelude::*;
+use solana_libra_canonical_serialization::{
     CanonicalDeserializer, CanonicalSerializer, SimpleDeserializer, SimpleSerializer,
 };
-use crypto::ed25519::*;
-use proptest::prelude::*;
+use solana_libra_crypto::ed25519::*;
 use std::convert::TryFrom;
 
 #[test]

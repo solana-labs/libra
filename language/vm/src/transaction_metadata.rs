@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::gas_schedule::{AbstractMemorySize, GasAlgebra, GasCarrier, GasPrice, GasUnits};
-use crypto::ed25519::{compat, Ed25519PublicKey};
-use types::{account_address::AccountAddress, transaction::SignedTransaction};
+use solana_libra_crypto::ed25519::{compat, Ed25519PublicKey};
+use solana_libra_types::{account_address::AccountAddress, transaction::SignedTransaction};
 
 pub struct TransactionMetadata {
     pub sender: AccountAddress,

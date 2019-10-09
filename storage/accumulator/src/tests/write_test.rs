@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::*;
-use crypto::hash::ACCUMULATOR_PLACEHOLDER_HASH;
 use proptest::{collection::vec, prelude::*};
-use types::proof::definition::LeafCount;
+use solana_libra_crypto::hash::ACCUMULATOR_PLACEHOLDER_HASH;
+use solana_libra_types::proof::definition::LeafCount;
 
 #[test]
 fn test_append_empty_on_empty() {

@@ -3,7 +3,7 @@
 
 // This is necessary for the derive macros which rely on being used in a
 // context where the crypto crate is external
-use crate as crypto;
+use crate as solana_libra_crypto;
 use crate::{
     bls12381::{BLS12381PrivateKey, BLS12381PublicKey, BLS12381Signature},
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
@@ -13,11 +13,11 @@ use crate::{
 
 use crate::hash::HashValue;
 
-use crypto_derive::{
-    PrivateKey, PublicKey, Signature, SigningKey, SilentDebug, ValidKey, VerifyingKey,
-};
 use proptest::prelude::*;
 use serde::{Deserialize, Serialize};
+use solana_libra_crypto_derive::{
+    PrivateKey, PublicKey, Signature, SigningKey, SilentDebug, ValidKey, VerifyingKey,
+};
 
 // Here we aim to make a point about how we can build an enum generically
 // on top of a few choice signing scheme types. This enum implements the

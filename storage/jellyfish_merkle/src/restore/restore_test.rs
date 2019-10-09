@@ -5,10 +5,10 @@ use crate::{
     mock_tree_store::MockTreeStore, restore::JellyfishMerkleRestore, JellyfishMerkleTree,
     TreeReader,
 };
-use crypto::HashValue;
 use proptest::{collection::btree_map, prelude::*};
+use solana_libra_crypto::HashValue;
+use solana_libra_types::{account_state_blob::AccountStateBlob, transaction::Version};
 use std::collections::BTreeMap;
-use types::{account_state_blob::AccountStateBlob, transaction::Version};
 
 proptest! {
     #![proptest_config(ProptestConfig::with_cases(10))]

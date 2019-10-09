@@ -1,13 +1,13 @@
 use crate::account_address::AccountAddress;
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
-use crypto::HashValue;
 use failure::prelude::*;
 use hex;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto::HashValue;
 use std::{convert::TryFrom, fmt};
 
 /// Size of an event key.

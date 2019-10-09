@@ -5,27 +5,27 @@ use crate::chained_bft::{
     common::{Author, Height, Round},
     consensus_types::{quorum_cert::QuorumCert, vote_data::VoteData},
 };
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
-};
-use crypto::{
-    hash::{BlockHasher, CryptoHash, CryptoHasher, GENESIS_BLOCK_ID},
-    HashValue,
-};
-use executor::{ExecutedState, StateComputeResult};
 use failure::Result;
 use mirai_annotations::{assumed_postcondition, checked_precondition, checked_precondition_eq};
 use rmp_serde::{from_slice, to_vec_named};
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
+};
+use solana_libra_crypto::{
+    hash::{BlockHasher, CryptoHash, CryptoHasher, GENESIS_BLOCK_ID},
+    HashValue,
+};
+use solana_libra_executor::{ExecutedState, StateComputeResult};
+use solana_libra_types::{
+    crypto_proxies::{LedgerInfoWithSignatures, Signature, ValidatorSigner, ValidatorVerifier},
+    ledger_info::LedgerInfo,
+};
 use std::{
     collections::HashMap,
     convert::{TryFrom, TryInto},
     fmt::{Display, Formatter},
     sync::Arc,
-};
-use types::{
-    crypto_proxies::{LedgerInfoWithSignatures, Signature, ValidatorSigner, ValidatorVerifier},
-    ledger_info::LedgerInfo,
 };
 
 #[cfg(test)]
@@ -422,7 +422,7 @@ where
 
 impl<T> CryptoHash for Block<T>
 where
-    T: canonical_serialization::CanonicalSerialize,
+    T: solana_libra_canonical_serialization::CanonicalSerialize,
 {
     type Hasher = BlockHasher;
 
@@ -497,13 +497,13 @@ where
     }
 }
 
-impl<T> TryFrom<network::proto::Block> for Block<T>
+impl<T> TryFrom<solana_libra_network::proto::Block> for Block<T>
 where
     T: DeserializeOwned + CanonicalDeserialize,
 {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::Block) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::Block) -> failure::Result<Self> {
         let id = HashValue::from_slice(proto.id.as_ref())?;
         let timestamp_usecs = proto.timestamp_usecs;
         let round = proto.round;
@@ -534,7 +534,7 @@ where
     }
 }
 
-impl<T> From<Block<T>> for network::proto::Block
+impl<T> From<Block<T>> for solana_libra_network::proto::Block
 where
     T: Serialize + Default + CanonicalSerialize + PartialEq,
 {

@@ -1,14 +1,13 @@
 //! This module translates the bytecode of a module to Boogie code.
 
-use bytecode_verifier::VerifiedModule;
 use num::{BigInt, Num};
-use stackless_bytecode_generator::{
+use solana_libra_bytecode_verifier::VerifiedModule;
+use solana_libra_stackless_bytecode_generator::{
     stackless_bytecode::StacklessBytecode::{self, *},
     stackless_bytecode_generator::{StacklessFunction, StacklessModuleGenerator},
 };
-use std::collections::{BTreeMap, BTreeSet};
-use types::identifier::Identifier;
-use vm::{
+use solana_libra_types::identifier::Identifier;
+use solana_libra_vm::{
     access::ModuleAccess,
     file_format::{
         FieldDefinitionIndex, FunctionHandleIndex, ModuleHandleIndex, SignatureToken,
@@ -20,6 +19,7 @@ use vm::{
         StructHandleView, ViewInternals,
     },
 };
+use std::collections::{BTreeMap, BTreeSet};
 
 pub struct BoogieTranslator {
     pub modules: Vec<VerifiedModule>,

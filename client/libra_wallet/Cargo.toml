@@ -15,22 +15,22 @@ byteorder = "1.3.2"
 serde = "1.0.96"
 sha3 = "0.8.2"
 sha2 = "0.8.0"
-types = { path = "../../types" }
+solana-libra-types = { path = "../../types" }
 
 [dependencies.ed25519-dalek]
 version = "1.0.0-pre.1"
 
 [dependencies.libra_crypto]
 path = "../../crypto/crypto"
-package = "crypto"
+package = "solana-libra-crypto"
 
-[dependencies.canonical_serialization]
+[dependencies.solana_libra_canonical_serialization]
 path = "../../common/canonical_serialization"
 
 [dependencies.failure]
 path = "../../common/failure_ext"
-package = "failure_ext"
+package = "solana_libra_failure_ext"
 
 [dev-dependencies]
-types = { path = "../../types", features = ["testing"]}
-tools = { path = "../../common/tools"}
+solana-libra-types = { path = "../../types", features = ["testing"]}
+solana-libra-tools = { path = "../../common/tools"}

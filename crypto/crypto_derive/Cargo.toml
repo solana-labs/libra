@@ -1,7 +1,7 @@
 [package]
-name = "crypto_derive"
+name = "solana_libra_crypto_derive"
 version = "0.1.0"
-description = "Custom derives for `crypto`"
+description = "Custom derives for `solana-libra-crypto`"
 edition = "2018"
 
 [lib]
@@ -13,5 +13,5 @@ quote = "1.0.0"
 proc-macro2 = "1.0.1"
 
 [dev-dependencies]
-crypto = { path = "../crypto"}
-failure = { path = "../../common/failure_ext", package = "failure_ext"}
+solana-libra-crypto = { path = "../crypto"}
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext"}

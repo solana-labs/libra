@@ -4,8 +4,8 @@
 #![allow(bare_trait_objects)]
 #![allow(missing_docs)]
 
-use ::types::proto::*;
-use mempool_shared_proto::proto::mempool_status;
+use ::solana_libra_types::proto::*;
+use solana_libra_mempool_shared_proto::proto::mempool_status;
 
 pub mod mempool {
     include!(concat!(env!("OUT_DIR"), "/mempool.rs"));

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::{arb_internal_nibble_path, skip_common_prefix, NibblePath};
-use nibble::Nibble;
 use proptest::prelude::*;
+use solana_libra_nibble::Nibble;
 
 #[test]
 fn test_nibble_path_fmt() {

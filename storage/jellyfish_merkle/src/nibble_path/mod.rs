@@ -8,9 +8,9 @@
 mod nibble_path_test;
 
 use crate::ROOT_NIBBLE_HEIGHT;
-use nibble::Nibble;
 use proptest::{collection::vec, prelude::*};
 use serde::{Deserialize, Serialize};
+use solana_libra_nibble::Nibble;
 use std::{fmt, iter::FromIterator};
 
 /// NibblePath defines a path in Merkle tree in the unit of nibble (4 bits).

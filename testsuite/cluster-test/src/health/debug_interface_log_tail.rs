@@ -4,12 +4,12 @@ use crate::{
     instance::Instance,
     util::unix_timestamp_now,
 };
-use debug_interface::{
+use grpcio::{self, ChannelBuilder, EnvBuilder};
+use serde_json::{self, value as json};
+use solana_libra_debug_interface::{
     self,
     proto::{Event as DebugInterfaceEvent, GetEventsRequest, NodeDebugInterfaceClient},
 };
-use grpcio::{self, ChannelBuilder, EnvBuilder};
-use serde_json::{self, value as json};
 use std::{
     env,
     sync::{atomic::AtomicI64, mpsc, Arc},

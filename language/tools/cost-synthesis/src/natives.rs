@@ -7,7 +7,7 @@
 //! then use this ability to run the native functions with different bytearray lengths in the
 //! generated synthesis binary.
 use rand::{rngs::StdRng, Rng, SeedableRng};
-use types::byte_array::ByteArray;
+use solana_libra_types::byte_array::ByteArray;
 
 /// A wrapper around data used to generate random valid bytearrays
 pub struct StackAccessorMocker {

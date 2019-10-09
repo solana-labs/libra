@@ -1,18 +1,18 @@
 use crate::LedgerInfo;
-use config::config::NodeConfig;
-use executor::Executor;
 use failure::prelude::*;
 use futures::{channel::oneshot, Future, FutureExt};
 use grpcio::EnvBuilder;
-use logger::prelude::*;
-use network::proto::GetChunkResponse;
-use std::{pin::Pin, sync::Arc};
-use storage_client::{StorageRead, StorageReadServiceClient};
-use types::{
+use solana_libra_config::config::NodeConfig;
+use solana_libra_executor::Executor;
+use solana_libra_logger::prelude::*;
+use solana_libra_network::proto::GetChunkResponse;
+use solana_libra_storage_client::{StorageRead, StorageReadServiceClient};
+use solana_libra_types::{
     crypto_proxies::{LedgerInfoWithSignatures, ValidatorVerifier},
     transaction::TransactionListWithProof,
 };
-use vm_runtime::MoveVM;
+use solana_libra_vm_runtime::MoveVM;
+use std::{pin::Pin, sync::Arc};
 
 /// Proxies interactions with execution and storage for state synchronization
 pub trait ExecutorProxyTrait: Sync + Send {

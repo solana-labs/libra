@@ -19,10 +19,10 @@ use crate::{
     validator_change::ValidatorChangeEventWithProof,
     validator_verifier::ValidatorVerifier,
 };
-use crypto::{hash::CryptoHash, *};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
+use solana_libra_crypto::{hash::CryptoHash, *};
 use std::{
     cmp,
     convert::{TryFrom, TryInto},

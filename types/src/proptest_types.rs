@@ -22,19 +22,19 @@ use crate::{
     vm_error::{StatusCode, VMStatus},
     write_set::{WriteOp, WriteSet, WriteSetMut},
 };
-use crypto::{
-    ed25519::{compat::keypair_strategy, *},
-    hash::CryptoHash,
-    traits::*,
-    HashValue,
-};
 use proptest::{
     collection::{vec, SizeRange},
     option,
     prelude::*,
 };
 use proptest_derive::Arbitrary;
-use proptest_helpers::Index;
+use solana_libra_crypto::{
+    ed25519::{compat::keypair_strategy, *},
+    hash::CryptoHash,
+    traits::*,
+    HashValue,
+};
+use solana_libra_proptest_helpers::Index;
 use std::time::Duration;
 
 prop_compose! {

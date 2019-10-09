@@ -1,5 +1,5 @@
 [package]
-name = "config"
+name = "solana-libra-config"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -16,16 +16,16 @@ serde = { version = "1.0.99", default-features = false }
 toml = { version = "0.5.3", default-features = false }
 prost = "0.5.0"
 
-crypto = { path = "../crypto/crypto" }
-logger = { path = "../common/logger" }
-failure = { path = "../common/failure_ext", package = "failure_ext" }
-tools = { path = "../common/tools" }
-types = { path = "../types" }
+solana-libra-crypto = { path = "../crypto/crypto" }
+solana-libra-logger = { path = "../common/logger" }
+failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
+solana-libra-tools = { path = "../common/tools" }
+solana-libra-types = { path = "../types" }
 
 [dev-dependencies]
-types = { path = "../types", features = ["testing"] }
-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-types = { path = "../types", features = ["testing"] }
+solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
 
 [features]
 default = []
-testing = ["crypto/testing", "types/testing"]
+testing = ["solana-libra-crypto/testing", "solana-libra-types/testing"]

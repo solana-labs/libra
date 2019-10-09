@@ -6,9 +6,9 @@ use crate::chained_bft::{
     consensus_types::{block::Block, sync_info::SyncInfo},
 };
 use failure::prelude::*;
+use solana_libra_types::crypto_proxies::ValidatorVerifier;
 use std::convert::{TryFrom, TryInto};
 use std::fmt;
-use types::crypto_proxies::ValidatorVerifier;
 
 /// ProposalMsg contains the required information for the proposer election protocol to make its
 /// choice (typically depends on round and proposer info).
@@ -22,10 +22,10 @@ pub struct ProposalMsg<T> {
 /// via the `validate_signatures` function.
 pub struct ProposalUncheckedSignatures<T>(ProposalMsg<T>);
 
-impl<T: Payload> TryFrom<network::proto::Proposal> for ProposalUncheckedSignatures<T> {
+impl<T: Payload> TryFrom<solana_libra_network::proto::Proposal> for ProposalUncheckedSignatures<T> {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::Proposal) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::Proposal) -> failure::Result<Self> {
         let proposal = proto
             .proposed_block
             .ok_or_else(|| format_err!("Missing proposed_block"))?
@@ -40,12 +40,16 @@ impl<T: Payload> TryFrom<network::proto::Proposal> for ProposalUncheckedSignatur
     }
 }
 
-impl<T: Payload> TryFrom<network::proto::ConsensusMsg> for ProposalUncheckedSignatures<T> {
+impl<T: Payload> TryFrom<solana_libra_network::proto::ConsensusMsg>
+    for ProposalUncheckedSignatures<T>
+{
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::ConsensusMsg) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::ConsensusMsg) -> failure::Result<Self> {
         match proto.message {
-            Some(network::proto::ConsensusMsg_oneof::Proposal(proposal)) => proposal.try_into(),
+            Some(solana_libra_network::proto::ConsensusMsg_oneof::Proposal(proposal)) => {
+                proposal.try_into()
+            }
             _ => bail!("Missing proposal"),
         }
     }
@@ -175,7 +179,7 @@ impl<T: Payload> fmt::Display for ProposalMsg<T> {
     }
 }
 
-impl<T: Payload> From<ProposalMsg<T>> for network::proto::Proposal {
+impl<T: Payload> From<ProposalMsg<T>> for solana_libra_network::proto::Proposal {
     fn from(proposal: ProposalMsg<T>) -> Self {
         Self {
             proposed_block: Some(proposal.proposal.into()),

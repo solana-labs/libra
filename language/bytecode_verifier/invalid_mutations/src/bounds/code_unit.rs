@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use proptest::{prelude::*, sample::Index as PropIndex};
-use proptest_helpers::pick_slice_idxs;
-use std::collections::BTreeMap;
-use types::vm_error::{StatusCode, VMStatus};
-use vm::{
+use solana_libra_proptest_helpers::pick_slice_idxs;
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
+use solana_libra_vm::{
     errors::{append_err_info, bytecode_offset_err},
     file_format::{
         AddressPoolIndex, ByteArrayPoolIndex, Bytecode, CodeOffset, CompiledModuleMut,
@@ -15,6 +14,7 @@ use vm::{
     internals::ModuleIndex,
     IndexKind,
 };
+use std::collections::BTreeMap;
 
 /// Represents a single mutation onto a code unit to make it out of bounds.
 #[derive(Debug)]

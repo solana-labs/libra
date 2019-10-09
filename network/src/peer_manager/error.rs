@@ -6,7 +6,7 @@
 use failure::Fail;
 use futures::channel::oneshot;
 use parity_multiaddr::Multiaddr;
-use types::PeerId;
+use solana_libra_types::PeerId;
 
 #[derive(Debug, Fail)]
 pub enum PeerManagerError {

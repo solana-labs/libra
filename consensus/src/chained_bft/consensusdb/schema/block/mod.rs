@@ -11,11 +11,11 @@
 
 use super::BLOCK_CF_NAME;
 use crate::chained_bft::{common::Payload, consensus_types::block::Block};
-use crypto::HashValue;
 use failure::prelude::*;
 use prost::Message;
-use prost_ext::MessageExt;
-use schemadb::schema::{KeyCodec, Schema, ValueCodec};
+use solana_libra_crypto::HashValue;
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_schemadb::schema::{KeyCodec, Schema, ValueCodec};
 use std::convert::TryInto;
 use std::marker::PhantomData;
 
@@ -24,7 +24,7 @@ pub struct BlockSchema<T: Payload> {
 }
 
 impl<T: Payload> Schema for BlockSchema<T> {
-    const COLUMN_FAMILY_NAME: schemadb::ColumnFamilyName = BLOCK_CF_NAME;
+    const COLUMN_FAMILY_NAME: solana_libra_schemadb::ColumnFamilyName = BLOCK_CF_NAME;
     type Key = HashValue;
     type Value = Block<T>;
 }
@@ -41,12 +41,12 @@ impl<T: Payload> KeyCodec<BlockSchema<T>> for HashValue {
 
 impl<T: Payload> ValueCodec<BlockSchema<T>> for Block<T> {
     fn encode_value(&self) -> Result<Vec<u8>> {
-        let block: network::proto::Block = self.clone().into();
+        let block: solana_libra_network::proto::Block = self.clone().into();
         Ok(block.to_vec()?)
     }
 
     fn decode_value(data: &[u8]) -> Result<Self> {
-        network::proto::Block::decode(data)?.try_into()
+        solana_libra_network::proto::Block::decode(data)?.try_into()
     }
 }
 

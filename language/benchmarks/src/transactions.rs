@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use criterion::{BatchSize, Bencher};
-use language_e2e_tests::{
+use proptest::{collection::vec, strategy::Strategy};
+use solana_libra_language_e2e_tests::{
     account_universe::{log_balance_strategy, AUTransactionGen, AccountUniverseGen},
     executor::FakeExecutor,
     gas_costs::TXN_RESERVED,
 };
-use proptest::{collection::vec, strategy::Strategy};
-use proptest_helpers::ValueGenerator;
-use types::transaction::SignedTransaction;
+use solana_libra_proptest_helpers::ValueGenerator;
+use solana_libra_types::transaction::SignedTransaction;
 
 /// Benchmarking support for transactions.
 #[derive(Clone, Debug)]

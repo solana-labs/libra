@@ -11,17 +11,17 @@ use crate::{
     transaction::Version,
 };
 
-use canonical_serialization::{SimpleDeserializer, SimpleSerializer};
-use crypto::{
-    hash::{AccountStateBlobHasher, CryptoHash, CryptoHasher},
-    HashValue,
-};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest::{arbitrary::Arbitrary, prelude::*};
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{SimpleDeserializer, SimpleSerializer};
+use solana_libra_crypto::{
+    hash::{AccountStateBlobHasher, CryptoHash, CryptoHasher},
+    HashValue,
+};
 use std::{
     collections::BTreeMap,
     convert::{TryFrom, TryInto},

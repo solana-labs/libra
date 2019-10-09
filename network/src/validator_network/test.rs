@@ -12,8 +12,6 @@ use crate::{
     },
     ProtocolId,
 };
-use config::config::RoleType;
-use crypto::{ed25519::compat, test_utils::TEST_SEED, traits::ValidKey, x25519};
 use futures::{
     executor::block_on,
     future::{join, FutureExt, TryFutureExt},
@@ -21,18 +19,20 @@ use futures::{
 };
 use parity_multiaddr::Multiaddr;
 use rand::{rngs::StdRng, SeedableRng};
+use solana_libra_config::config::RoleType;
+use solana_libra_crypto::{ed25519::compat, test_utils::TEST_SEED, traits::ValidKey, x25519};
+use solana_libra_types::{
+    account_address::{AccountAddress, ADDRESS_LENGTH},
+    proto::types::SignedTransaction,
+    test_helpers::transaction_test_helpers::get_test_signed_txn,
+    PeerId,
+};
 use std::{
     collections::HashMap,
     convert::{TryFrom, TryInto},
     time::Duration,
 };
 use tokio::runtime::Runtime;
-use types::{
-    account_address::{AccountAddress, ADDRESS_LENGTH},
-    proto::types::SignedTransaction,
-    test_helpers::transaction_test_helpers::get_test_signed_txn,
-    PeerId,
-};
 
 #[test]
 fn test_network_builder() {
@@ -81,7 +81,7 @@ fn test_network_builder() {
 
 #[test]
 fn test_mempool_sync() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
     let runtime = Runtime::new().unwrap();
     let mempool_sync_protocol = ProtocolId::from_static(MEMPOOL_DIRECT_SEND_PROTOCOL);
 
@@ -221,7 +221,7 @@ fn test_mempool_sync() {
 // correctly configured.
 #[test]
 fn test_permissionless_mempool_sync() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
     let runtime = Runtime::new().unwrap();
     let mempool_sync_protocol = ProtocolId::from_static(MEMPOOL_DIRECT_SEND_PROTOCOL);
 
@@ -364,7 +364,7 @@ fn test_permissionless_mempool_sync() {
 
 #[test]
 fn test_consensus_rpc() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
     let runtime = Runtime::new().unwrap();
     let rpc_protocol = ProtocolId::from_static(CONSENSUS_RPC_PROTOCOL);
 

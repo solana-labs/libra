@@ -6,11 +6,11 @@ use crate::{
     account_address::AccountAddress, byte_array::ByteArray,
     proto::types::transaction_argument::ArgType as TransactionArgument_ArgType,
 };
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use failure::prelude::*;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
 use std::{convert::TryFrom, fmt};
 
 #[derive(Clone, Hash, Eq, PartialEq, Serialize, Deserialize)]

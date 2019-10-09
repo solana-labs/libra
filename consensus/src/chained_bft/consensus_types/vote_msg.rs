@@ -3,16 +3,16 @@
 
 use crate::chained_bft::common;
 use crate::chained_bft::{common::Author, consensus_types::vote_data::VoteData};
-use crypto::hash::CryptoHash;
 use failure::ResultExt;
 use serde::{Deserialize, Serialize};
+use solana_libra_crypto::hash::CryptoHash;
+use solana_libra_types::{
+    crypto_proxies::{Signature, ValidatorSigner, ValidatorVerifier},
+    ledger_info::LedgerInfo,
+};
 use std::{
     convert::{TryFrom, TryInto},
     fmt::{Display, Formatter},
-};
-use types::{
-    crypto_proxies::{Signature, ValidatorSigner, ValidatorVerifier},
-    ledger_info::LedgerInfo,
 };
 
 /// VoteMsg is the struct that is ultimately sent by the voter in response for
@@ -129,10 +129,10 @@ impl VoteMsg {
     }
 }
 
-impl TryFrom<network::proto::Vote> for VoteMsg {
+impl TryFrom<solana_libra_network::proto::Vote> for VoteMsg {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::Vote) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::Vote) -> failure::Result<Self> {
         let vote_data = proto
             .vote_data
             .ok_or_else(|| format_err!("Missing vote_data"))?
@@ -158,18 +158,18 @@ impl TryFrom<network::proto::Vote> for VoteMsg {
     }
 }
 
-impl TryFrom<network::proto::ConsensusMsg> for VoteMsg {
+impl TryFrom<solana_libra_network::proto::ConsensusMsg> for VoteMsg {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::ConsensusMsg) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::ConsensusMsg) -> failure::Result<Self> {
         match proto.message {
-            Some(network::proto::ConsensusMsg_oneof::Vote(vote)) => vote.try_into(),
+            Some(solana_libra_network::proto::ConsensusMsg_oneof::Vote(vote)) => vote.try_into(),
             _ => bail!("Missing vote"),
         }
     }
 }
 
-impl From<VoteMsg> for network::proto::Vote {
+impl From<VoteMsg> for solana_libra_network::proto::Vote {
     fn from(vote: VoteMsg) -> Self {
         Self {
             vote_data: Some(vote.vote_data.into()),

@@ -1,14 +1,13 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use crypto::{ed25519::*, traits::ValidKey};
 use failure::prelude::*;
 use lazy_static::lazy_static;
 use rand::{rngs::StdRng, SeedableRng};
-use state_view::StateView;
-use std::time::Duration;
-use stdlib::stdlib_modules;
-use types::{
+use solana_libra_crypto::{ed25519::*, traits::ValidKey};
+use solana_libra_state_view::StateView;
+use solana_libra_stdlib::stdlib_modules;
+use solana_libra_types::{
     access_path::AccessPath,
     account_address::AccountAddress,
     account_config,
@@ -17,9 +16,9 @@ use types::{
     transaction::{RawTransaction, Script, SignatureCheckedTransaction, TransactionArgument},
     validator_set::ValidatorSet,
 };
-use vm::{access::ModuleAccess, transaction_metadata::TransactionMetadata};
-use vm_cache_map::Arena;
-use vm_runtime::{
+use solana_libra_vm::{access::ModuleAccess, transaction_metadata::TransactionMetadata};
+use solana_libra_vm_cache_map::Arena;
+use solana_libra_vm_runtime::{
     code_cache::{
         module_adapter::FakeFetcher,
         module_cache::{BlockModuleCache, VMModuleCache},
@@ -29,7 +28,8 @@ use vm_runtime::{
         TransactionExecutor, ACCOUNT_MODULE, BLOCK_MODULE, COIN_MODULE, VALIDATOR_SET_MODULE,
     },
 };
-use vm_runtime_types::value::Value;
+use solana_libra_vm_runtime_types::value::Value;
+use std::time::Duration;
 
 // The seed is arbitrarily picked to produce a consistent key. XXX make this more formal?
 const GENESIS_SEED: [u8; 32] = [42; 32];

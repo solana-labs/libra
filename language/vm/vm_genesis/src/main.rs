@@ -1,11 +1,11 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use config::{config::PersistableConfig, trusted_peers::ConfigHelpers};
-use prost_ext::MessageExt;
+use solana_libra_config::{config::PersistableConfig, trusted_peers::ConfigHelpers};
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_transaction_builder::default_config;
+use solana_libra_vm_genesis::{encode_genesis_transaction_with_validator, GENESIS_KEYPAIR};
 use std::{fs::File, io::prelude::*};
-use transaction_builder::default_config;
-use vm_genesis::{encode_genesis_transaction_with_validator, GENESIS_KEYPAIR};
 
 const CONFIG_LOCATION: &str = "genesis/vm_config.toml";
 const GENESIS_LOCATION: &str = "genesis/genesis.blob";
@@ -13,7 +13,7 @@ const GENESIS_LOCATION: &str = "genesis/genesis.blob";
 /// Generate the genesis blob used by the Libra blockchain
 fn generate_genesis_blob() -> Vec<u8> {
     let (_, consensus_config, network_config) = ConfigHelpers::gen_validator_nodes(10, None);
-    let genesis_txn: types::proto::types::SignedTransaction =
+    let genesis_txn: solana_libra_types::proto::types::SignedTransaction =
         encode_genesis_transaction_with_validator(
             &GENESIS_KEYPAIR.0,
             GENESIS_KEYPAIR.1.clone(),

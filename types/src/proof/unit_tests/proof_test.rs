@@ -18,7 +18,8 @@ use crate::{
     },
     vm_error::StatusCode,
 };
-use crypto::{
+use proptest::{collection::vec, prelude::*};
+use solana_libra_crypto::{
     ed25519::*,
     hash::{
         CryptoHash, TestOnlyHash, TransactionAccumulatorHasher, ACCUMULATOR_PLACEHOLDER_HASH,
@@ -26,7 +27,6 @@ use crypto::{
     },
     HashValue,
 };
-use proptest::{collection::vec, prelude::*};
 
 #[test]
 fn test_verify_empty_accumulator() {

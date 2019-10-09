@@ -6,15 +6,15 @@ use crate::{
     account_address::AccountAddress,
     identifier::{IdentStr, Identifier},
 };
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-    SimpleSerializer,
-};
-use crypto::hash::{AccessPathHasher, CryptoHash, CryptoHasher, HashValue};
 use failure::Result;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+    SimpleSerializer,
+};
+use solana_libra_crypto::hash::{AccessPathHasher, CryptoHash, CryptoHasher, HashValue};
 use std::convert::{TryFrom, TryInto};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Hash, Eq, Clone, PartialOrd, Ord)]

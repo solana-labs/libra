@@ -7,12 +7,12 @@ use crate::{
     mocks::local_mock_mempool::LocalMockMempool,
 };
 use proptest;
-use proptest_helpers::ValueGenerator;
 use prost::Message;
+use solana_libra_proptest_helpers::ValueGenerator;
+use solana_libra_storage_service::mocks::mock_storage_client::MockStorageReadClient;
+use solana_libra_types::transaction::SignedTransaction;
+use solana_libra_vm_validator::mocks::mock_vm_validator::MockVMValidator;
 use std::sync::Arc;
-use storage_service::mocks::mock_storage_client::MockStorageReadClient;
-use types::transaction::SignedTransaction;
-use vm_validator::mocks::mock_vm_validator::MockVMValidator;
 
 #[test]
 fn test_fuzzer() {

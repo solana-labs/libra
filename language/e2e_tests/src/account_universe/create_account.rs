@@ -11,8 +11,8 @@ use crate::{
 };
 use proptest::prelude::*;
 use proptest_derive::Arbitrary;
-use proptest_helpers::Index;
-use types::{
+use solana_libra_proptest_helpers::Index;
+use solana_libra_types::{
     transaction::{SignedTransaction, TransactionStatus},
     vm_error::{StatusCode, VMStatus},
 };

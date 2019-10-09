@@ -8,7 +8,7 @@ use futures::{
     io::AsyncRead,
     stream::StreamExt,
 };
-pub use prost_ext::MessageExt;
+pub use solana_libra_prost_ext::MessageExt;
 use std::io;
 use tokio::codec::Framed;
 use unsigned_varint::codec::UviBytes;

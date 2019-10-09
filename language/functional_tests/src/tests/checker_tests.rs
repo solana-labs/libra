@@ -5,7 +5,7 @@ use crate::{
     checker::{check, run_filecheck, Directive},
     evaluator::{EvaluationLog, EvaluationOutput, OutputType, Stage, Status},
 };
-use vm::{
+use solana_libra_vm::{
     file_format::{empty_module, CompiledModuleMut},
     vm_string::VMString,
 };

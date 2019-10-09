@@ -4,10 +4,10 @@
 pub mod proto;
 
 use failure::prelude::*;
-use logger::prelude::*;
-use mempool_shared_proto::MempoolAddTransactionStatus;
+use solana_libra_logger::prelude::*;
+use solana_libra_mempool_shared_proto::MempoolAddTransactionStatus;
+use solana_libra_types::vm_error::VMStatus;
 use std::convert::TryFrom;
-use types::vm_error::VMStatus;
 
 /// AC response status of submit_transaction to clients.
 #[derive(Debug, PartialEq, Eq, Clone)]

@@ -5,15 +5,15 @@ use proptest::{
     prelude::*,
     sample::{select, Index as PropIndex},
 };
-use proptest_helpers::{pick_slice_idxs, RepeatVec};
-use std::{collections::BTreeMap, iter};
-use types::vm_error::{StatusCode, VMStatus};
-use vm::{
+use solana_libra_proptest_helpers::{pick_slice_idxs, RepeatVec};
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
+use solana_libra_vm::{
     errors::append_err_info,
     file_format::{CompiledModuleMut, SignatureToken},
     internals::ModuleIndex,
     IndexKind, SignatureTokenKind,
 };
+use std::{collections::BTreeMap, iter};
 
 /// Represents a mutation that wraps a signature token up in a double reference (or an array of
 /// references.

@@ -1,7 +1,4 @@
 use crate::OP_COUNTER;
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use failure::prelude::*;
 use num_derive::ToPrimitive;
 use num_traits::ToPrimitive;
@@ -9,6 +6,9 @@ use num_traits::ToPrimitive;
 use proptest::{collection::hash_map, prelude::*};
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
 use std::collections::BTreeMap;
 use strum::IntoEnumIterator;
 use strum_macros::{AsRefStr, EnumIter};

@@ -11,11 +11,11 @@
 
 use super::QC_CF_NAME;
 use crate::chained_bft::consensus_types::quorum_cert::QuorumCert;
-use crypto::HashValue;
 use failure::prelude::*;
 use prost::Message;
-use prost_ext::MessageExt;
-use schemadb::{
+use solana_libra_crypto::HashValue;
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
@@ -35,12 +35,12 @@ impl KeyCodec<QCSchema> for HashValue {
 
 impl ValueCodec<QCSchema> for QuorumCert {
     fn encode_value(&self) -> Result<Vec<u8>> {
-        let cert: network::proto::QuorumCert = self.clone().into();
+        let cert: solana_libra_network::proto::QuorumCert = self.clone().into();
         Ok(cert.to_vec()?)
     }
 
     fn decode_value(data: &[u8]) -> Result<Self> {
-        network::proto::QuorumCert::decode(data)?.try_into()
+        solana_libra_network::proto::QuorumCert::decode(data)?.try_into()
     }
 }
 

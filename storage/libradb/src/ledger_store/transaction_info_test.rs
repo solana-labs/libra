@@ -4,8 +4,8 @@
 use super::*;
 use crate::LibraDB;
 use proptest::{collection::vec, prelude::*};
-use tools::tempdir::TempPath;
-use types::proof::verify_transaction_accumulator_element;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::proof::verify_transaction_accumulator_element;
 
 fn verify(
     store: &LedgerStore,

@@ -7,9 +7,9 @@ use crate::{
 };
 
 use failure::prelude::*;
-use metrics::counters::*;
+use solana_libra_metrics::counters::*;
+use solana_libra_types::account_address::ADDRESS_LENGTH;
 use std::{collections::HashMap, sync::Arc};
-use types::account_address::ADDRESS_LENGTH;
 
 /// Print the error and bump up error counter.
 pub fn report_error(msg: &str, e: Error) {

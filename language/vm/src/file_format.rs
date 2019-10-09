@@ -35,7 +35,7 @@ use lazy_static::lazy_static;
 use proptest::{collection::vec, prelude::*, strategy::BoxedStrategy};
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     byte_array::ByteArray,
     identifier::{IdentStr, Identifier},

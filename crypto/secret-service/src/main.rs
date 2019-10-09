@@ -1,8 +1,8 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use executable_helpers::helpers::setup_executable;
-use secret_service::secret_service_node;
+use solana_libra_executable_helpers::helpers::setup_executable;
+use solana_libra_secret_service::secret_service_node;
 use std::path::PathBuf;
 use structopt::StructOpt;
 

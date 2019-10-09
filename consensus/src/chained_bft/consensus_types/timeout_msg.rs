@@ -5,23 +5,25 @@ use crate::chained_bft::{
     common::{Author, Round},
     consensus_types::{sync_info::SyncInfo, vote_msg::VoteMsg},
 };
-use canonical_serialization::{CanonicalSerialize, CanonicalSerializer, SimpleSerializer};
-use crypto::{
+use failure::prelude::*;
+use mirai_annotations::assumed_postcondition;
+use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
+};
+use solana_libra_crypto::{
     hash::{CryptoHash, CryptoHasher, PacemakerTimeoutHasher, TimeoutMsgHasher},
     HashValue,
 };
-use failure::prelude::*;
-use mirai_annotations::assumed_postcondition;
-use network;
-use serde::{Deserialize, Serialize};
+use solana_libra_network;
+use solana_libra_types::{
+    account_address::AccountAddress,
+    crypto_proxies::{Signature, ValidatorSigner, ValidatorVerifier},
+};
 use std::{
     collections::HashSet,
     convert::{TryFrom, TryInto},
     fmt,
-};
-use types::{
-    account_address::AccountAddress,
-    crypto_proxies::{Signature, ValidatorSigner, ValidatorVerifier},
 };
 
 // Internal use only. Contains all the fields in PaceMakerTimeout that contributes to the
@@ -120,10 +122,10 @@ impl PacemakerTimeout {
     }
 }
 
-impl TryFrom<network::proto::PacemakerTimeout> for PacemakerTimeout {
+impl TryFrom<solana_libra_network::proto::PacemakerTimeout> for PacemakerTimeout {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::PacemakerTimeout) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::PacemakerTimeout) -> failure::Result<Self> {
         let round = proto.round;
         let author = Author::try_from(&proto.author[..])?;
         let signature = Signature::try_from(&proto.signature)?;
@@ -141,7 +143,7 @@ impl TryFrom<network::proto::PacemakerTimeout> for PacemakerTimeout {
     }
 }
 
-impl From<PacemakerTimeout> for network::proto::PacemakerTimeout {
+impl From<PacemakerTimeout> for solana_libra_network::proto::PacemakerTimeout {
     fn from(timeout: PacemakerTimeout) -> Self {
         Self {
             round: timeout.round,
@@ -244,10 +246,10 @@ impl TimeoutMsg {
     }
 }
 
-impl TryFrom<network::proto::TimeoutMsg> for TimeoutMsg {
+impl TryFrom<solana_libra_network::proto::TimeoutMsg> for TimeoutMsg {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::TimeoutMsg) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::TimeoutMsg) -> failure::Result<Self> {
         let sync_info = proto
             .sync_info
             .ok_or_else(|| format_err!("Missing sync_info"))?
@@ -265,7 +267,7 @@ impl TryFrom<network::proto::TimeoutMsg> for TimeoutMsg {
     }
 }
 
-impl From<TimeoutMsg> for network::proto::TimeoutMsg {
+impl From<TimeoutMsg> for solana_libra_network::proto::TimeoutMsg {
     fn from(timeout_msg: TimeoutMsg) -> Self {
         Self {
             sync_info: Some(timeout_msg.sync_info.into()),
@@ -275,12 +277,12 @@ impl From<TimeoutMsg> for network::proto::TimeoutMsg {
     }
 }
 
-impl TryFrom<network::proto::ConsensusMsg> for TimeoutMsg {
+impl TryFrom<solana_libra_network::proto::ConsensusMsg> for TimeoutMsg {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::ConsensusMsg) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::ConsensusMsg) -> failure::Result<Self> {
         match proto.message {
-            Some(network::proto::ConsensusMsg_oneof::TimeoutMsg(timeout_msg)) => {
+            Some(solana_libra_network::proto::ConsensusMsg_oneof::TimeoutMsg(timeout_msg)) => {
                 timeout_msg.try_into()
             }
             _ => bail!("Missing timeout_msg"),
@@ -353,10 +355,14 @@ impl PacemakerTimeoutCertificate {
     }
 }
 
-impl TryFrom<network::proto::PacemakerTimeoutCertificate> for PacemakerTimeoutCertificate {
+impl TryFrom<solana_libra_network::proto::PacemakerTimeoutCertificate>
+    for PacemakerTimeoutCertificate
+{
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::PacemakerTimeoutCertificate) -> failure::Result<Self> {
+    fn try_from(
+        proto: solana_libra_network::proto::PacemakerTimeoutCertificate,
+    ) -> failure::Result<Self> {
         let timeouts = proto
             .timeouts
             .into_iter()
@@ -366,7 +372,9 @@ impl TryFrom<network::proto::PacemakerTimeoutCertificate> for PacemakerTimeoutCe
     }
 }
 
-impl From<PacemakerTimeoutCertificate> for network::proto::PacemakerTimeoutCertificate {
+impl From<PacemakerTimeoutCertificate>
+    for solana_libra_network::proto::PacemakerTimeoutCertificate
+{
     fn from(timeout: PacemakerTimeoutCertificate) -> Self {
         Self {
             round: timeout.round,

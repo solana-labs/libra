@@ -1,5 +1,5 @@
 [package]
-name = "storage_proto"
+name = "solana_libra_storage_proto"
 version = "0.1.0"
 authors = ["Libra Association <opensource@libra.org>"]
 license = "Apache-2.0"
@@ -14,13 +14,13 @@ proptest = "0.9.2"
 proptest-derive = "0.1.0"
 prost = "0.5.0"
 
-crypto = { path = "../../crypto/crypto" }
-failure = { path = "../../common/failure_ext", package = "failure_ext" }
-types = { path = "../../types" }
+solana-libra-crypto = { path = "../../crypto/crypto" }
+failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
+solana-libra-types = { path = "../../types" }
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }
 
 [dev-dependencies]
-types = { path = "../../types", features = ["testing"]}
-prost-ext = { path = "../../common/prost-ext" }
+solana-libra-types = { path = "../../types", features = ["testing"]}
+solana-libra-prost-ext = { path = "../../common/prost-ext" }

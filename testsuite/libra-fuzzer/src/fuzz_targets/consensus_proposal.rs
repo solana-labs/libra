@@ -1,6 +1,6 @@
 use crate::FuzzTargetImpl;
-use consensus::event_processor_fuzzing::{fuzz_proposal, generate_corpus_proposal};
-use proptest_helpers::ValueGenerator;
+use solana_libra_consensus::event_processor_fuzzing::{fuzz_proposal, generate_corpus_proposal};
+use solana_libra_proptest_helpers::ValueGenerator;
 
 #[derive(Clone, Debug, Default)]
 pub struct ConsensusProposal;

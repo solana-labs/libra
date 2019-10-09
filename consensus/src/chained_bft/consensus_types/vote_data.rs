@@ -2,12 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::chained_bft::common::Round;
-use canonical_serialization::{CanonicalSerialize, CanonicalSerializer, SimpleSerializer};
-use crypto::{
+use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalSerialize, CanonicalSerializer, SimpleSerializer,
+};
+use solana_libra_crypto::{
     hash::{CryptoHash, CryptoHasher, VoteDataHasher},
     HashValue,
 };
-use serde::{Deserialize, Serialize};
 use std::{
     convert::TryFrom,
     fmt::{Display, Formatter},
@@ -180,10 +182,10 @@ impl VoteData {
     }
 }
 
-impl TryFrom<network::proto::VoteData> for VoteData {
+impl TryFrom<solana_libra_network::proto::VoteData> for VoteData {
     type Error = failure::Error;
 
-    fn try_from(proto: network::proto::VoteData) -> failure::Result<Self> {
+    fn try_from(proto: solana_libra_network::proto::VoteData) -> failure::Result<Self> {
         let block_id = HashValue::from_slice(proto.block_id.as_ref())?;
         let round = proto.round;
         let executed_state_id = HashValue::from_slice(proto.executed_state_id.as_ref())?;
@@ -203,7 +205,7 @@ impl TryFrom<network::proto::VoteData> for VoteData {
     }
 }
 
-impl From<VoteData> for network::proto::VoteData {
+impl From<VoteData> for solana_libra_network::proto::VoteData {
     fn from(vote: VoteData) -> Self {
         Self {
             block_id: vote.block_id.to_vec(),

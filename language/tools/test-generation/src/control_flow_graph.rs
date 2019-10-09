@@ -3,8 +3,8 @@
 
 use crate::abstract_state::{AbstractValue, BorrowState};
 use rand::{rngs::StdRng, Rng};
+use solana_libra_vm::file_format::{Bytecode, FunctionSignature, SignatureToken};
 use std::collections::{HashMap, VecDeque};
-use vm::file_format::{Bytecode, FunctionSignature, SignatureToken};
 
 /// This type holds basic block identifiers
 type BlockIDSize = u16;

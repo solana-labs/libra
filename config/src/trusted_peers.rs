@@ -1,26 +1,26 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use crypto::{
+use mirai_annotations::postcondition;
+use rand::{rngs::StdRng, SeedableRng};
+use serde::{de::DeserializeOwned, Deserialize, Deserializer, Serialize, Serializer};
+use solana_libra_crypto::{
     ed25519::{compat, *},
     traits::{ValidKey, ValidKeyStringExt},
     x25519::{self, X25519StaticPrivateKey, X25519StaticPublicKey},
 };
-use mirai_annotations::postcondition;
-use rand::{rngs::StdRng, SeedableRng};
-use serde::{de::DeserializeOwned, Deserialize, Deserializer, Serialize, Serializer};
-use std::{
-    collections::{BTreeMap, HashMap},
-    convert::TryFrom,
-    hash::BuildHasher,
-    str::FromStr,
-};
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     crypto_proxies::{ValidatorInfo, ValidatorVerifier},
     validator_public_keys::ValidatorPublicKeys,
     validator_set::ValidatorSet,
     PeerId,
+};
+use std::{
+    collections::{BTreeMap, HashMap},
+    convert::TryFrom,
+    hash::BuildHasher,
+    str::FromStr,
 };
 
 #[cfg(test)]

@@ -9,13 +9,13 @@
 
 // TODO: restrict identifiers to a subset of ASCII
 
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest::prelude::*;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
 use std::{borrow::Borrow, fmt, ops::Deref};
 
 /// An owned identifier.

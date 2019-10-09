@@ -7,11 +7,11 @@ use crate::proof::{
     position::{FrozenSubtreeSiblingIterator, Position},
     TestAccumulatorInternalNode,
 };
-use crypto::{
+use proptest::{collection::vec, prelude::*};
+use solana_libra_crypto::{
     hash::{CryptoHash, TestOnlyHash, TestOnlyHasher, ACCUMULATOR_PLACEHOLDER_HASH},
     HashValue,
 };
-use proptest::{collection::vec, prelude::*};
 use std::collections::HashMap;
 
 fn compute_parent_hash(left_hash: HashValue, right_hash: HashValue) -> HashValue {

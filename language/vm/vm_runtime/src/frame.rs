@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::loaded_data::{function::FunctionReference, loaded_module::LoadedModule};
-use std::{fmt, marker::PhantomData};
-use vm::{
+use solana_libra_vm::{
     errors::{Location, VMResult},
     file_format::{Bytecode, CodeOffset, LocalIndex},
 };
-use vm_runtime_types::value::{Locals, Value};
+use solana_libra_vm_runtime_types::value::{Locals, Value};
+use std::{fmt, marker::PhantomData};
 
 pub struct Frame<'txn, F: 'txn> {
     pc: u16,

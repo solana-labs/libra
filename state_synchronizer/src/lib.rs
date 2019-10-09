@@ -3,7 +3,9 @@
 //! Used to perform catching up between nodes for committed states.
 //! Used for node restarts, network partitions, full node syncs
 #![recursion_limit = "1024"]
-use types::{account_address::AccountAddress, crypto_proxies::LedgerInfoWithSignatures};
+use solana_libra_types::{
+    account_address::AccountAddress, crypto_proxies::LedgerInfoWithSignatures,
+};
 
 pub use synchronizer::{StateSyncClient, StateSynchronizer};
 

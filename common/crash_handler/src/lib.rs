@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use backtrace::Backtrace;
-use logger::prelude::*;
 use serde::Serialize;
+use solana_libra_logger::prelude::*;
 use std::{
     panic::{self, PanicInfo},
     process, thread, time,

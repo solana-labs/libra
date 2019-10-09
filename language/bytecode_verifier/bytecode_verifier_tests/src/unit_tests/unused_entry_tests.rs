@@ -1,7 +1,7 @@
-use bytecode_verifier::UnusedEntryChecker;
 use proptest::prelude::*;
-use types::{identifier::Identifier, vm_error::StatusCode};
-use vm::file_format::{
+use solana_libra_bytecode_verifier::UnusedEntryChecker;
+use solana_libra_types::{identifier::Identifier, vm_error::StatusCode};
+use solana_libra_vm::file_format::{
     CompiledModule, FieldDefinition, IdentifierIndex, LocalsSignature, ModuleHandleIndex,
     SignatureToken, StructHandle, StructHandleIndex, TypeSignature, TypeSignatureIndex,
 };

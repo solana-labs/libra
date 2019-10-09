@@ -8,13 +8,13 @@
 //! mixing with other sorts of strings. For example, it is not possible to use one as an
 //! identifier for name resolution.
 
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use failure::prelude::*;
 #[cfg(any(test, feature = "testing"))]
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
 use std::{borrow::Borrow, fmt, ops::Deref, result, string::FromUtf8Error};
 
 /// An owned string in a Move transaction.

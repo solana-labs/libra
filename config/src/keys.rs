@@ -1,13 +1,13 @@
 use crate::trusted_peers::{deserialize_key, serialize_key};
-use crypto::{
+use mirai_annotations::verify_unreachable;
+use rand::{rngs::StdRng, SeedableRng};
+use serde::{de::DeserializeOwned, Deserialize, Deserializer, Serialize, Serializer};
+use solana_libra_crypto::{
     ed25519::*,
     test_utils::TEST_SEED,
     x25519::{self, X25519StaticPrivateKey, X25519StaticPublicKey},
     PrivateKey, ValidKeyStringExt,
 };
-use mirai_annotations::verify_unreachable;
-use rand::{rngs::StdRng, SeedableRng};
-use serde::{de::DeserializeOwned, Deserialize, Deserializer, Serialize, Serializer};
 
 #[derive(Debug)]
 #[cfg_attr(any(test, feature = "testing"), derive(Clone))]

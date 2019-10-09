@@ -1,5 +1,5 @@
-use types::vm_error::{StatusCode, VMStatus};
-use vm::{
+use solana_libra_types::vm_error::{StatusCode, VMStatus};
+use solana_libra_vm::{
     access::ModuleAccess,
     errors::verification_error,
     file_format::{Bytecode, CompiledModule, StructFieldInformation},

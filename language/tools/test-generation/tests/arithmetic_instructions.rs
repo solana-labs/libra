@@ -1,9 +1,9 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-extern crate test_generation;
-use test_generation::abstract_state::{AbstractState, AbstractValue};
-use vm::file_format::{Bytecode, SignatureToken};
+extern crate solana_libra_test_generation;
+use solana_libra_test_generation::abstract_state::{AbstractState, AbstractValue};
+use solana_libra_vm::file_format::{Bytecode, SignatureToken};
 
 mod common;
 

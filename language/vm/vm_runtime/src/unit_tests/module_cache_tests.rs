@@ -13,21 +13,21 @@ use crate::{
         loaded_module::LoadedModule,
     },
 };
-use bytecode_verifier::{VerifiedModule, VerifiedScript};
-use compiler::Compiler;
 use hex;
-use types::{
+use solana_libra_bytecode_verifier::{VerifiedModule, VerifiedScript};
+use solana_libra_compiler::Compiler;
+use solana_libra_types::{
     account_address::AccountAddress,
     language_storage::ModuleId,
     vm_error::{StatusCode, StatusType},
 };
-use vm::{
+use solana_libra_vm::{
     access::ModuleAccess,
     file_format::*,
     gas_schedule::{GasAlgebra, GasUnits},
 };
-use vm_cache_map::Arena;
-use vm_runtime_types::loaded_data::{struct_def::StructDef, types::Type};
+use solana_libra_vm_cache_map::Arena;
+use solana_libra_vm_runtime_types::loaded_data::{struct_def::StructDef, types::Type};
 
 fn test_module(name: &'static str) -> VerifiedModule {
     let compiled_module = CompiledModuleMut {

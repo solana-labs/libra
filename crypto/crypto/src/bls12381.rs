@@ -7,8 +7,8 @@
 //! # Example
 //!
 //! ```
-//! use crypto::hash::{CryptoHasher, TestOnlyHasher};
-//! use crypto::{
+//! use solana_libra_crypto::hash::{CryptoHasher, TestOnlyHasher};
+//! use solana_libra_crypto::{
 //!     bls12381::*,
 //!     traits::{Signature, SigningKey, Uniform},
 //! };
@@ -33,7 +33,6 @@
 use crate::{traits::*, HashValue};
 use bincode::{deserialize, serialize};
 use core::convert::TryFrom;
-use crypto_derive::{Deref, SilentDebug, SilentDisplay};
 use failure::prelude::*;
 use pairing::{
     bls12_381::{Fr, FrRepr},
@@ -41,6 +40,7 @@ use pairing::{
 };
 use rand::Rng;
 use serde::{Deserialize, Serialize};
+use solana_libra_crypto_derive::{Deref, SilentDebug, SilentDisplay};
 
 /// The length of the BLS12381PrivateKey.
 pub const BLS12381_PRIVATE_KEY_LENGTH: usize = 32;

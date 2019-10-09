@@ -7,10 +7,10 @@ use crate::chained_bft::{
     block_storage::VoteReceptionResult,
     consensus_types::{vote_data::VoteData, vote_msg::VoteMsg},
 };
-use crypto::HashValue;
+use solana_libra_crypto::HashValue;
+use solana_libra_types::crypto_proxies::random_validator_verifier;
+use solana_libra_types::ledger_info::LedgerInfo;
 use std::sync::Arc;
-use types::crypto_proxies::random_validator_verifier;
-use types::ledger_info::LedgerInfo;
 
 fn random_ledger_info() -> LedgerInfo {
     LedgerInfo::new(
@@ -40,7 +40,7 @@ fn random_vote_data(round: Round) -> VoteData {
 #[test]
 /// Verify that votes are properly aggregated to QC based on their LedgerInfo digest
 fn test_qc_aggregation() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
     let (signers, validator) = random_validator_verifier(4, Some(2), false);
     let validator_verifier = Arc::new(validator);
     let mut pending_votes = PendingVotes::new();
@@ -112,7 +112,7 @@ fn test_qc_aggregation() {
 #[test]
 /// Verify that only the last votes are kept in the system for qc aggregation
 fn test_qc_aggregation_keep_last_only() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
 
     let (signers, validator) = random_validator_verifier(4, Some(2), false);
     let validator_verifier = Arc::new(validator);
@@ -181,7 +181,7 @@ fn test_qc_aggregation_keep_last_only() {
 #[test]
 /// Verify that votes are properly aggregated to TC based on their rounds
 fn test_tc_aggregation() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
 
     let (signers, validator) = random_validator_verifier(4, Some(2), false);
     let validator_verifier = Arc::new(validator);
@@ -235,7 +235,7 @@ fn test_tc_aggregation() {
 #[test]
 /// Verify that only the last votes are kept in the system for TC aggregation
 fn test_tc_aggregation_keep_last_only() {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
 
     let (signers, validator) = random_validator_verifier(4, Some(2), false);
     let validator_verifier = Arc::new(validator);

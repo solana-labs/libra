@@ -2,13 +2,13 @@ use crate::{
     code_cache::module_cache::ModuleCache,
     process_txn::verify::{VerTxn, VerifiedTransaction, VerifiedTransactionState},
 };
-use logger::prelude::*;
-use types::{
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
     transaction::{TransactionOutput, TransactionPayload, TransactionStatus},
     vm_error::{StatusCode, StatusType, VMStatus},
     write_set::WriteSet,
 };
-use vm::{
+use solana_libra_vm::{
     access::ModuleAccess,
     errors::{vm_error, Location},
 };

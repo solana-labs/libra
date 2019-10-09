@@ -2,12 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{commands::*, grpc_client::GRPCClient, AccountData, AccountStatus};
-use admission_control_proto::proto::admission_control::SubmitTransactionRequest;
-use config::{config::PersistableConfig, trusted_peers::ConsensusPeersConfig};
-use crypto::{ed25519::*, test_utils::KeyPair};
 use failure::prelude::*;
 use libra_wallet::{io_utils, wallet_library::WalletLibrary};
-use logger::prelude::*;
 use num_traits::{
     cast::{FromPrimitive, ToPrimitive},
     identities::Zero,
@@ -15,19 +11,12 @@ use num_traits::{
 use reqwest;
 use rust_decimal::Decimal;
 use serde_json;
-use std::{
-    collections::{BTreeMap, HashMap},
-    convert::TryFrom,
-    fmt, fs,
-    io::{stdout, Write},
-    path::{Display, Path, PathBuf},
-    process::{Command, Stdio},
-    str::{self, FromStr},
-    sync::Arc,
-    thread, time,
-};
-use tools::tempdir::TempPath;
-use types::{
+use solana_libra_admission_control_proto::proto::admission_control::SubmitTransactionRequest;
+use solana_libra_config::{config::PersistableConfig, trusted_peers::ConsensusPeersConfig};
+use solana_libra_crypto::{ed25519::*, test_utils::KeyPair};
+use solana_libra_logger::prelude::*;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::{
     access_path::AccessPath,
     account_address::{AccountAddress, ADDRESS_LENGTH},
     account_config::{
@@ -41,6 +30,17 @@ use types::{
         TransactionPayload, Version,
     },
     transaction_helpers::{create_signed_txn, create_unsigned_txn, TransactionSigner},
+};
+use std::{
+    collections::{BTreeMap, HashMap},
+    convert::TryFrom,
+    fmt, fs,
+    io::{stdout, Write},
+    path::{Display, Path, PathBuf},
+    process::{Command, Stdio},
+    str::{self, FromStr},
+    sync::Arc,
+    thread, time,
 };
 
 const CLIENT_WALLET_MNEMONIC_FILE: &str = "client.mnemonic";
@@ -334,7 +334,10 @@ impl ClientProxy {
                 format_err!("Unable to find sender account: {}", sender_account_ref_id)
             })?;
 
-            let program = transaction_builder::encode_transfer_script(&receiver_address, num_coins);
+            let program = solana_libra_transaction_builder::encode_transfer_script(
+                &receiver_address,
+                num_coins,
+            );
             let req = self.create_submit_transaction_req(
                 TransactionPayload::Script(program),
                 sender,
@@ -372,7 +375,8 @@ impl ClientProxy {
         gas_unit_price: Option<u64>,
         max_gas_amount: Option<u64>,
     ) -> Result<RawTransaction> {
-        let program = transaction_builder::encode_transfer_script(&receiver_address, num_coins);
+        let program =
+            solana_libra_transaction_builder::encode_transfer_script(&receiver_address, num_coins);
 
         Ok(create_unsigned_txn(
             TransactionPayload::Script(program),
@@ -462,7 +466,7 @@ impl ClientProxy {
         let dependencies_file = self.handle_dependencies(tmp_source_path.display(), is_module)?;
 
         let mut args = format!(
-            "run -p compiler -- {} -a {}{}",
+            "run -p solana-libra-compiler -- {} -a {}{}",
             tmp_source_path.display(),
             address,
             if is_module { " -m" } else { "" },
@@ -491,7 +495,7 @@ impl ClientProxy {
         source_path: Display,
         is_module: bool,
     ) -> Result<Option<TempPath>> {
-        let mut args = format!("run -p compiler -- -l {}", source_path);
+        let mut args = format!("run -p solana-libra-compiler -- -l {}", source_path);
         if is_module {
             args.push_str(" -m");
         }
@@ -921,7 +925,7 @@ impl ClientProxy {
         ensure!(self.faucet_account.is_some(), "No faucet account loaded");
         let sender = self.faucet_account.as_ref().unwrap();
         let sender_address = sender.address;
-        let program = transaction_builder::encode_mint_script(&receiver, num_coins);
+        let program = solana_libra_transaction_builder::encode_mint_script(&receiver, num_coins);
         let req = self.create_submit_transaction_req(
             TransactionPayload::Script(program),
             sender,
@@ -1080,10 +1084,10 @@ impl fmt::Display for AccountEntry {
 #[cfg(test)]
 mod tests {
     use crate::client_proxy::{parse_bool, AddressAndIndex, ClientProxy};
-    use config::{config::PersistableConfig, trusted_peers::ConfigHelpers};
     use libra_wallet::io_utils;
     use proptest::prelude::*;
-    use tools::tempdir::TempPath;
+    use solana_libra_config::{config::PersistableConfig, trusted_peers::ConfigHelpers};
+    use solana_libra_tools::tempdir::TempPath;
 
     fn generate_accounts_from_wallet(count: usize) -> (ClientProxy, Vec<AddressAndIndex>) {
         let mut accounts = Vec::new();

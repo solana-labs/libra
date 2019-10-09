@@ -1,22 +1,24 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use admission_control_proto::proto::admission_control::{
+use futures::future::{FutureExt, TryFutureExt};
+use grpcio::{ChannelBuilder, EnvBuilder, ServerBuilder};
+use solana_libra_admission_control_proto::proto::admission_control::{
     create_admission_control, AdmissionControlClient,
 };
-use admission_control_service::admission_control_service::AdmissionControlService;
-use config::config::{NetworkConfig, NodeConfig, RoleType};
-use consensus::consensus_provider::{make_consensus_provider, ConsensusProvider};
-use crypto::{ed25519::*, ValidKey};
-use debug_interface::{node_debug_service::NodeDebugService, proto::create_node_debug_interface};
-use executor::Executor;
-use futures::future::{FutureExt, TryFutureExt};
-use grpc_helpers::ServerHandle;
-use grpcio::{ChannelBuilder, EnvBuilder, ServerBuilder};
-use logger::prelude::*;
-use mempool::{proto::mempool::MempoolClient, MempoolRuntime};
-use metrics::metric_server;
-use network::{
+use solana_libra_admission_control_service::admission_control_service::AdmissionControlService;
+use solana_libra_config::config::{NetworkConfig, NodeConfig, RoleType};
+use solana_libra_consensus::consensus_provider::{make_consensus_provider, ConsensusProvider};
+use solana_libra_crypto::{ed25519::*, ValidKey};
+use solana_libra_debug_interface::{
+    node_debug_service::NodeDebugService, proto::create_node_debug_interface,
+};
+use solana_libra_executor::Executor;
+use solana_libra_grpc_helpers::ServerHandle;
+use solana_libra_logger::prelude::*;
+use solana_libra_mempool::{proto::mempool::MempoolClient, MempoolRuntime};
+use solana_libra_metrics::metric_server;
+use solana_libra_network::{
     validator_network::{
         network_builder::{NetworkBuilder, TransportType},
         LibraNetworkProvider, CONSENSUS_DIRECT_SEND_PROTOCOL, CONSENSUS_RPC_PROTOCOL,
@@ -24,7 +26,14 @@ use network::{
     },
     NetworkPublicKeys, ProtocolId,
 };
-use state_synchronizer::StateSynchronizer;
+use solana_libra_state_synchronizer::StateSynchronizer;
+use solana_libra_storage_client::{
+    StorageRead, StorageReadServiceClient, StorageWriteServiceClient,
+};
+use solana_libra_storage_service::start_storage_service;
+use solana_libra_types::account_address::AccountAddress as PeerId;
+use solana_libra_vm_runtime::MoveVM;
+use solana_libra_vm_validator::vm_validator::VMValidator;
 use std::{
     cmp::min,
     convert::{TryFrom, TryInto},
@@ -33,12 +42,7 @@ use std::{
     thread,
     time::Instant,
 };
-use storage_client::{StorageRead, StorageReadServiceClient, StorageWriteServiceClient};
-use storage_service::start_storage_service;
 use tokio::runtime::{Builder, Runtime};
-use types::account_address::AccountAddress as PeerId;
-use vm_runtime::MoveVM;
-use vm_validator::vm_validator::VMValidator;
 
 pub struct LibraHandle {
     _ac: ServerHandle,
@@ -221,7 +225,7 @@ pub fn setup_network(
 }
 
 pub fn setup_environment(node_config: &mut NodeConfig) -> (AdmissionControlClient, LibraHandle) {
-    crash_handler::setup_panic_handler();
+    solana_libra_crash_handler::setup_panic_handler();
 
     // Some of our code uses the rayon global thread pool. Name the rayon threads so it doesn't
     // cause confusion, otherwise the threads would have their parent's name.

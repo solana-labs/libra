@@ -5,12 +5,12 @@
 ///  Definition of LoadGenerator trait and several example structs that implement it.  ///
 /// ---------------------------------------------------------------------------------- ///
 use crate::OP_COUNTER;
-use admission_control_proto::proto::admission_control::SubmitTransactionRequest;
-use client::{AccountData, AccountStatus};
 use failure::prelude::*;
 use libra_wallet::wallet_library::WalletLibrary;
-use logger::prelude::*;
-use types::{
+use solana_libra_admission_control_proto::proto::admission_control::SubmitTransactionRequest;
+use solana_libra_client::{AccountData, AccountStatus};
+use solana_libra_logger::prelude::*;
+use solana_libra_types::{
     account_address::AccountAddress,
     get_with_proof::{RequestItem, UpdateToLatestLedgerRequest},
     proto::types::UpdateToLatestLedgerRequest as ProtoUpdateToLatestLedgerRequest,
@@ -116,7 +116,7 @@ fn gen_mint_txn_request(
     faucet_account: &mut AccountData,
     receiver: &AccountAddress,
 ) -> Result<Request> {
-    let program = transaction_builder::encode_mint_script(receiver, FREE_LUNCH);
+    let program = solana_libra_transaction_builder::encode_mint_script(receiver, FREE_LUNCH);
     let signer = faucet_account
         .key_pair
         .as_ref()
@@ -132,7 +132,7 @@ fn gen_transfer_txn_request(
     wallet: &WalletLibrary,
     num_coins: u64,
 ) -> Result<Request> {
-    let program = transaction_builder::encode_transfer_script(&receiver, num_coins);
+    let program = solana_libra_transaction_builder::encode_transfer_script(&receiver, num_coins);
     gen_submit_transaction_request(program, sender, wallet)
 }
 

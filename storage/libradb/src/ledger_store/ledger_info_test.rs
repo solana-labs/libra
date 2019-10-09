@@ -4,8 +4,8 @@
 use super::*;
 use crate::{change_set::ChangeSet, LibraDB};
 use proptest::{collection::vec, prelude::*};
-use tools::tempdir::TempPath;
-use types::ledger_info::LedgerInfo;
+use solana_libra_tools::tempdir::TempPath;
+use solana_libra_types::ledger_info::LedgerInfo;
 
 prop_compose! {
     fn arb_partial_ledger_info()(accu_hash in any::<HashValue>(),

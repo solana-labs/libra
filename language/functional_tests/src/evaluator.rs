@@ -5,27 +5,27 @@ use crate::{
     config::{global::Config as GlobalConfig, transaction::Config as TransactionConfig},
     errors::*,
 };
-use bytecode_verifier::verifier::{
+use solana_libra_bytecode_verifier::verifier::{
     verify_module_dependencies, verify_script_dependencies, VerifiedModule, VerifiedScript,
 };
-use config::config::VMPublishingOption;
-use ir_to_bytecode::{
+use solana_libra_config::config::VMPublishingOption;
+use solana_libra_ir_to_bytecode::{
     compiler::{compile_module, compile_script},
     parser::parse_script_or_module,
 };
-use ir_to_bytecode_syntax::ast::ScriptOrModule;
-use language_e2e_tests::{account::Account, executor::FakeExecutor};
-use std::{fmt, str::FromStr, time::Duration};
-use stdlib::stdlib_modules;
-use types::{
+use solana_libra_ir_to_bytecode_syntax::ast::ScriptOrModule;
+use solana_libra_language_e2e_tests::{account::Account, executor::FakeExecutor};
+use solana_libra_stdlib::stdlib_modules;
+use solana_libra_types::{
     transaction::{
         Module as TransactionModule, RawTransaction, Script as TransactionScript,
         SignedTransaction, TransactionArgument, TransactionOutput, TransactionStatus,
     },
     vm_error::StatusCode,
 };
-use vm::file_format::{CompiledModule, CompiledScript};
-use vm::gas_schedule::{GasAlgebra, MAXIMUM_NUMBER_OF_GAS_UNITS};
+use solana_libra_vm::file_format::{CompiledModule, CompiledScript};
+use solana_libra_vm::gas_schedule::{GasAlgebra, MAXIMUM_NUMBER_OF_GAS_UNITS};
+use std::{fmt, str::FromStr, time::Duration};
 
 /// A transaction to be evaluated by the testing infra.
 /// Contains code and a transaction config.

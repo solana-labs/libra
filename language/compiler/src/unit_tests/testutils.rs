@@ -1,15 +1,15 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use bytecode_verifier::{VerifiedModule, VerifiedScript};
 use failure::prelude::*;
-use ir_to_bytecode::{
+use solana_libra_bytecode_verifier::{VerifiedModule, VerifiedScript};
+use solana_libra_ir_to_bytecode::{
     compiler::{compile_module, compile_program},
     parser::{parse_module, parse_program},
 };
-use stdlib::stdlib_modules;
-use types::{account_address::AccountAddress, vm_error::VMStatus};
-use vm::{
+use solana_libra_stdlib::stdlib_modules;
+use solana_libra_types::{account_address::AccountAddress, vm_error::VMStatus};
+use solana_libra_vm::{
     access::ScriptAccess,
     file_format::{CompiledModule, CompiledScript},
 };

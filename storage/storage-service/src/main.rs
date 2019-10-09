@@ -1,12 +1,14 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use config::config::NodeConfig;
-use debug_interface::{node_debug_service::NodeDebugService, proto::create_node_debug_interface};
-use executable_helpers::helpers::setup_executable;
 use failure::prelude::*;
-use grpc_helpers::spawn_service_thread;
-use logger::prelude::*;
+use solana_libra_config::config::NodeConfig;
+use solana_libra_debug_interface::{
+    node_debug_service::NodeDebugService, proto::create_node_debug_interface,
+};
+use solana_libra_executable_helpers::helpers::setup_executable;
+use solana_libra_grpc_helpers::spawn_service_thread;
+use solana_libra_logger::prelude::*;
 use std::{path::PathBuf, thread};
 use structopt::StructOpt;
 
@@ -28,7 +30,7 @@ impl StorageNode {
     pub fn run(&self) -> Result<()> {
         info!("Starting storage node");
 
-        let _handle = storage_service::start_storage_service(&self.node_config);
+        let _handle = solana_libra_storage_service::start_storage_service(&self.node_config);
 
         // Start Debug interface
         let debug_service = create_node_debug_interface(NodeDebugService::new());

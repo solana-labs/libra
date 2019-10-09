@@ -7,7 +7,7 @@
 //! # Examples
 //!
 //! ```
-//! use crypto::{traits::Uniform, vrf::ecvrf::*};
+//! use solana_libra_crypto::{traits::Uniform, vrf::ecvrf::*};
 //! use rand::{rngs::StdRng, SeedableRng};
 //!
 //! let message = b"Test message";
@@ -22,7 +22,7 @@
 //! using a `VRFPublicKey`:
 //!
 //! ```
-//! # use crypto::{traits::Uniform, vrf::ecvrf::*};
+//! # use solana_libra_crypto::{traits::Uniform, vrf::ecvrf::*};
 //! # use rand::{rngs::StdRng, SeedableRng};
 //! # let message = b"Test message";
 //! # let mut rng: StdRng = SeedableRng::from_seed([0; 32]);
@@ -35,7 +35,7 @@
 //! Produce a pseudorandom output from a `Proof`:
 //!
 //! ```
-//! # use crypto::{traits::Uniform, vrf::ecvrf::*};
+//! # use solana_libra_crypto::{traits::Uniform, vrf::ecvrf::*};
 //! # use rand::{rngs::StdRng, SeedableRng};
 //! # let message = b"Test message";
 //! # let mut rng: StdRng = SeedableRng::from_seed([0; 32]);
@@ -47,7 +47,6 @@
 
 use crate::traits::*;
 use core::convert::TryFrom;
-use crypto_derive::Deref;
 use curve25519_dalek::{
     constants::ED25519_BASEPOINT_POINT,
     edwards::{CompressedEdwardsY, EdwardsPoint},
@@ -58,6 +57,7 @@ use ed25519_dalek::{
 };
 use failure::prelude::*;
 use serde::{Deserialize, Serialize};
+use solana_libra_crypto_derive::Deref;
 
 const SUITE: u8 = 0x03;
 const ONE: u8 = 0x01;

@@ -1,5 +1,5 @@
 [package]
-name = "benchmark"
+name = "solana-libra-benchmark"
 version = "0.1.0"
 authors = ["Libra <oncall+libra@xmail.facebook.com>"]
 publish = false
@@ -16,24 +16,24 @@ structopt = "0.3.2"
 num_cpus = "1.10.1"
 walkdir = "2.2.9"
 
-admission_control_proto = { path = "../admission_control/admission_control_proto" }
-client = { path = "../client" }
-config = { path = "../config" }
-failure = { package = "failure_ext", path = "../common/failure_ext" }
-generate-keypair = { path = "../config/generate-keypair" }
+solana_libra_admission_control_proto = { path = "../admission_control/admission_control_proto" }
+solana-libra-client = { path = "../client" }
+solana-libra-config = { path = "../config" }
+failure = { package = "solana_libra_failure_ext", path = "../common/failure_ext" }
+solana-libra-generate-keypair = { path = "../config/generate-keypair" }
 libra_wallet = { path = "../client/libra_wallet" }
 libra-swarm = { path = "../libra-swarm" }
-logger = { path = "../common/logger" }
-metrics = { path = "../common/metrics" }
-crypto = { path = "../crypto/crypto" }
+solana-libra-logger = { path = "../common/logger" }
+solana-libra-metrics = { path = "../common/metrics" }
+solana-libra-crypto = { path = "../crypto/crypto" }
 rusty-fork = "0.2.1"
-tools = { path = "../common/tools" }
-types = { path = "../types" }
-transaction_builder = { path = "../language/transaction_builder" }
+solana-libra-tools = { path = "../common/tools" }
+solana-libra-types = { path = "../types" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder" }
 
 [dev-dependencies]
-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
 
 [features]
 default = []
-testing = ["crypto/testing", "libra-swarm/testing"]
+testing = ["solana-libra-crypto/testing", "libra-swarm/testing"]

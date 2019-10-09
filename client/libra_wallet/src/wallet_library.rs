@@ -22,12 +22,12 @@ pub use libra_crypto::{
     hash::CryptoHash,
 };
 use rand::{rngs::EntropyRng, Rng};
-use std::{collections::HashMap, path::Path};
-use types::{
+use solana_libra_types::{
     account_address::AccountAddress,
     transaction::{RawTransaction, SignedTransaction},
     transaction_helpers::TransactionSigner,
 };
+use std::{collections::HashMap, path::Path};
 
 /// WalletLibrary contains all the information needed to recreate a particular wallet
 pub struct WalletLibrary {

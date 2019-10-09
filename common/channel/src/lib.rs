@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! Provides an mpsc (multi-producer single-consumer) channel wrapped in an
-//! [`IntGauge`](metrics::IntGauge)
+//! [`IntGauge`](solana_libra_metrics::IntGauge)
 
 use futures::{
     channel::mpsc,
@@ -10,8 +10,8 @@ use futures::{
     stream::{FusedStream, Stream},
     task::{Context, Poll},
 };
-use logger::prelude::*;
-use metrics::IntGauge;
+use solana_libra_logger::prelude::*;
+use solana_libra_metrics::IntGauge;
 use std::{
     pin::Pin,
     time::{Duration, Instant},

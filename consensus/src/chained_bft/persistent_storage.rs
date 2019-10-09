@@ -11,16 +11,16 @@ use crate::{
     },
     consensus_provider::create_storage_read_client,
 };
-use config::config::NodeConfig;
-use crypto::HashValue;
 use failure::{Result, ResultExt};
-use logger::prelude::*;
 use rmp_serde::{from_slice, to_vec_named};
+use solana_libra_config::config::NodeConfig;
+use solana_libra_crypto::HashValue;
+use solana_libra_logger::prelude::*;
+use solana_libra_types::ledger_info::LedgerInfo;
 use std::{
     collections::{HashMap, HashSet},
     sync::Arc,
 };
-use types::ledger_info::LedgerInfo;
 
 /// Persistent storage for liveness data
 pub trait PersistentLivenessStorage: Send + Sync {

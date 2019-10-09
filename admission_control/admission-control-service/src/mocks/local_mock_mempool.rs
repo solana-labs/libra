@@ -1,19 +1,19 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use mempool::proto::{
+use solana_libra_mempool::proto::{
     mempool::{
         AddTransactionWithValidationRequest, AddTransactionWithValidationResponse,
         HealthCheckRequest, HealthCheckResponse,
     },
     mempool_client::MempoolClientTrait,
 };
-use mempool_shared_proto::proto::mempool_status::{
+use solana_libra_mempool_shared_proto::proto::mempool_status::{
     MempoolAddTransactionStatus, MempoolAddTransactionStatusCode,
 };
+use solana_libra_types::{account_address::ADDRESS_LENGTH, transaction::SignedTransaction};
 use std::convert::TryFrom;
 use std::time::SystemTime;
-use types::{account_address::ADDRESS_LENGTH, transaction::SignedTransaction};
 
 /// Define a local mempool to use for unit tests and fuzzing,
 /// ignore methods not used

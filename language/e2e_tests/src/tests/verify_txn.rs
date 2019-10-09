@@ -9,13 +9,12 @@ use crate::{
     executor::{test_all_genesis, FakeExecutor},
     transaction_status_eq,
 };
-use bytecode_verifier::VerifiedModule;
-use compiler::Compiler;
-use config::config::{NodeConfigHelpers, VMPublishingOption};
-use crypto::{ed25519::*, HashValue};
-use std::collections::HashSet;
-use transaction_builder::encode_transfer_script;
-use types::{
+use solana_libra_bytecode_verifier::VerifiedModule;
+use solana_libra_compiler::Compiler;
+use solana_libra_config::config::{NodeConfigHelpers, VMPublishingOption};
+use solana_libra_crypto::{ed25519::*, HashValue};
+use solana_libra_transaction_builder::encode_transfer_script;
+use solana_libra_types::{
     test_helpers::transaction_test_helpers,
     transaction::{
         Script, TransactionArgument, TransactionPayload, TransactionStatus,
@@ -23,7 +22,8 @@ use types::{
     },
     vm_error::{StatusCode, StatusType, VMStatus},
 };
-use vm::gas_schedule::{self, GasAlgebra};
+use solana_libra_vm::gas_schedule::{self, GasAlgebra};
+use std::collections::HashSet;
 
 #[test]
 fn verify_signature() {

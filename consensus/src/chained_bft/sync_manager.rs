@@ -17,16 +17,16 @@ use crate::{
     state_replication::StateComputer,
 };
 use failure;
-use logger::prelude::*;
-use network::proto::BlockRetrievalStatus;
 use rand::{prelude::*, Rng};
+use solana_libra_logger::prelude::*;
+use solana_libra_network::proto::BlockRetrievalStatus;
+use solana_libra_types::account_address::AccountAddress;
 use std::{
     clone::Clone,
     sync::Arc,
     time::{Duration, Instant},
 };
 use termion::color::*;
-use types::account_address::AccountAddress;
 
 /// SyncManager is responsible for fetching dependencies and 'catching up' for given qc/ledger info
 pub struct SyncManager<T> {

@@ -3,7 +3,7 @@
 
 use crate::util::time_service::{ScheduledTask, TimeService};
 use futures::{Future, FutureExt};
-use logger::prelude::*;
+use solana_libra_logger::prelude::*;
 use std::{
     pin::Pin,
     sync::{Arc, Mutex},

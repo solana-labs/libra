@@ -8,8 +8,8 @@ use crate::{
     partition::Partition,
 };
 use mirai_annotations::checked_verify;
+use solana_libra_vm::file_format::{FieldDefinitionIndex, Kind, LocalIndex, StructDefinitionIndex};
 use std::collections::{BTreeMap, BTreeSet};
-use vm::file_format::{FieldDefinitionIndex, Kind, LocalIndex, StructDefinitionIndex};
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum AbstractValue {

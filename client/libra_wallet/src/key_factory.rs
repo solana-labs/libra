@@ -20,8 +20,8 @@ use crypto::{hmac::Hmac as CryptoHmac, pbkdf2::pbkdf2, sha3::Sha3};
 use libra_crypto::{ed25519::*, hash::HashValue, hkdf::Hkdf, traits::SigningKey};
 use serde::{Deserialize, Serialize};
 use sha3::Sha3_256;
+use solana_libra_types::account_address::AccountAddress;
 use std::{convert::TryFrom, ops::AddAssign};
-use types::account_address::AccountAddress;
 
 use crate::{error::Result, mnemonic::Mnemonic};
 

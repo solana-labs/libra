@@ -8,7 +8,7 @@ use crate::{
     summaries,
 };
 use rand::{rngs::StdRng, FromEntropy, Rng, SeedableRng};
-use vm::file_format::{
+use solana_libra_vm::file_format::{
     AddressPoolIndex, ByteArrayPoolIndex, Bytecode, CodeOffset, CompiledModuleMut,
     FieldDefinitionIndex, FunctionHandleIndex, FunctionSignature, LocalIndex, LocalsSignatureIndex,
     SignatureToken, StructDefinitionIndex, TableIndex, UserStringIndex,

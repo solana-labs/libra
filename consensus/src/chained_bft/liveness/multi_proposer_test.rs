@@ -8,8 +8,8 @@ use crate::chained_bft::{
         proposer_election::ProposerElection,
     },
 };
-use crypto::ed25519::*;
-use types::validator_signer::ValidatorSigner;
+use solana_libra_crypto::ed25519::*;
+use solana_libra_types::validator_signer::ValidatorSigner;
 
 #[test]
 fn test_multi_proposer() {

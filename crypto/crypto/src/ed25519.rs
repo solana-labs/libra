@@ -9,8 +9,8 @@
 //! # Examples
 //!
 //! ```
-//! use crypto::hash::{CryptoHasher, TestOnlyHasher};
-//! use crypto::{
+//! use solana_libra_crypto::hash::{CryptoHasher, TestOnlyHasher};
+//! use solana_libra_crypto::{
 //!     ed25519::*,
 //!     traits::{Signature, SigningKey, Uniform},
 //! };
@@ -30,14 +30,14 @@
 //! testing purposes. Production code should find an alternate means for secure key generation.
 
 use crate::{traits::*, HashValue};
-use canonical_serialization::{
-    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
-};
 use core::convert::TryFrom;
-use crypto_derive::{SilentDebug, SilentDisplay};
 use ed25519_dalek;
 use failure::prelude::*;
 use serde::{de, export, ser};
+use solana_libra_canonical_serialization::{
+    CanonicalDeserialize, CanonicalDeserializer, CanonicalSerialize, CanonicalSerializer,
+};
+use solana_libra_crypto_derive::{SilentDebug, SilentDisplay};
 use std::fmt;
 
 /// The length of the Ed25519PrivateKey
@@ -419,7 +419,7 @@ pub mod compat {
     ///
     /// Warning: if you pass in None, this will not return distinct
     /// results every time! Should you want to write non-deterministic
-    /// tests, look at config::config_builder::util::get_test_config
+    /// tests, look at solana_libra_config::config_builder::util::get_test_config
     pub fn generate_keypair<'a, T>(opt_rng: T) -> (Ed25519PrivateKey, Ed25519PublicKey)
     where
         T: Into<Option<&'a mut StdRng>> + Sized,

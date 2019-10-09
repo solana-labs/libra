@@ -8,13 +8,11 @@
 // Allow writing 1 * KiB or 1 * MiB
 #![allow(clippy::identity_op)]
 
-use config::config::RoleType;
 use core::str::FromStr;
 use criterion::{
     criterion_group, criterion_main, AxisScale, Bencher, Criterion, ParameterizedBenchmark,
     PlotConfiguration, Throughput,
 };
-use crypto::{ed25519::compat, test_utils::TEST_SEED, x25519};
 use futures::{
     channel::mpsc,
     compat::Future01CompatExt,
@@ -23,7 +21,10 @@ use futures::{
     sink::SinkExt,
     stream::{FuturesUnordered, StreamExt},
 };
-use network::{
+use parity_multiaddr::Multiaddr;
+use solana_libra_config::config::RoleType;
+use solana_libra_crypto::{ed25519::compat, test_utils::TEST_SEED, x25519};
+use solana_libra_network::{
     proto::{Block, ConsensusMsg, ConsensusMsg_oneof, Proposal, RequestBlock, RespondBlock},
     protocols::rpc::error::RpcError,
     validator_network::{
@@ -32,13 +33,12 @@ use network::{
     },
     NetworkPublicKeys, ProtocolId,
 };
-use parity_multiaddr::Multiaddr;
-use prost_ext::MessageExt;
+use solana_libra_prost_ext::MessageExt;
 
 use rand::{rngs::StdRng, SeedableRng};
+use solana_libra_types::PeerId;
 use std::{collections::HashMap, time::Duration};
 use tokio::runtime::Runtime;
-use types::PeerId;
 
 const KiB: usize = 1 << 10;
 const MiB: usize = 1 << 20;
@@ -357,7 +357,7 @@ fn compose_respond_block(msg_len: usize) -> ConsensusMsg {
 }
 
 fn network_crate_benchmark(c: &mut Criterion) {
-    ::logger::try_init_for_testing();
+    ::solana_libra_logger::try_init_for_testing();
 
     // Parameterize benchmarks over the message length.
     let msg_lens = vec![32usize, 256, 1 * KiB, 4 * KiB, 64 * KiB, 256 * KiB, 1 * MiB];

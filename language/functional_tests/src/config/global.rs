@@ -6,7 +6,7 @@
 
 use crate::errors::*;
 use crate::genesis_accounts::make_genesis_accounts;
-use language_e2e_tests::account::{Account, AccountData};
+use solana_libra_language_e2e_tests::account::{Account, AccountData};
 use std::{
     collections::{btree_map, BTreeMap},
     str::FromStr,

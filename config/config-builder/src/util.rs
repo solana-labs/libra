@@ -1,16 +1,16 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use config::{
+use rand::{Rng, SeedableRng};
+use solana_libra_config::{
     config::{NodeConfig, NodeConfigHelpers},
     trusted_peers::{ConfigHelpers, ConsensusPeersConfig, NetworkPeersConfig},
 };
-use crypto::{ed25519::*, test_utils::KeyPair};
-use prost_ext::MessageExt;
-use rand::{Rng, SeedableRng};
+use solana_libra_crypto::{ed25519::*, test_utils::KeyPair};
+use solana_libra_prost_ext::MessageExt;
+use solana_libra_types::transaction::SignatureCheckedTransaction;
+use solana_libra_vm_genesis::encode_genesis_transaction_with_validator;
 use std::{fs::File, io::prelude::*};
-use types::transaction::SignatureCheckedTransaction;
-use vm_genesis::encode_genesis_transaction_with_validator;
 
 pub fn gen_genesis_transaction(
     faucet_account_keypair: &KeyPair<Ed25519PrivateKey, Ed25519PublicKey>,
@@ -34,7 +34,8 @@ pub fn gen_genesis_transaction_bytes(
         consensus_peers_config,
         network_peers_config,
     );
-    let genesis_transaction: types::proto::types::SignedTransaction = genesis_transaction.into();
+    let genesis_transaction: solana_libra_types::proto::types::SignedTransaction =
+        genesis_transaction.into();
     genesis_transaction.to_vec().unwrap()
 }
 

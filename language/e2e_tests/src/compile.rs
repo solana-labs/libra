@@ -3,8 +3,8 @@
 
 //! Support for compiling scripts and modules in tests.
 
-use compiler::Compiler;
-use types::{
+use solana_libra_compiler::Compiler;
+use solana_libra_types::{
     account_address::AccountAddress,
     transaction::{Module, TransactionPayload},
 };

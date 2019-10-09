@@ -2,21 +2,21 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::StorageRead;
-use crypto::{hash::CryptoHash, HashValue};
 use failure::prelude::*;
-use scratchpad::{AccountState, SparseMerkleTree};
-use state_view::StateView;
+use solana_libra_crypto::{hash::CryptoHash, HashValue};
+use solana_libra_scratchpad::{AccountState, SparseMerkleTree};
+use solana_libra_state_view::StateView;
+use solana_libra_types::{
+    access_path::AccessPath,
+    account_address::AccountAddress,
+    proof::{verify_sparse_merkle_element, SparseMerkleProof},
+    transaction::Version,
+};
 use std::{
     cell::RefCell,
     collections::{hash_map::Entry, BTreeMap, HashMap},
     convert::TryInto,
     sync::Arc,
-};
-use types::{
-    access_path::AccessPath,
-    account_address::AccountAddress,
-    proof::{verify_sparse_merkle_element, SparseMerkleProof},
-    transaction::Version,
 };
 
 /// `VerifiedStateView` is like a snapshot of the global state comprised of state view at two

@@ -6,11 +6,11 @@ use crate::{
     common_transactions::rotate_key_txn,
     gas_costs,
 };
-use crypto::ed25519::{compat::keypair_strategy, *};
 use proptest::prelude::*;
 use proptest_derive::Arbitrary;
-use proptest_helpers::Index;
-use types::{
+use solana_libra_crypto::ed25519::{compat::keypair_strategy, *};
+use solana_libra_proptest_helpers::Index;
+use solana_libra_types::{
     account_address::AccountAddress,
     transaction::{SignedTransaction, TransactionStatus},
     vm_error::{StatusCode, VMStatus},
