@@ -19,24 +19,24 @@ prost = "0.5.0"
 tokio = "0.1.22"
 ttl_cache = "0.4.2"
 
-solana-libra-mempool-shared-proto = { path = "mempool-shared-proto" }
-solana-libra-bounded-executor = { path = "../common/bounded-executor" }
-solana-libra-config = { path = "../config" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-solana_libra_grpc_helpers = { path = "../common/grpc_helpers" }
-solana-libra-logger = { path = "../common/logger" }
-solana-libra-metrics = { path = "../common/metrics" }
-solana-libra-network = { path = "../network" }
-solana-libra-crypto = { path = "../crypto/crypto" }
-solana_libra_storage_client = { path = "../storage/storage_client" }
-solana-libra-types = { path = "../types" }
-solana_libra_vm_validator = { path = "../vm_validator" }
+solana-libra-mempool-shared-proto = { path = "mempool-shared-proto", version = "0.1.0" }
+solana-libra-bounded-executor = { path = "../common/bounded-executor", version = "0.1.0" }
+solana-libra-config = { path = "../config", version = "0.1.0" }
+failure = { path = "../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_grpc_helpers = { path = "../common/grpc_helpers", version = "0.1.0" }
+solana-libra-logger = { path = "../common/logger", version = "0.1.0" }
+solana-libra-metrics = { path = "../common/metrics", version = "0.1.0" }
+solana-libra-network = { path = "../network", version = "0.1.0" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0" }
+solana_libra_storage_client = { path = "../storage/storage_client", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0" }
+solana_libra_vm_validator = { path = "../vm_validator", version = "0.1.0" }
 
 [dev-dependencies]
 rand = "0.6.5"
-solana-libra-channel = { path = "../common/channel" }
-solana-libra-storage-service = { path = "../storage/storage-service" }
-solana-libra-types = { path = "../types", features = ["testing"] }
+solana-libra-channel = { path = "../common/channel", version = "0.1.0" }
+solana-libra-storage-service = { path = "../storage/storage-service", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0", features = ["testing"] }
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }

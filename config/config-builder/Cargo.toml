@@ -12,14 +12,14 @@ parity-multiaddr = { version = "0.5.0", default-features = false }
 rand = "0.6.5"
 structopt = "0.3.2"
 
-solana-libra-config = { path = ".." }
-solana-libra-crypto = { path = "../../crypto/crypto" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana-libra-generate-keypair = { path = "../generate-keypair" }
-solana-libra-logger = { path = "../../common/logger" }
-solana-libra-prost-ext = { path = "../../common/prost-ext" }
-solana-libra-types = { path = "../../types" }
-solana_libra_vm_genesis = { path = "../../language/vm/vm_genesis" }
+solana-libra-config = { path = "..", version = "0.1.0" }
+solana-libra-crypto = { path = "../../crypto/crypto", version = "0.1.0" }
+failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana-libra-generate-keypair = { path = "../generate-keypair", version = "0.1.0" }
+solana-libra-logger = { path = "../../common/logger", version = "0.1.0" }
+solana-libra-prost-ext = { path = "../../common/prost-ext", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.1.0" }
+solana_libra_vm_genesis = { path = "../../language/vm/vm_genesis", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", features = ["testing"]}
+solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"]}

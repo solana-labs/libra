@@ -15,4 +15,4 @@ pin-utils = "=0.1.0-alpha.4"
 tokio = "0.1.22"
 yamux = { version = "0.2.1", default-features = false }
 
-solana-libra-memsocket = { path = "../memsocket" }
+solana-libra-memsocket = { path = "../memsocket", version = "0.1.0" }

@@ -27,35 +27,35 @@ termion = { version = "1.5.3", default-features = false }
 tokio = { version = "0.1.22", default-features = false }
 prometheus = { version = "0.7.0", default-features = false }
 
-solana_libra_canonical_serialization = { path = "../common/canonical_serialization" }
-solana-libra-channel = { path = "../common/channel" }
-solana-libra-config = { path = "../config" }
-solana-libra-crypto = { path = "../crypto/crypto" }
-solana_libra_debug_interface = { path = "../common/debug_interface" }
-solana-libra-executor = { path = "../execution/executor" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-solana-libra-logger = { path = "../common/logger" }
-solana-libra-mempool = { path = "../mempool" }
-solana-libra-metrics = { path = "../common/metrics" }
-solana-libra-network = { path = "../network" }
-solana-libra-prost-ext = { path = "../common/prost-ext" }
-solana_libra_state_synchronizer = { path = "../state_synchronizer" }
-solana-libra-schemadb = { path = "../storage/schemadb" }
-solana_libra_storage_client = { path = "../storage/storage_client" }
-solana-libra-tools = { path = "../common/tools" }
-solana-libra-types = { path = "../types" }
-solana_libra_vm_runtime = { path = "../language/vm/vm_runtime" }
+solana_libra_canonical_serialization = { path = "../common/canonical_serialization", version = "0.1.0" }
+solana-libra-channel = { path = "../common/channel", version = "0.1.0" }
+solana-libra-config = { path = "../config", version = "0.1.0" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0" }
+solana_libra_debug_interface = { path = "../common/debug_interface", version = "0.1.0" }
+solana-libra-executor = { path = "../execution/executor", version = "0.1.0" }
+failure = { path = "../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana-libra-logger = { path = "../common/logger", version = "0.1.0" }
+solana-libra-mempool = { path = "../mempool", version = "0.1.0" }
+solana-libra-metrics = { path = "../common/metrics", version = "0.1.0" }
+solana-libra-network = { path = "../network", version = "0.1.0" }
+solana-libra-prost-ext = { path = "../common/prost-ext", version = "0.1.0" }
+solana_libra_state_synchronizer = { path = "../state_synchronizer", version = "0.1.0" }
+solana-libra-schemadb = { path = "../storage/schemadb", version = "0.1.0" }
+solana_libra_storage_client = { path = "../storage/storage_client", version = "0.1.0" }
+solana-libra-tools = { path = "../common/tools", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0" }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.1.0" }
 
 [dev-dependencies]
 cached = "0.9.0"
 parity-multiaddr = "0.5.0"
 rusty-fork = "0.2.2"
 
-solana-libra-storage-service = { path = "../storage/storage-service" }
-solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"]}
-solana-libra-types = { path = "../types", features = ["testing"]}
-solana_libra_vm_genesis = { path = "../language/vm/vm_genesis" }
-solana_libra_vm_validator = { path = "../vm_validator" }
+solana-libra-storage-service = { path = "../storage/storage-service", version = "0.1.0" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0", features = ["testing"]}
+solana-libra-types = { path = "../types", version = "0.1.0", features = ["testing"]}
+solana_libra_vm_genesis = { path = "../language/vm/vm_genesis", version = "0.1.0" }
+solana_libra_vm_validator = { path = "../vm_validator", version = "0.1.0" }
 proptest = "0.9.4"
 
 [features]

@@ -21,22 +21,22 @@ rusty-fork = "0.2.1"
 strum = "0.15.0"
 strum_macros = "0.15.0"
 
-solana-libra-accumulator = { path = "../accumulator" }
-solana_libra_canonical_serialization = { path = "../../common/canonical_serialization" }
-solana-libra-crypto = { path = "../../crypto/crypto" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana_libra_jellyfish_merkle = { path = "../jellyfish_merkle" }
-solana-libra-logger = { path = "../../common/logger" }
-solana-libra-metrics = { path = "../../common/metrics" }
-solana-libra-prost-ext = { path = "../../common/prost-ext" }
-solana-libra-schemadb = { path = "../schemadb" }
-solana_libra_storage_proto = { path = "../storage_proto" }
-solana-libra-tools = { path = "../../common/tools" }
-solana-libra-types = { path = "../../types" }
+solana-libra-accumulator = { path = "../accumulator", version = "0.1.0" }
+solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.1.0" }
+solana-libra-crypto = { path = "../../crypto/crypto", version = "0.1.0" }
+failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_jellyfish_merkle = { path = "../jellyfish_merkle", version = "0.1.0" }
+solana-libra-logger = { path = "../../common/logger", version = "0.1.0" }
+solana-libra-metrics = { path = "../../common/metrics", version = "0.1.0" }
+solana-libra-prost-ext = { path = "../../common/prost-ext", version = "0.1.0" }
+solana-libra-schemadb = { path = "../schemadb", version = "0.1.0" }
+solana_libra_storage_proto = { path = "../storage_proto", version = "0.1.0" }
+solana-libra-tools = { path = "../../common/tools", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.1.0" }
 
 [dev-dependencies]
-solana_libra_proptest_helpers = { path = "../../common/proptest_helpers" }
-solana-libra-types = { path = "../../types", features = ["testing"]}
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"]}
 
 [features]
 default = []

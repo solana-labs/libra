@@ -14,7 +14,7 @@ chrono = { version = "0.4.7", default-features = false }
 hex = { version = "0.3.2", default-features = false }
 itertools = { version = "0.8.0", default-features = false }
 lazy_static = { version = "1.3.0", default-features = false }
-solana-libra-logger = { path = "../common/logger" }
+solana-libra-logger = { path = "../common/logger", version = "0.1.0" }
 proptest = { version = "0.9.4", default-features = false }
 proptest-derive = { version = "0.1.2", default-features = false }
 prost = "0.5.0"
@@ -23,19 +23,19 @@ rand = "0.6.5"
 serde = { version = "1.0.99", default-features = false }
 tiny-keccak = { version = "1.5.0", default-features = false }
 
-solana_libra_canonical_serialization = { path = "../common/canonical_serialization" }
-solana-libra-crypto = { path = "../crypto/crypto" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-solana_libra_proptest_helpers = { path = "../common/proptest_helpers" }
+solana_libra_canonical_serialization = { path = "../common/canonical_serialization", version = "0.1.0" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0" }
+failure = { path = "../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_proptest_helpers = { path = "../common/proptest_helpers", version = "0.1.0" }
 num_enum = "0.4.1"
 
 [build-dependencies]
 prost-build = "0.5.0"
 
 [dev-dependencies]
-solana-libra-prost-ext = { path = "../common/prost-ext" }
+solana-libra-prost-ext = { path = "../common/prost-ext", version = "0.1.0" }
 serde_json = "1.0.40"
-solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0", features = ["testing"] }
 
 [features]
 default = []

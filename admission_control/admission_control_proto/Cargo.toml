@@ -12,13 +12,13 @@ futures = "0.1.28"
 grpcio = { version = "=0.5.0-alpha.4", default-features = false, features = ["prost-codec"] }
 prost = "0.5.0"
 
-failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext" }
-solana-libra-logger = { path = "../../common/logger" }
-solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto" }
-solana-libra-types = { path = "../../types" }
+failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext", version = "0.1.0" }
+solana-libra-logger = { path = "../../common/logger", version = "0.1.0" }
+solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", features = ["testing"]}
+solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"]}
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }

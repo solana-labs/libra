@@ -11,6 +11,6 @@ grpcio = { version = "=0.5.0-alpha.4", default-features = false }
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview", features = ["compat"] }
 futures_01 = { version = "0.1.28", package = "futures" }
 
-failure = { package = "solana_libra_failure_ext", path = "../failure_ext" }
-solana-libra-logger = { path = "../logger" }
-solana-libra-metrics = { path = "../metrics" }
+failure = { package = "solana_libra_failure_ext", path = "../failure_ext", version = "0.1.0" }
+solana-libra-logger = { path = "../logger", version = "0.1.0" }
+solana-libra-metrics = { path = "../metrics", version = "0.1.0" }

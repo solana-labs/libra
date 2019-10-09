@@ -27,10 +27,10 @@ threshold_crypto = "0.3"
 tiny-keccak = "1.5.0"
 x25519-dalek = { git = "https://github.com/calibra/x25519-dalek.git", branch = "fiat", default-features = false }
 
-solana_libra_crypto_derive = { path = "../crypto_derive" }
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana-libra-nibble = { path = "../../common/nibble" }
-solana_libra_canonical_serialization = { path = "../../common/canonical_serialization" }
+solana_libra_crypto_derive = { path = "../crypto_derive", version = "0.1.0" }
+failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana-libra-nibble = { path = "../../common/nibble", version = "0.1.0" }
+solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.1.0" }
 
 [dev-dependencies]
 bitvec = "0.10.1"

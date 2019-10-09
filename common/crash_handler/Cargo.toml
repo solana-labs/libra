@@ -10,5 +10,5 @@ edition = "2018"
 backtrace = "0.3.37"
 toml = "0.5.3"
 
-solana-libra-logger = { path = "../logger" }
+solana-libra-logger = { path = "../logger", version = "0.1.0" }
 serde = { version = "1.0.96", features = ["derive"] }

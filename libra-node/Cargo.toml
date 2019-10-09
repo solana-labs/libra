@@ -16,28 +16,28 @@ signal-hook = "0.1.10"
 structopt = "0.3.2"
 tokio = "0.1.22"
 
-solana_libra_admission_control_proto = { path = "../admission_control/admission_control_proto" }
-solana-libra-admission-control-service = { path = "../admission_control/admission-control-service" }
-solana-libra-config = { path = "../config" }
-solana-libra-consensus = { path = "../consensus" }
-solana_libra_crash_handler = { path = "../common/crash_handler" }
-solana_libra_debug_interface = { path = "../common/debug_interface" }
-solana-libra-executable-helpers = { path = "../common/executable-helpers" }
-solana-libra-executor = { path = "../execution/executor" }
+solana_libra_admission_control_proto = { path = "../admission_control/admission_control_proto", version = "0.1.0" }
+solana-libra-admission-control-service = { path = "../admission_control/admission-control-service", version = "0.1.0" }
+solana-libra-config = { path = "../config", version = "0.1.0" }
+solana-libra-consensus = { path = "../consensus", version = "0.1.0" }
+solana_libra_crash_handler = { path = "../common/crash_handler", version = "0.1.0" }
+solana_libra_debug_interface = { path = "../common/debug_interface", version = "0.1.0" }
+solana-libra-executable-helpers = { path = "../common/executable-helpers", version = "0.1.0" }
+solana-libra-executor = { path = "../execution/executor", version = "0.1.0" }
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview", features = ["async-await", "io-compat", "compat"] }
-solana_libra_grpc_helpers = { path = "../common/grpc_helpers" }
-solana-libra-logger = { path = "../common/logger" }
-solana-libra-mempool = { path = "../mempool" }
-solana-libra-metrics = { path = "../common/metrics" }
-solana-libra-crypto = { path = "../crypto/crypto" }
-solana-libra-network = { path = "../network" }
-solana_libra_state_synchronizer = { path = "../state_synchronizer" }
-solana_libra_storage_client = { path = "../storage/storage_client" }
-solana-libra-storage-service = { path = "../storage/storage-service" }
-solana-libra-types = { path = "../types" }
-solana_libra_vm_runtime = { path = "../language/vm/vm_runtime" }
-solana_libra_vm_validator = { path = "../vm_validator" }
+solana_libra_grpc_helpers = { path = "../common/grpc_helpers", version = "0.1.0" }
+solana-libra-logger = { path = "../common/logger", version = "0.1.0" }
+solana-libra-mempool = { path = "../mempool", version = "0.1.0" }
+solana-libra-metrics = { path = "../common/metrics", version = "0.1.0" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0" }
+solana-libra-network = { path = "../network", version = "0.1.0" }
+solana_libra_state_synchronizer = { path = "../state_synchronizer", version = "0.1.0" }
+solana_libra_storage_client = { path = "../storage/storage_client", version = "0.1.0" }
+solana-libra-storage-service = { path = "../storage/storage-service", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0" }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.1.0" }
+solana_libra_vm_validator = { path = "../vm_validator", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-config-builder = { path = "../config/config-builder" }
-solana-libra-types = { path = "../types", features = ["testing"]}
+solana-libra-config-builder = { path = "../config/config-builder", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0", features = ["testing"]}

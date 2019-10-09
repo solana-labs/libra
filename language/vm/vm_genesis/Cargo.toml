@@ -7,25 +7,25 @@ license = "Apache-2.0"
 publish = false
 
 [dependencies]
-solana-libra-config = { path = "../../../config" }
-failure = { path = "../../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana_libra_transaction_builder = { path = "../../transaction_builder"}
-solana-libra-crypto = { path = "../../../crypto/crypto" }
-solana-libra-stdlib = { path = "../../stdlib" }
-solana-libra-prost-ext = { path = "../../../common/prost-ext" }
-solana_libra_state_view = { path = "../../../storage/state_view" }
-solana-libra-types = { path = "../../../types" }
-solana-libra-vm = { path = "../" }
-solana_libra_vm_cache_map = { path = "../vm_runtime/vm_cache_map" }
-solana_libra_vm_runtime = { path = "../vm_runtime" }
-solana_libra_vm_runtime_types = { path = "../vm_runtime/vm_runtime_types" }
+solana-libra-config = { path = "../../../config", version = "0.1.0" }
+failure = { path = "../../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_transaction_builder = { path = "../../transaction_builder", version = "0.1.0"}
+solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.1.0" }
+solana-libra-stdlib = { path = "../../stdlib", version = "0.1.0" }
+solana-libra-prost-ext = { path = "../../../common/prost-ext", version = "0.1.0" }
+solana_libra_state_view = { path = "../../../storage/state_view", version = "0.1.0" }
+solana-libra-types = { path = "../../../types", version = "0.1.0" }
+solana-libra-vm = { path = "../", version = "0.1.0" }
+solana_libra_vm_cache_map = { path = "../vm_runtime/vm_cache_map", version = "0.1.0" }
+solana_libra_vm_runtime = { path = "../vm_runtime", version = "0.1.0" }
+solana_libra_vm_runtime_types = { path = "../vm_runtime/vm_runtime_types", version = "0.1.0" }
 lazy_static = "1.3.0"
 rand = "0.6.5"
 
 [dev-dependencies]
-solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization" }
-solana-libra-crypto = { path = "../../../crypto/crypto", features = ["testing"]}
+solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization", version = "0.1.0" }
+solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.1.0", features = ["testing"]}
 proptest = "0.9.3"
 proptest-derive = "0.1.1"
-solana_libra_proptest_helpers = { path = "../../../common/proptest_helpers" }
-solana-libra-types = { path = "../../../types", features = ["testing"] }
+solana_libra_proptest_helpers = { path = "../../../common/proptest_helpers", version = "0.1.0" }
+solana-libra-types = { path = "../../../types", version = "0.1.0", features = ["testing"] }
