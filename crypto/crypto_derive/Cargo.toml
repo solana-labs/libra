@@ -13,5 +13,4 @@ quote = "1.0.0"
 proc-macro2 = "1.0.1"
 
 [dev-dependencies]
-solana-libra-crypto = { path = "../crypto"}
 failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext"}
