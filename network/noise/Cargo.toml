@@ -12,9 +12,9 @@ edition = "2018"
 [dependencies]
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview" }
 snow = { version = "0.5.2", features=["ring-accelerated"]}
-solana-libra-crypto = { path = "../../crypto/crypto" }
-solana-libra-netcore = { path = "../netcore" }
-solana-libra-logger = { path = "../../common/logger" }
+solana-libra-crypto = { path = "../../crypto/crypto", version = "0.1.0" }
+solana-libra-netcore = { path = "../netcore", version = "0.1.0" }
+solana-libra-logger = { path = "../../common/logger", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-memsocket = { path = "../memsocket" }
+solana-libra-memsocket = { path = "../memsocket", version = "0.1.0" }

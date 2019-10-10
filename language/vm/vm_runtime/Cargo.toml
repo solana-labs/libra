@@ -18,23 +18,23 @@ rental = "0.5.4"
 mirai-annotations = "1.4.0"
 prometheus = { version = "0.7.0", default-features = false }
 
-solana_libra_bytecode_verifier = { path = "../../bytecode_verifier" }
-solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization" }
-solana-libra-config = { path = "../../../config" }
-solana-libra-crypto = { path = "../../../crypto/crypto" }
-solana-libra-logger = { path = "../../../common/logger" }
-solana-libra-metrics = { path = "../../../common/metrics" }
-solana_libra_state_view = { path = "../../../storage/state_view" }
-solana-libra-types = { path = "../../../types" }
-solana-libra-vm = { path = "../" }
-solana_libra_vm_cache_map = { path = "vm_cache_map" }
-solana_libra_vm_runtime_types = { path = "vm_runtime_types" }
+solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.1.0" }
+solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization", version = "0.1.0" }
+solana-libra-config = { path = "../../../config", version = "0.1.0" }
+solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.1.0" }
+solana-libra-logger = { path = "../../../common/logger", version = "0.1.0" }
+solana-libra-metrics = { path = "../../../common/metrics", version = "0.1.0" }
+solana_libra_state_view = { path = "../../../storage/state_view", version = "0.1.0" }
+solana-libra-types = { path = "../../../types", version = "0.1.0" }
+solana-libra-vm = { path = "../", version = "0.1.0" }
+solana_libra_vm_cache_map = { path = "vm_cache_map", version = "0.1.0" }
+solana_libra_vm_runtime_types = { path = "vm_runtime_types", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-compiler = { path = "../../compiler" }
+solana-libra-compiler = { path = "../../compiler", version = "0.1.0" }
 
-solana-libra-types = { path = "../../../types", features = ["testing"] }
-solana-libra-vm = { path = "../", features = ["testing"]}
+solana-libra-types = { path = "../../../types", version = "0.1.0", features = ["testing"] }
+solana-libra-vm = { path = "../", version = "0.1.0", features = ["testing"]}
 
 [features]
 default = []

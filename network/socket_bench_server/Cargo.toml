@@ -17,7 +17,7 @@ parity-multiaddr = "0.5.0"
 tokio = { version = "0.1.22", default-features = false }
 unsigned-varint = { version = "0.2.2", features = ["codec"] }
 
-solana-libra-logger = { path = "../../common/logger" }
-solana-libra-memsocket = { path = "../memsocket" }
-solana-libra-netcore = { path = "../netcore" }
-solana-libra-noise = { path = "../noise" }
+solana-libra-logger = { path = "../../common/logger", version = "0.1.0" }
+solana-libra-memsocket = { path = "../memsocket", version = "0.1.0" }
+solana-libra-netcore = { path = "../netcore", version = "0.1.0" }
+solana-libra-noise = { path = "../noise", version = "0.1.0" }

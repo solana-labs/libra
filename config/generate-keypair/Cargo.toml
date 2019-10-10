@@ -13,6 +13,6 @@ edition = "2018"
 bincode = { version = "1.1.4", default-features = false }
 structopt = "0.3.2"
 
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana-libra-crypto = { path = "../../crypto/crypto/"}
-solana-libra-tools = { path = "../../common/tools" }
+failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana-libra-crypto = { path = "../../crypto/crypto/", version = "0.1.0"}
+solana-libra-tools = { path = "../../common/tools", version = "0.1.0" }

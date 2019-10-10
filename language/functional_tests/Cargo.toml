@@ -9,22 +9,22 @@ license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", package = "solana_libra_failure_ext" }
-solana_libra_ir_to_bytecode_syntax = { path = "../compiler/ir_to_bytecode/syntax" }
-solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode" }
-solana-libra-stdlib = { path = "../stdlib" }
-solana-libra-types = { path = "../../types" }
-solana-libra-vm = { path = "../vm" }
-solana_libra_bytecode_verifier = { path = "../bytecode_verifier" }
-solana_libra_language_e2e_tests = { path = "../e2e_tests" }
-solana-libra-config = { path = "../../config" }
+failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_ir_to_bytecode_syntax = { path = "../compiler/ir_to_bytecode/syntax", version = "0.1.0" }
+solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode", version = "0.1.0" }
+solana-libra-stdlib = { path = "../stdlib", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.1.0" }
+solana-libra-vm = { path = "../vm", version = "0.1.0" }
+solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.1.0" }
+solana_libra_language_e2e_tests = { path = "../e2e_tests", version = "0.1.0" }
+solana-libra-config = { path = "../../config", version = "0.1.0" }
 filecheck = "0.4.0"
 lazy_static = "1.3.0"
 regex = { version = "1.3.0", default-features = false, features = ["std", "perf"] }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", features = ["testing"] }
-solana-libra-datatest-stable = { path = "../../common/datatest-stable" }
+solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"] }
+solana-libra-datatest-stable = { path = "../../common/datatest-stable", version = "0.1.0" }
 
 [[test]]
 name = "testsuite"

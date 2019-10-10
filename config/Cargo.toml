@@ -19,15 +19,15 @@ serde = { version = "1.0.99", default-features = false }
 toml = { version = "0.5.3", default-features = false }
 prost = "0.5.0"
 
-solana-libra-crypto = { path = "../crypto/crypto" }
-solana-libra-logger = { path = "../common/logger" }
-failure = { path = "../common/failure_ext", package = "solana_libra_failure_ext" }
-solana-libra-tools = { path = "../common/tools" }
-solana-libra-types = { path = "../types" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0" }
+solana-libra-logger = { path = "../common/logger", version = "0.1.0" }
+failure = { path = "../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana-libra-tools = { path = "../common/tools", version = "0.1.0" }
+solana-libra-types = { path = "../types", version = "0.1.0" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../types", features = ["testing"] }
-solana-libra-crypto = { path = "../crypto/crypto", features = ["testing"] }
+solana-libra-types = { path = "../types", version = "0.1.0", features = ["testing"] }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.1.0", features = ["testing"] }
 
 [features]
 default = []

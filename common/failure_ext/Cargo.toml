@@ -12,4 +12,4 @@ edition = "2018"
 [dependencies]
 failure = "0.1.3"
 
-solana_libra_failure_macros = { path = "failure_macros" }
+solana_libra_failure_macros = { path = "failure_macros", version = "0.1.0" }

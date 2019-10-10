@@ -15,15 +15,15 @@ log = "0.4"
 env_logger = "0.6"
 mirai-annotations = "1.4.0"
 structopt = "0.3.2"
-solana_libra_bytecode_verifier = { path = "../../bytecode_verifier" }
-solana-libra-cost-synthesis = { path = "../cost-synthesis" }
-solana-libra-vm = { path = "../../vm" }
-solana_libra_vm_runtime = { path = "../../vm/vm_runtime" }
-solana_libra_vm_runtime_types = { path = "../../vm/vm_runtime/vm_runtime_types" }
-solana_libra_vm_cache_map = { path = "../../vm/vm_runtime/vm_cache_map" }
-solana_libra_language_e2e_tests = { path = "../../e2e_tests" }
-solana-libra-stdlib = { path = "../../stdlib" }
-solana-libra-types = { path = "../../../types", features = ["testing"] }
+solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.1.0" }
+solana-libra-cost-synthesis = { path = "../cost-synthesis", version = "0.1.0" }
+solana-libra-vm = { path = "../../vm", version = "0.1.0" }
+solana_libra_vm_runtime = { path = "../../vm/vm_runtime", version = "0.1.0" }
+solana_libra_vm_runtime_types = { path = "../../vm/vm_runtime/vm_runtime_types", version = "0.1.0" }
+solana_libra_vm_cache_map = { path = "../../vm/vm_runtime/vm_cache_map", version = "0.1.0" }
+solana_libra_language_e2e_tests = { path = "../../e2e_tests", version = "0.1.0" }
+solana-libra-stdlib = { path = "../../stdlib", version = "0.1.0" }
+solana-libra-types = { path = "../../../types", version = "0.1.0", features = ["testing"] }
 
 [features]
 mirai-contracts = []
