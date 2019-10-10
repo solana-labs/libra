@@ -31,7 +31,7 @@
 //!
 //! ## Example
 //!
-//! ```
+//! ```ignore
 //! # #[macro_use] extern crate solana_libra_crypto_derive;
 //! use solana_libra_crypto::{
 //!     hash::HashValue,
