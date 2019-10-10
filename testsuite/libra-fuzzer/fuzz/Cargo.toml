@@ -3,6 +3,10 @@ name = "libra_fuzzer_fuzz"
 version = "0.1.0"
 edition = "2018"
 authors = ["Automatically generated"]
+description = "Libra fuzzer fuzz"
+repository = "https://github.com/libra/libra"
+homepage = "https://libra.org"
+license = "Apache-2.0"
 publish = false
 
 [package.metadata]
