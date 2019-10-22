@@ -1,10 +1,12 @@
 // Copyright (c) The Libra Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
+#[cfg(feature = "service-metrics")]
 use crate::ServiceMetrics;
 use lazy_static::lazy_static;
 use prometheus::IntCounter;
 
+#[cfg(feature = "service-metrics")]
 lazy_static! {
     pub static ref SVC_COUNTERS: ServiceMetrics = ServiceMetrics::new_and_registered();
 }
