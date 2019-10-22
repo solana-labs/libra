@@ -23,7 +23,7 @@ solana_libra_canonical_serialization = { path = "../../../common/canonical_seria
 solana-libra-config = { path = "../../../config", version = "0.1.0" }
 solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.1.0" }
 solana-libra-logger = { path = "../../../common/logger", version = "0.1.0" }
-solana-libra-metrics = { path = "../../../common/metrics", version = "0.1.0" }
+solana-libra-metrics = { path = "../../../common/metrics", version = "0.1.0", default-features = false }
 solana_libra_state_view = { path = "../../../storage/state_view", version = "0.1.0" }
 solana-libra-types = { path = "../../../types", version = "0.1.0" }
 solana-libra-vm = { path = "../", version = "0.1.0" }

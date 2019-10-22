@@ -10,7 +10,9 @@ pub mod counters;
 mod json_encoder;
 pub mod metric_server;
 
+#[cfg(feature = "service-metrics")]
 mod service_metrics;
+#[cfg(feature = "service-metrics")]
 pub use service_metrics::ServiceMetrics;
 
 mod op_counters;
