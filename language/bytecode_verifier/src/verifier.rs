@@ -14,8 +14,10 @@ use solana_libra_types::{
 };
 use solana_libra_vm::{
     access::{ModuleAccess, ScriptAccess},
-    errors::{append_err_info, verification_error},
-    file_format::{CompiledModule, CompiledProgram, CompiledScript},
+    errors::{append_err_info, verification_error, BinaryLoaderResult},
+    file_format::{
+        CompiledModule, CompiledModuleMut, CompiledProgram, CompiledScript, CompiledScriptMut,
+    },
     resolver::Resolver,
     views::{ModuleView, ViewInternals},
     IndexKind,
@@ -196,6 +198,14 @@ impl VerifiedModule {
         self.as_inner().serialize(buf)
     }
 
+    /// Deserializes a &[u8] slice into a `VerifiedModule` instance.
+    pub fn deserialize(binary: &[u8]) -> BinaryLoaderResult<Self> {
+        let deserialized = CompiledModuleMut::deserialize_no_check_bounds(binary)?;
+        Ok(VerifiedModule(deserialized.freeze().map_err(|_| {
+            VMStatus::new(StatusCode::UNKNOWN_VERIFICATION_ERROR)
+        })?))
+    }
+
     /// Returns a reference to the `CompiledModule` within.
     pub fn as_inner(&self) -> &CompiledModule {
         &self.0
@@ -276,6 +286,14 @@ impl VerifiedScript {
     /// untrusted. Instead, one must go through `CompiledScript`.
     pub fn serialize(&self, buf: &mut Vec<u8>) -> Result<(), Error> {
         self.as_inner().serialize(buf)
+    }
+
+    /// Deserializes a &[u8] slice into a `VerifiedScript` instance.
+    pub fn deserialize(binary: &[u8]) -> BinaryLoaderResult<Self> {
+        let deserialized = CompiledScriptMut::deserialize_no_check_bounds(binary)?;
+        Ok(VerifiedScript(deserialized.freeze().map_err(|_| {
+            VMStatus::new(StatusCode::UNKNOWN_VERIFICATION_ERROR)
+        })?))
     }
 
     /// Returns a reference to the `CompiledScript` within.
