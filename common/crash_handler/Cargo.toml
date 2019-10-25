@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_crash_handler"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra crash handler"
 repository = "https://github.com/libra/libra"
@@ -13,5 +13,5 @@ edition = "2018"
 backtrace = "0.3.37"
 toml = "0.5.3"
 
-solana_libra_logger = { path = "../logger", version = "0.0.1-sol2" }
+solana_libra_logger = { path = "../logger", version = "0.0.1-sol3" }
 serde = { version = "1.0.96", features = ["derive"] }

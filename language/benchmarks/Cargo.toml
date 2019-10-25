@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_language_benchmarks"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra language benchmarks"
 repository = "https://github.com/libra/libra"
@@ -13,12 +13,12 @@ edition = "2018"
 criterion = "0.2.11"
 proptest = "0.9.4"
 
-solana_libra_language_e2e_tests = { path = "../e2e_tests", version = "0.0.1-sol2" }
-solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol2" }
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2" }
+solana_libra_language_e2e_tests = { path = "../e2e_tests", version = "0.0.1-sol3" }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
 
 [dev-dependencies]
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"] }
 
 [[bench]]
 name = "transactions"

@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_prost_ext"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra build helpers"
 repository = "https://github.com/libra/libra"

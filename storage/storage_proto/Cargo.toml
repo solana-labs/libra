@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_storage_proto"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra storage proto"
 repository = "https://github.com/libra/libra"
@@ -17,13 +17,13 @@ proptest = "0.9.2"
 proptest-derive = "0.1.0"
 prost = "0.5.0"
 
-solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
-failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol3" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }
 
 [dev-dependencies]
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
-solana_libra_prost_ext = { path = "../../common/prost-ext", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"]}
+solana_libra_prost_ext = { path = "../../common/prost-ext", version = "0.0.1-sol3" }

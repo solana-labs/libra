@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_transaction_builder"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra transaction_builder"
 repository = "https://github.com/libra/libra"
@@ -9,16 +9,16 @@ license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-solana_libra_config = { path = "../../config", version = "0.0.1-sol2" }
-solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
-solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode", version = "0.0.1-sol2" }
+solana_libra_config = { path = "../../config", version = "0.0.1-sol3" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol3" }
+solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode", version = "0.0.1-sol3" }
 lazy_static = "1.3.0"
-solana_libra_stdlib = { path = "../stdlib", version = "0.0.1-sol2" }
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2" }
-solana_libra_vm = { path = "../vm", version = "0.0.1-sol2" }
+solana_libra_stdlib = { path = "../stdlib", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
+solana_libra_vm = { path = "../vm", version = "0.0.1-sol3" }
 
 [dev-dependencies]
-solana_libra_types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"]}
 
 [features]
 testing = ["solana_libra_types/testing", "solana_libra_crypto/testing"]
