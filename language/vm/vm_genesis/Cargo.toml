@@ -7,7 +7,6 @@ description = "Libra vm genesis"
 repository = "https://github.com/libra/libra"
 homepage = "https://libra.org"
 license = "Apache-2.0"
-publish = false
 
 [dependencies]
 solana-libra-config = { path = "../../../config", version = "0.0.1-sol" }
