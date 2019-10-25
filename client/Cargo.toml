@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-client"
-version = "0.0.1-sol3"
+version = "0.0.1-sol4"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra client"
 repository = "https://github.com/libra/libra"
@@ -25,21 +25,21 @@ serde = { version = "1.0.96", features = ["derive"] }
 serde_json = "1.0.40"
 structopt = "0.3.2"
 
-solana_libra_admission_control_proto = { path = "../admission_control/admission_control_proto", version = "0.0.1-sol3" }
-solana_libra_config = { path = "../config", version = "0.0.1-sol3" }
-solana_libra_crash_handler = { path = "../common/crash_handler", version = "0.0.1-sol3" }
-solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol3" }
-failure = { package = "solana_libra_failure_ext", path = "../common/failure_ext", version = "0.0.1-sol3" }
-libra_wallet = { path = "./libra_wallet", version = "0.0.1-sol3" }
-solana_libra_logger =  { path = "../common/logger", version = "0.0.1-sol3" }
-solana_libra_metrics = { path = "../common/metrics", version = "0.0.1-sol3" }
-solana_libra_types = { path = "../types", version = "0.0.1-sol3" }
-solana_libra_tools = { path = "../common/tools/", version = "0.0.1-sol3" }
-solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol3" }
+solana_libra_admission_control_proto = { path = "../admission_control/admission_control_proto", version = "0.0.1-sol4" }
+solana_libra_config = { path = "../config", version = "0.0.1-sol4" }
+solana_libra_crash_handler = { path = "../common/crash_handler", version = "0.0.1-sol4" }
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol4" }
+failure = { package = "solana_libra_failure_ext", path = "../common/failure_ext", version = "0.0.1-sol4" }
+libra_wallet = { path = "./libra_wallet", version = "0.0.1-sol4" }
+solana_libra_logger =  { path = "../common/logger", version = "0.0.1-sol4" }
+solana_libra_metrics = { path = "../common/metrics", version = "0.0.1-sol4" }
+solana_libra_types = { path = "../types", version = "0.0.1-sol4" }
+solana_libra_tools = { path = "../common/tools/", version = "0.0.1-sol4" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol4" }
 
 [dev-dependencies]
-solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol3", features = ["testing"] }
-solana_libra_types = { path = "../types", version = "0.0.1-sol3", features = ["testing"]}
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol4", features = ["testing"] }
+solana_libra_types = { path = "../types", version = "0.0.1-sol4", features = ["testing"]}
 
 [features]
 default = []
