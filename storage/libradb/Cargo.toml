@@ -26,21 +26,21 @@ strum_macros = "0.15.0"
 
 solana-libra-accumulator = { path = "../accumulator", version = "0.0.1-sol2" }
 solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.0.1-sol2" }
-solana-libra-crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
 failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
 solana_libra_jellyfish_merkle = { path = "../jellyfish_merkle", version = "0.0.1-sol2" }
-solana-libra-logger = { path = "../../common/logger", version = "0.0.1-sol2" }
-solana-libra-metrics = { path = "../../common/metrics", version = "0.0.1-sol2" }
-solana-libra-prost-ext = { path = "../../common/prost-ext", version = "0.0.1-sol2" }
+solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol2" }
+solana_libra_metrics = { path = "../../common/metrics", version = "0.0.1-sol2" }
+solana_libra_prost_ext = { path = "../../common/prost-ext", version = "0.0.1-sol2" }
 solana-libra-schemadb = { path = "../schemadb", version = "0.0.1-sol2" }
 solana_libra_storage_proto = { path = "../storage_proto", version = "0.0.1-sol2" }
-solana-libra-tools = { path = "../../common/tools", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
+solana_libra_tools = { path = "../../common/tools", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol2" }
 
 [dev-dependencies]
 solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
 
 [features]
 default = []
-testing = ["solana-libra-types/testing"]
+testing = ["solana_libra_types/testing"]

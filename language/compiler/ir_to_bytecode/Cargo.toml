@@ -11,12 +11,12 @@ edition = "2018"
 [dependencies]
 failure = { path = "../../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
 solana_libra_ir_to_bytecode_syntax = { path = "syntax", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../../vm", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2" }
+solana_libra_vm = { path = "../../vm", version = "0.0.1-sol2" }
 lalrpop-util = "0.17.2"
 log = "0.4.7"
 codespan = "0.2.1"
 codespan-reporting = "0.2.1"
 
 [dev-dependencies]
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }

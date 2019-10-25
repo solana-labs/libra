@@ -9,15 +9,15 @@ homepage = "https://libra.org"
 license = "Apache-2.0"
 
 [dependencies]
-solana-libra-config = { path = "../../../config", version = "0.0.1-sol2" }
+solana_libra_config = { path = "../../../config", version = "0.0.1-sol2" }
 failure = { path = "../../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
 solana_libra_transaction_builder = { path = "../../transaction_builder", version = "0.0.1-sol2"}
-solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2" }
-solana-libra-stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
-solana-libra-prost-ext = { path = "../../../common/prost-ext", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2" }
+solana_libra_stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
+solana_libra_prost_ext = { path = "../../../common/prost-ext", version = "0.0.1-sol2" }
 solana_libra_state_view = { path = "../../../storage/state_view", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2" }
+solana_libra_vm = { path = "../", version = "0.0.1-sol2" }
 solana_libra_vm_cache_map = { path = "../vm_runtime/vm_cache_map", version = "0.0.1-sol2" }
 solana_libra_vm_runtime = { path = "../vm_runtime", version = "0.0.1-sol2" }
 solana_libra_vm_runtime_types = { path = "../vm_runtime/vm_runtime_types", version = "0.0.1-sol2" }
@@ -26,8 +26,8 @@ rand = "0.6.5"
 
 [dev-dependencies]
 solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization", version = "0.0.1-sol2" }
-solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2", features = ["testing"]}
 proptest = "0.9.3"
 proptest-derive = "0.1.1"
 solana_libra_proptest_helpers = { path = "../../../common/proptest_helpers", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }

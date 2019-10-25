@@ -1,5 +1,5 @@
 [package]
-name = "solana-libra-nibble"
+name = "solana_libra_nibble"
 version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra nibble"

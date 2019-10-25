@@ -16,10 +16,10 @@ hex = "0.3.2"
 lazy_static = "1.4.0"
 lalrpop-util = "0.17.2"
 regex = { version = "1.3.0", default-features = false, features = ["std", "perf"] }
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../../../types", version = "0.0.1-sol2" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../../../types", version = "0.0.1-sol2", features = ["testing"] }
 
 [build-dependencies]
 lalrpop = "0.17.2"

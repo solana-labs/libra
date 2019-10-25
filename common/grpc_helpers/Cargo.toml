@@ -15,5 +15,5 @@ futures = { version = "=0.3.0-alpha.19", package = "futures-preview", features =
 futures_01 = { version = "0.1.28", package = "futures" }
 
 failure = { package = "solana_libra_failure_ext", path = "../failure_ext", version = "0.0.1-sol2" }
-solana-libra-logger = { path = "../logger", version = "0.0.1-sol2" }
-solana-libra-metrics = { path = "../metrics", version = "0.0.1-sol2" }
+solana_libra_logger = { path = "../logger", version = "0.0.1-sol2" }
+solana_libra_metrics = { path = "../metrics", version = "0.0.1-sol2" }

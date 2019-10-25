@@ -25,7 +25,7 @@ cli = { path = "../client", version = "0.0.1-sol2", package="solana-libra-client
 solana_libra_canonical_serialization = { path = "../common/canonical_serialization", version = "0.0.1-sol2", package="solana_libra_canonical_serialization" }
 solana-libra-generate-keypair = { path = "../config/generate-keypair", version = "0.0.1-sol2" }
 libra-swarm = { path = "../libra-swarm", version = "0.0.1-sol2", features = ["testing"]}
-solana-libra-logger = { path = "../common/logger", version = "0.0.1-sol2" }
-solana-libra-config = { path = "../config", version = "0.0.1-sol2" }
-solana-libra-tools = { path = "../common/tools", version = "0.0.1-sol2" }
-solana-libra-crypto = { path = "../crypto/crypto", version = "0.0.1-sol2" }
+solana_libra_logger = { path = "../common/logger", version = "0.0.1-sol2" }
+solana_libra_config = { path = "../config", version = "0.0.1-sol2" }
+solana_libra_tools = { path = "../common/tools", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol2" }

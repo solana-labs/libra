@@ -15,18 +15,18 @@ rand = "0.6.5"
 lazy_static = "1.3.0"
 
 solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.0.1-sol2" }
-solana-libra-stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../../vm", version = "0.0.1-sol2" }
+solana_libra_stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2" }
+solana_libra_vm = { path = "../../vm", version = "0.0.1-sol2" }
 solana_libra_vm_runtime = { path = "../../vm/vm_runtime", version = "0.0.1-sol2" }
 solana_libra_vm_runtime_types = { path = "../../vm/vm_runtime/vm_runtime_types", version = "0.0.1-sol2" }
 solana_libra_language_e2e_tests = { path = "../../e2e_tests", version = "0.0.1-sol2" }
 solana_libra_vm_cache_map = { path = "../../vm/vm_runtime/vm_cache_map", version = "0.0.1-sol2" }
-solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2" }
 structopt = "0.3.2"
 
 [dev-dependencies]
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
 
 [features]
 default = ["solana_libra_vm_runtime/instruction_synthesis"]

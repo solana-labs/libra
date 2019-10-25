@@ -10,11 +10,11 @@ publish = false
 edition = "2018"
 
 [dependencies]
-solana-libra-vm = { path = "../../vm", version = "0.0.1-sol2" }
+solana_libra_vm = { path = "../../vm", version = "0.0.1-sol2" }
 solana_libra_ir_to_bytecode = { path = "../../compiler/ir_to_bytecode", version = "0.0.1-sol2" }
-solana-libra-stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
+solana_libra_stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
 #
 [dev-dependencies]
 # solana_libra_invalid_mutations = { path = "invalid_mutations" }
 proptest = "0.9"
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"]}

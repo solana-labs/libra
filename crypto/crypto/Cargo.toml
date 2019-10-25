@@ -1,5 +1,5 @@
 [package]
-name = "solana-libra-crypto"
+name = "solana_libra_crypto"
 version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra crypto"
@@ -31,7 +31,7 @@ x25519-dalek = { git = "https://github.com/calibra/x25519-dalek.git", branch = "
 
 solana_libra_crypto_derive = { path = "../crypto_derive", version = "0.0.1-sol2" }
 failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
-solana-libra-nibble = { path = "../../common/nibble", version = "0.0.1-sol2" }
+solana_libra_nibble = { path = "../../common/nibble", version = "0.0.1-sol2" }
 solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.0.1-sol2" }
 
 [dev-dependencies]

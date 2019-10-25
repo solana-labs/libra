@@ -12,7 +12,7 @@ edition = "2018"
 [dependencies]
 slog-scope = "4.0"
 
-solana-libra-config = { path = "../../config", version = "0.0.1-sol2"}
+solana_libra_config = { path = "../../config", version = "0.0.1-sol2"}
 solana_libra_crash_handler = { path = "../crash_handler", version = "0.0.1-sol2" }
-solana-libra-logger =  { path = "../logger", version = "0.0.1-sol2" }
-solana-libra-metrics = { path = "../metrics", version = "0.0.1-sol2" }
+solana_libra_logger =  { path = "../logger", version = "0.0.1-sol2" }
+solana_libra_metrics = { path = "../metrics", version = "0.0.1-sol2" }

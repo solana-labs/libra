@@ -10,7 +10,7 @@ edition = "2018"
 
 [dependencies]
 failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol2" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
