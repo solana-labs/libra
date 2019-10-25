@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_ir_to_bytecode_syntax"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra ir to bytecode syntax"
 repository = "https://github.com/libra/libra"
@@ -11,15 +11,15 @@ build = "build.rs"
 
 [dependencies]
 codespan = "0.2.1"
-failure = { path = "../../../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
+failure = { path = "../../../../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
 hex = "0.3.2"
 lazy_static = "1.4.0"
 lalrpop-util = "0.17.2"
 regex = { version = "1.3.0", default-features = false, features = ["std", "perf"] }
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../../../types", version = "0.0.1-sol3" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../../../types", version = "0.0.1-sol3", features = ["testing"] }
 
 [build-dependencies]
 lalrpop = "0.17.2"

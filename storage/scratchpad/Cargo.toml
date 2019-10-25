@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-scratchpad"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra scratchpad"
 repository = "https://github.com/libra/libra"
@@ -12,10 +12,10 @@ edition = "2018"
 [dependencies]
 itertools = "0.8.0"
 
-solana-libra-crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
 
 [dev-dependencies]
 proptest = "0.9.4"
 
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"] }

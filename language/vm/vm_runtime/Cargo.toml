@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_vm_runtime"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra vm runtime"
 repository = "https://github.com/libra/libra"
@@ -17,26 +17,26 @@ rental = "0.5.4"
 mirai-annotations = "1.4.0"
 prometheus = { version = "0.7.0", default-features = false }
 
-solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.0.1-sol2" }
-solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization", version = "0.0.1-sol2" }
-solana-libra-config = { path = "../../../config", version = "0.0.1-sol2" }
-solana-libra-crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol2" }
-solana-libra-logger = { path = "../../../common/logger", version = "0.0.1-sol2" }
-solana-libra-metrics = { path = "../../../common/metrics", version = "0.0.1-sol2", default-features = false }
-solana_libra_state_view = { path = "../../../storage/state_view", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../", version = "0.0.1-sol2" }
-solana_libra_vm_cache_map = { path = "vm_cache_map", version = "0.0.1-sol2" }
-solana_libra_vm_runtime_types = { path = "vm_runtime_types", version = "0.0.1-sol2" }
+solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.0.1-sol3" }
+solana_libra_canonical_serialization = { path = "../../../common/canonical_serialization", version = "0.0.1-sol3" }
+solana_libra_config = { path = "../../../config", version = "0.0.1-sol3" }
+solana_libra_crypto = { path = "../../../crypto/crypto", version = "0.0.1-sol3" }
+solana_libra_logger = { path = "../../../common/logger", version = "0.0.1-sol3" }
+solana_libra_metrics = { path = "../../../common/metrics", version = "0.0.1-sol3", default-features = false }
+solana_libra_state_view = { path = "../../../storage/state_view", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol3" }
+solana_libra_vm = { path = "../", version = "0.0.1-sol3" }
+solana_libra_vm_cache_map = { path = "vm_cache_map", version = "0.0.1-sol3" }
+solana_libra_vm_runtime_types = { path = "vm_runtime_types", version = "0.0.1-sol3" }
 
 [dev-dependencies]
-solana-libra-compiler = { path = "../../compiler", version = "0.0.1-sol2" }
+solana_libra_compiler = { path = "../../compiler", version = "0.0.1-sol3" }
 
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
-solana-libra-vm = { path = "../", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol3", features = ["testing"] }
+solana_libra_vm = { path = "../", version = "0.0.1-sol3", features = ["testing"]}
 
 [features]
 default = []
 instruction_synthesis = []
-testing = ["solana-libra-types/testing"]
+testing = ["solana_libra_types/testing"]
 mirai-contracts = []

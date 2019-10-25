@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_admission_control_proto"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra admission control proto"
 repository = "https://github.com/libra/libra"
@@ -15,13 +15,13 @@ futures = "0.1.28"
 grpcio = { version = "=0.5.0-alpha.4", default-features = false, features = ["prost-codec"] }
 prost = "0.5.0"
 
-failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext", version = "0.0.1-sol2" }
-solana-libra-logger = { path = "../../common/logger", version = "0.0.1-sol2" }
-solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
+failure = { package = "solana_libra_failure_ext", path = "../../common/failure_ext", version = "0.0.1-sol3" }
+solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol3" }
+solana-libra-mempool-shared-proto = { path = "../../mempool/mempool-shared-proto", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"]}
 
 [build-dependencies]
 grpcio-compiler = { version = "0.5.0-alpha.2", default-features = false, features = ["prost-codec"] }

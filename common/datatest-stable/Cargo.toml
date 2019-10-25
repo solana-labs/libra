@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-datatest-stable"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra datatest stable"
 repository = "https://github.com/libra/libra"

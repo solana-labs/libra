@@ -1,6 +1,6 @@
 [package]
-name = "solana-libra-logger"
-version = "0.0.1-sol2"
+name = "solana_libra_logger"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra logger"
 repository = "https://github.com/libra/libra"
@@ -9,7 +9,7 @@ license = "Apache-2.0"
 edition = "2018"
 
 # Do NOT add any inter-project dependencies.
-# This is to avoid ever having a circular dependency with the solana-libra-logger crate.
+# This is to avoid ever having a circular dependency with the solana_libra_logger crate.
 [dependencies]
 backtrace = { version = "0.3.37", features = ["serialize-serde"] }
 chrono = "0.4.7"

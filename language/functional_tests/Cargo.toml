@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_functional_tests"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra functional tests"
 repository = "https://github.com/libra/libra"
@@ -10,22 +10,22 @@ edition = "2018"
 publish = false
 
 [dependencies]
-failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
-solana_libra_ir_to_bytecode_syntax = { path = "../compiler/ir_to_bytecode/syntax", version = "0.0.1-sol2" }
-solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode", version = "0.0.1-sol2" }
-solana-libra-stdlib = { path = "../stdlib", version = "0.0.1-sol2" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../vm", version = "0.0.1-sol2" }
-solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.0.1-sol2" }
-solana_libra_language_e2e_tests = { path = "../e2e_tests", version = "0.0.1-sol2" }
-solana-libra-config = { path = "../../config", version = "0.0.1-sol2" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
+solana_libra_ir_to_bytecode_syntax = { path = "../compiler/ir_to_bytecode/syntax", version = "0.0.1-sol3" }
+solana_libra_ir_to_bytecode = { path = "../compiler/ir_to_bytecode", version = "0.0.1-sol3" }
+solana_libra_stdlib = { path = "../stdlib", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
+solana_libra_vm = { path = "../vm", version = "0.0.1-sol3" }
+solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.0.1-sol3" }
+solana_libra_language_e2e_tests = { path = "../e2e_tests", version = "0.0.1-sol3" }
+solana_libra_config = { path = "../../config", version = "0.0.1-sol3" }
 filecheck = "0.4.0"
 lazy_static = "1.3.0"
 regex = { version = "1.3.0", default-features = false, features = ["std", "perf"] }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"] }
-solana-libra-datatest-stable = { path = "../../common/datatest-stable", version = "0.0.1-sol2" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"] }
+solana-libra-datatest-stable = { path = "../../common/datatest-stable", version = "0.0.1-sol3" }
 
 [[test]]
 name = "testsuite"

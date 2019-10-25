@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_serializer_tests"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra serializer tests"
 repository = "https://github.com/libra/libra"
@@ -12,7 +12,7 @@ edition = "2018"
 [dev-dependencies]
 proptest = "0.9"
 proptest-derive = "0.1.1"
-solana-libra-vm = { path = "../", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_vm = { path = "../", version = "0.0.1-sol3", features = ["testing"]}
 
 [features]
-testing = ["solana-libra-vm/testing"]
+testing = ["solana_libra_vm/testing"]

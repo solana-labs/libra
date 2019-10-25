@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_bytecode_verifier_tests"
-version = "0.0.1-sol2"
+version = "0.0.1-sol3"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra bytecode verifier tests"
 repository = "https://github.com/libra/libra"
@@ -12,8 +12,8 @@ edition = "2018"
 [dev-dependencies]
 petgraph = "0.4"
 proptest = "0.9.2"
-solana_libra_bytecode_verifier = {path = "../", version = "0.0.1-sol2", features = ["testing"]}
-failure = { path = "../../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"]}
-solana_libra_invalid_mutations = { path = "../invalid_mutations", version = "0.0.1-sol2" }
-solana-libra-vm = { path = "../../vm", version = "0.0.1-sol2", features = ["testing"]}
+solana_libra_bytecode_verifier = {path = "../", version = "0.0.1-sol3", features = ["testing"]}
+failure = { path = "../../../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol3", features = ["testing"]}
+solana_libra_invalid_mutations = { path = "../invalid_mutations", version = "0.0.1-sol3" }
+solana_libra_vm = { path = "../../vm", version = "0.0.1-sol3", features = ["testing"]}
