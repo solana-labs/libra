@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_vm_runtime_types"
-version = "0.0.1-sol"
+version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra vm runtime types"
 repository = "https://github.com/libra/libra"
@@ -13,15 +13,15 @@ bit-vec = "0.6.1"
 lazy_static = "1.3.0"
 proptest = "0.9"
 sha2 = "0.8.0"
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol" }
-solana-libra-vm = { path = "../../", version = "0.0.1-sol" }
-solana_libra_canonical_serialization = { path = "../../../../common/canonical_serialization", version = "0.0.1-sol" }
-solana-libra-crypto = { path = "../../../../crypto/crypto", version = "0.0.1-sol" }
-failure = { path = "../../../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
+solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2" }
+solana-libra-vm = { path = "../../", version = "0.0.1-sol2" }
+solana_libra_canonical_serialization = { path = "../../../../common/canonical_serialization", version = "0.0.1-sol2" }
+solana-libra-crypto = { path = "../../../../crypto/crypto", version = "0.0.1-sol2" }
+failure = { path = "../../../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../../../types", version = "0.0.1-sol", features = ["testing"] }
-solana-libra-vm = { path = "../../", version = "0.0.1-sol", features = ["testing"]}
+solana-libra-types = { path = "../../../../types", version = "0.0.1-sol2", features = ["testing"] }
+solana-libra-vm = { path = "../../", version = "0.0.1-sol2", features = ["testing"]}
 
 [features]
 instruction_synthesis = []

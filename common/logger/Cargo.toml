@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-logger"
-version = "0.0.1-sol"
+version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra logger"
 repository = "https://github.com/libra/libra"
