@@ -466,7 +466,7 @@ impl ClientProxy {
         let dependencies_file = self.handle_dependencies(tmp_source_path.display(), is_module)?;
 
         let mut args = format!(
-            "run -p solana-libra-compiler -- {} -a {}{}",
+            "run -p solana_libra_compiler -- {} -a {}{}",
             tmp_source_path.display(),
             address,
             if is_module { " -m" } else { "" },
@@ -495,7 +495,7 @@ impl ClientProxy {
         source_path: Display,
         is_module: bool,
     ) -> Result<Option<TempPath>> {
-        let mut args = format!("run -p solana-libra-compiler -- -l {}", source_path);
+        let mut args = format!("run -p solana_libra_compiler -- -l {}", source_path);
         if is_module {
             args.push_str(" -m");
         }
