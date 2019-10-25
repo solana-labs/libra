@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-noise"
-version = "0.0.1-sol3"
+version = "0.0.1-sol4"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra noise"
 repository = "https://github.com/libra/libra"
@@ -12,9 +12,9 @@ edition = "2018"
 [dependencies]
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview" }
 snow = { version = "0.5.2", features=["ring-accelerated"]}
-solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol3" }
-solana-libra-netcore = { path = "../netcore", version = "0.0.1-sol3" }
-solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol3" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol4" }
+solana-libra-netcore = { path = "../netcore", version = "0.0.1-sol4" }
+solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol4" }
 
 [dev-dependencies]
-solana-libra-memsocket = { path = "../memsocket", version = "0.0.1-sol3" }
+solana-libra-memsocket = { path = "../memsocket", version = "0.0.1-sol4" }

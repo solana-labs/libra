@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_state_synchronizer"
-version = "0.0.1-sol3"
+version = "0.0.1-sol4"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra state synchronizer"
 repository = "https://github.com/libra/libra"
@@ -17,23 +17,23 @@ rand = "0.6.5"
 tokio = { version = "0.1.22", default-features = false }
 prometheus = { version = "0.7.0", default-features = false }
 
-solana_libra_config = { path = "../config", version = "0.0.1-sol3" }
-solana-libra-executor = { path = "../execution/executor", version = "0.0.1-sol3" }
-failure = { path = "../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
-solana_libra_logger = { path = "../common/logger", version = "0.0.1-sol3" }
-solana_libra_metrics = { path = "../common/metrics", version = "0.0.1-sol3" }
-solana-libra-network = { path = "../network", version = "0.0.1-sol3" }
-solana_libra_storage_client = { path = "../storage/storage_client", version = "0.0.1-sol3" }
-solana_libra_types = { path = "../types", version = "0.0.1-sol3" }
-solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol3" }
+solana_libra_config = { path = "../config", version = "0.0.1-sol4" }
+solana-libra-executor = { path = "../execution/executor", version = "0.0.1-sol4" }
+failure = { path = "../common/failure_ext", version = "0.0.1-sol4", package = "solana_libra_failure_ext" }
+solana_libra_logger = { path = "../common/logger", version = "0.0.1-sol4" }
+solana_libra_metrics = { path = "../common/metrics", version = "0.0.1-sol4" }
+solana-libra-network = { path = "../network", version = "0.0.1-sol4" }
+solana_libra_storage_client = { path = "../storage/storage_client", version = "0.0.1-sol4" }
+solana_libra_types = { path = "../types", version = "0.0.1-sol4" }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol4" }
 
 [dev-dependencies]
 bytes = "0.4.12"
 
-solana-libra-config-builder = { path = "../config/config-builder", version = "0.0.1-sol3" }
-solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol3", features = ["testing"]}
+solana-libra-config-builder = { path = "../config/config-builder", version = "0.0.1-sol4" }
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol4", features = ["testing"]}
 parity-multiaddr = "0.5.0"
-solana_libra_types = { path = "../types", version = "0.0.1-sol3", features = ["testing"] }
-solana_libra_vm_genesis = { path = "../language/vm/vm_genesis", version = "0.0.1-sol3" }
-solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol3" }
-solana-libra-channel = { path = "../common/channel", version = "0.0.1-sol3" }
+solana_libra_types = { path = "../types", version = "0.0.1-sol4", features = ["testing"] }
+solana_libra_vm_genesis = { path = "../language/vm/vm_genesis", version = "0.0.1-sol4" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol4" }
+solana-libra-channel = { path = "../common/channel", version = "0.0.1-sol4" }

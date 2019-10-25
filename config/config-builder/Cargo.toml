@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-config-builder"
-version = "0.0.1-sol3"
+version = "0.0.1-sol4"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra config builder"
 repository = "https://github.com/libra/libra"
@@ -15,14 +15,14 @@ parity-multiaddr = { version = "0.5.0", default-features = false }
 rand = "0.6.5"
 structopt = "0.3.2"
 
-solana_libra_config = { path = "..", version = "0.0.1-sol3" }
-solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol3" }
-failure = { path = "../../common/failure_ext", version = "0.0.1-sol3", package = "solana_libra_failure_ext" }
-solana-libra-generate-keypair = { path = "../generate-keypair", version = "0.0.1-sol3" }
-solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol3" }
-solana_libra_prost_ext = { path = "../../common/prost-ext", version = "0.0.1-sol3" }
-solana_libra_types = { path = "../../types", version = "0.0.1-sol3" }
-solana_libra_vm_genesis = { path = "../../language/vm/vm_genesis", version = "0.0.1-sol3" }
+solana_libra_config = { path = "..", version = "0.0.1-sol4" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol4" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol4", package = "solana_libra_failure_ext" }
+solana-libra-generate-keypair = { path = "../generate-keypair", version = "0.0.1-sol4" }
+solana_libra_logger = { path = "../../common/logger", version = "0.0.1-sol4" }
+solana_libra_prost_ext = { path = "../../common/prost-ext", version = "0.0.1-sol4" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol4" }
+solana_libra_vm_genesis = { path = "../../language/vm/vm_genesis", version = "0.0.1-sol4" }
 
 [dev-dependencies]
-solana_libra_types = { path = "../../types", version = "0.0.1-sol3", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol4", features = ["testing"]}
