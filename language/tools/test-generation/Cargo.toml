@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-test-generation"
-version = "0.0.1-sol"
+version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra test generation"
 repository = "https://github.com/libra/libra"
@@ -15,15 +15,15 @@ log = "0.4"
 env_logger = "0.6"
 mirai-annotations = "1.4.0"
 structopt = "0.3.2"
-solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.0.1-sol" }
-solana-libra-cost-synthesis = { path = "../cost-synthesis", version = "0.0.1-sol" }
-solana-libra-vm = { path = "../../vm", version = "0.0.1-sol" }
-solana_libra_vm_runtime = { path = "../../vm/vm_runtime", version = "0.0.1-sol" }
-solana_libra_vm_runtime_types = { path = "../../vm/vm_runtime/vm_runtime_types", version = "0.0.1-sol" }
-solana_libra_vm_cache_map = { path = "../../vm/vm_runtime/vm_cache_map", version = "0.0.1-sol" }
-solana_libra_language_e2e_tests = { path = "../../e2e_tests", version = "0.0.1-sol" }
-solana-libra-stdlib = { path = "../../stdlib", version = "0.0.1-sol" }
-solana-libra-types = { path = "../../../types", version = "0.0.1-sol", features = ["testing"] }
+solana_libra_bytecode_verifier = { path = "../../bytecode_verifier", version = "0.0.1-sol2" }
+solana-libra-cost-synthesis = { path = "../cost-synthesis", version = "0.0.1-sol2" }
+solana-libra-vm = { path = "../../vm", version = "0.0.1-sol2" }
+solana_libra_vm_runtime = { path = "../../vm/vm_runtime", version = "0.0.1-sol2" }
+solana_libra_vm_runtime_types = { path = "../../vm/vm_runtime/vm_runtime_types", version = "0.0.1-sol2" }
+solana_libra_vm_cache_map = { path = "../../vm/vm_runtime/vm_cache_map", version = "0.0.1-sol2" }
+solana_libra_language_e2e_tests = { path = "../../e2e_tests", version = "0.0.1-sol2" }
+solana-libra-stdlib = { path = "../../stdlib", version = "0.0.1-sol2" }
+solana-libra-types = { path = "../../../types", version = "0.0.1-sol2", features = ["testing"] }
 
 [features]
 mirai-contracts = []

@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_vm_validator"
-version = "0.0.1-sol"
+version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra vm validator"
 repository = "https://github.com/libra/libra"
@@ -10,24 +10,24 @@ publish = false
 edition = "2018"
 
 [dependencies]
-solana-libra-config = { path = "../config", version = "0.0.1-sol" }
-failure = { path = "../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
+solana-libra-config = { path = "../config", version = "0.0.1-sol2" }
+failure = { path = "../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
 futures = "0.1.28"
-solana-libra-scratchpad = { path = "../storage/scratchpad", version = "0.0.1-sol" }
-solana_libra_state_view = { path = "../storage/state_view", version = "0.0.1-sol" }
-solana_libra_storage_client = { path = "../storage/storage_client", version = "0.0.1-sol" }
-solana-libra-types = { path = "../types", version = "0.0.1-sol" }
-solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol" }
+solana-libra-scratchpad = { path = "../storage/scratchpad", version = "0.0.1-sol2" }
+solana_libra_state_view = { path = "../storage/state_view", version = "0.0.1-sol2" }
+solana_libra_storage_client = { path = "../storage/storage_client", version = "0.0.1-sol2" }
+solana-libra-types = { path = "../types", version = "0.0.1-sol2" }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol2" }
 
 [dev-dependencies]
 grpcio = { version = "=0.5.0-alpha.4", default-features = false }
 rand = "0.6.5"
 
-solana-libra-config-builder = { path = "../config/config-builder", version = "0.0.1-sol" }
-solana-libra-crypto = { path = "../crypto/crypto", version = "0.0.1-sol", features = ["testing"] }
-solana-libra-executor = { path = "../execution/executor", version = "0.0.1-sol" }
-solana_libra_grpc_helpers = { path = "../common/grpc_helpers", version = "0.0.1-sol" }
-solana-libra-storage-service = { path = "../storage/storage-service", version = "0.0.1-sol" }
-solana-libra-types = { path = "../types", version = "0.0.1-sol", features = ["testing"] }
-solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol" }
-solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol" }
+solana-libra-config-builder = { path = "../config/config-builder", version = "0.0.1-sol2" }
+solana-libra-crypto = { path = "../crypto/crypto", version = "0.0.1-sol2", features = ["testing"] }
+solana-libra-executor = { path = "../execution/executor", version = "0.0.1-sol2" }
+solana_libra_grpc_helpers = { path = "../common/grpc_helpers", version = "0.0.1-sol2" }
+solana-libra-storage-service = { path = "../storage/storage-service", version = "0.0.1-sol2" }
+solana-libra-types = { path = "../types", version = "0.0.1-sol2", features = ["testing"] }
+solana_libra_vm_runtime = { path = "../language/vm/vm_runtime", version = "0.0.1-sol2" }
+solana_libra_transaction_builder = { path = "../language/transaction_builder", version = "0.0.1-sol2" }

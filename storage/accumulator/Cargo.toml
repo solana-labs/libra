@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-accumulator"
-version = "0.0.1-sol"
+version = "0.0.1-sol2"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra accumulator"
 repository = "https://github.com/libra/libra"
@@ -12,10 +12,10 @@ edition = "2018"
 [dependencies]
 proptest = "0.9.1"
 
-solana-libra-crypto = { path = "../../crypto/crypto", version = "0.0.1-sol" }
-failure = { path = "../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
-solana-libra-types = { path = "../../types", version = "0.0.1-sol" }
+solana-libra-crypto = { path = "../../crypto/crypto", version = "0.0.1-sol2" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol2", package = "solana_libra_failure_ext" }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol2" }
 
 [dev-dependencies]
 rand = "0.6.5"
-solana-libra-types = { path = "../../types", version = "0.0.1-sol", features = ["testing"] }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol2", features = ["testing"] }
