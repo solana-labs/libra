@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_proptest_helpers"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra proptest helpers"
 repository = "https://github.com/libra/libra"

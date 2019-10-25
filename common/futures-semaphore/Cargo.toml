@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-futures-semaphore"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra futures semaphore"
 repository = "https://github.com/libra/libra"

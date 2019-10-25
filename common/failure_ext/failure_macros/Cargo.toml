@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_failure_macros"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra failure macros"
 repository = "https://github.com/libra/libra"

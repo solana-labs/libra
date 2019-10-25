@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_crypto_derive"
-version = "0.1.0"
+version = "0.0.1-sol"
 description = "Libra custom derives for `crypto`"
 repository = "https://github.com/libra/libra"
 homepage = "https://libra.org"
@@ -16,4 +16,4 @@ quote = "1.0.0"
 proc-macro2 = "1.0.1"
 
 [dev-dependencies]
-failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext"}
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext"}

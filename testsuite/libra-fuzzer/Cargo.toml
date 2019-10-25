@@ -1,6 +1,6 @@
 [package]
 name = "libra-fuzzer"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra fuzzer"
 repository = "https://github.com/libra/libra"
@@ -11,33 +11,33 @@ edition = "2018"
 # common dependencies
 [dependencies]
 byteorder = { version = "1.3.2", default-features = false }
-solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.1.0" }
-failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
+solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.0.1-sol" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
 hex = { version = "0.3.2", default-features = false }
 lazy_static = { version = "1.3.0", default-features = false }
 proptest = { version = "0.9.4", default-features = false }
-solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.1.0" }
-solana-libra-prost-ext = { path = "../../common/prost-ext", version = "0.1.0" }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol" }
+solana-libra-prost-ext = { path = "../../common/prost-ext", version = "0.0.1-sol" }
 prost = "0.5.0"
 rusty-fork = { version = "0.2.2", default-features = false }
 sha-1 = { version = "0.8.1", default-features = false }
 structopt = "0.3.2"
 
 # List out modules with data structures being fuzzed here.
-solana-libra-types = { path = "../../types", version = "0.1.0" }
-solana-libra-vm = { path = "../../language/vm", version = "0.1.0" }
-solana_libra_vm_runtime_types = { path = "../../language/vm/vm_runtime/vm_runtime_types", version = "0.1.0" }
-solana-libra-consensus = { path = "../../consensus", version = "0.1.0" }
-solana-libra-admission-control-service = { path = "../../admission_control/admission-control-service", version = "0.1.0" }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol" }
+solana-libra-vm = { path = "../../language/vm", version = "0.0.1-sol" }
+solana_libra_vm_runtime_types = { path = "../../language/vm/vm_runtime/vm_runtime_types", version = "0.0.1-sol" }
+solana-libra-consensus = { path = "../../consensus", version = "0.0.1-sol" }
+solana-libra-admission-control-service = { path = "../../admission_control/admission-control-service", version = "0.0.1-sol" }
 
 [dev-dependencies]
-solana-libra-datatest-stable = { path = "../../common/datatest-stable", version = "0.1.0" }
+solana-libra-datatest-stable = { path = "../../common/datatest-stable", version = "0.0.1-sol" }
 stats_alloc = "0.1.8"
 rusty-fork = "0.2.2"
 
-solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"] }
-solana-libra-vm = { path = "../../language/vm", version = "0.1.0", features = ["testing"] }
-solana_libra_vm_runtime_types = { path = "../../language/vm/vm_runtime/vm_runtime_types", version = "0.1.0", features = ["testing"] }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol", features = ["testing"] }
+solana-libra-vm = { path = "../../language/vm", version = "0.0.1-sol", features = ["testing"] }
+solana_libra_vm_runtime_types = { path = "../../language/vm/vm_runtime/vm_runtime_types", version = "0.0.1-sol", features = ["testing"] }
 
 [features]
 default = ["testing", "fuzzing"]

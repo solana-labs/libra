@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-compiler"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra compiler"
 repository = "https://github.com/libra/libra"
@@ -10,14 +10,14 @@ publish = false
 edition = "2018"
 
 [dependencies]
-solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.1.0" }
-failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
-solana_libra_ir_to_bytecode = { path = "ir_to_bytecode", version = "0.1.0" }
-solana-libra-stdlib = { path = "../stdlib", version = "0.1.0" }
-solana-libra-types = { path = "../../types", version = "0.1.0" }
-solana-libra-vm = { path = "../vm", version = "0.1.0" }
+solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.0.1-sol" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
+solana_libra_ir_to_bytecode = { path = "ir_to_bytecode", version = "0.0.1-sol" }
+solana-libra-stdlib = { path = "../stdlib", version = "0.0.1-sol" }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol" }
+solana-libra-vm = { path = "../vm", version = "0.0.1-sol" }
 structopt = "0.3.2"
 serde_json = "1.0.40"
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"] }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol", features = ["testing"] }

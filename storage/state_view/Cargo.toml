@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_state_view"
-version = "0.1.0"
+version = "0.0.1-sol"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra state view"
 repository = "https://github.com/libra/libra"
@@ -10,8 +10,8 @@ publish = false
 edition = "2018"
 
 [dependencies]
-failure = { path = "../../common/failure_ext", version = "0.1.0", package = "solana_libra_failure_ext" }
-solana-libra-types = { path = "../../types", version = "0.1.0" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol", package = "solana_libra_failure_ext" }
+solana-libra-types = { path = "../../types", version = "0.0.1-sol" }
 
 [dev-dependencies]
-solana-libra-types = { path = "../../types", version = "0.1.0", features = ["testing"]}
+solana-libra-types = { path = "../../types", version = "0.0.1-sol", features = ["testing"]}
