@@ -7,7 +7,6 @@ description = "Libra language e2e tests"
 repository = "https://github.com/libra/libra"
 homepage = "https://libra.org"
 license = "Apache-2.0"
-publish = false
 
 [dependencies]
 solana_libra_bytecode_verifier = { path = "../bytecode_verifier", version = "0.0.1-sol" }
