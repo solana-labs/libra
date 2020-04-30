@@ -11,7 +11,7 @@ use solana_libra_types::{account_address::AccountAddress, account_config};
 
 lazy_static! {
     static ref STDLIB_MODULES: Vec<VerifiedModule> =
-        { build_stdlib(account_config::core_code_address()) };
+        build_stdlib(account_config::core_code_address());
 }
 
 /// Returns a reference to the standard library, compiled with the

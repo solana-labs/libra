@@ -23,7 +23,7 @@ use std::time::Duration;
 
 // StdLib account, it is where the code is and needed to make access path to Account resources
 lazy_static! {
-    static ref STDLIB_ADDRESS: AccountAddress = { account_config::core_code_address() };
+    static ref STDLIB_ADDRESS: AccountAddress = account_config::core_code_address();
 }
 
 /// Details about a Libra account.

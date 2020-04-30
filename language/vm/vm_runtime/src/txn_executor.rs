@@ -49,20 +49,20 @@ use std::{collections::VecDeque, convert::TryFrom};
 lazy_static! {
     /// The ModuleId for the Account module
     pub static ref ACCOUNT_MODULE: ModuleId =
-        { ModuleId::new(account_config::core_code_address(), Identifier::new("LibraAccount").unwrap()) };
+        ModuleId::new(account_config::core_code_address(), Identifier::new("LibraAccount").unwrap());
     /// The ModuleId for the Account module
     pub static ref BLOCK_MODULE: ModuleId =
-        { ModuleId::new(account_config::core_code_address(), Identifier::new("Block").unwrap()) };
+        ModuleId::new(account_config::core_code_address(), Identifier::new("Block").unwrap());
     /// The ModuleId for the LibraCoin module
     pub static ref COIN_MODULE: ModuleId =
-        { ModuleId::new(account_config::core_code_address(), Identifier::new("LibraCoin").unwrap()) };
+        ModuleId::new(account_config::core_code_address(), Identifier::new("LibraCoin").unwrap());
     /// The ModuleId for the Event
     pub static ref EVENT_MODULE: ModuleId =
-        { ModuleId::new(account_config::core_code_address(), Identifier::new("Event").unwrap()) };
+        ModuleId::new(account_config::core_code_address(), Identifier::new("Event").unwrap());
 
     /// The ModuleId for the validator set
     pub static ref VALIDATOR_SET_MODULE: ModuleId =
-        { ModuleId::new(account_config::core_code_address(), Identifier::new("ValidatorSet").unwrap()) };
+        ModuleId::new(account_config::core_code_address(), Identifier::new("ValidatorSet").unwrap());
 }
 
 // Names for special functions.

@@ -21,11 +21,11 @@ use solana_libra_vm::file_format::Bytecode;
 use std::{collections::HashSet, iter::FromIterator};
 
 lazy_static! {
-    static ref PEER_TO_PEER_TXN: Vec<u8> = { compile_script(&PEER_TO_PEER_TRANSFER_TXN_BODY) };
-    static ref CREATE_ACCOUNT_TXN: Vec<u8> = { compile_script(&CREATE_ACCOUNT_TXN_BODY) };
+    static ref PEER_TO_PEER_TXN: Vec<u8> = compile_script(&PEER_TO_PEER_TRANSFER_TXN_BODY);
+    static ref CREATE_ACCOUNT_TXN: Vec<u8> = compile_script(&CREATE_ACCOUNT_TXN_BODY);
     static ref ROTATE_AUTHENTICATION_KEY_TXN: Vec<u8> =
-        { compile_script(&ROTATE_AUTHENTICATION_KEY_TXN_BODY) };
-    static ref MINT_TXN: Vec<u8> = { compile_script(&MINT_TXN_BODY) };
+        compile_script(&ROTATE_AUTHENTICATION_KEY_TXN_BODY);
+    static ref MINT_TXN: Vec<u8> = compile_script(&MINT_TXN_BODY);
 }
 
 fn compile_script(body: &ast::Program) -> Vec<u8> {

@@ -54,7 +54,7 @@ impl ConsensusKeyManager {
     }
 
     /// Asks the secret service to sign a hash of the consensus message.
-    pub fn sign_consensus_message(&self, message: &HashValue) -> Result<(GenericSignature)> {
+    pub fn sign_consensus_message(&self, message: &HashValue) -> Result<GenericSignature> {
         let mut sig_req: SignRequest = SignRequest::default();
         sig_req.key_id = self.signing_keyid.to_vec();
         sig_req.message_hash = message.to_vec();

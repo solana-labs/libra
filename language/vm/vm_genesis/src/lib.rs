@@ -60,7 +60,7 @@ lazy_static! {
     static ref REGISTER_CANDIDATE_VALIDATOR: Identifier =
         Identifier::new("register_candidate_validator").unwrap();
     static ref ROTATE_AUTHENTICATION_KEY: Identifier =
-        { Identifier::new("rotate_authentication_key").unwrap() };
+        Identifier::new("rotate_authentication_key").unwrap();
     static ref EPILOGUE: Identifier = Identifier::new("epilogue").unwrap();
 }
 

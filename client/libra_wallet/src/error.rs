@@ -54,7 +54,7 @@ impl convert::From<WalletError> for io::Error {
 
 impl convert::From<io::Error> for WalletError {
     fn from(err: io::Error) -> WalletError {
-        WalletError::LibraWalletGeneric(err.description().to_string())
+        WalletError::LibraWalletGeneric(err.to_string())
     }
 }
 

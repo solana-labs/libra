@@ -26,7 +26,7 @@ pub fn mint() -> &'static str {
 
 lazy_static! {
     pub static ref PEER_TO_PEER_TRANSFER_TXN_BODY: Program =
-        { parse_program(peer_to_peer()).unwrap() };
+        parse_program(peer_to_peer()).unwrap();
 }
 
 lazy_static! {
@@ -35,7 +35,7 @@ lazy_static! {
 
 lazy_static! {
     pub static ref ROTATE_AUTHENTICATION_KEY_TXN_BODY: Program =
-        { parse_program(rotate_key()).unwrap() };
+        parse_program(rotate_key()).unwrap();
 }
 
 lazy_static! {

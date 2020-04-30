@@ -82,7 +82,7 @@ pub trait CanonicalDeserializer {
 macro_rules! impl_canonical_deserialize {
     ($function:ident, $type:ty) => {
         impl CanonicalDeserialize for $type {
-            fn deserialize(deserializer: &mut impl CanonicalDeserializer) -> Result<(Self)> {
+            fn deserialize(deserializer: &mut impl CanonicalDeserializer) -> Result<Self> {
                 deserializer.$function()
             }
         }
@@ -95,7 +95,7 @@ macro_rules! impl_canonical_deserialize_for_tuple {
         where
             $($type: CanonicalDeserialize,) +
         {
-            fn deserialize(deserializer: &mut impl CanonicalDeserializer) -> Result<(Self)>
+            fn deserialize(deserializer: &mut impl CanonicalDeserializer) -> Result<Self>
             where
                 Self: Sized,
             {

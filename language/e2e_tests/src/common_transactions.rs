@@ -14,14 +14,14 @@ use solana_libra_types::{
 
 lazy_static! {
     /// A serialized transaction to create a new account.
-    pub static ref CREATE_ACCOUNT: Vec<u8> = { create_account() };
+    pub static ref CREATE_ACCOUNT: Vec<u8> = create_account();
     /// A serialized transaction to mint new funds.
-    pub static ref MINT: Vec<u8> = { mint() };
+    pub static ref MINT: Vec<u8> = mint();
     /// A serialized transaction to transfer coin from one account to another (possibly new)
     /// one.
-    pub static ref PEER_TO_PEER: Vec<u8> = { peer_to_peer() };
+    pub static ref PEER_TO_PEER: Vec<u8> = peer_to_peer();
     /// A serialized transaction to change the keys for an account.
-    pub static ref ROTATE_KEY: Vec<u8> = { rotate_key() };
+    pub static ref ROTATE_KEY: Vec<u8> = rotate_key();
 }
 
 /// Returns a transaction to create a new account with the given arguments.
