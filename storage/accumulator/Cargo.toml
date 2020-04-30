@@ -17,5 +17,5 @@ failure = { path = "../../common/failure_ext", version = "0.0.1-sol4", package =
 solana_libra_types = { path = "../../types", version = "0.0.1-sol4" }
 
 [dev-dependencies]
-rand = "0.6.5"
+rand = "0.7.0"
 solana_libra_types = { path = "../../types", version = "0.0.1-sol4", features = ["testing"] }

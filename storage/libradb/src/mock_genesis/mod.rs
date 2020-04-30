@@ -31,7 +31,7 @@ fn gen_mock_genesis() -> (
     LedgerInfoWithSignatures,
     TransactionToCommit,
 ) {
-    let mut seed_rng = OsRng::new().expect("can't access OsRng");
+    let mut seed_rng = OsRng::default();
     let seed_buf: [u8; 32] = seed_rng.gen();
     let mut rng = StdRng::from_seed(seed_buf);
     let (privkey, pubkey) = compat::generate_keypair(&mut rng);

@@ -10,4 +10,4 @@ edition = "2018"
 
 [dependencies]
 hex = "0.3.2"
-rand = "0.6.5"
+rand = "0.7.0"

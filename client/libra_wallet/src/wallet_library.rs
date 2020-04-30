@@ -21,7 +21,7 @@ pub use libra_crypto::{
     ed25519::{Ed25519PublicKey, Ed25519Signature},
     hash::CryptoHash,
 };
-use rand::{rngs::EntropyRng, Rng};
+use rand::Rng;
 use solana_libra_types::{
     account_address::AccountAddress,
     transaction::{RawTransaction, SignedTransaction},
@@ -42,7 +42,7 @@ impl WalletLibrary {
     /// empty WalletLibrary from that Mnemonic
     #[allow(clippy::new_without_default)]
     pub fn new() -> Self {
-        let mut rng = EntropyRng::new();
+        let mut rng = rand::rngs::OsRng::default();
         let data: [u8; 32] = rng.gen();
         let mnemonic = Mnemonic::mnemonic(&data).unwrap();
         Self::new_from_mnemonic(mnemonic)

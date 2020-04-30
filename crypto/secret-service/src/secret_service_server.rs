@@ -13,7 +13,7 @@ use crate::{
     },
 };
 use failure::prelude::*;
-use rand::{rngs::EntropyRng, Rng, SeedableRng};
+use rand::{Rng, SeedableRng};
 use rand_chacha::ChaChaRng;
 use solana_libra_crypto::{
     bls12381::BLS12381PrivateKey, ed25519::Ed25519PrivateKey, hash::HashValue, traits::*,
@@ -52,7 +52,7 @@ impl SecretServiceServer {
 
     /// Generates a new secret key (for now this is the code for testing).
     pub fn generate_key_inner(&mut self, spec: KeyType) -> Result<KeyID> {
-        let seed: [u8; 32] = EntropyRng::new().gen();
+        let seed: [u8; 32] = rand::rngs::OsRng::default().gen();
 
         let private_key: GenericPrivateKey = {
             let mut rng = ChaChaRng::from_seed(seed);

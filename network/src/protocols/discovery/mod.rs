@@ -52,7 +52,8 @@ use futures::{
 };
 use parity_multiaddr::Multiaddr;
 use prost::Message;
-use rand::{rngs::SmallRng, FromEntropy, Rng};
+use rand::{rngs::SmallRng, Rng};
+use rand_core::SeedableRng;
 use solana_libra_channel;
 use solana_libra_crypto::{
     ed25519::*,

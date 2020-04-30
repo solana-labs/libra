@@ -266,7 +266,7 @@ fn get_mock_txn_data(
     Vec<solana_libra_types::proto::types::SignedTransaction>,
     Vec<TransactionInfo>,
 ) {
-    let mut seed_rng = OsRng::new().expect("can't access OsRng");
+    let mut seed_rng = OsRng::default();
     let seed_buf: [u8; 32] = seed_rng.gen();
     let mut rng = StdRng::from_seed(seed_buf);
     let (priv_key, pub_key) = compat::generate_keypair(&mut rng);

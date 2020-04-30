@@ -32,7 +32,8 @@ use futures::{
     sink::SinkExt,
     stream::{FusedStream, FuturesUnordered, Stream, StreamExt},
 };
-use rand::{rngs::SmallRng, seq::SliceRandom, FromEntropy};
+use rand::{rngs::SmallRng, seq::SliceRandom};
+use rand_core::SeedableRng;
 use solana_libra_channel;
 use solana_libra_logger::prelude::*;
 use solana_libra_types::PeerId;

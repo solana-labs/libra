@@ -27,7 +27,7 @@ solana_libra_metrics = { path = "../../common/metrics", version = "0.0.1-sol4" }
 solana_libra_storage_client = { path = "../storage_client", version = "0.0.1-sol4" }
 solana_libra_storage_proto = { path = "../storage_proto", version = "0.0.1-sol4" }
 solana_libra_types = { path = "../../types", version = "0.0.1-sol4" }
-rand = "0.6.5"
+rand = "0.7.0"
 
 [dev-dependencies]
 itertools = "0.8.0"

@@ -12,7 +12,7 @@ edition = "2018"
 [dependencies]
 hex = { version = "0.3.2", default-features = false }
 parity-multiaddr = { version = "0.5.0", default-features = false }
-rand = "0.6.5"
+rand = "0.7.0"
 structopt = "0.3.2"
 
 solana_libra_config = { path = "..", version = "0.0.1-sol4" }

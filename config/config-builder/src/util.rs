@@ -45,7 +45,7 @@ pub fn get_test_config() -> (NodeConfig, KeyPair<Ed25519PrivateKey, Ed25519Publi
     let config = NodeConfigHelpers::get_single_node_test_config(true);
     // Those configs should be different on every call. We bypass the
     // costly StdRng initialization
-    let mut seed_rng = rand::rngs::OsRng::new().expect("can't access OsRng");
+    let mut seed_rng = rand::rngs::OsRng::default();
     let seed_buf: [u8; 32] = seed_rng.gen();
     let mut rng = rand::rngs::StdRng::from_seed(seed_buf);
     let (private_key, _) = compat::generate_keypair(&mut rng);

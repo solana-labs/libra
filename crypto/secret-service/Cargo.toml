@@ -14,8 +14,8 @@ bytes = "0.4.12"
 grpcio = { version = "=0.5.0-alpha.4", default-features = false, features = ["prost-codec"] }
 futures = "0.1.28"
 prost = "0.5.0"
-rand = "0.6.5"
-rand_chacha = "0.1.1"
+rand = "0.7.0"
+rand_chacha = "0.2.2"
 serde = { version = "1.0.96", features = ["derive"] }
 structopt = "0.3.2"
 

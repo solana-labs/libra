@@ -7,7 +7,8 @@ use crate::{
     control_flow_graph::CFG,
     summaries,
 };
-use rand::{rngs::StdRng, FromEntropy, Rng, SeedableRng};
+use rand::{rngs::StdRng, Rng};
+use rand_core::SeedableRng;
 use solana_libra_vm::file_format::{
     AddressPoolIndex, ByteArrayPoolIndex, Bytecode, CodeOffset, CompiledModuleMut,
     FieldDefinitionIndex, FunctionHandleIndex, FunctionSignature, LocalIndex, LocalsSignatureIndex,

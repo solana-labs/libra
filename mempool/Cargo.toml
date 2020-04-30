@@ -36,7 +36,7 @@ solana_libra_types = { path = "../types", version = "0.0.1-sol4" }
 solana_libra_vm_validator = { path = "../vm_validator", version = "0.0.1-sol4" }
 
 [dev-dependencies]
-rand = "0.6.5"
+rand = "0.7.0"
 solana-libra-channel = { path = "../common/channel", version = "0.0.1-sol4" }
 solana-libra-storage-service = { path = "../storage/storage-service", version = "0.0.1-sol4" }
 solana_libra_types = { path = "../types", version = "0.0.1-sol4", features = ["testing"] }

@@ -39,7 +39,7 @@ proptest = { version = "0.9.4", optional = true }
 
 [dev-dependencies]
 assert_matches = "1.3.0"
-rand = "0.6.5"
+rand = "0.7.0"
 solana-libra-storage-service = { path = "../../storage/storage-service", version = "0.0.1-sol4" }
 solana_libra_types = { path = "../../types", version = "0.0.1-sol4", features = ["testing"] }
 solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol4" }

@@ -58,7 +58,7 @@
 
 use crate::{hkdf::Hkdf, traits::*};
 use failure::prelude::*;
-use rand::{rngs::EntropyRng, RngCore};
+use rand::RngCore;
 use serde::{de, export, ser};
 use sha2::Sha256;
 use solana_libra_canonical_serialization::{
@@ -175,7 +175,7 @@ impl X25519StaticPrivateKey {
         seed: &[u8],
         app_info: Option<&[u8]>,
     ) -> (X25519StaticPrivateKey, X25519StaticPublicKey) {
-        let mut rng = EntropyRng::new();
+        let mut rng = rand::rngs::OsRng::default();
         let mut seed_from_rng = [0u8; X25519_PRIVATE_KEY_LENGTH];
         rng.fill_bytes(&mut seed_from_rng);
 

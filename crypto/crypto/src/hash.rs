@@ -72,7 +72,7 @@ use bytes::Bytes;
 use failure::prelude::*;
 use lazy_static::lazy_static;
 use proptest_derive::Arbitrary;
-use rand::{rngs::EntropyRng, Rng};
+use rand::Rng;
 use serde::{Deserialize, Serialize};
 use solana_libra_nibble::Nibble;
 use std::{self, convert::AsRef, fmt};
@@ -138,7 +138,7 @@ impl HashValue {
 
     /// Create a cryptographically random instance.
     pub fn random() -> Self {
-        let mut rng = EntropyRng::new();
+        let mut rng = rand::rngs::OsRng::default();
         let hash: [u8; HashValue::LENGTH] = rng.gen();
         HashValue { hash }
     }
