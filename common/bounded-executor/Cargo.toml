@@ -1,6 +1,6 @@
 [package]
 name = "solana-libra-bounded-executor"
-version = "0.0.1-sol4"
+version = "0.0.1-sol5"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra bounded executor"
 repository = "https://github.com/libra/libra"
@@ -10,6 +10,6 @@ publish = false
 edition = "2018"
 
 [dependencies]
-solana-libra-futures-semaphore = { path = "../futures-semaphore", version = "0.0.1-sol4" }
+solana-libra-futures-semaphore = { path = "../futures-semaphore", version = "0.0.1-sol5" }
 futures = { version = "=0.3.0-alpha.19", package = "futures-preview", features = ["async-await", "compat"] }
 tokio = "0.1.22"

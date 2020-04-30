@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_config"
-version = "0.0.1-sol4"
+version = "0.0.1-sol5"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra config"
 repository = "https://github.com/libra/libra"
@@ -18,15 +18,15 @@ serde = { version = "1.0.99", default-features = false }
 toml = { version = "0.5.3", default-features = false }
 prost = "0.5.0"
 
-solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol4" }
-solana_libra_logger = { path = "../common/logger", version = "0.0.1-sol4" }
-failure = { path = "../common/failure_ext", version = "0.0.1-sol4", package = "solana_libra_failure_ext" }
-solana_libra_tools = { path = "../common/tools", version = "0.0.1-sol4" }
-solana_libra_types = { path = "../types", version = "0.0.1-sol4" }
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol5" }
+solana_libra_logger = { path = "../common/logger", version = "0.0.1-sol5" }
+failure = { path = "../common/failure_ext", version = "0.0.1-sol5", package = "solana_libra_failure_ext" }
+solana_libra_tools = { path = "../common/tools", version = "0.0.1-sol5" }
+solana_libra_types = { path = "../types", version = "0.0.1-sol5" }
 
 [dev-dependencies]
-solana_libra_types = { path = "../types", version = "0.0.1-sol4", features = ["testing"] }
-solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol4", features = ["testing"] }
+solana_libra_types = { path = "../types", version = "0.0.1-sol5", features = ["testing"] }
+solana_libra_crypto = { path = "../crypto/crypto", version = "0.0.1-sol5", features = ["testing"] }
 
 [features]
 default = []

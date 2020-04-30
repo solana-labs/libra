@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_stackless_bytecode_generator"
-version = "0.0.1-sol4"
+version = "0.0.1-sol5"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra stackless bytecode generator"
 repository = "https://github.com/libra/libra"
@@ -10,11 +10,11 @@ publish = false
 edition = "2018"
 
 [dependencies]
-solana_libra_vm = { path = "../../vm", version = "0.0.1-sol4" }
-solana_libra_ir_to_bytecode = { path = "../../compiler/ir_to_bytecode", version = "0.0.1-sol4" }
-solana_libra_stdlib = { path = "../../stdlib", version = "0.0.1-sol4" }
+solana_libra_vm = { path = "../../vm", version = "0.0.1-sol5" }
+solana_libra_ir_to_bytecode = { path = "../../compiler/ir_to_bytecode", version = "0.0.1-sol5" }
+solana_libra_stdlib = { path = "../../stdlib", version = "0.0.1-sol5" }
 #
 [dev-dependencies]
 # solana_libra_invalid_mutations = { path = "invalid_mutations" }
 proptest = "0.9"
-solana_libra_types = { path = "../../../types", version = "0.0.1-sol4", features = ["testing"]}
+solana_libra_types = { path = "../../../types", version = "0.0.1-sol5", features = ["testing"]}

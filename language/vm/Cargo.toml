@@ -1,6 +1,6 @@
 [package]
 name = "solana_libra_vm"
-version = "0.0.1-sol4"
+version = "0.0.1-sol5"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra vm"
 repository = "https://github.com/libra/libra"
@@ -16,15 +16,15 @@ mirai-annotations = "1.4.0"
 proptest = "0.9"
 proptest-derive = "0.1.1"
 serde = { version = "1", features = ["derive"] }
-solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.0.1-sol4" }
-solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol4" }
-failure = { path = "../../common/failure_ext", version = "0.0.1-sol4", package = "solana_libra_failure_ext" }
-solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol4" }
-solana_libra_types = { path = "../../types", version = "0.0.1-sol4" }
+solana_libra_canonical_serialization = { path = "../../common/canonical_serialization", version = "0.0.1-sol5" }
+solana_libra_crypto = { path = "../../crypto/crypto", version = "0.0.1-sol5" }
+failure = { path = "../../common/failure_ext", version = "0.0.1-sol5", package = "solana_libra_failure_ext" }
+solana_libra_proptest_helpers = { path = "../../common/proptest_helpers", version = "0.0.1-sol5" }
+solana_libra_types = { path = "../../types", version = "0.0.1-sol5" }
 
 [dev-dependencies]
 serde_json = "1"
-solana_libra_types = { path = "../../types", version = "0.0.1-sol4", features = ["testing"]}
+solana_libra_types = { path = "../../types", version = "0.0.1-sol5", features = ["testing"]}
 
 [features]
 default = []
