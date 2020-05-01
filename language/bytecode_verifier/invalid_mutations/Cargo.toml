@@ -7,7 +7,7 @@ description = "Libra invalid mutations"
 repository = "https://github.com/libra/libra"
 homepage = "https://libra.org"
 license = "Apache-2.0"
-publish = false
+# publish = false
 
 [dependencies]
 proptest = "0.9"
