@@ -13,7 +13,7 @@
 #   $ source ci/rust-version.sh
 #
 
-stable_version=1.36.0
+stable_version=1.42.0
 nightly_version=2019-07-19
 
 export rust_stable="$stable_version"
