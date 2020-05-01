@@ -3662,7 +3662,7 @@ dependencies = [
  "solana-libra-executable-helpers 0.0.1-sol5",
  "solana_libra_config 0.0.1-sol5",
  "solana_libra_crypto 0.0.1-sol5",
- "solana_libra_crypto_derive 0.0.1-sol5",
+ "solana_libra_crypto-derive 0.0.1-sol5",
  "solana_libra_debug_interface 0.0.1-sol5",
  "solana_libra_failure_ext 0.0.1-sol5",
  "solana_libra_grpc_helpers 0.0.1-sol5",
@@ -3856,7 +3856,7 @@ dependencies = [
  "sha2 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha3 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "solana_libra_canonical_serialization 0.0.1-sol5",
- "solana_libra_crypto_derive 0.0.1-sol5",
+ "solana_libra_crypto-derive 0.0.1-sol5",
  "solana_libra_failure_ext 0.0.1-sol5",
  "solana_libra_nibble 0.0.1-sol5",
  "threshold_crypto 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3865,7 +3865,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana_libra_crypto_derive"
+name = "solana_libra_crypto-derive"
 version = "0.0.1-sol5"
 dependencies = [
  "proc-macro2 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",

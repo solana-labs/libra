@@ -1,5 +1,5 @@
 [package]
-name = "solana_libra_crypto_derive"
+name = "solana_libra_crypto-derive"
 version = "0.0.1-sol5"
 authors = ["Libra Association <opensource@libra.org>"]
 description = "Libra custom derives for `crypto`"
